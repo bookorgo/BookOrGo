@@ -1,7 +1,7 @@
 # BookOrGo phase roadmap
 Date: 12 October 2026 (Asia/Karachi)
 Authority: Master Requirements V3.1 and AI Execution Playbook V4.1; latest owner direction overrides temporary Sites exception.
-Target: Laravel 13, Blade SSR, selective Livewire 4/Alpine, Tailwind, MySQL/MariaDB, minimal compatible Filament. GitHub + Hostinger Premium. Fresh build; deleted prototype must not be reused.
+Target: Laravel 13, Blade SSR, selective Livewire 4/Alpine, Tailwind, MySQL/MariaDB, minimal compatible Filament. GitHub + Hostinger Premium. Fresh build; previous prototype must not be reused. Latest owner instruction: preserve ALL existing Sites/files; do not delete them.
 
 ## Execution rules
 Complete bounded tickets in order; record requirement IDs, revision, actual tests, limitations, release and next task. Never mark a phase complete from code alone. Preserve current public URLs and Site until a verified migration. Owner requests main environment rather than staging: read-only discovery first, protected smoke checks and backup/restore before production replacement; record this deviation without treating unperformed gates as passed.
@@ -57,4 +57,4 @@ Separate authorization and legal/commercial/technical feasibility before booking
 Prove Dubai model first; authorize each country's supplier, legal, language/currency and support readiness separately.
 
 ## Next bounded package
-Finish P0 runtime/dependency and production-baseline preparation. Existing hourly schedule remains paused until the replacement execution/release workflow is verified.
+Finish P0 runtime/dependency and production-baseline preparation. See CURRENT_PLAN.md and RUN_LOG.md for current execution status. Hourly development may continue authorized preparation and CI checks; full production release remains gated.
