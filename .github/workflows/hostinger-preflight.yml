@@ -1,0 +1,31 @@
+name: Hostinger read-only preflight
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check runtime over verified SSH
+        env:
+          SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.HOSTINGER_KNOWN_HOSTS }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$SSH_KEY" || { echo "Missing HOSTINGER_SSH_KEY"; exit 1; }
+          test -n "$KNOWN_HOSTS" || { echo "Missing HOSTINGER_KNOWN_HOSTS"; exit 1; }
+          umask 077
+          key_file="$(mktemp)"
+          hosts_file="$(mktemp)"
+          trap 'rm -f "$key_file" "$hosts_file"' EXIT
+          printf '%s\n' "$SSH_KEY" > "$key_file"
+          printf '%s\n' "$KNOWN_HOSTS" > "$hosts_file"
+          ssh -i "$key_file" -p 65002 -o BatchMode=yes -o ConnectTimeout=20 -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts_file" u809119518@45.137.159.248 'bash -s' <<'REMOTE'
+          set -eu
+          /opt/alt/php84/usr/bin/php -v
+          /opt/alt/php84/usr/bin/php -m
+          command -v composer
+          ls -ld "$HOME/domains/bookorgo.com/public_html"
+          REMOTE
