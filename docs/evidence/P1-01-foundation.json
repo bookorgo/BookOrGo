@@ -1,0 +1,104 @@
+{
+  "task": "P1-01-homepage-foundation",
+  "status": "PASS_CI_FOUNDATION_SLICE",
+  "tested_revision": "f8a1c71403dcf1c5473542ffa395af1b6cc60d8f",
+  "run_url": "https://github.com/bookorgo/BookOrGo/actions/runs/38249192582",
+  "artifact": {
+    "id": 11747646484,
+    "digest": "sha256:03bd1c4f8be617f566e48b4728de7ccc5f6cb36e5e2395ef644861265c684101",
+    "expires_at": "2026-10-26T12:29:01Z"
+  },
+  "requirements": [
+    "Playbook V4.1 P1-01 / UI-01",
+    "Master V3.1 section 03 homepage/nav/mobile",
+    "Master V3.1 section 08 SSR metadata/index controls",
+    "OWNER-20261012-MAIN"
+  ],
+  "tests": {
+    "php": "8.3.35",
+    "feature_tests": 5,
+    "assertions": 65,
+    "composer_locked_install": "PASS",
+    "vite_tailwind_build": "PASS",
+    "route_view_config_cache": "PASS",
+    "browser": {
+      "checks": [
+        {
+          "viewport": 1440,
+          "homepage": "pass",
+          "search": "pass",
+          "overflow": "pass",
+          "menu": "not applicable"
+        },
+        {
+          "viewport": 768,
+          "homepage": "pass",
+          "search": "pass",
+          "overflow": "pass",
+          "menu": "not applicable"
+        },
+        {
+          "viewport": 390,
+          "homepage": "pass",
+          "search": "pass",
+          "overflow": "pass",
+          "menu": "pass"
+        },
+        {
+          "viewport": 320,
+          "homepage": "pass",
+          "search": "pass",
+          "overflow": "pass",
+          "menu": "pass"
+        },
+        {
+          "javascriptDisabled": "pass",
+          "internalLinks": 8,
+          "emptySearch": "pass"
+        }
+      ],
+      "pageErrors": []
+    }
+  },
+  "visual_review": {
+    "screenshots": [
+      "homepage-1440.png",
+      "homepage-768.png",
+      "homepage-390.png",
+      "search-390.png"
+    ],
+    "result": "Reviewed for hierarchy, spacing, clipping, responsive navigation/search and truthful preview labels. No blocking visual defects found in inspected views.",
+    "owner_acceptance": "NOT_REQUESTED_OR_RECEIVED",
+    "comparison": "Navy/blue/yellow structure follows owner reference; category artwork is original CSS. No third-party photos, branding or offer content copied."
+  },
+  "deployment": {
+    "performed": false,
+    "target": "Existing Hostinger main",
+    "plan": "docs/P1_MAIN_RELEASE_PLAN.md"
+  },
+  "limitations": [
+    "This completes only the homepage/navigation/category-search foundation slice, not all P1.",
+    "No real catalogue products, pricing, availability, partner redirects, published articles, booking or admin panel.",
+    "Category landing pages intentionally show empty states; full listing/detail/article templates and footer policy content remain.",
+    "Browser checks use Chromium in CI, not Hostinger or a full WCAG/cross-browser/performance audit.",
+    "No production/database/cron changes or full production rollback proof."
+  ],
+  "resolved_failures": [
+    {
+      "run": 38248511470,
+      "cause": "Inherited PHP 8.4 lock incompatible with web PHP 8.3",
+      "fix": "Pinned Composer platform to 8.3.35, resolved Symfony 7.4 dependencies, committed corrected lock."
+    },
+    {
+      "run": 38248683967,
+      "cause": "Test hardcoded localhost despite CI APP_URL using 127.0.0.1",
+      "fix": "Assert links against configured origin; no production logic changed."
+    },
+    {
+      "run": 38248883387,
+      "cause": "JS-disabled test left the native navigation overlay open before clicking search",
+      "fix": "Exercise native menu close and assert closed state before search; no forced click or bypass."
+    }
+  ],
+  "next": "P1-01-main-release: implement/execute guarded main publication from tested source under P1_MAIN_RELEASE_PLAN.md; no staging or temporary Hostinger database prerequisite."
+}

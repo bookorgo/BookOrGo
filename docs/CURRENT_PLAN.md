@@ -9,7 +9,7 @@ Controlling owner decisions: GitHub + Hostinger Premium; main environment reques
 Follow PHASE_ROADMAP.md. Private original Master Requirements V3.1, Playbook V4.1, kickoff and approved reference PDFs remain the authority. Retrieve them from owner Library; never publish full internal documents to this public repository.
 
 ## Current status
-P0 operational checks remain open. P1-01 homepage/navigation implementation in progress under OWNER-20261012-MAIN. P2-P5 not started; P6-P7 deferred.
+P0 operational checks remain open. P1-01 homepage/navigation foundation CI-verified under OWNER-20261012-MAIN; main Hostinger publication is next. P2-P5 not started; P6-P7 deferred.
 Completed bounded package P0-L02a: GitHub Actions SSH, CLI PHP and tooling inventory.
 Evidence: https://github.com/bookorgo/BookOrGo/actions/runs/38169812198
 Tested code revision: abbc16c6e34b1d7cb75555529065f13948053f25
@@ -80,19 +80,22 @@ Resolved on PHP 8.4.26 with Composer 2.10.3: Laravel Framework 13.35.0, Livewire
 Mapped requirements: Master Requirements V3.1 section 25.1; Playbook V4.1 sections 2A.2 and P0-L03.
 Limitations: generated Composer/npm lockfiles are retained as CI evidence but are not yet promoted as the repository application scaffold; MySQL/MariaDB, Filament panel creation, host web runtime, scheduler, backup/restore and deployment remain unverified. Dependency security audits were not part of this bounded proof.
 
+
+## Latest application package — P1-01 homepage foundation
+Fresh actual Laravel application is now in `site/`. Tested revision f8a1c71403dcf1c5473542ffa395af1b6cc60d8f; successful workflow https://github.com/bookorgo/BookOrGo/actions/runs/38249192582. Five feature tests / 65 assertions, locked PHP 8.3 install, production Vite build, route/view/config cache and Chromium checks at 1440/768/390/320 passed. JS-disabled navigation/search and eight internal link targets passed. Desktop/tablet/mobile screenshots reviewed. See P1_FOUNDATION.md and evidence/P1-01-foundation.json.
+The old PHP 8.4 Composer lock was not compatible with Hostinger web PHP 8.3.35; the corrected committed lock pins the Composer platform and uses Symfony 7.4 while retaining Laravel 13.35.0, Livewire 4.4.7 and Filament 5.10.1.
+Status: foundation slice CI-verified, NOT live on Hostinger. P1 as a phase remains incomplete. Pages are labelled development previews/noindex with category-only search, empty category states and no fake inventory. No database, scheduler or existing production/Site file changed. Main release plan is prepared in P1_MAIN_RELEASE_PLAN.md; do not confuse GitHub main with a deployed main website.
+
 ## Ordered next tasks
-1. P0-L01 completed at inventory level (P0-L01a baseline and P0-L01b design/asset/URL manifest). Rights-verified production assets remain a release gate.
-2. P0-L02a/P0-L02b completed for CLI tooling plus web runtime/origin/SSL/bounded-upload evidence. Web PHP 8.3.35 versus CLI 8.4.26 remains an ADR/release constraint; account quota is still unknown.
-3. P0-L04a-prep complete: CI harness passed. Actual Hostinger database proof remains BLOCKED on the six recorded dedicated smoke-database secrets; never reuse an unknown production DB.
-4. P0-L04b-prep and P0-L04c filesystem proof completed: protected Blade SSR/SEO, built assets, scheduled no-op CI and guarded Hostinger file restore passed. Hostinger hPanel scheduler, storage-link, isolated MySQL host CRUD and database backup/restore remain required before P0 exit.
-5. P0-L05 completed: ADR-001 is BLOCKED and machine-validated. Retain the locked Laravel/Hostinger direction; do not start P1 or promote the scaffold until mandatory Hostinger DB/restore/scheduler/storage/HTTP gates pass.
-6. Promote the P0-L03 verified Laravel 13.35.0, Livewire 4.4.7 and Filament 5.10.1 scaffold and lockfiles only in a dedicated package after the host gates above.
-7. P1: homepage/navigation; listing/filter/pagination; six category detail variants; blog article/hub; responsive and accessibility QA.
-8. P2: normalized catalog/source data; migrations; minimal editorial CMS; roles/publication workflow.
-9. P3: approved partner sourcing; deep links/disclosures; attribution and freshness checks.
-10. P4: SEO crawl/indexation controls; eligible schema; editorial content; search monitoring and monetization readiness.
-11. P5: release verification/rollback; analytics; ongoing content and operational checks.
-12. P6/P7 deferred to separate owner authorization.
+1. P1-01-main-release: implement the concrete guarded main release/rollback plan in P1_MAIN_RELEASE_PLAN.md for the tested database-independent homepage. Use fresh inventory and the existing SSH connection. No staging or temporary Hostinger database prerequisite. Preserve all current files and the existing Site; no DNS change or indexing release.
+2. P1-02: full category-aware listing/filter/sort/pagination and state handling; current search is taxonomy-only.
+3. P1-03: six category-aware detail variants with clearly labelled samples and honest CTA states.
+4. P1-04: reusable blog article layout and listing reuse; then P1-05 wider visual/accessibility QA and owner design review.
+5. P2: main application database configuration, normalized catalog/source data, migrations, minimal editorial CMS and publication roles. Database backup/restore is required before relevant main data changes; do not reuse the isolated temporary-table harness on the main database.
+6. P3: approved partner sourcing, links/disclosures, attribution and freshness checks.
+7. P4: SEO crawl/indexability controls, eligible schema, original editorial content and search monitoring.
+8. P5: production operations, rollback/monitoring and growth reporting. Keep unresolved operational P0 evidence honest and address each gate when applicable; it is not a blanket ban on independent feature work.
+9. P6/P7 deferred to separate owner authorization.
 
 ## Work rules
 Take one bounded ready package per scheduled run; continue independent prep when another gate needs owner input. Read latest remote source before editing. Avoid overlapping edits; reconcile remote head and active CI runs. Record task IDs, tested revision, actual test results, honest limitations and next task in RUN_LOG.md.

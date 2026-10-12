@@ -59,4 +59,4 @@ Separate authorization and legal/commercial/technical feasibility before booking
 Prove Dubai model first; authorize each country's supplier, legal, language/currency and support readiness separately.
 
 ## Next bounded package
-Finish P0 runtime/dependency and production-baseline preparation. See CURRENT_PLAN.md and RUN_LOG.md for current execution status. Hourly development may continue authorized preparation and CI checks; full production release remains gated.
+P1-01 foundation is CI-verified at f8a1c71403dcf1c5473542ffa395af1b6cc60d8f (run 38249192582); see P1_FOUNDATION.md. Execute the guarded main Hostinger release package in P1_MAIN_RELEASE_PLAN.md next, then continue P1-02 listing work. P1 is not complete; real catalogue/detail/article/policy/visual-acceptance work remains. Keep open P0 operational gates scoped to applicable features; no staging or temporary Hostinger database is required for this database-independent first release.
