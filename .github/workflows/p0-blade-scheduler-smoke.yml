@@ -1,0 +1,139 @@
+name: P0 Blade scheduler smoke
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/p0-blade-scheduler-smoke.yml'
+      - 'p0-smoke/**'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: p0-blade-scheduler-smoke-main
+  cancel-in-progress: false
+
+jobs:
+  disposable-smoke:
+    name: PHP 8.3 Blade SSR, assets and scheduler
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      APP_ENV: testing
+      APP_URL: https://bookorgo.test
+      DB_CONNECTION: sqlite
+      DB_DATABASE: ':memory:'
+
+    steps:
+      - name: Checkout evidence package
+        uses: actions/checkout@v4
+
+      - name: Set up PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, xml, ctype, json, tokenizer, curl, fileinfo, openssl, pdo, pdo_sqlite
+          coverage: none
+          tools: composer:v2
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Create clean Laravel application
+        run: |
+          set -euo pipefail
+          composer create-project laravel/laravel:^13.0 smoke-app --no-interaction --prefer-dist
+          cd smoke-app
+          composer require laravel/framework:13.35.0 livewire/livewire:4.4.7 filament/filament:5.10.1 --with-all-dependencies --no-interaction --prefer-dist
+          composer validate --strict
+
+      - name: Overlay protected smoke package
+        run: |
+          set -euo pipefail
+          cp p0-smoke/routes/web.php smoke-app/routes/web.php
+          cp p0-smoke/routes/console.php smoke-app/routes/console.php
+          mkdir -p smoke-app/resources/views/layouts smoke-app/resources/views/smoke smoke-app/tests/Feature
+          cp p0-smoke/resources/views/layouts/smoke.blade.php smoke-app/resources/views/layouts/smoke.blade.php
+          cp p0-smoke/resources/views/smoke/*.blade.php smoke-app/resources/views/smoke/
+          cp p0-smoke/tests/Feature/SmokePagesTest.php smoke-app/tests/Feature/SmokePagesTest.php
+          cd smoke-app
+          cp .env.example .env
+          php artisan key:generate --ansi
+
+      - name: Build Tailwind and Vite assets
+        working-directory: smoke-app
+        run: |
+          set -euo pipefail
+          npm install --package-lock-only --ignore-scripts
+          npm ci
+          npm run build
+          test -s public/build/manifest.json
+
+      - name: Verify routes and server-rendered HTML
+        working-directory: smoke-app
+        run: |
+          set -euo pipefail
+          php artisan route:list --path=__p0 --json | tee p0-routes.json
+          php artisan test --testsuite=Feature --filter=SmokePagesTest | tee p0-tests.txt
+
+      - name: Execute scheduled no-op
+        working-directory: smoke-app
+        run: |
+          set -euo pipefail
+          php artisan schedule:list | tee p0-schedule-list.txt
+          php artisan schedule:run --verbose | tee p0-schedule-run.txt
+          test -s storage/framework/p0-scheduler-proof.json
+          grep -F '"status": "executed"' storage/framework/p0-scheduler-proof.json
+
+      - name: Record bounded evidence
+        working-directory: smoke-app
+        run: |
+          set -euo pipefail
+          php -r '
+          $packages = json_decode(file_get_contents("composer.lock"), true)["packages"];
+          $versions = [];
+          foreach ($packages as $package) {
+              if (in_array($package["name"], ["laravel/framework", "livewire/livewire", "filament/filament"], true)) {
+                  $versions[$package["name"]] = ltrim($package["version"], "v");
+              }
+          }
+          $report = [
+              "task" => "P0-L04b-prep",
+              "status" => "PASS_CI_ONLY",
+              "php" => PHP_VERSION,
+              "packages" => $versions,
+              "routes" => 3,
+              "feature_tests" => 3,
+              "robots" => "noindex,nofollow",
+              "assets_manifest_sha256" => hash_file("sha256", "public/build/manifest.json"),
+              "scheduler_proof_sha256" => hash_file("sha256", "storage/framework/p0-scheduler-proof.json"),
+              "deployment" => "none",
+              "limitations" => [
+                  "Disposable GitHub Actions environment only",
+                  "Hostinger scheduler and backup/restore not verified",
+                  "No browser screenshot or public URL",
+                  "Sample content is not approved for publication"
+              ]
+          ];
+          file_put_contents("p0-smoke-report.json", json_encode($report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES).PHP_EOL);
+          '
+          cat p0-smoke-report.json
+
+      - name: Upload proof artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-blade-scheduler-smoke-${{ github.sha }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            smoke-app/p0-routes.json
+            smoke-app/p0-tests.txt
+            smoke-app/p0-schedule-list.txt
+            smoke-app/p0-schedule-run.txt
+            smoke-app/p0-smoke-report.json
+            smoke-app/storage/framework/p0-scheduler-proof.json
+            smoke-app/public/build/manifest.json
