@@ -78,7 +78,7 @@ jobs:
           header('Cache-Control: no-store, max-age=0');
           header('X-Robots-Tag: noindex, nofollow, noarchive');
 
-          $root = getenv('HOME') . '/domains/bookorgo.com/public_html';
+          $root = dirname(__DIR__);
           $required = ['ctype', 'curl', 'dom', 'fileinfo', 'filter', 'hash', 'mbstring', 'openssl', 'pcre', 'PDO', 'session', 'tokenizer', 'xml', 'pdo_mysql', 'intl', 'zip'];
           $missing = array_values(array_filter($required, static fn (string $extension): bool => !extension_loaded($extension)));
           $upload = $_FILES['sample'] ?? null;
