@@ -14,8 +14,14 @@ This does not prove database authentication/version, hPanel cron availability, w
 Workflow .github/workflows/hostinger-preflight.yml is read-only, uses HOSTINGER_SSH_KEY and HOSTINGER_KNOWN_HOSTS, and runs on its changes on main or manual dispatch. Strict host checking required. Secrets must never be printed. GitHub connector supports repo writes and run-log reads; direct dispatch is not exposed. Supported push triggers can run checks.
 Assets should be built in CI if hosting Node is unavailable. Cron requires hPanel capability verification; absent crontab is not proof hPanel scheduling is unsupported.
 
+## Latest bounded inventory — P0-L01a
+Completed read-only inventory; see P0_BASELINE.md and evidence/P0-L01a-baseline.json.
+Verified 12 October 2026 01:06 UTC: public homepage returns 200 with title Default page, no canonical or noindex signal detected, no discovered category links; robots.txt is 200 with no non-comment directives; sitemap.xml is 404. Host document root has one file/default.php marker. This differs from historical Site observations; cause and DNS routing were not verified. Existing Site/files were preserved.
+Tested revision aa64f9b55a60ee1fc7502f0a8014606dfcf792c3; Actions run 38190560434 passed. Full P0-L01/P0 still incomplete.
+Next bounded package: P0-L03 clean dependency/smoke-test CI. P0-L01b design/asset and previous URL manifest remains required before release. Do not change live indexation or DNS in response to the baseline without a reviewed release.
+
 ## Ordered next tasks
-1. P0-L01: inventory only BookOrGo paths/URLs without deleting or importing old code; record baseline.
+1. P0-L01a completed; P0-L01b remains: design/asset references and prior URL manifest, without importing old code.
 2. P0-L03: fresh Laravel 13 dependency resolution and smoke tests in CI; select compatible Livewire 4 and minimal Filament, pin lockfiles. No substantial P1 before P0 proof.
 3. P0-L02b: web PHP/origin/document-root/SSL proof and resource/upload constraints.
 4. P0-L04a: new isolated database credentials and temporary CRUD/migration proof; never reuse unknown production DB.
