@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "task_id": "P0-L04c-fs-restore",
+  "status": "PASS_FILESYSTEM_ONLY",
+  "date": "2026-10-12",
+  "tested_revision": "1cb06b2f3535b1a9e2978df4ef9e6b726ec7124f",
+  "workflow_run": {
+    "id": 38227821932,
+    "url": "https://github.com/bookorgo/BookOrGo/actions/runs/38227821932",
+    "conclusion": "success"
+  },
+  "proof": {
+    "archive_size_bytes": 330,
+    "source_sha256": "f1845aa043c23fd8188ab7813df089231438e1edbabc7a9dba7795796987406c",
+    "restored_sha256": "f1845aa043c23fd8188ab7813df089231438e1edbabc7a9dba7795796987406c",
+    "archive_sha256": "0c201a33c6659426c258dd5eae4d4c174f35ebe8de0ccb9c2a199ae9c0baf89f",
+    "https_protection_status": 404,
+    "source_removed_before_restore": true,
+    "temporary_path_removed": true,
+    "root_fingerprint_restored": true,
+    "existing_files_opened": 0,
+    "database_touched": false
+  },
+  "artifact": {
+    "id": 11737430400,
+    "digest": "sha256:f31d389ca1d3f3694568ff496295e7e1fef0b2cb0adac7ef4da61ee1c6e39369",
+    "expires_at": "2026-11-11T09:07:17Z"
+  },
+  "requirements": [
+    "Master V3.1 §10",
+    "Master V3.1 §25.1–25.3 P0-T02/P0-T04",
+    "Playbook V4.1 §2A.2/§2A.3 P0-L04",
+    "PHASE_ROADMAP P0-L04"
+  ],
+  "deployment": "none",
+  "host_changes_after_cleanup": [],
+  "limitations": [
+    "Filesystem payload only",
+    "No database access or MySQL restore",
+    "No Laravel release rollback",
+    "No storage-link proof",
+    "No protected browser screenshot",
+    "Hostinger hPanel scheduler unverified"
+  ]
+}

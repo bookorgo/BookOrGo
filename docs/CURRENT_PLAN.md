@@ -53,6 +53,14 @@ The named every-minute no-op schedule executed and produced a timestamped proof 
 Two earlier runs failed honestly: 38222038879 treated intentional exact package pins as strict validation warnings; 38222285085 exposed the default database cache-lock dependency. The final run uses normal Composer schema validation and an isolated in-memory cache for the disposable scheduler proof.
 Status is PASS_CI_ONLY, not a Hostinger or release pass. No deployment occurred. Hostinger scheduler configuration, protected browser screenshot, storage link, database backup/restore and actual host database proof remain open.
 
+## Latest bounded Hostinger filesystem restore proof — P0-L04c-fs-restore
+Completed a protected Hostinger filesystem backup/restore/checksum/HTTP-denial/cleanup proof; see P0_HOST_FILESYSTEM_RESTORE.md and evidence/P0-L04c-host-filesystem-restore.json.
+Successful Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38227821932 at tested revision 1cb06b2f3535b1a9e2978df4ef9e6b726ec7124f.
+A unique mode-700 temporary path under the known document root contained only a generated test payload and deny-access file. The payload was archived, the source removed, the archive allowlisted, and the payload restored to a separate directory. Source and restored SHA-256 values matched. Direct HTTPS access returned 404.
+Final cleanup removed every known temporary file and directory. The document-root top-level name/type fingerprint after cleanup exactly matched the pre-test fingerprint. Existing file contents opened: zero; database touched: false; deployment: none.
+Status is PASS_FILESYSTEM_ONLY. This proves the host can perform a guarded file archive/restore cycle; it is not a MySQL restore, full Laravel release rollback or hPanel Scheduler proof. Database backup/restore remains gated by dedicated isolated DB inputs, and scheduled execution remains gated by observable hPanel cron configuration.
+Artifact 11737430400 digest: sha256:f31d389ca1d3f3694568ff496295e7e1fef0b2cb0adac7ef4da61ee1c6e39369.
+
 ## Latest bounded dependency proof — P0-L03
 Completed a clean, disposable Laravel compatibility build in GitHub Actions; no production or Hostinger files were changed.
 Tested revision: 6f7a177f67438c91c2ad68ca125a0eee1cc96f2a.
@@ -65,7 +73,7 @@ Limitations: generated Composer/npm lockfiles are retained as CI evidence but ar
 1. P0-L01 completed at inventory level (P0-L01a baseline and P0-L01b design/asset/URL manifest). Rights-verified production assets remain a release gate.
 2. P0-L02a/P0-L02b completed for CLI tooling plus web runtime/origin/SSL/bounded-upload evidence. Web PHP 8.3.35 versus CLI 8.4.26 remains an ADR/release constraint; account quota is still unknown.
 3. P0-L04a-prep complete: CI harness passed. Actual Hostinger database proof remains BLOCKED on the six recorded dedicated smoke-database secrets; never reuse an unknown production DB.
-4. P0-L04b-prep completed in disposable CI: protected Blade SSR/SEO, built assets and scheduled no-op passed on PHP 8.3. Hostinger scheduler configuration, protected browser evidence, storage-link and backup/restore proof remain required before P0 exit.
+4. P0-L04b-prep and P0-L04c filesystem proof completed: protected Blade SSR/SEO, built assets, scheduled no-op CI and guarded Hostinger file restore passed. Hostinger hPanel scheduler, storage-link, isolated MySQL host CRUD and database backup/restore remain required before P0 exit.
 5. P0-L05: ADR-001 with PASS/FAIL/BLOCKED; no full P0 PASS until every required gate passes.
 6. Promote the P0-L03 verified Laravel 13.35.0, Livewire 4.4.7 and Filament 5.10.1 scaffold and lockfiles only in a dedicated package after the host gates above.
 7. P1: homepage/navigation; listing/filter/pagination; six category detail variants; blog article/hub; responsive and accessibility QA.

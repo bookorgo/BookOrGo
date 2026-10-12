@@ -89,3 +89,17 @@ Safety/deployment: sample pages are clearly labelled, noindex,nofollow and conta
 Limitations: GitHub Actions proof is not Hostinger scheduler/hPanel configuration or public browser evidence. No storage link, host DB, database backup/restore, screenshot or production rollback was tested.
 Evidence: docs/P0_BLADE_SCHEDULER_SMOKE.md and docs/evidence/P0-L04b-blade-scheduler.json.
 Next: P0-L04c guarded Hostinger scheduler plus backup/restore readiness package; actual host execution remains gated by dedicated isolated DB inputs and a reviewed protected new-path plan.
+
+
+## 12 October 2026 — P0-L04c-fs-restore
+Completed and verified a guarded Hostinger filesystem backup/restore proof against Master Requirements V3.1 §10 and §25.1–25.3 P0-T02/P0-T04, Playbook V4.1 §2A.2/§2A.3 P0-L04 and PHASE_ROADMAP P0-L04.
+Tested revision: 1cb06b2f3535b1a9e2978df4ef9e6b726ec7124f.
+Successful Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38227821932.
+Result: PASS_FILESYSTEM_ONLY.
+Host proof: created a unique random mode-700 temporary path under the verified document root; added explicit HTTP denial; generated one test payload; captured its SHA-256; created and allowlist-inspected a 330-byte tar.gz archive; removed the source; restored into a separate directory; and verified identical source/restored SHA-256 f1845aa043c23fd8188ab7813df089231438e1edbabc7a9dba7795796987406c. Archive SHA-256: 0c201a33c6659426c258dd5eae4d4c174f35ebe8de0ccb9c2a199ae9c0baf89f.
+Protection/cleanup: direct HTTPS request returned 404. Final cleanup removed the entire temporary path using only exact known-file removals and empty-directory removal. The document-root top-level name/type fingerprint after cleanup matched the pre-test fingerprint.
+Safety: existing file contents opened: zero; database touched: false; no recursive delete; strict SSH host verification remained enabled. No Hostinger deployment, DNS, Site, audience, public URL, robots, canonical or sitemap change occurred.
+Artifact: ID 11737430400, digest sha256:f31d389ca1d3f3694568ff496295e7e1fef0b2cb0adac7ef4da61ee1c6e39369, expires 11 November 2026.
+Limitations: this is not MySQL backup/restore, a full Laravel release rollback, storage-link evidence, protected browser screenshot or hPanel Scheduler execution proof. Database work remains blocked on dedicated isolated DB credentials; hPanel cron configuration is not visible through the current SSH evidence.
+Evidence: docs/P0_HOST_FILESYSTEM_RESTORE.md and docs/evidence/P0-L04c-host-filesystem-restore.json.
+Next: P0-L05 ADR-001 with current PASS/BLOCKED matrix and exact prerequisites; do not mark P0 complete while host DB, DB restore and hPanel scheduler remain unverified.
