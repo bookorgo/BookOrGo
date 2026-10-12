@@ -1,0 +1,62 @@
+{
+  "task": "P0-L01b",
+  "verified_at": "2026-10-12T03:09:16Z",
+  "status": "PASS_INVENTORY_ONLY",
+  "tested_repository_revision": "99bd461d6a3669b8adfb6edb6d163cc47e2fd20a",
+  "fresh_build": true,
+  "previous_code_imported": false,
+  "deployment_performed": false,
+  "site": {
+    "project_id": "appgprj_6acb4e7adff88191b607a30f99f4b4b4",
+    "observed_live_url": "https://bookorgo-uae.kwikar.chatgpt.site",
+    "read_only": true,
+    "routes_observed": 21,
+    "routes_loaded": 21,
+    "routes_with_noindex_nofollow": 21,
+    "routes_with_canonical": 0,
+    "query_states_observed": 3
+  },
+  "design_references": {
+    "documents": 3,
+    "pages_rendered_and_visually_inspected": 6,
+    "homepage_pages": 2,
+    "listing_pages": 2,
+    "detail_pages": 2,
+    "reference_assets_authorized_for_reuse": false
+  },
+  "routes": [
+    {"path": "/", "template": "homepage", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/about/", "template": "static", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/activities/", "template": "category_listing", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/holidays/", "template": "category_listing", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/visas/", "template": "category_listing", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/cruises/", "template": "category_listing", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/yachts/", "template": "category_listing", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/events/", "template": "category_listing", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/blog/", "template": "blog_hub", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/activities/dubai/skyline/", "template": "activity_detail", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/activities/dubai/desert/", "template": "activity_detail", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/cruises/dubai/marina-cruise/", "template": "cruise_detail", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/yachts/dubai/yacht-day/", "template": "yacht_detail", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/holidays/uae-staycation/", "template": "holiday_detail", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/visas/visitor-information/", "template": "visa_detail", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/events/dubai/culture-calendar/", "template": "event_detail", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/blog/dubai/plan-your-first-visit/", "template": "blog_article", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/disclosure/", "template": "legal", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/privacy/", "template": "legal", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/terms/", "template": "legal", "robots": "noindex,nofollow", "canonical": null},
+    {"path": "/contact/", "template": "contact", "robots": "noindex,nofollow", "canonical": null}
+  ],
+  "query_states": [
+    "/activities/?category=all",
+    "/activities/?area=Dubai",
+    "/holidays/?area=Ras%20Al%20Khaimah"
+  ],
+  "unresolved": [
+    "Owner-supplied or rights-verified original BookOrGo logo asset",
+    "Font licence register",
+    "Media provenance and reuse rights",
+    "Custom-domain route parity",
+    "Final responsive design tokens and component approval"
+  ]
+}
