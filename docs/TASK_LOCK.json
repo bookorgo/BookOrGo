@@ -1,7 +1,10 @@
 {
   "task": "P0-L01",
   "owner": "bookorgo-p0-inventory-20261012T0057Z",
-  "status": "active",
+  "status": "released",
   "acquired_at": "2026-10-12T00:57:00Z",
-  "expires_at": "2026-10-12T01:42:00Z"
+  "expires_at": "2026-10-12T01:42:00Z",
+  "completed_task": "P0-L01a",
+  "evidence_run": 38190560434,
+  "released_at": "2026-10-12 01:07:44 UTC"
 }
