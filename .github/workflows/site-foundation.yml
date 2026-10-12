@@ -31,7 +31,6 @@ jobs:
           cache-dependency-path: site/package-lock.json
       - name: Install locked dependencies
         run: |
-          composer update 'symfony/*' --with-all-dependencies --minimal-changes --no-interaction --prefer-dist --no-progress
           composer validate --no-check-publish
           composer install --no-interaction --prefer-dist --no-progress
           npm ci --ignore-scripts

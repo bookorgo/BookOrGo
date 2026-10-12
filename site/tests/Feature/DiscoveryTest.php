@@ -16,7 +16,7 @@ final class DiscoveryTest extends TestCase
         $response->assertHeader('X-Content-Type-Options', 'nosniff');
         $this->assertSame(1, substr_count($response->getContent(), '<h1'));
         foreach (['activities', 'holidays', 'visas', 'cruises', 'yachts', 'events'] as $slug) {
-            $response->assertSee('href="http://localhost/'.$slug.'"', false);
+            $response->assertSee('href="'.rtrim(config('app.url'), '/').'/'.$slug.'"', false);
         }
     }
 
