@@ -11,7 +11,7 @@ concurrency:
 jobs:
   preflight:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Check runtime over verified SSH
         env:
@@ -39,4 +39,102 @@ jobs:
           done
           test -w "$HOME/domains/bookorgo.com/public_html" && echo "document_root_writable: yes"
           ls -ld "$HOME/domains/bookorgo.com/public_html"
+          /opt/alt/php84/usr/bin/php <<'PHP'
+          <?php
+          $root = getenv('HOME') . '/domains/bookorgo.com/public_html';
+          $items = array_values(array_diff(scandir($root), ['.', '..']));
+          $files = $dirs = $links = 0;
+          foreach ($items as $item) {
+              $path = $root . '/' . $item;
+              if (is_link($path)) { $links++; }
+              elseif (is_dir($path)) { $dirs++; }
+              elseif (is_file($path)) { $files++; }
+          }
+          $markers = [];
+          foreach (['index.php','index.html','default.php','artisan','composer.json','wp-config.php'] as $name) {
+              $markers[$name] = file_exists($root . '/' . $name);
+          }
+          echo 'HOST_BASELINE_JSON=', json_encode([
+              'scope'=>'BookOrGo public_html top-level metadata only',
+              'root_is_symlink'=>is_link($root),
+              'files'=>$files, 'directories'=>$dirs, 'symlinks'=>$links,
+              'markers'=>$markers,
+              'limits'=>['No existing file contents read','No recursive scan','No changes']
+          ]), PHP_EOL;
+          PHP
           REMOTE
+      - name: Capture bounded public URL baseline
+        shell: bash
+        run: |
+          python3 <<'PY'
+          import hashlib, json
+          from datetime import datetime, timezone
+          from html.parser import HTMLParser
+          from urllib.request import Request, build_opener, HTTPRedirectHandler
+          from urllib.parse import urljoin, urlsplit
+          from urllib.error import HTTPError
+          
+          ORIGIN = "https://bookorgo.com"
+          class SameOriginRedirect(HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, headers, newurl):
+                  if urlsplit(newurl).netloc != "bookorgo.com" or urlsplit(newurl).scheme != "https":
+                      raise ValueError("Redirect outside approved HTTPS origin")
+                  return super().redirect_request(req, fp, code, msg, headers, newurl)
+          opener = build_opener(SameOriginRedirect)
+          class Page(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.links, self.canonicals, self.robots = [], [], []
+                  self.h1_count = 0
+              def handle_starttag(self, tag, attrs):
+                  a = dict(attrs)
+                  if tag == "h1": self.h1_count += 1
+                  if tag == "a" and a.get("href"): self.links.append(a["href"])
+                  if tag == "link" and "canonical" in a.get("rel", "").lower().split():
+                      self.canonicals.append(a.get("href", ""))
+                  if tag == "meta" and a.get("name", "").lower() in ("robots","googlebot"):
+                      self.robots.append(a.get("content", ""))
+          def inspect(path):
+              url = ORIGIN + path
+              row = {"path": path}
+              try:
+                  try:
+                      response = opener.open(Request(url, headers={"User-Agent":"BookOrGoOwnerReadOnlyAudit/1.0"}), timeout=20)
+                  except HTTPError as e:
+                      response = e
+                  with response:
+                      data = response.read(2_000_001)
+                      row.update(status=response.code, final_url=response.geturl(),
+                                 content_type=response.headers.get("Content-Type",""),
+                                 x_robots_tag=response.headers.get("X-Robots-Tag",""),
+                                 truncated=len(data)>2_000_000)
+                  if row["truncated"]: raise ValueError("Response exceeded bounded read")
+                  row["sha256"] = hashlib.sha256(data).hexdigest()
+                  page = Page()
+                  if "text/html" in row["content_type"]:
+                      page.feed(data.decode("utf-8","replace"))
+                      row.update(h1_count=page.h1_count, canonicals=page.canonicals, robots=page.robots)
+                  links = []
+                  for href in page.links:
+                      u = urlsplit(urljoin(url, href))
+                      if u.scheme=="https" and u.netloc=="bookorgo.com" and not u.query and not u.fragment:
+                          if u.path.startswith(("/activities","/holidays","/visas","/cruises","/yachts","/events","/blog")):
+                              links.append(u.path or "/")
+                  return row, sorted(set(links))
+              except Exception as e:
+                  row["error"] = type(e).__name__
+                  return row, []
+          home, paths = inspect("/")
+          selected = ["/robots.txt", "/sitemap.xml"] + paths[:18]
+          rows = [home]
+          for path in dict.fromkeys(selected):
+              row, _ = inspect(path)
+              rows.append(row)
+          report = {"task":"P0-L01a","checked_at":datetime.now(timezone.utc).isoformat(),
+                    "scope":"homepage, robots/sitemap and at most 18 clean category/detail/blog links discovered on homepage",
+                    "discovered_paths":paths, "results":rows,
+                    "limits":["No external or affiliate link requests","No browser/visual check","Not an exhaustive crawl","No mutation"]}
+          print("PUBLIC_BASELINE_JSON="+json.dumps(report, separators=(",",":")))
+          if any("error" in r for r in rows):
+              raise SystemExit("Incomplete baseline: inspect per-path errors")
+          PY
