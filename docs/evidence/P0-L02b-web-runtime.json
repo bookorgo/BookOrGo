@@ -1,0 +1,66 @@
+{
+  "task": "P0-L02b",
+  "verified_at": "2026-10-12T04:12:17Z",
+  "status": "PASS_BOUNDED",
+  "tested_revision": "1bd7fd9eb7c955c83bed6a22facca5beb66cdc90",
+  "successful_run_id": 38202823303,
+  "successful_run_url": "https://github.com/bookorgo/BookOrGo/actions/runs/38202823303",
+  "correction_run_id": 38202757487,
+  "retained_failed_run_id": 38202643328,
+  "origin": {
+    "https_status": 200,
+    "http_redirect_status": 301,
+    "tls_hostname_verified": true,
+    "certificate_valid_more_than_7_days": true,
+    "certificate_not_after": "2026-12-31T07:02:07Z",
+    "document_root_matches_verified_parent": true
+  },
+  "web_runtime": {
+    "php_version": "8.3.35",
+    "sapi": "litespeed",
+    "missing_required_extensions": [],
+    "https_detected": true,
+    "document_root_writable": true,
+    "limits": {
+      "memory_limit": "512M",
+      "max_execution_time": "300",
+      "max_input_time": "240",
+      "max_input_vars": "5000",
+      "upload_max_filesize": "256M",
+      "post_max_size": "256M",
+      "max_file_uploads": "20"
+    }
+  },
+  "cli_runtime": {
+    "php_version": "8.4.26",
+    "sapi": "cli",
+    "limits": {
+      "memory_limit": "512M",
+      "max_execution_time": "0",
+      "upload_max_filesize": "256M",
+      "post_max_size": "256M"
+    }
+  },
+  "upload_probe": {
+    "bytes": 1024,
+    "present": true,
+    "php_upload_error": 0,
+    "is_uploaded_file": true
+  },
+  "cleanup": {
+    "transient_probe_removed": true
+  },
+  "production_impact": {
+    "deployment_performed": false,
+    "existing_files_overwritten": false,
+    "dns_changed": false,
+    "indexation_changed": false
+  },
+  "limitations": [
+    "Web PHP 8.3.35 differs from CLI PHP 8.4.26",
+    "Filesystem free space is not proof of account quota or inode allowance",
+    "Configured 256M upload/post limits were observed but only a 1 KiB upload was exercised",
+    "HSTS, cipher inventory and certificate auto-renewal were not tested",
+    "Database, scheduler, storage-link, backup and restore proofs remain open"
+  ]
+}
