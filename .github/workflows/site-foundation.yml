@@ -1,0 +1,66 @@
+name: BookOrGo application foundation
+on:
+  push:
+    branches: [main]
+    paths: ['site/**', '.github/workflows/site-foundation.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: bookorgo-site-foundation-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  application:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, pdo_mysql, pdo_sqlite, dom, xml, curl, zip, fileinfo, bcmath
+          coverage: none
+          tools: composer:v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Install locked dependencies
+        run: |
+          composer validate --no-check-publish
+          composer install --no-interaction --prefer-dist --no-progress
+          npm ci --ignore-scripts
+          npm run build
+      - name: Prepare CI-only runtime
+        run: |
+          cp .env.example .env
+          printf '\nAPP_ENV=testing\nAPP_URL=http://127.0.0.1:8000\nSESSION_SECURE_COOKIE=false\n' >> .env
+          php artisan key:generate --ansi
+      - name: Feature and cache checks
+        run: |
+          php artisan test
+          php artisan route:cache
+          php artisan view:cache
+          php artisan config:cache
+          php artisan route:list --except-vendor
+      - name: Browser verification
+        run: |
+          npm install --prefix /tmp/bookorgo-browser --no-save --package-lock=false playwright@1.56.1
+          /tmp/bookorgo-browser/node_modules/.bin/playwright install --with-deps chromium
+          php artisan serve --host=127.0.0.1 --port=8000 > /tmp/bookorgo-app.log 2>&1 &
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:8000/up > /dev/null; then break; fi
+            sleep 1
+          done
+          node tests/browser/discovery.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bookorgo-p1-foundation-${{ github.sha }}
+          path: site/test-results/
+          if-no-files-found: warn
+          retention-days: 14
