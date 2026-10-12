@@ -77,6 +77,7 @@ jobs:
       - name: Build production assets
         working-directory: build/bookorgo
         run: |
+          npm install --package-lock-only --ignore-scripts
           npm ci
           npm run build
 
