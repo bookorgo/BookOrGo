@@ -45,3 +45,17 @@ Boundaries: the earlier Site was used only to identify paths and information arc
 Limitations: a rights-verified original logo, font licence register, reusable-media provenance, custom-domain route parity and final responsive design tokens remain unverified. Third-party reference branding/content/prices/reviews/media are excluded.
 Deployment: none; documentation and evidence checkpoint only.
 Next: P0-L02b web PHP/origin/document-root/SSL proof and host resource/upload constraints.
+
+## 12 October 2026 — P0-L02b
+Completed protected Hostinger web-runtime, origin, HTTPS and small-upload verification against Master Requirements V3.1 section 25.3 P0-T02, Playbook V4.1 sections 2A.2/2A.3 P0-L02 and the kickoff safety boundary.
+Tested revision: 1bd7fd9eb7c955c83bed6a22facca5beb66cdc90.
+Successful final Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38202823303.
+Result: PASS for this bounded package. The public origin returned HTTPS 200; HTTP redirected 301 to HTTPS; default certificate verification passed and the certificate reported validity through 31 December 2026. The random probe written under the known Hostinger public_html was fetched through bookorgo.com, confirming origin/document-root mapping.
+Web runtime: PHP 8.3.35, LiteSpeed SAPI, missing required extensions [], memory_limit 512M, max_execution_time 300, max_input_time 240, max_input_vars 5000, upload_max_filesize/post_max_size 256M, max_file_uploads 20. A real 1 KiB multipart upload passed with PHP error 0 and is_uploaded_file true.
+CLI comparison: PHP 8.4.26, CLI SAPI, memory 512M. Web/CLI PHP versions differ; code must remain PHP 8.3-compatible unless the web runtime is deliberately aligned through a reviewed change.
+Safety: the probe was POST-only, unique, no-store and noindex; final SSH assertion confirmed the transient directory was removed. No existing file was overwritten or deleted. No deployment, DNS, Site, audience, robots, canonical, sitemap or database change.
+Correction evidence: initial run https://github.com/bookorgo/BookOrGo/actions/runs/38202643328 failed because web DOCUMENT_ROOT was compared with a CLI-only HOME value. The corrected comparison passed in run 38202757487 and the final cleanup-verifying run 38202823303. No failed assertion was reported as passed.
+Evidence: docs/P0_HOST_RUNTIME.md and docs/evidence/P0-L02b-web-runtime.json.
+Limitations: mounted-filesystem free space is not proof of account quota/inodes; configured 256M upload/post limits were observed but only 1 KiB was exercised; HSTS/cipher inventory/auto-renewal, MySQL, scheduler, storage link, backup and restore remain unverified.
+Deployment: none.
+Next: P0-L04a new isolated database credentials and temporary migration/CRUD proof; do not reuse an unknown or existing production database.
