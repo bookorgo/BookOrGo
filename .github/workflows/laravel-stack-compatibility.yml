@@ -1,0 +1,134 @@
+name: Laravel stack compatibility
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/laravel-stack-compatibility.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: laravel-stack-compatibility
+  cancel-in-progress: false
+
+jobs:
+  resolve-and-smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP 8.4
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          extensions: bcmath, ctype, curl, dom, fileinfo, filter, hash, intl, json, mbstring, openssl, pcre, pdo, pdo_sqlite, session, tokenizer, xml
+          coverage: none
+          tools: composer:v2
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Create clean Laravel 13 application
+        run: |
+          set -euo pipefail
+          composer create-project laravel/laravel:"^13.0" build/bookorgo --no-interaction --prefer-dist
+          cp build/bookorgo/.env.example build/bookorgo/.env
+          touch build/bookorgo/database/database.sqlite
+          php build/bookorgo/artisan key:generate --ansi
+
+      - name: Resolve Livewire 4
+        working-directory: build/bookorgo
+        run: composer require livewire/livewire:"^4.0" --with-all-dependencies --no-interaction --prefer-dist
+
+      - name: Resolve current stable Filament
+        id: filament
+        working-directory: build/bookorgo
+        shell: bash
+        run: |
+          set +e
+          composer require filament/filament --with-all-dependencies --no-interaction --prefer-dist 2>&1 | tee ../../filament-resolution.log
+          code=${PIPESTATUS[0]}
+          echo "exit_code=${code}" >> "${GITHUB_OUTPUT}"
+          exit 0
+
+      - name: Validate resolved application
+        working-directory: build/bookorgo
+        env:
+          APP_ENV: testing
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
+        run: |
+          set -euo pipefail
+          composer validate --strict --no-check-publish
+          php artisan --version
+          php artisan package:discover --ansi
+          php artisan route:list --except-vendor
+          php artisan migrate --force --ansi
+          php artisan test --ansi
+
+      - name: Build production assets
+        working-directory: build/bookorgo
+        run: |
+          npm ci
+          npm run build
+
+      - name: Write compatibility report
+        working-directory: build/bookorgo
+        shell: bash
+        run: |
+          set -euo pipefail
+          composer show --direct --format=json > ../../direct-dependencies.json
+          composer show laravel/framework --format=json > ../../laravel-framework.json
+          composer show livewire/livewire --format=json > ../../livewire.json
+          if composer show filament/filament --format=json > ../../filament.json 2>/dev/null; then
+            filament_installed=true
+          else
+            filament_installed=false
+          fi
+          cat > ../../compatibility-summary.json <<JSON
+          {
+            "task": "P0-L03",
+            "php": "$(php -r 'echo PHP_VERSION;')",
+            "composer": "$(composer --version --no-ansi | sed 's/"/\\\"/g')",
+            "node": "$(node --version)",
+            "npm": "$(npm --version)",
+            "laravel": "$(php artisan --version --no-ansi)",
+            "filament_requirement": "current stable compatible release selected by Composer",
+            "filament_resolution_exit_code": ${{ steps.filament.outputs.exit_code }},
+            "filament_installed": ${filament_installed},
+            "deployment": "none"
+          }
+          JSON
+
+      - name: Upload compatibility evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-l03-compatibility
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            compatibility-summary.json
+            direct-dependencies.json
+            laravel-framework.json
+            livewire.json
+            filament.json
+            filament-resolution.log
+            build/bookorgo/composer.json
+            build/bookorgo/composer.lock
+            build/bookorgo/package.json
+            build/bookorgo/package-lock.json
+
+      - name: Enforce Filament compatibility
+        if: steps.filament.outputs.exit_code != '0'
+        run: |
+          echo "::error::No current stable Filament release resolved with Laravel 13 and Livewire 4."
+          exit 1
