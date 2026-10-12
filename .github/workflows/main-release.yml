@@ -201,6 +201,8 @@ jobs:
           build_new="$docroot/.bookorgo-build-$revision"
           mkdir "$build_new"
           cp -a "$release/public/build/." "$build_new/"
+          find "$build_new" -type d -exec chmod 755 {} +
+          find "$build_new" -type f -exec chmod 644 {} +
           cp "$release/public/.htaccess" "$docroot/.htaccess.new-$revision"
           sed \
             -e "s#__DIR__.'/../storage#__DIR__.'/../releases/$revision/storage#" \
