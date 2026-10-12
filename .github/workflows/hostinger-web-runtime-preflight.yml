@@ -1,0 +1,208 @@
+name: Hostinger P0-L02b web runtime proof
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/hostinger-web-runtime-preflight.yml'
+
+permissions: {}
+
+concurrency:
+  group: hostinger-p0-l02b-web-runtime
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Verify HTTPS origin, web PHP and bounded upload
+        env:
+          SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.HOSTINGER_KNOWN_HOSTS }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$SSH_KEY" || { echo "Missing HOSTINGER_SSH_KEY"; exit 1; }
+          test -n "$KNOWN_HOSTS" || { echo "Missing HOSTINGER_KNOWN_HOSTS"; exit 1; }
+
+          umask 077
+          key_file="$(mktemp)"
+          hosts_file="$(mktemp)"
+          upload_file="$(mktemp)"
+          response_headers="$(mktemp)"
+          response_body="$(mktemp)"
+          http_headers="$(mktemp)"
+          remote_rel=""
+
+          cleanup() {
+            if [[ "$remote_rel" =~ ^__bookorgo_p0_l02b_[0-9a-f]{32}$ ]]; then
+              ssh -i "$key_file" -p 65002 -o BatchMode=yes -o ConnectTimeout=20 \
+                -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts_file" \
+                u809119518@45.137.159.248 \
+                "target=\"\$HOME/domains/bookorgo.com/public_html/$remote_rel\"; rm -f -- \"\$target/index.php\"; rmdir -- \"\$target\" 2>/dev/null || true" \
+                >/dev/null 2>&1 || true
+            fi
+            rm -f "$key_file" "$hosts_file" "$upload_file" "$response_headers" "$response_body" "$http_headers"
+          }
+          trap cleanup EXIT
+
+          printf '%s\n' "$SSH_KEY" > "$key_file"
+          printf '%s\n' "$KNOWN_HOSTS" > "$hosts_file"
+          head -c 1024 /dev/zero > "$upload_file"
+
+          remote_rel="$(ssh -i "$key_file" -p 65002 -o BatchMode=yes -o ConnectTimeout=20 \
+            -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts_file" \
+            u809119518@45.137.159.248 'bash -s' <<'REMOTE'
+          set -euo pipefail
+          root="$HOME/domains/bookorgo.com/public_html"
+          test -d "$root"
+          test -w "$root"
+          suffix="$(/opt/alt/php84/usr/bin/php -r 'echo bin2hex(random_bytes(16));')"
+          rel="__bookorgo_p0_l02b_${suffix}"
+          dir="$root/$rel"
+          test ! -e "$dir"
+          mkdir -m 755 "$dir"
+          cat > "$dir/index.php" <<'PHP'
+          <?php
+          declare(strict_types=1);
+
+          if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+              http_response_code(404);
+              exit;
+          }
+
+          header('Content-Type: application/json; charset=utf-8');
+          header('Cache-Control: no-store, max-age=0');
+          header('X-Robots-Tag: noindex, nofollow, noarchive');
+
+          $root = getenv('HOME') . '/domains/bookorgo.com/public_html';
+          $required = ['ctype', 'curl', 'dom', 'fileinfo', 'filter', 'hash', 'mbstring', 'openssl', 'pcre', 'PDO', 'session', 'tokenizer', 'xml', 'pdo_mysql', 'intl', 'zip'];
+          $missing = array_values(array_filter($required, static fn (string $extension): bool => !extension_loaded($extension)));
+          $upload = $_FILES['sample'] ?? null;
+          $uploadResult = [
+              'present' => is_array($upload),
+              'error' => is_array($upload) ? ($upload['error'] ?? null) : null,
+              'size' => is_array($upload) ? ($upload['size'] ?? null) : null,
+              'is_uploaded_file' => is_array($upload) && isset($upload['tmp_name']) && is_uploaded_file($upload['tmp_name']),
+          ];
+
+          $result = [
+              'task' => 'P0-L02b',
+              'probe_marker' => basename(__DIR__),
+              'php_version' => PHP_VERSION,
+              'php_sapi' => PHP_SAPI,
+              'missing_extensions' => $missing,
+              'document_root_matches' => realpath((string) ($_SERVER['DOCUMENT_ROOT'] ?? '')) === realpath($root),
+              'https_detected' => (($_SERVER['HTTPS'] ?? '') !== '' && ($_SERVER['HTTPS'] ?? '') !== 'off')
+                  || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https'),
+              'limits' => [
+                  'memory_limit' => ini_get('memory_limit'),
+                  'max_execution_time' => ini_get('max_execution_time'),
+                  'max_input_time' => ini_get('max_input_time'),
+                  'max_input_vars' => ini_get('max_input_vars'),
+                  'upload_max_filesize' => ini_get('upload_max_filesize'),
+                  'post_max_size' => ini_get('post_max_size'),
+                  'max_file_uploads' => ini_get('max_file_uploads'),
+              ],
+              'storage' => [
+                  'document_root_writable' => is_writable($root),
+                  'disk_total_bytes' => disk_total_space($root),
+                  'disk_free_bytes' => disk_free_space($root),
+              ],
+              'upload' => $uploadResult,
+          ];
+
+          @unlink(__FILE__);
+          @rmdir(__DIR__);
+          echo json_encode($result, JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR), PHP_EOL;
+          PHP
+          chmod 644 "$dir/index.php"
+          printf '%s\n' "$rel"
+          REMOTE
+          )"
+
+          [[ "$remote_rel" =~ ^__bookorgo_p0_l02b_[0-9a-f]{32}$ ]] || {
+            echo "Invalid generated probe path"
+            exit 1
+          }
+
+          probe_url="https://bookorgo.com/$remote_rel/"
+          status="$(curl --silent --show-error --fail-with-body \
+            --connect-timeout 10 --max-time 30 --proto '=https' --tlsv1.2 \
+            --header 'Cache-Control: no-store' \
+            --form "sample=@$upload_file;type=application/octet-stream" \
+            --dump-header "$response_headers" --output "$response_body" \
+            --write-out '%{http_code}' "$probe_url")"
+          test "$status" = "200"
+          grep -Eiq '^X-Robots-Tag:[[:space:]]*noindex,[[:space:]]*nofollow,[[:space:]]*noarchive' "$response_headers"
+
+          REMOTE_REL="$remote_rel" RESPONSE_BODY="$response_body" python3 <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          data = json.loads(Path(os.environ["RESPONSE_BODY"]).read_text())
+          assert data["task"] == "P0-L02b"
+          assert data["probe_marker"] == os.environ["REMOTE_REL"]
+          assert data["php_sapi"] not in ("cli", "phpdbg")
+          assert data["missing_extensions"] == []
+          assert data["document_root_matches"] is True
+          assert data["https_detected"] is True
+          assert data["storage"]["document_root_writable"] is True
+          assert data["storage"]["disk_free_bytes"] > 0
+          assert data["upload"] == {
+              "present": True,
+              "error": 0,
+              "size": 1024,
+              "is_uploaded_file": True,
+          }
+          print("P0_L02B_WEB_JSON=" + json.dumps(data, separators=(",", ":")))
+          PY
+
+          http_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 \
+            --dump-header "$http_headers" --output /dev/null --write-out '%{http_code}' \
+            http://bookorgo.com/)"
+          case "$http_status" in
+            301|302|307|308) ;;
+            *) echo "Expected HTTP-to-HTTPS redirect, got $http_status"; exit 1 ;;
+          esac
+          grep -Eiq '^Location:[[:space:]]*https://bookorgo\.com(/|[[:space:]]*$)' "$http_headers"
+
+          https_status="$(curl --silent --show-error --fail --connect-timeout 10 --max-time 30 \
+            --proto '=https' --tlsv1.2 --output /dev/null --write-out '%{http_code}' \
+            https://bookorgo.com/)"
+          test "$https_status" = "200"
+
+          cert_end="$(openssl s_client -connect bookorgo.com:443 -servername bookorgo.com </dev/null 2>/dev/null \
+            | openssl x509 -noout -enddate | cut -d= -f2-)"
+          test -n "$cert_end"
+          openssl s_client -connect bookorgo.com:443 -servername bookorgo.com </dev/null 2>/dev/null \
+            | openssl x509 -noout -checkend 604800 >/dev/null
+
+          echo "P0_L02B_ORIGIN_JSON={\"https_status\":$https_status,\"http_redirect_status\":$http_status,\"tls_hostname_verified\":true,\"certificate_valid_more_than_7_days\":true,\"certificate_not_after\":\"$cert_end\"}"
+
+          ssh -i "$key_file" -p 65002 -o BatchMode=yes -o ConnectTimeout=20 \
+            -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts_file" \
+            u809119518@45.137.159.248 'bash -s' <<'REMOTE'
+          set -euo pipefail
+          root="$HOME/domains/bookorgo.com/public_html"
+          /opt/alt/php84/usr/bin/php -r '
+          $root = getenv("HOME") . "/domains/bookorgo.com/public_html";
+          echo "P0_L02B_CLI_JSON=", json_encode([
+              "php_version" => PHP_VERSION,
+              "php_sapi" => PHP_SAPI,
+              "limits" => [
+                  "memory_limit" => ini_get("memory_limit"),
+                  "max_execution_time" => ini_get("max_execution_time"),
+                  "upload_max_filesize" => ini_get("upload_max_filesize"),
+                  "post_max_size" => ini_get("post_max_size"),
+              ],
+              "document_root_writable" => is_writable($root),
+              "disk_total_bytes" => disk_total_space($root),
+              "disk_free_bytes" => disk_free_space($root),
+          ], JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR), PHP_EOL;
+          '
+          REMOTE
