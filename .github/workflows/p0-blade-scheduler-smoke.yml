@@ -25,6 +25,7 @@ jobs:
       APP_URL: https://bookorgo.test
       DB_CONNECTION: sqlite
       DB_DATABASE: ':memory:'
+      CACHE_STORE: array
 
     steps:
       - name: Checkout evidence package
