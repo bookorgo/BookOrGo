@@ -33,3 +33,15 @@ Artifact: p0-l03-compatibility, ID 11722337895, digest sha256:ad72b3ec67615eec57
 Deployment: none. Existing Hostinger and ChatGPT Site files/audience/URLs unchanged.
 Limitations: generated scaffold/lockfiles are evidence only and not yet committed as the application; MySQL/MariaDB, Filament panel setup, security audits, web PHP, scheduler, backup/restore and production release remain unverified.
 Next: P0-L01b design/asset and prior URL manifest; then P0-L02b/P0-L04 protected host checks.
+
+## 12 October 2026 — P0-L01b
+Completed the bounded design/asset and prior-URL manifest against the owner references and current public ChatGPT Site.
+Tested repository revision: 99bd461d6a3669b8adfb6edb6d163cc47e2fd20a.
+Result: PASS for P0-L01b inventory only; this is not asset approval, content migration or release approval.
+Evidence: docs/P0_DESIGN_URL_MANIFEST.md and docs/evidence/P0-L01b-design-url-manifest.json.
+Tests: rendered and visually inspected 6/6 pages across the homepage, listing and detail reference PDFs. Loaded 21/21 observed Site routes; all returned a `noindex,nofollow` meta directive and 0/21 exposed a canonical tag. Recorded three query-string filter states separately from canonical route candidates. Evidence JSON parsed successfully and aggregate counts matched its route array.
+Requirements checked: Master Requirements V3.1 sections 01–04, 03, 17 and 25; Playbook V4.1 P0-L01 and P1 template inputs; kickoff fresh-build and release-control rules.
+Boundaries: the earlier Site was used only to identify paths and information architecture. No old code, copy, records or assets were imported. No Site, Hostinger, DNS, audience or indexation setting changed.
+Limitations: a rights-verified original logo, font licence register, reusable-media provenance, custom-domain route parity and final responsive design tokens remain unverified. Third-party reference branding/content/prices/reviews/media are excluded.
+Deployment: none; documentation and evidence checkpoint only.
+Next: P0-L02b web PHP/origin/document-root/SSL proof and host resource/upload constraints.
