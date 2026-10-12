@@ -1,0 +1,30 @@
+name: ADR-001 validation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - docs/ADR-001-laravel-hostinger.md
+      - docs/evidence/ADR-001.json
+      - .github/scripts/validate-adr-001.py
+      - .github/workflows/adr-001-validation.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: adr-001-validation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate ADR-001 evidence and markdown
+        run: python3 .github/scripts/validate-adr-001.py

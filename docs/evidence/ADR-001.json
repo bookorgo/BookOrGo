@@ -1,0 +1,106 @@
+{
+  "decision_id": "ADR-001",
+  "task_id": "P0-L05",
+  "recorded_at": "2026-10-12T10:10:00Z",
+  "overall_status": "BLOCKED",
+  "decision": "Retain the owner-selected Laravel architecture and Hostinger Premium as the preferred target, but do not start P1 scaffold promotion or production deployment until the remaining mandatory Hostinger gates pass.",
+  "tested_revision": null,
+  "deployment": {
+    "performed": false,
+    "environment": null,
+    "reason": "Architecture decision and validation only; production deployment is not authorized by this package."
+  },
+  "matrix": [
+    {
+      "id": "COMPAT",
+      "status": "PASS",
+      "evidence": "https://github.com/bookorgo/BookOrGo/actions/runs/38194341523",
+      "limitation": null
+    },
+    {
+      "id": "HOST-CLI",
+      "status": "PASS",
+      "evidence": "https://github.com/bookorgo/BookOrGo/actions/runs/38169812198",
+      "limitation": null
+    },
+    {
+      "id": "HOST-WEB",
+      "status": "PASS",
+      "evidence": "https://github.com/bookorgo/BookOrGo/actions/runs/38202823303",
+      "limitation": null
+    },
+    {
+      "id": "SSR-CI",
+      "status": "PASS_CI_ONLY",
+      "evidence": "https://github.com/bookorgo/BookOrGo/actions/runs/38222473237",
+      "limitation": "Disposable GitHub Actions environment only; not a Hostinger HTTP or browser proof."
+    },
+    {
+      "id": "DB-CI",
+      "status": "PASS_CI_ONLY",
+      "evidence": "https://github.com/bookorgo/BookOrGo/actions/runs/38217201832",
+      "limitation": "Disposable MariaDB service only; no Hostinger database connection was attempted."
+    },
+    {
+      "id": "FS-RESTORE",
+      "status": "PASS_FILESYSTEM_ONLY",
+      "evidence": "https://github.com/bookorgo/BookOrGo/actions/runs/38227821932",
+      "limitation": "Proves only a protected generated-file archive/restore cycle, not database or full application rollback."
+    },
+    {
+      "id": "HOST-DB",
+      "status": "BLOCKED",
+      "evidence": null,
+      "limitation": "Six dedicated BOOKORGO_P0_DB_* GitHub secrets for an explicitly isolated smoke database are absent."
+    },
+    {
+      "id": "DB-RESTORE",
+      "status": "BLOCKED",
+      "evidence": null,
+      "limitation": "Requires the dedicated isolated Hostinger smoke database and a guarded export/restore procedure."
+    },
+    {
+      "id": "HOST-SCHEDULER",
+      "status": "BLOCKED",
+      "evidence": null,
+      "limitation": "hPanel scheduler execution and observability have not been proven."
+    },
+    {
+      "id": "DURABLE-STORAGE",
+      "status": "BLOCKED",
+      "evidence": null,
+      "limitation": "Laravel storage:link or an approved durable media path plus recovery is untested."
+    },
+    {
+      "id": "HOST-HTTP",
+      "status": "BLOCKED",
+      "evidence": null,
+      "limitation": "No protected Laravel application path or browser screenshot set exists on Hostinger."
+    },
+    {
+      "id": "PROD-ROLLBACK",
+      "status": "NOT_RUN",
+      "evidence": null,
+      "limitation": "Production deployment and rollback require a reviewed release plan and explicit authorization."
+    },
+    {
+      "id": "ASSET-RIGHTS",
+      "status": "BLOCKED",
+      "evidence": null,
+      "limitation": "Rights-verified production logo, fonts and reusable media plus visual signoff are not yet recorded."
+    }
+  ],
+  "required_blockers": [
+    "HOST-DB",
+    "DB-RESTORE",
+    "HOST-SCHEDULER",
+    "DURABLE-STORAGE",
+    "HOST-HTTP",
+    "ASSET-RIGHTS"
+  ],
+  "requirements": [
+    "Master Requirements V3.1 section 25.3 P0-T05",
+    "AI Execution Playbook V4.1 section 2A.3 P0-L05",
+    "AI Execution Playbook V4.1 section 7 recovery evidence"
+  ]
+}
