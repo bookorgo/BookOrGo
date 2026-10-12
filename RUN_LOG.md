@@ -13,3 +13,11 @@ Deployment: none. Existing Site/files unchanged.
 Unverified: complete dependency resolution, web PHP, database authentication and CRUD, scheduler execution, backup/restore, browser QA.
 Next: P0-L01 inventory and P0-L03 clean Laravel dependency/smoke-test package, before P1.
 Full internal documents remain in owner Library; public-repo publication was blocked by automatic approval review and was not retried. CURRENT_PLAN.md and PHASE_ROADMAP.md are the public technical work checkpoints.
+
+## 12 October 2026 — P0-L01a
+Completed bounded read-only inventory of repo, Hostinger document-root metadata and public homepage/crawl endpoints.
+Tested revision: aa64f9b55a60ee1fc7502f0a8014606dfcf792c3.
+Actions run https://github.com/bookorgo/BookOrGo/actions/runs/38190560434 succeeded; Python syntax checked.
+Findings: homepage 200 title "Default page", no canonical/noindex detected, no discovered category links; robots 200 with no non-comment directives; sitemap 404. Host document root has one file/default.php marker and no subdirectories. See docs/P0_BASELINE.md and docs/evidence/P0-L01a-baseline.json.
+Status: PASS for P0-L01a only; full P0-L01/P0 remains incomplete. Existing source was not imported; no deployment, DNS, file deletion or live SEO mutation.
+Next: P0-L03 clean Laravel dependency/smoke-test CI; P0-L01b asset/design and prior URL inventory. Database/web runtime/cron/backup/restore remain unverified.
