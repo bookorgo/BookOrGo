@@ -1,15 +1,9 @@
 {
-  "task": "P0-L04b-prep",
-  "owner": "bookorgo-p0-blade-scheduler-smoke-20261012T0805Z",
-  "status": "released",
-  "acquired_at": "2026-10-12T08:05:00Z",
-  "expires_at": "2026-10-12T09:05:00Z",
-  "base_revision": "aa5b03c23d4843eecac6540f95f9650b2938b9f2",
-  "completed_task": "P0-L04b-prep",
-  "result": "PASS_CI_ONLY",
-  "tested_revision": "f652ee1ea235b6aebd2d97520e6720a6ad28127b",
-  "checkpoint_revision": "7ef2269bbb988c3bc89aaf564b0798e911088e68",
-  "evidence_run": 38222473237,
-  "evidence": "docs/evidence/P0-L04b-blade-scheduler.json",
-  "released_at": "2026-10-12T08:20:00Z"
+  "task": "P0-L04c-fs-restore",
+  "owner": "bookorgo-p0-host-fs-restore-20261012T0908Z",
+  "status": "active",
+  "acquired_at": "2026-10-12T09:08:00Z",
+  "expires_at": "2026-10-12T10:08:00Z",
+  "base_revision": "8039536e2793e0ec2d76fd2a2f60091bd61df676",
+  "scope": "Protected Hostinger filesystem backup/restore/checksum/HTTP-denial/cleanup proof in unique temporary paths; no existing file or database mutation."
 }
