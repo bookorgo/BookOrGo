@@ -1,8 +1,15 @@
 {
   "task": "P0-L04a-prep",
   "owner": "bookorgo-p0-isolated-db-harness-20261012T0713Z",
-  "status": "active",
+  "status": "released",
   "acquired_at": "2026-10-12T07:13:00Z",
   "expires_at": "2026-10-12T07:58:00Z",
-  "base_revision": "976cb01dfecb100e35a07ec14cefceb27e255f96"
+  "base_revision": "976cb01dfecb100e35a07ec14cefceb27e255f96",
+  "completed_task": "P0-L04a-prep",
+  "result": "PASS_HARNESS_HOST_BLOCKED",
+  "tested_revision": "888f3c624aed1f18bb5ae2120d3e7106b0fd02ef",
+  "checkpoint_revision": "a3f16d07fe76ec1fc91392a451f05aac7bebf278",
+  "evidence_run": 38217201832,
+  "evidence": "docs/evidence/P0-L04a-db-harness.json",
+  "released_at": "2026-10-12T07:26:47Z"
 }
