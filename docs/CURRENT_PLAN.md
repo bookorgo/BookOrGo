@@ -17,8 +17,15 @@ Assets should be built in CI if hosting Node is unavailable. Cron requires hPane
 ## Latest bounded inventory — P0-L01a
 Completed read-only inventory; see P0_BASELINE.md and evidence/P0-L01a-baseline.json.
 Verified 12 October 2026 01:06 UTC: public homepage returns 200 with title Default page, no canonical or noindex signal detected, no discovered category links; robots.txt is 200 with no non-comment directives; sitemap.xml is 404. Host document root has one file/default.php marker. This differs from historical Site observations; cause and DNS routing were not verified. Existing Site/files were preserved.
-Tested revision aa64f9b55a60ee1fc7502f0a8014606dfcf792c3; Actions run 38190560434 passed. Full P0-L01/P0 still incomplete.
-P0-L03 dependency/smoke-test CI is now complete. Next bounded package: P0-L01b design/asset and previous URL manifest, without importing old code. Do not change live indexation or DNS in response to the baseline without a reviewed release.
+Tested revision aa64f9b55a60ee1fc7502f0a8014606dfcf792c3; Actions run 38190560434 passed.
+
+## Latest bounded design and URL inventory — P0-L01b
+Completed the remaining P0-L01 design/asset and prior-URL inventory; see P0_DESIGN_URL_MANIFEST.md and evidence/P0-L01b-design-url-manifest.json.
+Rendered and visually inspected all six pages across the three owner reference PDFs. Recorded structural guidance for fresh homepage, listing, detail and blog templates while excluding third-party branding, content, prices, reviews and media.
+Loaded all 21 observed public ChatGPT Site routes: every route exposed `noindex,nofollow`, and none exposed a canonical tag. Three query-string filter states were recorded separately from canonical route candidates. The earlier Site remains a path reference only; no old code, copy, records or assets will be imported.
+Asset release blockers are explicit: no separate rights-verified logo original, font licence register or reusable-media provenance was verified. P0-L01 is complete at inventory level; asset approval remains an implementation/release gate.
+No Site, Hostinger, DNS, audience or indexation setting changed.
+Next bounded package: P0-L02b web PHP/origin/document-root/SSL proof and resource/upload constraints.
 
 ## Latest bounded dependency proof — P0-L03
 Completed a clean, disposable Laravel compatibility build in GitHub Actions; no production or Hostinger files were changed.
@@ -27,15 +34,14 @@ Evidence: https://github.com/bookorgo/BookOrGo/actions/runs/38194341523 and docs
 Resolved on PHP 8.4.26 with Composer 2.10.3: Laravel Framework 13.35.0, Livewire 4.4.7 and Filament 5.10.1. Composer validation, package discovery, route listing, SQLite migration, two starter tests, npm clean install and production Vite/Tailwind build passed. The Laravel distribution did not include package-lock.json, so the first CI attempt failed honestly at npm ci; the workflow now generates a frontend lockfile before the clean install and the rerun passed.
 Mapped requirements: Master Requirements V3.1 section 25.1; Playbook V4.1 sections 2A.2 and P0-L03.
 Limitations: generated Composer/npm lockfiles are retained as CI evidence but are not yet promoted as the repository application scaffold; MySQL/MariaDB, Filament panel creation, host web runtime, scheduler, backup/restore and deployment remain unverified. Dependency security audits were not part of this bounded proof.
-Next bounded package: P0-L01b design/asset and prior URL manifest. Then continue P0-L02b/P0-L04 protected host checks before any production cutover.
 
 ## Ordered next tasks
-1. P0-L01a completed; P0-L01b remains: design/asset references and prior URL manifest, without importing old code.
-2. P0-L03 completed: clean Laravel 13 dependency resolution and smoke tests selected Laravel 13.35.0, Livewire 4.4.7 and Filament 5.10.1; generated lockfiles retained in run evidence. Promote the verified scaffold and lockfiles only in a dedicated next package.
-3. P0-L02b: web PHP/origin/document-root/SSL proof and resource/upload constraints.
-4. P0-L04a: new isolated database credentials and temporary CRUD/migration proof; never reuse unknown production DB.
-5. P0-L04b: scheduler execution evidence, build artifacts, protected Blade smoke views, backup/restore proof.
-6. P0-L05: ADR-001 with PASS/FAIL/BLOCKED; no full P0 PASS until every required gate passes.
+1. P0-L01 completed at inventory level (P0-L01a baseline and P0-L01b design/asset/URL manifest). Rights-verified production assets remain a release gate.
+2. P0-L02b: web PHP/origin/document-root/SSL proof and resource/upload constraints.
+3. P0-L04a: new isolated database credentials and temporary CRUD/migration proof; never reuse unknown production DB.
+4. P0-L04b: scheduler execution evidence, build artifacts, protected Blade smoke views, backup/restore proof.
+5. P0-L05: ADR-001 with PASS/FAIL/BLOCKED; no full P0 PASS until every required gate passes.
+6. Promote the P0-L03 verified Laravel 13.35.0, Livewire 4.4.7 and Filament 5.10.1 scaffold and lockfiles only in a dedicated package after the host gates above.
 7. P1: homepage/navigation; listing/filter/pagination; six category detail variants; blog article/hub; responsive and accessibility QA.
 8. P2: normalized catalog/source data; migrations; minimal editorial CMS; roles/publication workflow.
 9. P3: approved partner sourcing; deep links/disclosures; attribution and freshness checks.
