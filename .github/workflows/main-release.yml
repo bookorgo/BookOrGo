@@ -1,0 +1,291 @@
+name: BookOrGo guarded main release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/main-release.yml'
+      - '.github/scripts/verify-live.py'
+      - '.github/scripts/live-smoke.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bookorgo-production-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Build, backup, activate and verify main
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SSH_HOST: 45.137.159.248
+      SSH_PORT: '65002'
+      SSH_USER: u809119518
+    steps:
+      - name: Checkout frozen revision
+        uses: actions/checkout@v4
+
+      - name: Set up PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, pdo_mysql, dom, xml, curl, zip, fileinfo, bcmath
+          coverage: none
+          tools: composer:v2
+
+      - name: Set up Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Test and build exact application
+        working-directory: site
+        run: |
+          set -euo pipefail
+          composer validate --no-check-publish
+          composer install --no-interaction --prefer-dist --no-progress
+          cp .env.example .env
+          printf '\nAPP_ENV=testing\nAPP_URL=http://127.0.0.1\nSESSION_SECURE_COOKIE=false\n' >> .env
+          php artisan key:generate --ansi
+          php artisan test
+          npm ci --ignore-scripts
+          npm run build
+          php artisan route:cache
+          php artisan view:cache
+          php artisan config:cache
+          composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist --no-progress
+          php artisan config:clear
+          rm .env
+
+      - name: Assemble bounded release archive
+        run: |
+          set -euo pipefail
+          tar --exclude='site/node_modules' --exclude='site/tests' --exclude='site/test-results' --exclude='site/.env' --exclude='site/.phpunit.cache' -czf bookorgo-release.tgz site
+          sha256sum bookorgo-release.tgz | tee release-package.sha256
+          tar -tzf bookorgo-release.tgz > release-package-files.txt
+          if grep -Eq '(^/|(^|/)\.\.(/|$)|(^|/)\.env($|/))' release-package-files.txt; then
+            echo 'Unsafe release archive entry detected' >&2
+            exit 1
+          fi
+
+      - name: Prepare strict SSH client
+        env:
+          SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.HOSTINGER_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          test -n "$SSH_KEY"
+          test -n "$KNOWN_HOSTS"
+          umask 077
+          mkdir -p .release-ssh
+          printf '%s\n' "$SSH_KEY" > .release-ssh/key
+          printf '%s\n' "$KNOWN_HOSTS" > .release-ssh/known_hosts
+
+      - name: Read-only production preflight
+        run: |
+          set -euo pipefail
+          mkdir -p site/test-results
+          package_bytes="$(stat -c %s bookorgo-release.tgz)"
+          ssh -i .release-ssh/key -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=.release-ssh/known_hosts "$SSH_USER@$SSH_HOST" "bash -s -- '$GITHUB_SHA' '$package_bytes'" <<'REMOTE' | tee site/test-results/release-preflight.txt
+          set -euo pipefail
+          revision="$1"
+          package_bytes="$2"
+          root="$HOME/domains/bookorgo.com"
+          docroot="$root/public_html"
+          test "$revision" != ""
+          test -d "$docroot"
+          test ! -L "$docroot"
+          test -f "$docroot/default.php"
+          test ! -L "$docroot/default.php"
+          inventory="$(find "$docroot" -mindepth 1 -maxdepth 1 -printf '%f:%y\n' | LC_ALL=C sort)"
+          if [ "$inventory" != 'default.php:f' ]; then
+            echo 'ABORT: production document root no longer matches the verified one-file baseline' >&2
+            printf '%s\n' "$inventory" >&2
+            exit 20
+          fi
+          test -x /opt/alt/php84/usr/bin/php
+          test -f /usr/local/bin/composer
+          available_kb="$(df -Pk "$root" | awk 'NR==2 {print $4}')"
+          required_kb="$(( (package_bytes * 4 + 1023) / 1024 ))"
+          test "$available_kb" -gt "$required_kb"
+          printf 'status=PASS\nrevision=%s\nexisting=default.php only\npackage_bytes=%s\navailable_kb=%s\n' "$revision" "$package_bytes" "$available_kb"
+          REMOTE
+
+      - name: Upload release archive outside web root
+        run: |
+          set -euo pipefail
+          scp -i .release-ssh/key -P "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=.release-ssh/known_hosts bookorgo-release.tgz "$SSH_USER@$SSH_HOST:domains/bookorgo.com/.bookorgo-incoming-$GITHUB_SHA.tgz"
+
+      - name: Backup, restore-check and activate
+        id: activation
+        run: |
+          set -euo pipefail
+          package_sha="$(cut -d' ' -f1 release-package.sha256)"
+          ssh -i .release-ssh/key -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=.release-ssh/known_hosts "$SSH_USER@$SSH_HOST" "bash -s -- '$GITHUB_SHA' '$package_sha'" <<'REMOTE' | tee site/test-results/release-activation.txt
+          set -euo pipefail
+          revision="$1"
+          expected_sha="$2"
+          root="$HOME/domains/bookorgo.com"
+          docroot="$root/public_html"
+          releases="$root/releases"
+          backups="$root/backups"
+          shared="$root/shared"
+          incoming="$root/.bookorgo-incoming-$revision.tgz"
+          release="$releases/$revision"
+          lock="$root/.bookorgo-release-lock"
+          umask 077
+          if ! mkdir "$lock" 2>/dev/null; then
+            echo 'ABORT: another host release lock exists' >&2
+            exit 21
+          fi
+          trap 'rmdir "$lock" 2>/dev/null || true' EXIT
+          inventory="$(find "$docroot" -mindepth 1 -maxdepth 1 -printf '%f:%y\n' | LC_ALL=C sort)"
+          test "$inventory" = 'default.php:f'
+          test -f "$incoming"
+          actual_sha="$(sha256sum "$incoming" | awk '{print $1}')"
+          test "$actual_sha" = "$expected_sha"
+          archive_list="$(mktemp)"
+          trap 'rm -f "$archive_list"; rmdir "$lock" 2>/dev/null || true' EXIT
+          tar -tzf "$incoming" > "$archive_list"
+          if grep -Eq '(^/|(^|/)\.\.(/|$)|(^|/)\.env($|/))' "$archive_list"; then
+            echo 'ABORT: unsafe archive entry' >&2
+            exit 22
+          fi
+          test ! -e "$release"
+          mkdir -p "$releases" "$backups" "$shared"
+          backup="$backups/$(date -u +%Y%m%dT%H%M%SZ)-$revision"
+          mkdir -m 700 "$backup"
+          tar -C "$docroot" -czf "$backup/public_html-before.tar.gz" .
+          sha256sum "$backup/public_html-before.tar.gz" > "$backup/public_html-before.sha256"
+          tar -tzf "$backup/public_html-before.tar.gz" > "$backup/public_html-before.files"
+          mkdir "$backup/restore-check"
+          tar -xzf "$backup/public_html-before.tar.gz" -C "$backup/restore-check"
+          cmp "$docroot/default.php" "$backup/restore-check/default.php"
+          find "$backup/restore-check" -type f -exec chmod 600 {} +
+          mkdir -m 700 "$release"
+          tar -xzf "$incoming" --strip-components=1 -C "$release"
+          test -f "$release/artisan"
+          test -f "$release/public/index.php"
+          test -f "$release/public/.htaccess"
+          test -s "$release/public/build/manifest.json"
+          /opt/alt/php84/usr/bin/php /usr/local/bin/composer check-platform-reqs --no-dev --working-dir="$release"
+          if [ ! -f "$shared/.env" ]; then
+            app_key="$(/opt/alt/php84/usr/bin/php -r 'echo "base64:".base64_encode(random_bytes(32));')"
+            {
+              printf 'APP_NAME=BookOrGo\nAPP_ENV=production\nAPP_KEY=%s\n' "$app_key"
+              printf 'APP_DEBUG=false\nAPP_URL=https://bookorgo.com\nAPP_LOCALE=en\nAPP_FALLBACK_LOCALE=en\n'
+              printf 'LOG_CHANNEL=stack\nLOG_STACK=single\nLOG_LEVEL=warning\n'
+              printf 'DB_CONNECTION=mysql\nDB_HOST=127.0.0.1\nDB_PORT=3306\nDB_DATABASE=\nDB_USERNAME=\nDB_PASSWORD=\n'
+              printf 'SESSION_DRIVER=file\nSESSION_SECURE_COOKIE=true\nSESSION_HTTP_ONLY=true\nSESSION_SAME_SITE=lax\n'
+              printf 'CACHE_STORE=file\nQUEUE_CONNECTION=sync\nFILESYSTEM_DISK=local\n'
+            } > "$shared/.env"
+            chmod 600 "$shared/.env"
+            unset app_key
+          fi
+          ln -s "$shared/.env" "$release/.env"
+          find "$release/storage" "$release/bootstrap/cache" -type d -exec chmod 700 {} +
+          find "$release/storage" "$release/bootstrap/cache" -type f -exec chmod 600 {} +
+          /opt/alt/php84/usr/bin/php "$release/artisan" config:cache
+          /opt/alt/php84/usr/bin/php "$release/artisan" route:cache
+          /opt/alt/php84/usr/bin/php "$release/artisan" view:cache
+          touch "$release/.activation-attempted"
+          chmod 600 "$release/.activation-attempted"
+          build_new="$docroot/.bookorgo-build-$revision"
+          mkdir "$build_new"
+          cp -a "$release/public/build/." "$build_new/"
+          cp "$release/public/.htaccess" "$docroot/.htaccess.new-$revision"
+          sed \
+            -e "s#__DIR__.'/../storage#__DIR__.'/../releases/$revision/storage#" \
+            -e "s#__DIR__.'/../vendor#__DIR__.'/../releases/$revision/vendor#" \
+            -e "s#__DIR__.'/../bootstrap#__DIR__.'/../releases/$revision/bootstrap#" \
+            "$release/public/index.php" > "$docroot/index.php.new-$revision"
+          grep -q "releases/$revision/vendor" "$docroot/index.php.new-$revision"
+          chmod 644 "$docroot/.htaccess.new-$revision" "$docroot/index.php.new-$revision"
+          mv "$build_new" "$docroot/build"
+          mv "$docroot/.htaccess.new-$revision" "$docroot/.htaccess"
+          printf '%s\n' "$revision" > "$shared/current-release"
+          chmod 600 "$shared/current-release"
+          mv "$docroot/index.php.new-$revision" "$docroot/index.php"
+          printf 'status=ACTIVATED\nrevision=%s\npackage_sha256=%s\nbackup=%s\nbackup_sha256=%s\nexisting_default_preserved=yes\ndatabase_touched=no\n' \
+            "$revision" "$actual_sha" "$backup" "$(awk '{print $1}' "$backup/public_html-before.sha256")"
+          REMOTE
+
+      - name: Verify live HTTP and browser behavior
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/verify-live.py
+          npm install --prefix /tmp/bookorgo-live-browser --no-save --package-lock=false playwright@1.56.1
+          /tmp/bookorgo-live-browser/node_modules/.bin/playwright install --with-deps chromium
+          node .github/scripts/live-smoke.mjs
+
+      - name: Mark verified release and remove incoming archive
+        run: |
+          set -euo pipefail
+          ssh -i .release-ssh/key -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=.release-ssh/known_hosts "$SSH_USER@$SSH_HOST" "bash -s -- '$GITHUB_SHA'" <<'REMOTE' | tee site/test-results/release-finalize.txt
+          set -euo pipefail
+          revision="$1"
+          root="$HOME/domains/bookorgo.com"
+          release="$root/releases/$revision"
+          incoming="$root/.bookorgo-incoming-$revision.tgz"
+          test -f "$release/.activation-attempted"
+          printf '%s\n' "$revision" > "$release/.verified-live"
+          chmod 600 "$release/.verified-live"
+          rm -f "$incoming"
+          printf 'status=VERIFIED_LIVE\nrevision=%s\nincoming_removed=yes\n' "$revision"
+          REMOTE
+
+      - name: Roll back exact first-release files on failure
+        if: ${{ failure() && steps.activation.outcome != 'skipped' }}
+        run: |
+          set -euo pipefail
+          ssh -i .release-ssh/key -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=.release-ssh/known_hosts "$SSH_USER@$SSH_HOST" "bash -s -- '$GITHUB_SHA'" <<'REMOTE' | tee site/test-results/release-rollback.txt
+          set -euo pipefail
+          revision="$1"
+          root="$HOME/domains/bookorgo.com"
+          docroot="$root/public_html"
+          release="$root/releases/$revision"
+          incoming="$root/.bookorgo-incoming-$revision.tgz"
+          failed="$root/releases/.failed-public-$revision"
+          if [ ! -f "$release/.activation-attempted" ]; then
+            rm -f "$incoming"
+            printf 'status=NO_ACTIVATION_TO_ROLL_BACK\nrevision=%s\n' "$revision"
+            exit 0
+          fi
+          mkdir -m 700 "$failed"
+          if [ -f "$docroot/index.php" ] && grep -q "releases/$revision/vendor" "$docroot/index.php"; then
+            mv "$docroot/index.php" "$failed/index.php"
+          fi
+          if [ -f "$docroot/.htaccess" ] && cmp -s "$docroot/.htaccess" "$release/public/.htaccess"; then
+            mv "$docroot/.htaccess" "$failed/.htaccess"
+          fi
+          if [ -d "$docroot/build" ] && cmp -s "$docroot/build/manifest.json" "$release/public/build/manifest.json"; then
+            mv "$docroot/build" "$failed/build"
+          fi
+          test -f "$docroot/default.php"
+          rm -f "$incoming"
+          printf 'status=ROLLED_BACK_TO_PRESERVED_DEFAULT\nrevision=%s\ndatabase_touched=no\n' "$revision"
+          REMOTE
+
+      - name: Upload bounded release evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bookorgo-main-release-${{ github.sha }}
+          path: |
+            site/test-results/
+            release-package.sha256
+            release-package-files.txt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Remove local SSH material
+        if: always()
+        run: |
+          rm -f .release-ssh/key .release-ssh/known_hosts
+          rmdir .release-ssh 2>/dev/null || true

@@ -1,12 +1,8 @@
 {
-  "task": "P1-01-homepage-foundation",
-  "owner": "bookorgo-main-20261012T1209Z",
-  "status": "released",
-  "acquired_at": "2026-10-12T12:09:00Z",
-  "expires_at": "2026-10-12T13:09:00Z",
-  "base_revision": "2fb3704d4b228d14b2181b0d43d34179792be714",
-  "released_at": "2026-10-12T12:31:00Z",
-  "tested_revision": "f8a1c71403dcf1c5473542ffa395af1b6cc60d8f",
-  "result": "PASS_CI_FOUNDATION_SLICE",
-  "next_task": "P1-01-main-release"
+  "task": "P1-01-main-release",
+  "owner": "bookorgo-main-release-20261012T1315Z",
+  "status": "active",
+  "acquired_at": "2026-10-12T13:15:00Z",
+  "expires_at": "2026-10-12T14:15:00Z",
+  "base_revision": "97bf76ec55dabb17969b49578b8431f1c72290a4"
 }
