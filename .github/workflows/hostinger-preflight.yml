@@ -86,7 +86,10 @@ jobs:
                   super().__init__()
                   self.links, self.canonicals, self.robots = [], [], []
                   self.h1_count = 0
+                  self.in_title = False
+                  self.title = ""
               def handle_starttag(self, tag, attrs):
+                  if tag == "title": self.in_title = True
                   a = dict(attrs)
                   if tag == "h1": self.h1_count += 1
                   if tag == "a" and a.get("href"): self.links.append(a["href"])
@@ -94,6 +97,11 @@ jobs:
                       self.canonicals.append(a.get("href", ""))
                   if tag == "meta" and a.get("name", "").lower() in ("robots","googlebot"):
                       self.robots.append(a.get("content", ""))
+              def handle_endtag(self, tag):
+                  if tag == "title": self.in_title = False
+              def handle_data(self, data):
+                  if self.in_title: self.title += data
+          
           def inspect(path):
               url = ORIGIN + path
               row = {"path": path}
@@ -113,7 +121,9 @@ jobs:
                   page = Page()
                   if "text/html" in row["content_type"]:
                       page.feed(data.decode("utf-8","replace"))
-                      row.update(h1_count=page.h1_count, canonicals=page.canonicals, robots=page.robots)
+                      row.update(title=page.title.strip()[:160], h1_count=page.h1_count, canonicals=page.canonicals, robots=page.robots)
+                  if path == "/robots.txt" and row["status"] == 200 and row["content_type"].startswith("text/plain"):
+                      row["directives"] = [line.strip()[:250] for line in data.decode("utf-8","replace").splitlines() if line.strip() and not line.lstrip().startswith("#")][:40]
                   links = []
                   for href in page.links:
                       u = urlsplit(urljoin(url, href))
