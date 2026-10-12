@@ -1,0 +1,87 @@
+{
+  "task": "P0-L01a",
+  "status": "PASS_BOUNDED_INVENTORY",
+  "checked_at": "2026-10-12T01:06:08.343340+00:00",
+  "code_revision": "aa64f9b55a60ee1fc7502f0a8014606dfcf792c3",
+  "run_url": "https://github.com/bookorgo/BookOrGo/actions/runs/38190560434",
+  "host": {
+    "scope": "BookOrGo public_html top-level metadata only",
+    "root_is_symlink": false,
+    "files": 1,
+    "directories": 0,
+    "symlinks": 0,
+    "markers": {
+      "index.php": false,
+      "index.html": false,
+      "default.php": true,
+      "artisan": false,
+      "composer.json": false,
+      "wp-config.php": false
+    },
+    "limits": [
+      "No existing file contents read",
+      "No recursive scan",
+      "No changes"
+    ]
+  },
+  "public_site": {
+    "task": "P0-L01a",
+    "checked_at": "2026-10-12T01:06:08.343340+00:00",
+    "scope": "homepage, robots/sitemap and at most 18 clean category/detail/blog links discovered on homepage",
+    "discovered_paths": [],
+    "results": [
+      {
+        "path": "/",
+        "status": 200,
+        "final_url": "https://bookorgo.com/",
+        "content_type": "text/html; charset=UTF-8",
+        "x_robots_tag": "",
+        "truncated": false,
+        "sha256": "93eef66ff401e219e4c90e5f552b6c9db52cbcd75f900125a203f7b6b6121ba1",
+        "title": "Default page",
+        "h1_count": 1,
+        "canonicals": [],
+        "robots": []
+      },
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "final_url": "https://bookorgo.com/robots.txt",
+        "content_type": "text/plain; charset=utf-8",
+        "x_robots_tag": "",
+        "truncated": false,
+        "sha256": "8fa3036c68bfcbd32365f6225d24333264093b7cd38d306e106b4dbdc934fd5b",
+        "directives": []
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 404,
+        "final_url": "https://bookorgo.com/sitemap.xml",
+        "content_type": "text/html",
+        "x_robots_tag": "",
+        "truncated": false,
+        "sha256": "fb81334a3c46c98d1d8e1e49b4622a3f5d057f27e2b9a70e5ad42f8034c3ef16",
+        "title": "This Page Does Not Exist",
+        "h1_count": 1,
+        "canonicals": [],
+        "robots": []
+      }
+    ],
+    "limits": [
+      "No external or affiliate link requests",
+      "No browser/visual check",
+      "Not an exhaustive crawl",
+      "No mutation"
+    ]
+  },
+  "deployment": "none",
+  "remaining": [
+    "Asset/design rights inventory and previous Site URL manifest",
+    "Laravel dependencies and lockfiles",
+    "Web runtime/origin configuration",
+    "Database credentials and CRUD",
+    "Scheduler execution",
+    "Backup/restore",
+    "Browser visual QA"
+  ]
+}
