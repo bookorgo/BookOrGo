@@ -148,6 +148,7 @@ jobs:
           assert data["task"] == "P0-L02b"
           assert data["probe_marker"] == os.environ["REMOTE_REL"]
           assert data["php_sapi"] not in ("cli", "phpdbg")
+          assert tuple(map(int, data["php_version"].split(".")[:2])) >= (8, 3)
           assert data["missing_extensions"] == []
           assert data["document_root_matches"] is True
           assert data["https_detected"] is True
@@ -161,6 +162,12 @@ jobs:
           }
           print("P0_L02B_WEB_JSON=" + json.dumps(data, separators=(",", ":")))
           PY
+
+          ssh -i "$key_file" -p 65002 -o BatchMode=yes -o ConnectTimeout=20 \
+            -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts_file" \
+            u809119518@45.137.159.248 \
+            "test ! -e \"\$HOME/domains/bookorgo.com/public_html/$remote_rel\""
+          echo "P0_L02B_CLEANUP_JSON={\"transient_probe_removed\":true}"
 
           http_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 \
             --dump-header "$http_headers" --output /dev/null --write-out '%{http_code}' \
