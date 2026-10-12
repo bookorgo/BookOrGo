@@ -48,14 +48,16 @@ jobs:
         working-directory: site
         run: |
           set -euo pipefail
+          mkdir -p test-results
+          printf 'source_revision=%s\nstatus=BUILD_STARTED\n' "$GITHUB_SHA" > test-results/release-attempt.txt
           composer validate --no-check-publish
           composer install --no-interaction --prefer-dist --no-progress
+          npm ci --ignore-scripts
+          npm run build
           cp .env.example .env
           printf '\nAPP_ENV=testing\nAPP_URL=http://127.0.0.1\nSESSION_SECURE_COOKIE=false\n' >> .env
           php artisan key:generate --ansi
           php artisan test
-          npm ci --ignore-scripts
-          npm run build
           php artisan route:cache
           php artisan view:cache
           php artisan config:cache
