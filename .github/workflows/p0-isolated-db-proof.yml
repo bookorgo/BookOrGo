@@ -1,0 +1,168 @@
+name: P0 isolated database proof
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/scripts/p0-isolated-db-proof.php"
+      - ".github/workflows/p0-isolated-db-proof.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: p0-isolated-database-proof
+  cancel-in-progress: false
+
+jobs:
+  validate-harness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      mariadb:
+        image: mariadb:11.4
+        env:
+          MARIADB_ROOT_PASSWORD: ci-harness-secret
+          MARIADB_DATABASE: bookorgo_p0_ci
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up PHP 8.3
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: pdo_mysql
+          coverage: none
+
+      - name: Lint isolated database proof
+        run: php -l .github/scripts/p0-isolated-db-proof.php
+
+      - name: Exercise migration and CRUD harness on disposable MariaDB
+        env:
+          DB_HOST: 127.0.0.1
+          DB_PORT: "3306"
+          DB_DATABASE: bookorgo_p0_ci
+          DB_USERNAME: root
+          DB_PASSWORD: ci-harness-secret
+          BOOKORGO_P0_DB_CONFIRM: ISOLATED_EPHEMERAL_DATABASE
+          BOOKORGO_P0_RUN_ID: ci_${{ github.run_id }}_${{ github.run_attempt }}
+          REPORT_PATH: p0-l04a-ci-harness.json
+        run: php .github/scripts/p0-isolated-db-proof.php
+
+      - name: Upload harness evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-l04a-db-harness
+          if-no-files-found: error
+          retention-days: 30
+          path: p0-l04a-ci-harness.json
+
+  hostinger-credential-readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      DB_HOST_VALUE: ${{ secrets.BOOKORGO_P0_DB_HOST }}
+      DB_PORT_VALUE: ${{ secrets.BOOKORGO_P0_DB_PORT }}
+      DB_DATABASE_VALUE: ${{ secrets.BOOKORGO_P0_DB_DATABASE }}
+      DB_USERNAME_VALUE: ${{ secrets.BOOKORGO_P0_DB_USERNAME }}
+      DB_PASSWORD_VALUE: ${{ secrets.BOOKORGO_P0_DB_PASSWORD }}
+      DB_CONFIRM_VALUE: ${{ secrets.BOOKORGO_P0_DB_CONFIRM }}
+    steps:
+      - name: Report secret readiness without exposing values
+        shell: python
+        run: |
+          import json
+          import os
+
+          required = {
+              "BOOKORGO_P0_DB_HOST": os.getenv("DB_HOST_VALUE", ""),
+              "BOOKORGO_P0_DB_PORT": os.getenv("DB_PORT_VALUE", ""),
+              "BOOKORGO_P0_DB_DATABASE": os.getenv("DB_DATABASE_VALUE", ""),
+              "BOOKORGO_P0_DB_USERNAME": os.getenv("DB_USERNAME_VALUE", ""),
+              "BOOKORGO_P0_DB_PASSWORD": os.getenv("DB_PASSWORD_VALUE", ""),
+          }
+          missing = [name for name, value in required.items() if not value]
+          if os.getenv("DB_CONFIRM_VALUE", "") != "ISOLATED_EPHEMERAL_DATABASE":
+              missing.append("BOOKORGO_P0_DB_CONFIRM")
+          report = {"task": "P0-L04a", "hostinger_credentials_ready": not missing, "missing": missing}
+          print("P0_L04A_READINESS_JSON=" + json.dumps(report, separators=(",", ":")))
+
+  hostinger-isolated-proof:
+    if: github.event_name == 'workflow_dispatch'
+    needs:
+      - validate-harness
+      - hostinger-credential-readiness
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+      KNOWN_HOSTS: ${{ secrets.HOSTINGER_KNOWN_HOSTS }}
+      DB_HOST_VALUE: ${{ secrets.BOOKORGO_P0_DB_HOST }}
+      DB_PORT_VALUE: ${{ secrets.BOOKORGO_P0_DB_PORT }}
+      DB_DATABASE_VALUE: ${{ secrets.BOOKORGO_P0_DB_DATABASE }}
+      DB_USERNAME_VALUE: ${{ secrets.BOOKORGO_P0_DB_USERNAME }}
+      DB_PASSWORD_VALUE: ${{ secrets.BOOKORGO_P0_DB_PASSWORD }}
+      DB_CONFIRM_VALUE: ${{ secrets.BOOKORGO_P0_DB_CONFIRM }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run proof over verified SSH
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$SSH_KEY"
+          test -n "$KNOWN_HOSTS"
+          test -n "$DB_HOST_VALUE"
+          test -n "$DB_PORT_VALUE"
+          test -n "$DB_DATABASE_VALUE"
+          test -n "$DB_USERNAME_VALUE"
+          test -n "$DB_PASSWORD_VALUE"
+          test "$DB_CONFIRM_VALUE" = "ISOLATED_EPHEMERAL_DATABASE"
+          [[ "$DB_DATABASE_VALUE" =~ (^|_)(p0|smoke|isolated)(_|$) ]]
+
+          umask 077
+          key_file="$(mktemp)"
+          hosts_file="$(mktemp)"
+          payload_file="$(mktemp)"
+          trap 'rm -f "$key_file" "$hosts_file" "$payload_file"' EXIT
+          printf '%s\n' "$SSH_KEY" > "$key_file"
+          printf '%s\n' "$KNOWN_HOSTS" > "$hosts_file"
+
+          {
+            printf 'export DB_HOST=%q\n' "$DB_HOST_VALUE"
+            printf 'export DB_PORT=%q\n' "$DB_PORT_VALUE"
+            printf 'export DB_DATABASE=%q\n' "$DB_DATABASE_VALUE"
+            printf 'export DB_USERNAME=%q\n' "$DB_USERNAME_VALUE"
+            printf 'export DB_PASSWORD=%q\n' "$DB_PASSWORD_VALUE"
+            printf 'export BOOKORGO_P0_DB_CONFIRM=%q\n' "$DB_CONFIRM_VALUE"
+            printf 'export BOOKORGO_P0_RUN_ID=%q\n' "host_$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+            cat <<'REMOTE'
+          set -euo pipefail
+          umask 077
+          php_file="$(mktemp)"
+          trap 'rm -f "$php_file"' EXIT
+          base64 -d > "$php_file" <<'PHP64'
+          REMOTE
+            base64 -w0 .github/scripts/p0-isolated-db-proof.php
+            printf '\n'
+            cat <<'REMOTE'
+          PHP64
+          /opt/alt/php84/usr/bin/php "$php_file"
+          REMOTE
+          } > "$payload_file"
+
+          result="$(ssh -i "$key_file" -p 65002 -o BatchMode=yes -o ConnectTimeout=20 \
+            -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts_file" \
+            u809119518@45.137.159.248 'bash -s' < "$payload_file")"
+          printf '%s\n' "$result"
+          grep -q '^P0_L04A_DB_JSON=' <<< "$result"
