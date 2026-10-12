@@ -1,0 +1,60 @@
+{
+  "task_id": "P1-01-main-release",
+  "status": "PASS_LIVE_MAIN",
+  "verified_at": "2026-10-12T18:08:45Z",
+  "source_revision": "6e091e2502f0547c0d5213da1ae2b11a25915dc8",
+  "workflow_run": 38288802464,
+  "artifact": {
+    "id": 11764123926,
+    "digest": "sha256:bdf083216d7dcecc47b10d178ee497483470aedf96a4df759f5897ace50fb0b4",
+    "expires_at": "2026-11-11T18:08:44Z"
+  },
+  "release_package_sha256": "962cbea99ddc7b770f966eb729857c3e1a1563e7c35d660347ebb1e4f46b1a4a",
+  "backup": {
+    "path": "/home/u809119518/domains/bookorgo.com/backups/20261012T180806Z-6e091e2502f0547c0d5213da1ae2b11a25915dc8",
+    "sha256": "f42596fef81c466c333e0ca4e8dce1f7f849f7eedb977aac7763319ea3ad74ed",
+    "restore_check": "PASS"
+  },
+  "checks": {
+    "feature_tests": {"tests": 5, "assertions": 65, "result": "PASS"},
+    "intended_html_routes": {"count": 9, "status_200": 9, "result": "PASS"},
+    "canonical_and_single_h1": "PASS",
+    "html_and_http_noindex": "PASS",
+    "built_css_js_status_and_mime": "PASS",
+    "unknown_route_404": "PASS",
+    "sensitive_path_denial": "PASS",
+    "browser_viewports": [1440, 390],
+    "mobile_menu_search_overflow": "PASS",
+    "page_errors": 0,
+    "existing_default_preserved": true,
+    "database_touched": false
+  },
+  "failed_attempts": [
+    {
+      "run": 38254837031,
+      "result": "FAIL_PRE_HOST",
+      "reason": "Vite manifest absent because tests preceded asset build",
+      "production_changed": false
+    },
+    {
+      "run": 38255012519,
+      "result": "FAIL_THEN_ROLLED_BACK",
+      "reason": "Built asset directory was not web-readable",
+      "rollback": "PASS",
+      "database_touched": false
+    }
+  ],
+  "requirements": [
+    "Master Requirements V3.1 sections 03, 08, 10, 18 and 25",
+    "AI Execution Playbook V4.1 P1-01/UI-01 and release controls",
+    "OWNER-20261012-MAIN"
+  ],
+  "limitations": [
+    "Development-preview discovery shell only",
+    "No real inventory, offers, prices, availability, booking, payments, ads or partners",
+    "No database, scheduler, durable media or CMS verification",
+    "No indexability release; noindex remains mandatory",
+    "P1 remains incomplete"
+  ],
+  "next_task": "P1-02"
+}

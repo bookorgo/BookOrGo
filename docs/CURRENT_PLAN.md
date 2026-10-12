@@ -9,7 +9,7 @@ Controlling owner decisions: GitHub + Hostinger Premium; main environment reques
 Follow PHASE_ROADMAP.md. Private original Master Requirements V3.1, Playbook V4.1, kickoff and approved reference PDFs remain the authority. Retrieve them from owner Library; never publish full internal documents to this public repository.
 
 ## Current status
-P0 operational checks remain open. P1-01 homepage/navigation foundation CI-verified under OWNER-20261012-MAIN; main Hostinger publication is next. P2-P5 not started; P6-P7 deferred.
+P0 operational checks remain open. P1-01 homepage/navigation foundation is now verified live on the main Hostinger site under OWNER-20261012-MAIN. P1 remains in progress; P1-02 listing/filter/state work is next. P2-P5 not started; P6-P7 deferred.
 Completed bounded package P0-L02a: GitHub Actions SSH, CLI PHP and tooling inventory.
 Evidence: https://github.com/bookorgo/BookOrGo/actions/runs/38169812198
 Tested code revision: abbc16c6e34b1d7cb75555529065f13948053f25
@@ -69,7 +69,7 @@ Artifact 11737430400 digest: sha256:f31d389ca1d3f3694568ff496295e7e1fef0b2cb0ada
 Recorded and machine-validated ADR-001 as BLOCKED; see ADR-001-laravel-hostinger.md and evidence/ADR-001.json.
 Successful initial validation: https://github.com/bookorgo/BookOrGo/actions/runs/38234390686 at decision revision c60a56724e43593f4f250615bcfa50e61e0b9f1a. Successful checkpoint validation: https://github.com/bookorgo/BookOrGo/actions/runs/38234543176 at revision 9b2b4bedcaeacfcaab268b205d0864f71b1df2ed.
 The owner-selected Laravel 13 + Blade SSR + selective Livewire 4/Alpine + Tailwind + MySQL/MariaDB + minimal compatible Filament architecture remains the preferred stack, and Hostinger Premium remains the preferred target. Existing positive evidence covers dependency resolution, host CLI/web PHP and extensions, HTTPS/origin, CI Blade/SEO/assets/scheduler smoke checks, CI MariaDB CRUD, and a protected Hostinger filesystem restore cycle.
-P0 is not PASS. Mandatory unresolved gates are an isolated Hostinger database CRUD proof, MySQL backup/restore, observable hPanel scheduler execution, Laravel durable storage/public-media recovery, protected Hostinger Laravel HTTP plus desktop/mobile browser evidence, and rights-verified production assets. No VPS or stack change is proposed from current evidence.
+P0 is not PASS. The later P1-01 release supplied protected Hostinger Laravel HTTP and desktop/mobile browser evidence for the database-independent shell. Remaining mandatory operational gates are main-database configuration/CRUD when introduced, MySQL backup/restore, observable hPanel scheduler execution, Laravel durable storage/public-media recovery and rights-verified production assets. No VPS or stack change is proposed from current evidence.
 No production deployment, DNS, Site audience, canonical/robots, ads, affiliate, payment or existing-file change occurred.
 
 ## Latest bounded dependency proof — P0-L03
@@ -84,18 +84,24 @@ Limitations: generated Composer/npm lockfiles are retained as CI evidence but ar
 ## Latest application package — P1-01 homepage foundation
 Fresh actual Laravel application is now in `site/`. Tested revision f8a1c71403dcf1c5473542ffa395af1b6cc60d8f; successful workflow https://github.com/bookorgo/BookOrGo/actions/runs/38249192582. Five feature tests / 65 assertions, locked PHP 8.3 install, production Vite build, route/view/config cache and Chromium checks at 1440/768/390/320 passed. JS-disabled navigation/search and eight internal link targets passed. Desktop/tablet/mobile screenshots reviewed. See P1_FOUNDATION.md and evidence/P1-01-foundation.json.
 The old PHP 8.4 Composer lock was not compatible with Hostinger web PHP 8.3.35; the corrected committed lock pins the Composer platform and uses Symfony 7.4 while retaining Laravel 13.35.0, Livewire 4.4.7 and Filament 5.10.1.
-Status: foundation slice CI-verified, NOT live on Hostinger. P1 as a phase remains incomplete. Pages are labelled development previews/noindex with category-only search, empty category states and no fake inventory. No database, scheduler or existing production/Site file changed. Main release plan is prepared in P1_MAIN_RELEASE_PLAN.md; do not confuse GitHub main with a deployed main website.
+Status: foundation slice CI-verified and live on Hostinger at release revision 6e091e2502f0547c0d5213da1ae2b11a25915dc8. P1 as a phase remains incomplete. Pages are labelled development previews/noindex with category-only search, empty category states and no fake inventory. No database or scheduler was used. See P1_MAIN_RELEASE.md and evidence/P1-01-main-release.json.
+
+## Latest main release — P1-01-main-release
+Guarded production workflow run https://github.com/bookorgo/BookOrGo/actions/runs/38288802464 verified the exact release revision 6e091e2502f0547c0d5213da1ae2b11a25915dc8. CI build/tests, strict SSH preflight, package allowlist, PHP 8.4 host dependency check, document-root backup plus restore-check, activation and live browser/security verification all passed.
+
+Nine intended HTML routes returned 200 with one H1, correct canonical URL and HTML plus HTTP `noindex, nofollow`. CSS and JavaScript assets returned 200 with expected MIME types. Unknown routes returned 404; sensitive `.env`, source, vendor and log probes were denied or absent. Desktop 1440 px and mobile 390 px browser flows, search, mobile menu and horizontal-overflow checks passed with zero page errors. The original `default.php` was preserved, application source/vendor remained outside the web root, and no database operation occurred.
+
+The first workflow attempt failed before host access because tests preceded the Vite build. The second activated successfully but detected inaccessible asset permissions, then automatically rolled back only the newly introduced files and restored the one-file baseline. Neither failure was reported as live. The corrected third run finalized successfully. Draft/noindex protection remains in force; this was not an SEO indexability release.
 
 ## Ordered next tasks
-1. P1-01-main-release: implement the concrete guarded main release/rollback plan in P1_MAIN_RELEASE_PLAN.md for the tested database-independent homepage. Use fresh inventory and the existing SSH connection. No staging or temporary Hostinger database prerequisite. Preserve all current files and the existing Site; no DNS change or indexing release.
-2. P1-02: full category-aware listing/filter/sort/pagination and state handling; current search is taxonomy-only.
-3. P1-03: six category-aware detail variants with clearly labelled samples and honest CTA states.
-4. P1-04: reusable blog article layout and listing reuse; then P1-05 wider visual/accessibility QA and owner design review.
-5. P2: main application database configuration, normalized catalog/source data, migrations, minimal editorial CMS and publication roles. Database backup/restore is required before relevant main data changes; do not reuse the isolated temporary-table harness on the main database.
-6. P3: approved partner sourcing, links/disclosures, attribution and freshness checks.
-7. P4: SEO crawl/indexability controls, eligible schema, original editorial content and search monitoring.
-8. P5: production operations, rollback/monitoring and growth reporting. Keep unresolved operational P0 evidence honest and address each gate when applicable; it is not a blanket ban on independent feature work.
-9. P6/P7 deferred to separate owner authorization.
+1. P1-02: full category-aware listing/filter/sort/pagination and state handling; current search is taxonomy-only. Keep all sample states labelled and noindex.
+2. P1-03: six category-aware detail variants with clearly labelled samples and honest CTA states.
+3. P1-04: reusable blog article layout and listing reuse; then P1-05 wider visual/accessibility QA and owner design review.
+4. P2: main application database configuration, normalized catalog/source data, migrations, minimal editorial CMS and publication roles. Database backup/restore is required before relevant main data changes; do not reuse the isolated temporary-table harness on the main database.
+5. P3: approved partner sourcing, links/disclosures, attribution and freshness checks.
+6. P4: SEO crawl/indexability controls, eligible schema, original editorial content and search monitoring.
+7. P5: production operations, rollback/monitoring and growth reporting. Keep unresolved operational P0 evidence honest and address each gate when applicable; it is not a blanket ban on independent feature work.
+8. P6/P7 deferred to separate owner authorization.
 
 ## Work rules
 Take one bounded ready package per scheduled run; continue independent prep when another gate needs owner input. Read latest remote source before editing. Avoid overlapping edits; reconcile remote head and active CI runs. Record task IDs, tested revision, actual test results, honest limitations and next task in RUN_LOG.md.

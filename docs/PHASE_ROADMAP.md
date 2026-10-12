@@ -20,12 +20,15 @@ Observed: GitHub read/write verified; Actions SSH preflight succeeded on revisio
 Exit: compatibility, protected checks and rollback evidence pass.
 
 ## P1 — Responsive public frontend
+- P1-01 status: homepage/navigation/search foundation is verified live at revision `6e091e2502f0547c0d5213da1ae2b11a25915dc8`; draft/noindex protection remains. P1 is not complete.
 - Homepage hero/search and discoverable Activities, Holidays, Visas, Cruises, Yachts, Events.
 - Listing/search filters, sort, pagination, query state and empty/error states.
 - Category-aware detail pages: gallery, sourced information fields, FAQs, related content and honest CTA states.
 - Distinct blog article template and blog hub using shared listing architecture.
 - Mobile/desktop, keyboard/accessibility, Blade-delivered metadata and stable URL checks.
 Exit: representative screenshots/interactions accepted; labelled noindex samples, feature and browser checks evidenced.
+
+Next bounded package: P1-02 category-aware listing/filter/sort/pagination and query/empty/error states.
 
 ## P2 — Data architecture and editorial CMS
 - Product, Variant, Offer, Partner, Location, Article and SourceEvidence boundaries.

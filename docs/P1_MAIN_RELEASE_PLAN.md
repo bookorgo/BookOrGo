@@ -1,6 +1,6 @@
 # P1-01 first main release plan
 
-Status: PREPARED, NOT EXECUTED. Owner authority: OWNER-20261012-MAIN. Target is the existing main Hostinger environment; no separate staging site or temporary Hostinger database. This plan covers only the database-independent discovery shell in `site/`.
+Status: EXECUTED AND VERIFIED on 12 October 2026. Owner authority: OWNER-20261012-MAIN. Release revision: `6e091e2502f0547c0d5213da1ae2b11a25915dc8`. Successful run: https://github.com/bookorgo/BookOrGo/actions/runs/38288802464. Detailed evidence: P1_MAIN_RELEASE.md and evidence/P1-01-main-release.json. This plan covered only the database-independent discovery shell in `site/`.
 
 ## Exact release scope
 
@@ -20,6 +20,6 @@ Known target from verified SSH/origin evidence is the BookOrGo account's `domain
 
 If bootstrap, security or essential HTTP/browser checks fail, restore the previous public entry/routing files from the verified backup using the manifest. Move only newly introduced files to the retained release directory rather than deleting original contents. Restore the previous entry selection, verify the original homepage status and checksum and leave the failed revision for diagnosis outside the web root. Log the rollback; do not call a rolled-back release live. No database rollback is needed because this release performs no database writes.
 
-## Boundaries and remaining inputs
+## Execution outcome and remaining inputs
 
-This plan is not evidence that deployment or full production rollback has happened. The implementation job currently builds/tests only and carries no Hostinger credentials. The next bounded package is to implement and execute this guarded main release using the already verified SSH connection. Hostinger database and hPanel scheduler are later requirements for features that actually use them, not blockers for this first main homepage. Product templates, full catalogue search/filtering and verified editorial/policy pages remain subsequent P1/P2 work.
+The guarded workflow executed the build, backup/restore-check, release activation and live verification. A failed asset-permission attempt demonstrated the bounded automatic rollback before the corrected release passed. The successful release retained its verified backup and preserved the original `default.php`; it performed no database writes. Hostinger database and hPanel scheduler are later requirements for features that use them. Full catalogue search/filtering, detail templates and verified editorial/policy pages remain subsequent P1/P2 work.
