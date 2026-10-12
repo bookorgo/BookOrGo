@@ -50,6 +50,8 @@ try {
     }
     await page.locator('.mobile-menu summary').click();
     assert.ok(await page.locator('.mobile-menu nav').isVisible());
+    await page.locator('.mobile-menu summary').click();
+    assert.equal(await page.locator('.mobile-menu').getAttribute('open'), null);
     await page.getByLabel('What would you like to explore?').fill('xyz-no-match');
     await page.getByRole('button', { name: 'Explore' }).click();
     assert.ok(await page.getByRole('heading', { name: 'No matching categories yet' }).isVisible());
