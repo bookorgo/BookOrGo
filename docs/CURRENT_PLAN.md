@@ -45,6 +45,14 @@ Hostinger proof remains BLOCKED: the readiness job found no dedicated BOOKORGO_P
 The Hostinger job is manual-dispatch only, requires an explicitly isolated p0/smoke database name and exact confirmation value ISOLATED_EPHEMERAL_DATABASE, and cannot run from a normal push.
 No deployment or production change occurred. Backup/restore remains a separate P0-L04b gate.
 
+## Latest bounded Blade/SEO, asset and scheduler preparation — P0-L04b-prep
+Completed a disposable PHP 8.3 Laravel smoke package for protected Blade SSR/SEO HTML, built assets and scheduled no-op execution; see P0_BLADE_SCHEDULER_SMOKE.md and evidence/P0-L04b-blade-scheduler.json.
+Successful Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38222473237 at tested revision f652ee1ea235b6aebd2d97520e6720a6ad28127b.
+The clean build resolved Laravel Framework 13.35.0, Livewire 4.4.7 and Filament 5.10.1 on PHP 8.3.35. Vite/Tailwind production assets built successfully. Three protected routes—homepage, activity detail and blog article—returned server-rendered HTML; 3 feature tests and 17 assertions verified status 200, unique titles/H1 content, canonical URLs, noindex,nofollow, all six planned category labels, no live offer and the article publication gate.
+The named every-minute no-op schedule executed and produced a timestamped proof file. Artifact 11735210224 retained seven evidence files with digest sha256:27119fbf88dc72c6b7bfc1bba099178138a8f5bb73f95a343697fe87e4cbc2c9.
+Two earlier runs failed honestly: 38222038879 treated intentional exact package pins as strict validation warnings; 38222285085 exposed the default database cache-lock dependency. The final run uses normal Composer schema validation and an isolated in-memory cache for the disposable scheduler proof.
+Status is PASS_CI_ONLY, not a Hostinger or release pass. No deployment occurred. Hostinger scheduler configuration, protected browser screenshot, storage link, database backup/restore and actual host database proof remain open.
+
 ## Latest bounded dependency proof — P0-L03
 Completed a clean, disposable Laravel compatibility build in GitHub Actions; no production or Hostinger files were changed.
 Tested revision: 6f7a177f67438c91c2ad68ca125a0eee1cc96f2a.
@@ -57,7 +65,7 @@ Limitations: generated Composer/npm lockfiles are retained as CI evidence but ar
 1. P0-L01 completed at inventory level (P0-L01a baseline and P0-L01b design/asset/URL manifest). Rights-verified production assets remain a release gate.
 2. P0-L02a/P0-L02b completed for CLI tooling plus web runtime/origin/SSL/bounded-upload evidence. Web PHP 8.3.35 versus CLI 8.4.26 remains an ADR/release constraint; account quota is still unknown.
 3. P0-L04a-prep complete: CI harness passed. Actual Hostinger database proof remains BLOCKED on the six recorded dedicated smoke-database secrets; never reuse an unknown production DB.
-4. Continue independent P0-L04b preparation: scheduler evidence, built assets and protected Blade smoke views. Backup/restore and final P0-L04a host proof remain required before P0 exit.
+4. P0-L04b-prep completed in disposable CI: protected Blade SSR/SEO, built assets and scheduled no-op passed on PHP 8.3. Hostinger scheduler configuration, protected browser evidence, storage-link and backup/restore proof remain required before P0 exit.
 5. P0-L05: ADR-001 with PASS/FAIL/BLOCKED; no full P0 PASS until every required gate passes.
 6. Promote the P0-L03 verified Laravel 13.35.0, Livewire 4.4.7 and Filament 5.10.1 scaffold and lockfiles only in a dedicated package after the host gates above.
 7. P1: homepage/navigation; listing/filter/pagination; six category detail variants; blog article/hub; responsive and accessibility QA.

@@ -73,3 +73,19 @@ Deployment: none. No Hostinger database, existing file, DNS, Site, audience or i
 Limitations: CI proof is not Hostinger connectivity/capacity/privilege proof; database backup/restore remains unverified.
 Evidence: docs/P0_ISOLATED_DB_PROOF.md and docs/evidence/P0-L04a-db-harness.json.
 Next: continue independent P0-L04b protected Blade/SEO, built-asset and scheduler/backup preparation; execute P0-L04a host proof only after the dedicated isolated database inputs are configured.
+
+
+## 12 October 2026 — P0-L04b-prep
+Completed and verified the CI-only protected Blade/SEO, built-asset and scheduler smoke package against Master Requirements V3.1 section 25.3 P0-T04, Playbook V4.1 sections 2A.2/2A.3 P0-L04 and PHASE_ROADMAP P0-L04.
+Tested revision: f652ee1ea235b6aebd2d97520e6720a6ad28127b.
+Successful Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38222473237.
+Result: PASS_CI_ONLY.
+Runtime/dependencies: PHP 8.3.35, Laravel Framework 13.35.0, Livewire 4.4.7, Filament 5.10.1.
+Tests: Composer schema validation passed with intentional exact-pin warnings; npm lock generation and clean install passed with zero reported vulnerabilities; Vite 8.3.4/Tailwind production build passed. Three protected routes were registered. Three feature tests with 17 assertions verified 200 responses, server-rendered core content, canonical URLs, noindex,nofollow, six category labels, an explicit no-live-offer state and article publication gate.
+Scheduler: p0-no-op appeared in schedule:list, schedule:run executed it and wrote a timestamped JSON proof. Asset manifest SHA-256 f235c8340b7b492d82b75030649ab84c7a2fac7ea05894312068e2122382b4e2; scheduler proof SHA-256 eb8eb53b259f83d73a676cb23ab146890a5d680b7e49b3a9247bfa0608790af3.
+Artifact: ID 11735210224, digest sha256:27119fbf88dc72c6b7bfc1bba099178138a8f5bb73f95a343697fe87e4cbc2c9, expires 11 November 2026.
+Corrections: run 38222038879 failed because strict Composer validation rejected exact reproducibility pins as warnings. Run 38222285085 then passed dependencies, assets and all feature tests but failed scheduler listing on the default database cache without cache_locks. The final run used normal schema validation and CACHE_STORE=array for this disposable, non-concurrent no-op proof. Neither failed run was treated as passed.
+Safety/deployment: sample pages are clearly labelled, noindex,nofollow and contain no price, availability, rights, approval or live partner claim. The package was not deployed; Hostinger files, DNS, existing Site/audience and public URLs were unchanged.
+Limitations: GitHub Actions proof is not Hostinger scheduler/hPanel configuration or public browser evidence. No storage link, host DB, database backup/restore, screenshot or production rollback was tested.
+Evidence: docs/P0_BLADE_SCHEDULER_SMOKE.md and docs/evidence/P0-L04b-blade-scheduler.json.
+Next: P0-L04c guarded Hostinger scheduler plus backup/restore readiness package; actual host execution remains gated by dedicated isolated DB inputs and a reviewed protected new-path plan.

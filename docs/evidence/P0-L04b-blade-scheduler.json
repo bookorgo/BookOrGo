@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "task_id": "P0-L04b-prep",
+  "status": "PASS_CI_ONLY",
+  "date": "2026-10-12",
+  "tested_revision": "f652ee1ea235b6aebd2d97520e6720a6ad28127b",
+  "workflow_run": {
+    "id": 38222473237,
+    "url": "https://github.com/bookorgo/BookOrGo/actions/runs/38222473237",
+    "conclusion": "success"
+  },
+  "runtime": {
+    "php": "8.3.35",
+    "laravel_framework": "13.35.0",
+    "livewire": "4.4.7",
+    "filament": "5.10.1"
+  },
+  "checks": {
+    "routes": 3,
+    "feature_tests": 3,
+    "assertions": 17,
+    "robots": "noindex,nofollow",
+    "assets": "pass",
+    "scheduler_list": "pass",
+    "scheduler_execution": "pass"
+  },
+  "hashes": {
+    "assets_manifest_sha256": "f235c8340b7b492d82b75030649ab84c7a2fac7ea05894312068e2122382b4e2",
+    "scheduler_proof_sha256": "eb8eb53b259f83d73a676cb23ab146890a5d680b7e49b3a9247bfa0608790af3"
+  },
+  "artifact": {
+    "id": 11735210224,
+    "digest": "sha256:27119fbf88dc72c6b7bfc1bba099178138a8f5bb73f95a343697fe87e4cbc2c9",
+    "expires_at": "2026-11-11T08:16:19Z"
+  },
+  "corrections": [
+    {
+      "run_id": 38222038879,
+      "result": "failure",
+      "reason": "Composer strict validation promoted exact-pin warnings to failure"
+    },
+    {
+      "run_id": 38222285085,
+      "result": "failure",
+      "reason": "Default database cache expected absent cache_locks during scheduler listing"
+    },
+    {
+      "run_id": 38222473237,
+      "result": "success",
+      "changes": [
+        "normal Composer schema validation",
+        "CACHE_STORE=array for disposable scheduler proof"
+      ]
+    }
+  ],
+  "requirements": [
+    "Master V3.1 §25.3 P0-T04",
+    "Playbook V4.1 §2A.2/§2A.3 P0-L04",
+    "PHASE_ROADMAP P0-L04"
+  ],
+  "deployment": "none",
+  "host_changes": [],
+  "limitations": [
+    "CI-only proof",
+    "Hostinger scheduler/hPanel not verified",
+    "Hostinger database not verified",
+    "storage link not verified",
+    "backup/restore not verified",
+    "no protected browser screenshot or public URL",
+    "sample content not approved for publication"
+  ]
+}
