@@ -37,6 +37,14 @@ No deployment, existing-file replacement, DNS, Site, audience or indexation chan
 Limitations: filesystem free space is not the account quota; only a 1 KiB upload was exercised; database, scheduler, storage-link, backup and restore remain open.
 The first run 38202643328 failed honestly because the check compared web DOCUMENT_ROOT with a CLI-only HOME value. The corrected comparison passed in runs 38202757487 and 38202823303.
 
+## Latest bounded isolated-database preparation — P0-L04a-prep
+Completed and CI-verified the isolated MySQL/MariaDB migration/CRUD/cleanup harness; see P0_ISOLATED_DB_PROOF.md and evidence/P0-L04a-db-harness.json.
+Successful Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38217201832 at tested revision 888f3c624aed1f18bb5ae2120d3e7106b0fd02ef.
+On PHP 8.3 and disposable MariaDB 11.4.13, connection, table creation, insert/read/update/delete, table drop and post-run cleanup all passed. Database identity and credentials were not logged.
+Hostinger proof remains BLOCKED: the readiness job found no dedicated BOOKORGO_P0_DB_HOST, BOOKORGO_P0_DB_PORT, BOOKORGO_P0_DB_DATABASE, BOOKORGO_P0_DB_USERNAME, BOOKORGO_P0_DB_PASSWORD or BOOKORGO_P0_DB_CONFIRM secret. No Hostinger database connection was attempted.
+The Hostinger job is manual-dispatch only, requires an explicitly isolated p0/smoke database name and exact confirmation value ISOLATED_EPHEMERAL_DATABASE, and cannot run from a normal push.
+No deployment or production change occurred. Backup/restore remains a separate P0-L04b gate.
+
 ## Latest bounded dependency proof — P0-L03
 Completed a clean, disposable Laravel compatibility build in GitHub Actions; no production or Hostinger files were changed.
 Tested revision: 6f7a177f67438c91c2ad68ca125a0eee1cc96f2a.
@@ -48,8 +56,8 @@ Limitations: generated Composer/npm lockfiles are retained as CI evidence but ar
 ## Ordered next tasks
 1. P0-L01 completed at inventory level (P0-L01a baseline and P0-L01b design/asset/URL manifest). Rights-verified production assets remain a release gate.
 2. P0-L02a/P0-L02b completed for CLI tooling plus web runtime/origin/SSL/bounded-upload evidence. Web PHP 8.3.35 versus CLI 8.4.26 remains an ADR/release constraint; account quota is still unknown.
-3. P0-L04a: new isolated database credentials and temporary CRUD/migration proof; never reuse unknown production DB.
-4. P0-L04b: scheduler execution evidence, build artifacts, protected Blade smoke views, backup/restore proof.
+3. P0-L04a-prep complete: CI harness passed. Actual Hostinger database proof remains BLOCKED on the six recorded dedicated smoke-database secrets; never reuse an unknown production DB.
+4. Continue independent P0-L04b preparation: scheduler evidence, built assets and protected Blade smoke views. Backup/restore and final P0-L04a host proof remain required before P0 exit.
 5. P0-L05: ADR-001 with PASS/FAIL/BLOCKED; no full P0 PASS until every required gate passes.
 6. Promote the P0-L03 verified Laravel 13.35.0, Livewire 4.4.7 and Filament 5.10.1 scaffold and lockfiles only in a dedicated package after the host gates above.
 7. P1: homepage/navigation; listing/filter/pagination; six category detail variants; blog article/hub; responsive and accessibility QA.
