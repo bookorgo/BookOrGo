@@ -1,17 +1,19 @@
 {
   "task": "P0-L05-ADR-001",
   "owner": "bookorgo-p0-adr-001-20261012T1010Z",
-  "status": "active",
+  "status": "released",
   "acquired_at": "2026-10-12T10:10:00Z",
   "expires_at": "2026-10-12T11:10:00Z",
   "base_revision": "7548d14d2cbf123072d9f11f71d8286bbcdf2436",
-  "scope": [
-    "docs/ADR-001-laravel-hostinger.md",
-    "docs/evidence/ADR-001.json",
-    ".github/scripts/validate-adr-001.py",
-    ".github/workflows/adr-001-validation.yml",
-    "docs/CURRENT_PLAN.md",
-    "RUN_LOG.md"
+  "completed_task": "P0-L05-ADR-001",
+  "result": "BLOCKED",
+  "decision_revision": "c60a56724e43593f4f250615bcfa50e61e0b9f1a",
+  "checkpoint_revision": "9b2b4bedcaeacfcaab268b205d0864f71b1df2ed",
+  "validation_runs": [
+    38234390686,
+    38234543176
   ],
-  "production_deployment": false
+  "evidence": "docs/evidence/ADR-001.json",
+  "deployment_performed": false,
+  "released_at": "2026-10-12T10:11:00Z"
 }

@@ -107,7 +107,7 @@ Next: P0-L05 ADR-001 with current PASS/BLOCKED matrix and exact prerequisites; d
 ## 12 October 2026 — P0-L05 / ADR-001
 Completed the bounded architecture decision record against Master Requirements V3.1 section 25.3 P0-T05, AI Execution Playbook V4.1 section 2A.3 P0-L05 and the kickoff release-control rules.
 Decision revision: c60a56724e43593f4f250615bcfa50e61e0b9f1a.
-Successful Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38234390686.
+Successful initial Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38234390686. Successful checkpoint validation run: https://github.com/bookorgo/BookOrGo/actions/runs/38234543176 at revision 9b2b4bedcaeacfcaab268b205d0864f71b1df2ed.
 Result: BLOCKED. This is not a Laravel/Hostinger FAIL and not a P0 PASS. Retain Laravel 13, Blade SSR, selective Livewire 4/Alpine, Tailwind, MySQL/MariaDB and minimal compatible Filament, with Hostinger Premium as the preferred target.
 Validator evidence: 13 unique matrix gates parsed; overall status BLOCKED; six required blocker IDs present and BLOCKED; scoped passes include evidence and limitations; deployment.performed=false; markdown declares Status: BLOCKED. The GitHub job completed successfully on Ubuntu 24.04 with read-only contents permission.
 Positive evidence incorporated: dependency compatibility run 38194341523; Hostinger CLI run 38169812198; Hostinger web/HTTPS run 38202823303; CI Blade/SEO/assets/scheduler run 38222473237; CI MariaDB CRUD run 38217201832; protected Hostinger filesystem restore run 38227821932.

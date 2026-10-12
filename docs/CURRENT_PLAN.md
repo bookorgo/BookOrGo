@@ -63,7 +63,7 @@ Artifact 11737430400 digest: sha256:f31d389ca1d3f3694568ff496295e7e1fef0b2cb0ada
 
 ## Latest architecture decision — P0-L05 / ADR-001
 Recorded and machine-validated ADR-001 as BLOCKED; see ADR-001-laravel-hostinger.md and evidence/ADR-001.json.
-Successful Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38234390686 at tested revision c60a56724e43593f4f250615bcfa50e61e0b9f1a.
+Successful initial validation: https://github.com/bookorgo/BookOrGo/actions/runs/38234390686 at decision revision c60a56724e43593f4f250615bcfa50e61e0b9f1a. Successful checkpoint validation: https://github.com/bookorgo/BookOrGo/actions/runs/38234543176 at revision 9b2b4bedcaeacfcaab268b205d0864f71b1df2ed.
 The owner-selected Laravel 13 + Blade SSR + selective Livewire 4/Alpine + Tailwind + MySQL/MariaDB + minimal compatible Filament architecture remains the preferred stack, and Hostinger Premium remains the preferred target. Existing positive evidence covers dependency resolution, host CLI/web PHP and extensions, HTTPS/origin, CI Blade/SEO/assets/scheduler smoke checks, CI MariaDB CRUD, and a protected Hostinger filesystem restore cycle.
 P0 is not PASS. Mandatory unresolved gates are an isolated Hostinger database CRUD proof, MySQL backup/restore, observable hPanel scheduler execution, Laravel durable storage/public-media recovery, protected Hostinger Laravel HTTP plus desktop/mobile browser evidence, and rights-verified production assets. No VPS or stack change is proposed from current evidence.
 No production deployment, DNS, Site audience, canonical/robots, ads, affiliate, payment or existing-file change occurred.
