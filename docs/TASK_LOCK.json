@@ -1,19 +1,8 @@
 {
-  "task": "P0-L05-ADR-001",
-  "owner": "bookorgo-p0-adr-001-20261012T1010Z",
-  "status": "released",
-  "acquired_at": "2026-10-12T10:10:00Z",
-  "expires_at": "2026-10-12T11:10:00Z",
-  "base_revision": "7548d14d2cbf123072d9f11f71d8286bbcdf2436",
-  "completed_task": "P0-L05-ADR-001",
-  "result": "BLOCKED",
-  "decision_revision": "c60a56724e43593f4f250615bcfa50e61e0b9f1a",
-  "checkpoint_revision": "9b2b4bedcaeacfcaab268b205d0864f71b1df2ed",
-  "validation_runs": [
-    38234390686,
-    38234543176
-  ],
-  "evidence": "docs/evidence/ADR-001.json",
-  "deployment_performed": false,
-  "released_at": "2026-10-12T10:11:00Z"
+  "task": "P1-01-homepage-foundation",
+  "owner": "bookorgo-main-20261012T1209Z",
+  "status": "active",
+  "acquired_at": "2026-10-12T12:09:00Z",
+  "expires_at": "2026-10-12T13:09:00Z",
+  "base_revision": "2fb3704d4b228d14b2181b0d43d34179792be714"
 }

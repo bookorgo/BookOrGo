@@ -1,11 +1,15 @@
 # Current execution plan
+
+## Controlling latest owner decision — OWNER-20261012-MAIN
+See OWNER_MAIN_ONLY.md. The owner explicitly reconfirmed main-only incremental development and rejected temporary Hostinger database/staging prerequisites. Begin independent P1 Laravel implementation now; do not run destructive smoke tests against the main database. CI testing remains required, backups/rollback remain required for live changes, and unperformed host checks remain unverified. The older P0-before-P1 stop wording below is historical and superseded for independent feature work.
+
 Updated: 12 October 2026, Asia/Karachi.
 Repository: bookorgo/BookOrGo. Fresh application, not an import from the previous prototype.
 Controlling owner decisions: GitHub + Hostinger Premium; main environment requested, no separate staging requested; preserve ALL existing Sites/files. No deletion or overwriting existing application files. Prepare fresh app outside existing document root until a reviewed release/cutover.
 Follow PHASE_ROADMAP.md. Private original Master Requirements V3.1, Playbook V4.1, kickoff and approved reference PDFs remain the authority. Retrieve them from owner Library; never publish full internal documents to this public repository.
 
 ## Current status
-P0 in progress. P1-P5 not started in this fresh application; P6-P7 deferred.
+P0 operational checks remain open. P1-01 homepage/navigation implementation in progress under OWNER-20261012-MAIN. P2-P5 not started; P6-P7 deferred.
 Completed bounded package P0-L02a: GitHub Actions SSH, CLI PHP and tooling inventory.
 Evidence: https://github.com/bookorgo/BookOrGo/actions/runs/38169812198
 Tested code revision: abbc16c6e34b1d7cb75555529065f13948053f25

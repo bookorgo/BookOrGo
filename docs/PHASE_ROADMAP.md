@@ -1,4 +1,6 @@
 # BookOrGo phase roadmap
+
+Latest override: OWNER_MAIN_ONLY.md (12 October 2026) permits independent P1 implementation on main while operational P0 checks remain open. No separate staging or temporary Hostinger database prerequisite; no destructive testing on the application database.
 Date: 12 October 2026 (Asia/Karachi)
 Authority: Master Requirements V3.1 and AI Execution Playbook V4.1; latest owner direction overrides temporary Sites exception.
 Target: Laravel 13, Blade SSR, selective Livewire 4/Alpine, Tailwind, MySQL/MariaDB, minimal compatible Filament. GitHub + Hostinger Premium. Fresh build; previous prototype must not be reused. Latest owner instruction: preserve ALL existing Sites/files; do not delete them.
