@@ -1,13 +1,8 @@
 {
-  "task": "P0-L01b",
-  "owner": "bookorgo-p0-design-url-inventory-20261012T0300Z",
-  "status": "released",
-  "acquired_at": "2026-10-12T03:01:00Z",
-  "expires_at": "2026-10-12T03:46:00Z",
-  "base_revision": "99bd461d6a3669b8adfb6edb6d163cc47e2fd20a",
-  "completed_task": "P0-L01b",
-  "tested_revision": "99bd461d6a3669b8adfb6edb6d163cc47e2fd20a",
-  "checkpoint_revision": "ade480ce8115e41b5806035a23cb9b9da6b751b3",
-  "evidence": "docs/evidence/P0-L01b-design-url-manifest.json",
-  "released_at": "2026-10-12T03:12:00Z"
+  "task": "P0-L02b",
+  "owner": "bookorgo-p0-web-runtime-20261012T0407Z",
+  "status": "active",
+  "acquired_at": "2026-10-12T04:07:00Z",
+  "expires_at": "2026-10-12T04:52:00Z",
+  "base_revision": "b859067615787fbcd288c3256b2a5455b9d2cc9e"
 }
