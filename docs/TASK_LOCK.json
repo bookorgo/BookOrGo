@@ -1,8 +1,14 @@
 {
   "task": "P0-L02b",
   "owner": "bookorgo-p0-web-runtime-20261012T0407Z",
-  "status": "active",
+  "status": "released",
   "acquired_at": "2026-10-12T04:07:00Z",
   "expires_at": "2026-10-12T04:52:00Z",
-  "base_revision": "b859067615787fbcd288c3256b2a5455b9d2cc9e"
+  "base_revision": "b859067615787fbcd288c3256b2a5455b9d2cc9e",
+  "completed_task": "P0-L02b",
+  "tested_revision": "1bd7fd9eb7c955c83bed6a22facca5beb66cdc90",
+  "checkpoint_revision": "67ebcbeece8f086f214a7fdbe41600998016f92d",
+  "evidence_run": 38202823303,
+  "evidence": "docs/evidence/P0-L02b-web-runtime.json",
+  "released_at": "2026-10-12T06:04:35Z"
 }
