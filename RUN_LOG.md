@@ -59,3 +59,17 @@ Evidence: docs/P0_HOST_RUNTIME.md and docs/evidence/P0-L02b-web-runtime.json.
 Limitations: mounted-filesystem free space is not proof of account quota/inodes; configured 256M upload/post limits were observed but only 1 KiB was exercised; HSTS/cipher inventory/auto-renewal, MySQL, scheduler, storage link, backup and restore remain unverified.
 Deployment: none.
 Next: P0-L04a new isolated database credentials and temporary migration/CRUD proof; do not reuse an unknown or existing production database.
+
+## 12 October 2026 — P0-L04a-prep
+Completed and verified a guarded database migration/CRUD/cleanup harness against Master Requirements V3.1 section 25.3 P0-T04, Playbook V4.1 sections 2A.2/2A.3 P0-L04 and kickoff secret/isolation rules.
+Tested revision: 888f3c624aed1f18bb5ae2120d3e7106b0fd02ef.
+Successful Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38217201832.
+Result: PASS for the harness; BLOCKED for actual Hostinger proof.
+CI tests: PHP 8.3 lint passed. On disposable MariaDB 11.4.13, PDO connection, reversible InnoDB table creation, insert, read, update, delete, table drop and post-run absence verification all passed. No database identity or credential was logged.
+Artifact: p0-l04a-db-harness, ID 11732595166, digest sha256:17e522233f5165dcdd9e4c74c30c3c59ab271d66a50247f606a5ff0b42d1c8eb, expires 11 November 2026.
+Hostinger readiness result: credentials_ready false. Missing BOOKORGO_P0_DB_HOST, BOOKORGO_P0_DB_PORT, BOOKORGO_P0_DB_DATABASE, BOOKORGO_P0_DB_USERNAME, BOOKORGO_P0_DB_PASSWORD and BOOKORGO_P0_DB_CONFIRM. Hostinger connection was not attempted and its manual job was skipped.
+Safety: host proof requires a database name containing an explicit p0/smoke/isolated marker and BOOKORGO_P0_DB_CONFIRM=ISOLATED_EPHEMERAL_DATABASE. It is manual-dispatch only and transports credentials over the existing strict-host-key SSH channel without logging them.
+Deployment: none. No Hostinger database, existing file, DNS, Site, audience or indexation state changed.
+Limitations: CI proof is not Hostinger connectivity/capacity/privilege proof; database backup/restore remains unverified.
+Evidence: docs/P0_ISOLATED_DB_PROOF.md and docs/evidence/P0-L04a-db-harness.json.
+Next: continue independent P0-L04b protected Blade/SEO, built-asset and scheduler/backup preparation; execute P0-L04a host proof only after the dedicated isolated database inputs are configured.
