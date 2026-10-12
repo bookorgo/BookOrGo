@@ -4,7 +4,7 @@
   "recorded_at": "2026-10-12T10:10:00Z",
   "overall_status": "BLOCKED",
   "decision": "Retain the owner-selected Laravel architecture and Hostinger Premium as the preferred target, but do not start P1 scaffold promotion or production deployment until the remaining mandatory Hostinger gates pass.",
-  "tested_revision": null,
+  "tested_revision": "c60a56724e43593f4f250615bcfa50e61e0b9f1a",
   "deployment": {
     "performed": false,
     "environment": null,
@@ -102,5 +102,16 @@
     "Master Requirements V3.1 section 25.3 P0-T05",
     "AI Execution Playbook V4.1 section 2A.3 P0-L05",
     "AI Execution Playbook V4.1 section 7 recovery evidence"
-  ]
+  ],
+  "validation": {
+    "workflow_run": 38234390686,
+    "url": "https://github.com/bookorgo/BookOrGo/actions/runs/38234390686",
+    "conclusion": "success",
+    "checked_revision": "c60a56724e43593f4f250615bcfa50e61e0b9f1a",
+    "validator_output": {
+      "matrix_items": 13,
+      "overall_status": "BLOCKED",
+      "deployment_performed": false
+    }
+  }
 }

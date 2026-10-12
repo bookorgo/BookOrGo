@@ -103,3 +103,16 @@ Artifact: ID 11737430400, digest sha256:f31d389ca1d3f3694568ff496295e7e1fef0b2cb
 Limitations: this is not MySQL backup/restore, a full Laravel release rollback, storage-link evidence, protected browser screenshot or hPanel Scheduler execution proof. Database work remains blocked on dedicated isolated DB credentials; hPanel cron configuration is not visible through the current SSH evidence.
 Evidence: docs/P0_HOST_FILESYSTEM_RESTORE.md and docs/evidence/P0-L04c-host-filesystem-restore.json.
 Next: P0-L05 ADR-001 with current PASS/BLOCKED matrix and exact prerequisites; do not mark P0 complete while host DB, DB restore and hPanel scheduler remain unverified.
+
+## 12 October 2026 — P0-L05 / ADR-001
+Completed the bounded architecture decision record against Master Requirements V3.1 section 25.3 P0-T05, AI Execution Playbook V4.1 section 2A.3 P0-L05 and the kickoff release-control rules.
+Decision revision: c60a56724e43593f4f250615bcfa50e61e0b9f1a.
+Successful Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38234390686.
+Result: BLOCKED. This is not a Laravel/Hostinger FAIL and not a P0 PASS. Retain Laravel 13, Blade SSR, selective Livewire 4/Alpine, Tailwind, MySQL/MariaDB and minimal compatible Filament, with Hostinger Premium as the preferred target.
+Validator evidence: 13 unique matrix gates parsed; overall status BLOCKED; six required blocker IDs present and BLOCKED; scoped passes include evidence and limitations; deployment.performed=false; markdown declares Status: BLOCKED. The GitHub job completed successfully on Ubuntu 24.04 with read-only contents permission.
+Positive evidence incorporated: dependency compatibility run 38194341523; Hostinger CLI run 38169812198; Hostinger web/HTTPS run 38202823303; CI Blade/SEO/assets/scheduler run 38222473237; CI MariaDB CRUD run 38217201832; protected Hostinger filesystem restore run 38227821932.
+Open gates: actual isolated Hostinger DB CRUD; MySQL backup/restore; observable hPanel scheduler execution; storage:link or approved durable media path plus recovery; protected Hostinger Laravel HTTP/browser screenshots; rights-verified production logo/fonts/media. Production rollback remains NOT_RUN and requires a reviewed release plan.
+Files: docs/ADR-001-laravel-hostinger.md, docs/evidence/ADR-001.json, .github/scripts/validate-adr-001.py, .github/workflows/adr-001-validation.yml, docs/CURRENT_PLAN.md and RUN_LOG.md.
+Tests: local Python validator PASS; workflow YAML parse PASS; GitHub Actions validator PASS. No host/database/browser test was implied by the ADR validator.
+Safety/deployment: documentation and validation only. No production deployment; no existing Hostinger/Site file, audience, URL, DNS, canonical, robots, sitemap, ad, affiliate or payment change.
+Next: configure the six dedicated isolated BOOKORGO_P0_DB_* GitHub secrets, run guarded Hostinger DB CRUD and backup/restore, and capture hPanel scheduler observability. Do not reuse an unknown or production database.

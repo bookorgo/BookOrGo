@@ -61,6 +61,13 @@ Final cleanup removed every known temporary file and directory. The document-roo
 Status is PASS_FILESYSTEM_ONLY. This proves the host can perform a guarded file archive/restore cycle; it is not a MySQL restore, full Laravel release rollback or hPanel Scheduler proof. Database backup/restore remains gated by dedicated isolated DB inputs, and scheduled execution remains gated by observable hPanel cron configuration.
 Artifact 11737430400 digest: sha256:f31d389ca1d3f3694568ff496295e7e1fef0b2cb0adac7ef4da61ee1c6e39369.
 
+## Latest architecture decision — P0-L05 / ADR-001
+Recorded and machine-validated ADR-001 as BLOCKED; see ADR-001-laravel-hostinger.md and evidence/ADR-001.json.
+Successful Actions run: https://github.com/bookorgo/BookOrGo/actions/runs/38234390686 at tested revision c60a56724e43593f4f250615bcfa50e61e0b9f1a.
+The owner-selected Laravel 13 + Blade SSR + selective Livewire 4/Alpine + Tailwind + MySQL/MariaDB + minimal compatible Filament architecture remains the preferred stack, and Hostinger Premium remains the preferred target. Existing positive evidence covers dependency resolution, host CLI/web PHP and extensions, HTTPS/origin, CI Blade/SEO/assets/scheduler smoke checks, CI MariaDB CRUD, and a protected Hostinger filesystem restore cycle.
+P0 is not PASS. Mandatory unresolved gates are an isolated Hostinger database CRUD proof, MySQL backup/restore, observable hPanel scheduler execution, Laravel durable storage/public-media recovery, protected Hostinger Laravel HTTP plus desktop/mobile browser evidence, and rights-verified production assets. No VPS or stack change is proposed from current evidence.
+No production deployment, DNS, Site audience, canonical/robots, ads, affiliate, payment or existing-file change occurred.
+
 ## Latest bounded dependency proof — P0-L03
 Completed a clean, disposable Laravel compatibility build in GitHub Actions; no production or Hostinger files were changed.
 Tested revision: 6f7a177f67438c91c2ad68ca125a0eee1cc96f2a.
@@ -74,7 +81,7 @@ Limitations: generated Composer/npm lockfiles are retained as CI evidence but ar
 2. P0-L02a/P0-L02b completed for CLI tooling plus web runtime/origin/SSL/bounded-upload evidence. Web PHP 8.3.35 versus CLI 8.4.26 remains an ADR/release constraint; account quota is still unknown.
 3. P0-L04a-prep complete: CI harness passed. Actual Hostinger database proof remains BLOCKED on the six recorded dedicated smoke-database secrets; never reuse an unknown production DB.
 4. P0-L04b-prep and P0-L04c filesystem proof completed: protected Blade SSR/SEO, built assets, scheduled no-op CI and guarded Hostinger file restore passed. Hostinger hPanel scheduler, storage-link, isolated MySQL host CRUD and database backup/restore remain required before P0 exit.
-5. P0-L05: ADR-001 with PASS/FAIL/BLOCKED; no full P0 PASS until every required gate passes.
+5. P0-L05 completed: ADR-001 is BLOCKED and machine-validated. Retain the locked Laravel/Hostinger direction; do not start P1 or promote the scaffold until mandatory Hostinger DB/restore/scheduler/storage/HTTP gates pass.
 6. Promote the P0-L03 verified Laravel 13.35.0, Livewire 4.4.7 and Filament 5.10.1 scaffold and lockfiles only in a dedicated package after the host gates above.
 7. P1: homepage/navigation; listing/filter/pagination; six category detail variants; blog article/hub; responsive and accessibility QA.
 8. P2: normalized catalog/source data; migrations; minimal editorial CMS; roles/publication workflow.
