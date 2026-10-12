@@ -1,0 +1,257 @@
+name: Hostinger P0-L04c filesystem restore proof
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/hostinger-filesystem-restore-proof.yml'
+
+permissions: {}
+
+concurrency:
+  group: hostinger-p0-l04c-filesystem-restore
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Protected backup, restore and cleanup
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Prove isolated filesystem backup and restore
+        env:
+          SSH_KEY: ${{ secrets.HOSTINGER_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.HOSTINGER_KNOWN_HOSTS }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$SSH_KEY" || { echo "Missing HOSTINGER_SSH_KEY"; exit 1; }
+          test -n "$KNOWN_HOSTS" || { echo "Missing HOSTINGER_KNOWN_HOSTS"; exit 1; }
+
+          umask 077
+          key_file="$(mktemp)"
+          hosts_file="$(mktemp)"
+          proof_file="$(mktemp)"
+          remote_rel=""
+
+          ssh_base=(
+            ssh -i "$key_file" -p 65002
+            -o BatchMode=yes
+            -o ConnectTimeout=20
+            -o StrictHostKeyChecking=yes
+            -o UserKnownHostsFile="$hosts_file"
+            u809119518@45.137.159.248
+          )
+
+          emergency_cleanup() {
+            if [[ "$remote_rel" =~ ^\.bookorgo-p0-l04c-[0-9a-f]{32}$ ]]; then
+              "${ssh_base[@]}" 'bash -s' -- "$remote_rel" <<'REMOTE' >/dev/null 2>&1 || true
+          set -euo pipefail
+          rel="$1"
+          [[ "$rel" =~ ^\.bookorgo-p0-l04c-[0-9a-f]{32}$ ]]
+          account_root="$(getent passwd "$(id -un)" | cut -d: -f6)"
+          root="$account_root/domains/bookorgo.com/public_html"
+          work="$root/$rel"
+          test "$work" != "$root"
+          test ! -L "$work"
+          rm -f -- "$work/source/payload.txt" "$work/source/.htaccess"
+          rm -f -- "$work/restored/payload.txt" "$work/restored/.htaccess"
+          rm -f -- "$work/backup.tar.gz" "$work/proof.json" "$work/.htaccess"
+          rmdir -- "$work/source" 2>/dev/null || true
+          rmdir -- "$work/restored" 2>/dev/null || true
+          rmdir -- "$work" 2>/dev/null || true
+          REMOTE
+            fi
+            rm -f -- "$key_file" "$hosts_file" "$proof_file"
+          }
+          trap emergency_cleanup EXIT
+
+          printf '%s\n' "$SSH_KEY" > "$key_file"
+          printf '%s\n' "$KNOWN_HOSTS" > "$hosts_file"
+
+          prepare_output="$("${ssh_base[@]}" 'bash -s' <<'REMOTE'
+          set -euo pipefail
+          php_bin=/opt/alt/php84/usr/bin/php
+          account_root="$(getent passwd "$(id -un)" | cut -d: -f6)"
+          root="$account_root/domains/bookorgo.com/public_html"
+          test -d "$root"
+          test -w "$root"
+          test ! -L "$root"
+
+          root_fingerprint() {
+            find "$root" -mindepth 1 -maxdepth 1 -printf '%f:%y\n' \
+              | LC_ALL=C sort \
+              | sha256sum \
+              | cut -d' ' -f1
+          }
+
+          before="$(root_fingerprint)"
+          suffix="$($php_bin -r 'echo bin2hex(random_bytes(16));')"
+          rel=".bookorgo-p0-l04c-${suffix}"
+          work="$root/$rel"
+          source="$work/source"
+          restored="$work/restored"
+          archive="$work/backup.tar.gz"
+          test ! -e "$work"
+          mkdir -m 700 "$work" "$source" "$restored"
+
+          cat > "$work/.htaccess" <<'HTACCESS'
+          <IfModule mod_authz_core.c>
+              Require all denied
+          </IfModule>
+          <IfModule !mod_authz_core.c>
+              Deny from all
+          </IfModule>
+          HTACCESS
+          cp "$work/.htaccess" "$source/.htaccess"
+          chmod 600 "$work/.htaccess" "$source/.htaccess"
+
+          $php_bin -r 'echo "bookorgo-p0-l04c:", bin2hex(random_bytes(32)), PHP_EOL;' > "$source/payload.txt"
+          chmod 600 "$source/payload.txt"
+          source_hash="$(sha256sum "$source/payload.txt" | cut -d' ' -f1)"
+
+          tar -czf "$archive" -C "$source" .
+          test -s "$archive"
+          archive_hash="$(sha256sum "$archive" | cut -d' ' -f1)"
+          archive_size="$(wc -c < "$archive" | tr -d ' ')"
+
+          while IFS= read -r entry; do
+            case "$entry" in
+              ./|./.htaccess|./payload.txt) ;;
+              *) echo "Unexpected archive entry" >&2; exit 1 ;;
+            esac
+          done < <(tar -tzf "$archive")
+
+          rm -f -- "$source/payload.txt" "$source/.htaccess"
+          rmdir -- "$source"
+          tar -xzf "$archive" -C "$restored" --no-same-owner --no-same-permissions
+          test -f "$restored/payload.txt"
+          test -f "$restored/.htaccess"
+          restored_hash="$(sha256sum "$restored/payload.txt" | cut -d' ' -f1)"
+          test "$restored_hash" = "$source_hash"
+
+          P0_REL="$rel" P0_BEFORE="$before" P0_SOURCE_HASH="$source_hash" \
+          P0_RESTORED_HASH="$restored_hash" P0_ARCHIVE_HASH="$archive_hash" \
+          P0_ARCHIVE_SIZE="$archive_size" "$php_bin" <<'PHP' > "$work/proof.json"
+          <?php
+          $proof = [
+              'task' => 'P0-L04c-fs-restore',
+              'status' => 'restore_verified_pending_cleanup',
+              'temporary_path' => getenv('P0_REL'),
+              'root_fingerprint_before' => getenv('P0_BEFORE'),
+              'source_sha256' => getenv('P0_SOURCE_HASH'),
+              'restored_sha256' => getenv('P0_RESTORED_HASH'),
+              'archive_sha256' => getenv('P0_ARCHIVE_HASH'),
+              'archive_size_bytes' => (int) getenv('P0_ARCHIVE_SIZE'),
+              'source_removed_before_restore' => true,
+              'existing_files_opened' => 0,
+              'database_touched' => false,
+          ];
+          echo json_encode($proof, JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR), PHP_EOL;
+          PHP
+          chmod 600 "$work/proof.json"
+
+          printf 'REMOTE_REL=%s\n' "$rel"
+          printf 'PROOF_JSON=%s\n' "$(tr -d '\n' < "$work/proof.json")"
+          REMOTE
+          )"
+
+          remote_rel="$(printf '%s\n' "$prepare_output" | sed -n 's/^REMOTE_REL=//p')"
+          proof_json="$(printf '%s\n' "$prepare_output" | sed -n 's/^PROOF_JSON=//p')"
+          [[ "$remote_rel" =~ ^\.bookorgo-p0-l04c-[0-9a-f]{32}$ ]] || {
+            echo "Invalid generated temporary path"
+            exit 1
+          }
+          test -n "$proof_json"
+
+          access_status="$(curl --silent --show-error \
+            --connect-timeout 10 --max-time 30 --proto '=https' --tlsv1.2 \
+            --output /dev/null --write-out '%{http_code}' \
+            "https://bookorgo.com/$remote_rel/restored/payload.txt")"
+          case "$access_status" in
+            403|404) ;;
+            *) echo "Protected payload was unexpectedly reachable: HTTP $access_status"; exit 1 ;;
+          esac
+
+          cleanup_output="$("${ssh_base[@]}" 'bash -s' -- "$remote_rel" <<'REMOTE'
+          set -euo pipefail
+          rel="$1"
+          [[ "$rel" =~ ^\.bookorgo-p0-l04c-[0-9a-f]{32}$ ]]
+          php_bin=/opt/alt/php84/usr/bin/php
+          account_root="$(getent passwd "$(id -un)" | cut -d: -f6)"
+          root="$account_root/domains/bookorgo.com/public_html"
+          work="$root/$rel"
+          test "$work" != "$root"
+          test -d "$work"
+          test ! -L "$work"
+          baseline="$($php_bin -r '$data=json_decode(file_get_contents($argv[1]), true, 512, JSON_THROW_ON_ERROR); echo $data["root_fingerprint_before"];' "$work/proof.json")"
+
+          rm -f -- "$work/restored/payload.txt" "$work/restored/.htaccess"
+          rm -f -- "$work/backup.tar.gz" "$work/proof.json" "$work/.htaccess"
+          rmdir -- "$work/restored"
+          rmdir -- "$work"
+          test ! -e "$work"
+
+          after="$(find "$root" -mindepth 1 -maxdepth 1 -printf '%f:%y\n' \
+            | LC_ALL=C sort \
+            | sha256sum \
+            | cut -d' ' -f1)"
+          test "$after" = "$baseline"
+          printf 'CLEANUP_JSON={"temporary_path_removed":true,"root_fingerprint_restored":true}\n'
+          REMOTE
+          )"
+          cleanup_json="$(printf '%s\n' "$cleanup_output" | sed -n 's/^CLEANUP_JSON=//p')"
+          test -n "$cleanup_json"
+          remote_rel=""
+
+          PROOF_JSON="$proof_json" CLEANUP_JSON="$cleanup_json" ACCESS_STATUS="$access_status" \
+          PROOF_FILE="$proof_file" python3 <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          proof = json.loads(os.environ['PROOF_JSON'])
+          cleanup = json.loads(os.environ['CLEANUP_JSON'])
+          assert proof['task'] == 'P0-L04c-fs-restore'
+          assert proof['status'] == 'restore_verified_pending_cleanup'
+          assert proof['source_sha256'] == proof['restored_sha256']
+          assert proof['archive_size_bytes'] > 0
+          assert proof['source_removed_before_restore'] is True
+          assert proof['existing_files_opened'] == 0
+          assert proof['database_touched'] is False
+          assert os.environ['ACCESS_STATUS'] in {'403', '404'}
+          assert cleanup == {
+              'temporary_path_removed': True,
+              'root_fingerprint_restored': True,
+          }
+          result = {
+              'task': 'P0-L04c-fs-restore',
+              'status': 'PASS_FILESYSTEM_ONLY',
+              'proof': proof,
+              'https_protection_status': int(os.environ['ACCESS_STATUS']),
+              'cleanup': cleanup,
+              'deployment': 'none',
+              'limitations': [
+                  'Filesystem payload only; no database was accessed',
+                  'Hostinger hPanel scheduler remains unverified',
+                  'No existing file contents were opened',
+                  'No production release or rollback was performed',
+              ],
+          }
+          Path(os.environ['PROOF_FILE']).write_text(
+              json.dumps(result, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+          print('P0_L04C_RESULT=' + json.dumps(result, separators=(',', ':')))
+          PY
+
+          cp "$proof_file" p0-l04c-host-filesystem-restore.json
+
+      - name: Upload bounded proof
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-l04c-host-filesystem-restore-${{ github.sha }}
+          if-no-files-found: error
+          retention-days: 30
+          path: p0-l04c-host-filesystem-restore.json
