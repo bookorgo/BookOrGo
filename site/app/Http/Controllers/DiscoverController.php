@@ -47,6 +47,7 @@ final class DiscoverController extends Controller
     public function information(string $page): View
     {
         $pages = [
+            'photo-credits' => ['title' => 'Photo credits', 'heading' => 'Destination photography & credits', 'body' => 'Destination photos are illustrative. They do not depict or verify the fictional sample products. These photographs are used under the published Unsplash License; no photographer or venue endorsement is implied.'],
             'about' => ['title' => 'About BookOrGo', 'heading' => 'A new way to explore the UAE', 'body' => 'BookOrGo is being built as a Dubai-first UAE travel discovery and editorial website. The current public preview contains fictional catalogue records and draft guide templates, not live travel offers.'],
             'contact' => ['title' => 'Contact', 'heading' => 'Contact details are being prepared', 'body' => 'A verified public support address has not been published in this preview. No contact form is active and no booking support service is offered here.'],
             'disclosure' => ['title' => 'Affiliate disclosure', 'heading' => 'Know where a booking will happen', 'body' => 'No affiliate link or advertisement is active in this preview. Before any referral is enabled, the relevant partner, disclosure and permitted link must be verified. Future partner checkout will be external; BookOrGo does not currently take payments or issue confirmations.'],

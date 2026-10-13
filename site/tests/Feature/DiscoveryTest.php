@@ -15,14 +15,14 @@ final class DiscoveryTest extends TestCase
             ->assertDontSee('London')->assertDontSee('Register')->assertDontSee('Sign in');
         $this->assertSame(6, substr_count($response->getContent(), 'class="destination-card"'));
         $this->assertSame(4, substr_count($response->getContent(), 'class="featured-card"'));
-        $this->assertSame(3, substr_count($response->getContent(), 'class="home-guide"'));
-        $response->assertSee('area=Dubai', false)->assertSee('Original illustration');
+        $this->assertSame(8, substr_count($response->getContent(), 'class="region-card"'));
+        $response->assertSee('area=Dubai', false)->assertSee('Destination photos are illustrative.');
     }
 
     public function test_gallery_location_faq_and_referral_disclosure_do_not_fabricate_facts(): void
     {
         $response = $this->get('/activities/dubai/sample-desert-morning');
-        $response->assertOk()->assertSee('not venue photographs')->assertSee('No venue photos supplied')
+        $response->assertOk()->assertSee('not photographs of this sample')->assertSee('Illustrative only')
             ->assertSee('No verified address')->assertSee('Frequently asked questions')
             ->assertSee('No affiliate link is active here.')->assertDontSee('maps.googleapis.com', false)
             ->assertDontSee('application/ld+json', false);
@@ -32,7 +32,7 @@ final class DiscoveryTest extends TestCase
 
     public function test_footer_information_routes_are_honest_noindex_drafts(): void
     {
-        foreach (['about', 'contact', 'disclosure', 'privacy', 'terms'] as $page) {
+        foreach (['about', 'contact', 'disclosure', 'privacy', 'terms', 'photo-credits'] as $page) {
             $response = $this->get('/'.$page);
             $response->assertOk()->assertSee('Draft information.')->assertHeader('X-Robots-Tag', 'noindex, nofollow');
             $this->assertSame(1, substr_count($response->getContent(), '<h1'));
@@ -45,7 +45,7 @@ final class DiscoveryTest extends TestCase
     {
         $response = $this->get('/search?q=boat&sort=title-desc');
         $response->assertOk()->assertSee('class="listing-search"', false)
-            ->assertSee('form="catalogue-filter-form"', false)->assertSee('Apply sort')
+            ->assertSee('name="sort" value="title-desc"', false)->assertSee('Title Z–A')
             ->assertSee('value="boat"', false)->assertDontSee('Lowest price');
     }
     public function test_home_is_server_rendered_without_database_or_live_offers(): void

@@ -8,6 +8,16 @@ await fs.mkdir(output, { recursive: true });
 const failures = [];
 const checks = [];
 
+async function verifyPhotos(page) {
+    const results = await page.locator('img.destination-photo').evaluateAll(async images => Promise.all(images.map(async image => {
+        image.loading = 'eager';
+        try { await image.decode(); } catch {}
+        return { loaded: image.complete && image.naturalWidth > 0, sameOrigin: new URL(image.currentSrc).origin === location.origin };
+    })));
+    assert.ok(results.length > 0);
+    assert.ok(results.every(image => image.loaded && image.sameOrigin), 'all destination photos load from the same origin');
+}
+
 try {
     for (const width of [1920, 1440, 768, 390, 320]) {
         const context = await browser.newContext({ viewport: { width, height: 1000 } });
@@ -23,7 +33,9 @@ try {
         assert.equal(await page.locator('.hero .search-form').evaluate(el => getComputedStyle(el).borderTopColor), 'rgb(255, 196, 0)');
         assert.equal(await page.locator('.destination-card').count(), 6);
         assert.equal(await page.locator('.featured-card').count(), 4);
-        assert.equal(await page.locator('.home-guide').count(), 3);
+        assert.equal(await page.locator('.region-card').count(), 8);
+        await verifyPhotos(page);
+        assert.ok(await page.evaluate(async () => { await document.fonts.load('700 32px Inter'); return document.fonts.check('700 32px Inter'); }));
         assert.ok(await page.locator('#newsletter-preview').isDisabled());
         assert.ok(await page.locator('#preview-date').isDisabled());
         assert.ok(await page.locator('#preview-travellers').isDisabled());
@@ -72,6 +84,8 @@ try {
         assert.equal(await page.locator('h1').count(), 1);
         assert.equal(await page.locator('.field-grid > div').count(), 6);
         assert.equal(await page.locator('.gallery-tile').count(), 6);
+        await verifyPhotos(page);
+        assert.equal(await page.locator('.review-empty-grid > div').count(), 2);
         assert.equal(await page.locator('.detail-faq details').count(), 4);
         await page.locator('.detail-faq summary').first().focus();
         await page.keyboard.press('Enter');
@@ -106,9 +120,9 @@ try {
     interactivePage.on('pageerror', error => failures.push(error.message));
     await interactivePage.goto('http://127.0.0.1:8000/search');
     await interactivePage.locator('.listing-filters summary').click();
-    await interactivePage.getByLabel('Category').selectOption('yachts');
-    await interactivePage.getByLabel('Area').selectOption('Dubai Marina');
-    await interactivePage.getByLabel('Duration').selectOption('under-2-hours');
+    await interactivePage.locator('input[name="category"][value="yachts"]').check();
+    await interactivePage.locator('input[name="area"][value="Dubai Marina"]').check();
+    await interactivePage.locator('input[name="duration"][value="under-2-hours"]').check();
     await interactivePage.getByLabel('Sample yes').check();
     await interactivePage.getByRole('button', { name: /Apply filters/ }).click();
     await interactivePage.locator('.experience-card').waitFor();
@@ -129,8 +143,7 @@ try {
     assert.ok(await interactivePage.getByText('Page 2 of 3').isVisible());
     assert.equal(await interactivePage.locator('.experience-card').count(), 6);
     checks.push({ filteredNavigation: 'pass', loadingState: 'pass', pagination: 'pass' });
-    await interactivePage.getByLabel('Sort by').selectOption('title-desc');
-    await interactivePage.getByRole('button', { name: 'Apply sort', exact: true }).click();
+    await interactivePage.getByRole('link', { name: 'Title Z–A', exact: true }).click();
     assert.equal(new URL(interactivePage.url()).searchParams.get('sort'), 'title-desc');
     assert.equal(new URL(interactivePage.url()).searchParams.get('q'), 'sample');
     checks.push({ externalFormSort: 'pass', filtersPreserved: 'pass' });

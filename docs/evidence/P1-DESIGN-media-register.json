@@ -1,0 +1,84 @@
+{
+  "task": "P1-DESIGN-FIDELITY",
+  "assets": [
+    {
+      "path": "site/resources/images/dubai.webp",
+      "author": "Gherardo Sava",
+      "source": "https://unsplash.com/photos/sQoVHsxP8ds",
+      "license": "https://unsplash.com/license",
+      "license_observed": "2026-10-13",
+      "sha256": "d06d48581079a8e7bc36a5592c76fd9dad5e811763594366337cb5617b0b9ee3",
+      "bytes": 115250,
+      "use": "Illustrative destination photography, not imagery of fictional products. Resized/WebP encoded; CSS crops. No endorsement or property/model release asserted."
+    },
+    {
+      "path": "site/resources/images/desert.webp",
+      "author": "Harjinder Cheema",
+      "source": "https://unsplash.com/photos/fSI5aR3Ci9A",
+      "license": "https://unsplash.com/license",
+      "license_observed": "2026-10-13",
+      "sha256": "b500a7b443868c6b841b8b709dd81e3c503da1288ece99d27d819096399bcf00",
+      "bytes": 32326,
+      "use": "Illustrative destination photography, not imagery of fictional products. Resized/WebP encoded; CSS crops. No endorsement or property/model release asserted."
+    },
+    {
+      "path": "site/resources/images/marina.webp",
+      "author": "Be Ignite",
+      "source": "https://unsplash.com/photos/E8hjeRR5OGM",
+      "license": "https://unsplash.com/license",
+      "license_observed": "2026-10-13",
+      "sha256": "05cff32060a4f5901980eea0f9fd8bae8a8a251090059734458e72182888be25",
+      "bytes": 127042,
+      "use": "Illustrative destination photography, not imagery of fictional products. Resized/WebP encoded; CSS crops. No endorsement or property/model release asserted."
+    },
+    {
+      "path": "site/resources/images/mountains.webp",
+      "author": "Kirtesh Mahant",
+      "source": "https://unsplash.com/photos/HroTD0O51I4",
+      "license": "https://unsplash.com/license",
+      "license_observed": "2026-10-13",
+      "sha256": "64f456b81d836cde2ccf7fb00758fce0cd3601765aaf44dcd2a79dca597d364a",
+      "bytes": 78090,
+      "use": "Illustrative destination photography, not imagery of fictional products. Resized/WebP encoded; CSS crops. No endorsement or property/model release asserted."
+    },
+    {
+      "path": "site/resources/images/abu-dhabi.webp",
+      "author": "Sreevishnu Nair",
+      "source": "https://unsplash.com/photos/C9zIo0Kpx6o",
+      "license": "https://unsplash.com/license",
+      "license_observed": "2026-10-13",
+      "sha256": "ca5891bae221b318fe6154d9561e2ded1a7f7ff79736f01d8cf9fde6c9725195",
+      "bytes": 39306,
+      "use": "Illustrative destination photography, not imagery of fictional products. Resized/WebP encoded; CSS crops. No endorsement or property/model release asserted."
+    },
+    {
+      "path": "site/resources/images/sharjah.webp",
+      "author": "Subasun Townley",
+      "source": "https://unsplash.com/photos/A0ULAaNVuPY",
+      "license": "https://unsplash.com/license",
+      "license_observed": "2026-10-13",
+      "sha256": "65fbc94f22d135ce4adfe6355de564a77492e908e59a8b2266ba7a2ef74f1e5a",
+      "bytes": 66308,
+      "use": "Illustrative destination photography, not imagery of fictional products. Resized/WebP encoded; CSS crops. No endorsement or property/model release asserted."
+    },
+    {
+      "path": "site/resources/images/fujairah.webp",
+      "author": "Samy Mar Boy",
+      "source": "https://unsplash.com/photos/jjgKCe3T0HM",
+      "license": "https://unsplash.com/license",
+      "license_observed": "2026-10-13",
+      "sha256": "e60ebfdfedaa50c98a75cd5b97f39eb1502660e813041b7d3ca8bfdef9cab503",
+      "bytes": 138218,
+      "use": "Illustrative destination photography, not imagery of fictional products. Resized/WebP encoded; CSS crops. No endorsement or property/model release asserted."
+    },
+    {
+      "path": "site/resources/fonts/InterVariable.woff2",
+      "source": "https://github.com/rsms/inter/blob/v4.1/docs/font-files/InterVariable.woff2",
+      "license": "SIL OFL 1.1; full license at site/resources/fonts/LICENSE.txt",
+      "sha256": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3",
+      "modified": false,
+      "use": "Home typography; not a claim that reference font identity was established."
+    }
+  ],
+  "limitations": "Independent licensed assets, not copied reference photographs. Sample pages remain noindex. Published licenses were checked, not venue or supplier approval."
+}

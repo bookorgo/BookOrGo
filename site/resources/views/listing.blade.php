@@ -22,33 +22,13 @@
         <details class="listing-filters" open>
             <summary>Filters @if($activeCount)<span>{{ $activeCount }} active</span>@endif</summary>
             <form id="catalogue-filter-form" method="get" action="{{ $action }}" data-listing-form>
-                <div class="filter-field">
+                <input type="hidden" name="sort" value="{{ $filters['sort'] }}"><div class="filter-field">
                     <label for="catalogue-query">Search samples</label>
                     <input id="catalogue-query" name="q" type="search" maxlength="120" value="{{ $filters['q'] }}" placeholder="Try boat, city or visa">
                 </div>
-                @unless($fixedCategory)
-                <div class="filter-field">
-                    <label for="catalogue-category">Category</label>
-                    <select id="catalogue-category" name="category">
-                        <option value="">All categories</option>
-                        @foreach($categories as $slug => $entry)<option value="{{ $slug }}" @selected($filters['category'] === $slug)>{{ $entry['name'] }}</option>@endforeach
-                    </select>
-                </div>
-                @endunless
-                <div class="filter-field">
-                    <label for="catalogue-area">Area</label>
-                    <select id="catalogue-area" name="area">
-                        <option value="">All sample areas</option>
-                        @foreach($areas as $area)<option value="{{ $area }}" @selected($filters['area'] === $area)>{{ $area }}</option>@endforeach
-                    </select>
-                </div>
-                <div class="filter-field">
-                    <label for="catalogue-duration">Duration</label>
-                    <select id="catalogue-duration" name="duration">
-                        <option value="">Any sample duration</option>
-                        @foreach($durations as $value => $label)<option value="{{ $value }}" @selected($filters['duration'] === $value)>{{ $label }}</option>@endforeach
-                    </select>
-                </div>
+<fieldset class="filter-choices"><legend>Location <small>Choose one</small></legend><label><input type="radio" name="area" value="" @checked($filters['area']==='')> All sample areas</label>@foreach($areas as $area)<label><input type="radio" name="area" value="{{ $area }}" @checked($filters['area']===$area)> {{ $area }}</label>@endforeach</fieldset>
+@unless($fixedCategory)<fieldset class="filter-choices"><legend>Category <small>Choose one</small></legend><label><input type="radio" name="category" value="" @checked($filters['category']==='')> All categories</label>@foreach($categories as $slug=>$entry)<label><input type="radio" name="category" value="{{ $slug }}" @checked($filters['category']===$slug)> {{ $entry['name'] }}</label>@endforeach</fieldset>@endunless
+<fieldset class="filter-choices"><legend>Duration <small>Choose one</small></legend><label><input type="radio" name="duration" value="" @checked($filters['duration']==='')> Any sample duration</label>@foreach($durations as $value=>$label)<label><input type="radio" name="duration" value="{{ $value }}" @checked($filters['duration']===$value)> {{ $label }}</label>@endforeach</fieldset>
                 <fieldset class="filter-field radio-group">
                     <legend>Family suitability</legend>
                     <label><input type="radio" name="family" value="" @checked($filters['family'] === '')> Any</label>
@@ -64,7 +44,7 @@
     <div class="results-column" id="catalogue-results" aria-live="polite">
         <div class="results-toolbar">
             <div><p class="eyebrow ink">Sample results</p><h2 id="results-heading">{{ $total }} {{ $total === 1 ? 'fictional card' : 'fictional cards' }}</h2></div>
-            <div class="result-sort"><label for="catalogue-sort">Sort by</label><select id="catalogue-sort" name="sort" form="catalogue-filter-form"><option value="recommended" @selected($filters['sort'] === 'recommended')>Curated sample order</option><option value="title-asc" @selected($filters['sort'] === 'title-asc')>Title A–Z</option><option value="title-desc" @selected($filters['sort'] === 'title-desc')>Title Z–A</option></select><button type="submit" form="catalogue-filter-form">Apply sort</button><p>Page {{ $page }} of {{ $lastPage }}</p></div>
+<p class="result-page-count">Page {{ $page }} of {{ $lastPage }}</p>
         </div>
         <nav class="sort-tabs" aria-label="Sample sorting">
             @foreach(['recommended' => 'Our sample order', 'title-asc' => 'Title A–Z', 'title-desc' => 'Title Z–A'] as $sort => $label)
