@@ -9,7 +9,7 @@ Controlling owner decisions: GitHub + Hostinger Premium; main environment reques
 Follow PHASE_ROADMAP.md. Private original Master Requirements V3.1, Playbook V4.1, kickoff and approved reference PDFs remain the authority. Retrieve them from owner Library; never publish full internal documents to this public repository.
 
 ## Current status
-P0 operational checks remain open. P1-01 homepage/navigation foundation is now verified live on the main Hostinger site under OWNER-20261012-MAIN. P1 remains in progress; P1-02 listing/filter/state work is next. P2-P5 not started; P6-P7 deferred.
+P0 operational checks remain open. P1-01 homepage/navigation foundation is verified live on the main Hostinger site under OWNER-20261012-MAIN. P1-02 listing/filter/state source is CI-verified at revision `3bbeebf0c034b0d93fa5d6fcdceb4ccdf95b5cdc` but is not yet deployed; the live site therefore remains on the P1-01 release. P1 remains in progress. P2-P5 not started; P6-P7 deferred.
 Completed bounded package P0-L02a: GitHub Actions SSH, CLI PHP and tooling inventory.
 Evidence: https://github.com/bookorgo/BookOrGo/actions/runs/38169812198
 Tested code revision: abbc16c6e34b1d7cb75555529065f13948053f25
@@ -94,8 +94,8 @@ Nine intended HTML routes returned 200 with one H1, correct canonical URL and HT
 The first workflow attempt failed before host access because tests preceded the Vite build. The second activated successfully but detected inaccessible asset permissions, then automatically rolled back only the newly introduced files and restored the one-file baseline. Neither failure was reported as live. The corrected third run finalized successfully. Draft/noindex protection remains in force; this was not an SEO indexability release.
 
 ## Ordered next tasks
-1. P1-02: full category-aware listing/filter/sort/pagination and state handling; current search is taxonomy-only. Keep all sample states labelled and noindex.
-2. P1-03: six category-aware detail variants with clearly labelled samples and honest CTA states.
+1. P1-02-main-release: adapt the guarded Hostinger workflow from its verified first-release baseline to an exact-current-release upgrade, back up current public files, retain bounded rollback and verify the new listing flows live. Do not reuse the old one-file-baseline assertion.
+2. P1-03: six category-aware detail variants with clearly labelled samples and honest CTA states after P1-02 is verified live.
 3. P1-04: reusable blog article layout and listing reuse; then P1-05 wider visual/accessibility QA and owner design review.
 4. P2: main application database configuration, normalized catalog/source data, migrations, minimal editorial CMS and publication roles. Database backup/restore is required before relevant main data changes; do not reuse the isolated temporary-table harness on the main database.
 5. P3: approved partner sourcing, links/disclosures, attribution and freshness checks.

@@ -142,3 +142,16 @@ Honest failure history: run 38254837031 failed before host access because tests 
 Requirements checked: Master Requirements V3.1 sections 03, 08, 10, 18 and 25; Playbook V4.1 P1-01/UI-01 and release controls; OWNER-20261012-MAIN. Limitations: preview shell only; no real catalogue, offers, pricing, availability, booking, CMS, database, durable media or scheduler. Noindex remains mandatory and P1 is incomplete.
 
 Evidence: docs/P1_MAIN_RELEASE.md and docs/evidence/P1-01-main-release.json. Repository lease released. Next: P1-02 category-aware listing/filter/sort/pagination and state handling.
+
+## 13 October 2026 — P1-02 listing/filter/state implementation
+Completed the bounded P1-02 frontend package against Master Requirements V3.1 listing, accessibility/pagination and indexation constraints; Playbook V4.1 P1-02; the fresh-build rule; and OWNER-20261012-MAIN. Tested source revision: `3bbeebf0c034b0d93fa5d6fcdceb4ccdf95b5cdc`. Successful workflow: https://github.com/bookorgo/BookOrGo/actions/runs/38354800327. Result: PASS_CI_LISTING_SLICE.
+
+Implemented one shared Laravel/Blade listing for search plus Activities, Holidays, Visas, Cruises, Yachts and Events; server-side keyword/category/area/duration/family filters; deterministic curated/title sorting; six-item pagination with retained query state; responsive filter disclosure; and explicit loading, empty and invalid-input states. Eighteen records are clearly labelled fictional samples. They contain no price, rating, availability, partner or booking field/action. Draft meta and HTTP `noindex, nofollow` remain.
+
+Tests: Composer locked install on PHP 8.3.35; Vite/Tailwind production build; route/view/config caches; 8 feature tests / 159 assertions. Chromium at 1440/768/390/320 passed listing/filter/overflow checks with zero page errors; real filtered navigation, loading state, pagination and JavaScript-disabled navigation/search/empty state passed. Eight internal link targets returned 200. Desktop listing, mobile listing and mobile empty-state screenshots were visually inspected with no blocking defect.
+
+Artifact: ID `11792601359`, digest `sha256:a2d9beabda49d16a4a769f5a2a208e5f98574a029947c0c3134c2f4852f2d65e`, expires 27 October 2026. Evidence: docs/P1_LISTING.md and docs/evidence/P1-02-listing.json.
+
+Deployment: NOT PERFORMED. Production remains on P1-01 revision `6e091e2502f0547c0d5213da1ae2b11a25915dc8`. The existing guarded workflow requires the obsolete one-file pre-release baseline and must not be reused against the now-live Laravel files. No Hostinger, database, DNS, Site, audience or indexability change occurred.
+
+Limitations: source-backed fictional UI data only; no real catalogue/database/CMS, details, partner links, prices, availability, ratings or bookings. Full category-specific commercial fields, Safari/Firefox, WCAG/performance audit and owner visual acceptance remain. Next: P1-02-main-release with exact current-release preflight, current public-file backup, bounded activation/rollback and live listing verification. Repository lease released.

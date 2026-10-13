@@ -1,10 +1,13 @@
 {
   "task": "P1-02",
   "owner": "bookorgo-p1-02-20261012T1908Z",
-  "status": "active",
+  "status": "released",
   "acquired_at": "2026-10-12T19:08:00Z",
   "expires_at": "2026-10-13T07:30:00Z",
   "base_revision": "56d41624bd6e3f1de5a92bb45b403dc35dd847e4",
   "refreshed_at": "2026-10-13T05:58:00Z",
-  "resume_revision": "2986977de7de633870f3bbd64c6fc42753a26c8b"
+  "resume_revision": "2986977de7de633870f3bbd64c6fc42753a26c8b",
+  "released_at": "2026-10-13T06:12:00Z",
+  "completion_revision": "3bbeebf0c034b0d93fa5d6fcdceb4ccdf95b5cdc",
+  "result": "PASS_CI_LISTING_SLICE"
 }

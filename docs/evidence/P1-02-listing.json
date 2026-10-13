@@ -1,0 +1,68 @@
+{
+  "task": "P1-02-listing-filter-states",
+  "status": "PASS_CI_LISTING_SLICE",
+  "tested_revision": "3bbeebf0c034b0d93fa5d6fcdceb4ccdf95b5cdc",
+  "run_url": "https://github.com/bookorgo/BookOrGo/actions/runs/38354800327",
+  "artifact": {
+    "id": 11792601359,
+    "digest": "sha256:a2d9beabda49d16a4a769f5a2a208e5f98574a029947c0c3134c2f4852f2d65e",
+    "expires_at": "2026-10-27T06:06:11Z"
+  },
+  "requirements": [
+    "Master Requirements V3.1 listing/filter/pagination and indexation constraints",
+    "Playbook V4.1 P1-02",
+    "OWNER-20261012-MAIN",
+    "Fresh build; no deleted prototype reuse"
+  ],
+  "tests": {
+    "php": "8.3.35",
+    "feature_tests": 8,
+    "assertions": 159,
+    "composer_locked_install": "PASS",
+    "vite_tailwind_build": "PASS",
+    "route_view_config_cache": "PASS",
+    "browser": {
+      "viewports": [1440, 768, 390, 320],
+      "overflow": "PASS",
+      "filters": "PASS",
+      "filtered_navigation": "PASS",
+      "loading_state": "PASS",
+      "pagination": "PASS",
+      "javascript_disabled": "PASS",
+      "internal_links": 8,
+      "empty_state": "PASS",
+      "page_errors": []
+    }
+  },
+  "content_safety": {
+    "fictional_records": 18,
+    "sample_labelled": true,
+    "noindex": true,
+    "prices": false,
+    "availability": false,
+    "ratings": false,
+    "booking_actions": false,
+    "partner_claims": false
+  },
+  "visual_review": {
+    "screenshots": [
+      "listing-1440.png",
+      "listing-390.png",
+      "listing-empty-390.png"
+    ],
+    "result": "No blocking hierarchy, clipping, filter-disclosure or sample-labelling defect found.",
+    "owner_acceptance": "NOT_REQUESTED_OR_RECEIVED"
+  },
+  "deployment": {
+    "performed": false,
+    "live_revision_unchanged": "6e091e2502f0547c0d5213da1ae2b11a25915dc8",
+    "reason": "The existing release workflow is a first-release workflow pinned to the old one-file baseline; a reviewed exact-current-release upgrade path is required."
+  },
+  "limitations": [
+    "Static fictional source records only; no verified catalogue, database or CMS.",
+    "No detail pages, partner links, prices, ratings, availability or bookings.",
+    "Chromium CI only; full WCAG, Safari, Firefox, performance and owner visual acceptance remain.",
+    "Hostinger live listing behavior is not claimed until the guarded upgrade release passes."
+  ],
+  "next": "P1-02-main-release"
+}

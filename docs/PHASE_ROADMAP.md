@@ -21,6 +21,7 @@ Exit: compatibility, protected checks and rollback evidence pass.
 
 ## P1 — Responsive public frontend
 - P1-01 status: homepage/navigation/search foundation is verified live at revision `6e091e2502f0547c0d5213da1ae2b11a25915dc8`; draft/noindex protection remains. P1 is not complete.
+- P1-02 status: listing/filter/sort/pagination and empty/error/loading states are CI-verified at revision `3bbeebf0c034b0d93fa5d6fcdceb4ccdf95b5cdc`; deployment is not yet performed, so the live site still serves P1-01.
 - Homepage hero/search and discoverable Activities, Holidays, Visas, Cruises, Yachts, Events.
 - Listing/search filters, sort, pagination, query state and empty/error states.
 - Category-aware detail pages: gallery, sourced information fields, FAQs, related content and honest CTA states.
@@ -28,7 +29,7 @@ Exit: compatibility, protected checks and rollback evidence pass.
 - Mobile/desktop, keyboard/accessibility, Blade-delivered metadata and stable URL checks.
 Exit: representative screenshots/interactions accepted; labelled noindex samples, feature and browser checks evidenced.
 
-Next bounded package: P1-02 category-aware listing/filter/sort/pagination and query/empty/error states.
+Next bounded package: P1-02-main-release. Upgrade the guarded production workflow to verify the exact current P1-01 release, back up the current public application files, activate the tested P1-02 revision with bounded rollback, and verify representative listing/filter/pagination states live.
 
 ## P2 — Data architecture and editorial CMS
 - Product, Variant, Offer, Partner, Location, Article and SourceEvidence boundaries.
@@ -62,4 +63,4 @@ Separate authorization and legal/commercial/technical feasibility before booking
 Prove Dubai model first; authorize each country's supplier, legal, language/currency and support readiness separately.
 
 ## Next bounded package
-P1-01 foundation is CI-verified at f8a1c71403dcf1c5473542ffa395af1b6cc60d8f (run 38249192582); see P1_FOUNDATION.md. Execute the guarded main Hostinger release package in P1_MAIN_RELEASE_PLAN.md next, then continue P1-02 listing work. P1 is not complete; real catalogue/detail/article/policy/visual-acceptance work remains. Keep open P0 operational gates scoped to applicable features; no staging or temporary Hostinger database is required for this database-independent first release.
+P1-02 source is CI-verified at `3bbeebf0c034b0d93fa5d6fcdceb4ccdf95b5cdc` in run 38354800327; see P1_LISTING.md. Execute P1-02-main-release next using a reviewed exact-current-release upgrade/rollback path. P1 is not complete; real catalogue/detail/article/policy/visual-acceptance work remains. Keep open P0 operational gates scoped to applicable features; no staging or temporary Hostinger database is required for this database-independent frontend release.
