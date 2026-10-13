@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DiscoverController::class, 'home'])->name('home');
 Route::get('/search', [DiscoverController::class, 'search'])->name('search');
 Route::get('/blog', [DiscoverController::class, 'journal'])->name('journal');
+Route::get('/{page}', [DiscoverController::class, 'information'])
+    ->where('page', 'about|contact|disclosure|privacy|terms')->name('information');
 Route::get('/blog/{article}', [DiscoverController::class, 'article'])
     ->where('article', 'sample-[a-z0-9-]+')
     ->name('article');

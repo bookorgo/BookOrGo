@@ -9,10 +9,9 @@
 </section>
 
 <section class="container detail-hero">
-    <div class="detail-art card-{{ $item['motif'] }}" aria-hidden="true">
-        <span class="sample-ribbon">Fictional sample</span>
-        <span class="art-orbit"></span><span class="art-shape"></span><span class="art-line"></span>
-        <p>Original placeholder artwork</p>
+    <div class="detail-gallery" role="group" aria-label="Original illustration gallery — not venue photographs">
+        <div class="detail-art card-{{ $item['motif'] }}"><x-scene :motif="$item['motif']" /><span class="sample-ribbon">Fictional sample</span><p>Original placeholder artwork</p></div>
+        @foreach([1, 2, 3, 4] as $variant)<div class="gallery-tile"><x-scene :motif="$item['motif']" :variant="$variant" />@if($variant === 4)<span>Illustrations only<br>No venue photos supplied</span>@endif</div>@endforeach
     </div>
     <div class="detail-heading">
         <p class="eyebrow ink">{{ $item['template_label'] }}</p>
@@ -26,6 +25,8 @@
         <div class="sample-disclosure" role="note"><strong>Layout demonstration only.</strong> This page is not a real offer, recommendation or source of availability. Its fields are intentionally withheld until approved evidence exists.</div>
     </div>
 </section>
+
+<nav class="container detail-section-nav" aria-label="Detail page sections"><a href="#overview-heading">Overview</a><a href="#fields-heading">Practical information</a><a href="#location-heading">Location</a><a href="#faq-heading">Questions</a></nav>
 
 <section class="container detail-layout">
     <div class="detail-content">
@@ -50,6 +51,20 @@
             <h2 id="before-heading">Why these details are disabled</h2>
             <p>{{ $item['decision_note'] }}</p>
         </section>
+
+        <section class="detail-section" aria-labelledby="location-heading">
+            <p class="eyebrow ink">Location & getting there</p><h2 id="location-heading">A place for verified directions</h2>
+            <div class="location-placeholder"><span aria-hidden="true">⌖</span><strong>{{ $item['area'] }} · Sample area label</strong><p>No verified address, coordinates, meeting point or map is attached.</p></div>
+            <p>Directions, transport context and accessibility must be checked before release. No external map or location tracking is loaded in this preview.</p>
+        </section>
+        <section class="detail-section detail-faq" aria-labelledby="faq-heading">
+            <p class="eyebrow ink">Before you decide</p><h2 id="faq-heading">Frequently asked questions</h2>
+            <details><summary>Can I book this sample?</summary><p>No. This is a fictional layout record. The referral control stays disabled until a real offer and approved partner link are verified.</p></details>
+            <details><summary>Where are the prices and availability?</summary><p>They are withheld. No live price, schedule, inventory, discount or review is attached to this sample.</p></details>
+            <details><summary>Who would handle a future booking?</summary><p>A clearly identified external partner would handle checkout, confirmation and support under its terms. BookOrGo has no active checkout in this preview.</p></details>
+            <details><summary>Are these photographs of the experience?</summary><p>No. The gallery contains original vector illustrations used for layout review, not venue photographs or evidence of a real experience.</p></details>
+        </section>
+        <section class="detail-section detail-disclosure"><h2>Referral & content disclosure</h2><p>No affiliate link is active here. Real source-backed information, media permissions and partner disclosures must pass review before publication. <a href="{{ route('information', 'disclosure') }}">Read the disclosure preview</a>.</p></section>
     </div>
 
     <aside class="detail-action" aria-labelledby="action-heading">

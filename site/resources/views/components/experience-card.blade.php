@@ -2,11 +2,11 @@
 <article class="experience-card">
     <div class="experience-art card-{{ $item['motif'] }}" aria-hidden="true">
         <span class="sample-ribbon">Sample layout</span>
-        <span class="art-orbit"></span><span class="art-shape"></span><span class="art-line"></span>
+        <x-scene :motif="$item['motif']" />
     </div>
     <div class="experience-copy">
         <div class="card-kicker"><span>{{ $categories[$item['category']]['name'] }}</span><span>Fictional sample</span></div>
-        <h2>{{ $item['title'] }}</h2>
+        <h2><a href="{{ route('experience.detail', ['category' => $item['category'], 'location' => $item['location_slug'], 'experience' => $item['id']]) }}">{{ $item['title'] }}</a></h2>
         <ul class="attribute-list" aria-label="Sample filter attributes">
             <li>{{ $item['area'] }}</li>
             <li>{{ $durations[$item['duration']] }}</li>

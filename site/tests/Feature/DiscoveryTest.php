@@ -7,6 +7,47 @@ use Tests\TestCase;
 
 final class DiscoveryTest extends TestCase
 {
+    public function test_reference_homepage_modules_are_original_uae_only_and_non_commercial(): void
+    {
+        $response = $this->get('/');
+        $response->assertOk()->assertSee('Where do you want to go?')->assertSee('Ideas worth exploring')
+            ->assertSee('Newsletter preview only.')->assertSee('Subscriptions are not open.')
+            ->assertDontSee('London')->assertDontSee('Register')->assertDontSee('Sign in');
+        $this->assertSame(6, substr_count($response->getContent(), 'class="destination-card"'));
+        $this->assertSame(4, substr_count($response->getContent(), 'class="featured-card"'));
+        $this->assertSame(3, substr_count($response->getContent(), 'class="home-guide"'));
+        $response->assertSee('area=Dubai', false)->assertSee('Original UAE-inspired illustration');
+    }
+
+    public function test_gallery_location_faq_and_referral_disclosure_do_not_fabricate_facts(): void
+    {
+        $response = $this->get('/activities/dubai/sample-desert-morning');
+        $response->assertOk()->assertSee('not venue photographs')->assertSee('No venue photos supplied')
+            ->assertSee('No verified address')->assertSee('Frequently asked questions')
+            ->assertSee('No affiliate link is active here.')->assertDontSee('maps.googleapis.com', false)
+            ->assertDontSee('application/ld+json', false);
+        $this->assertSame(4, substr_count($response->getContent(), 'class="gallery-tile"'));
+        $this->assertSame(6, substr_count($response->getContent(), 'Not supplied in this preview'));
+    }
+
+    public function test_footer_information_routes_are_honest_noindex_drafts(): void
+    {
+        foreach (['about', 'contact', 'disclosure', 'privacy', 'terms'] as $page) {
+            $response = $this->get('/'.$page);
+            $response->assertOk()->assertSee('Draft information.')->assertHeader('X-Robots-Tag', 'noindex, nofollow');
+            $this->assertSame(1, substr_count($response->getContent(), '<h1'));
+        }
+        $this->get('/contact')->assertSee('No contact form is active');
+        $this->get('/privacy')->assertSee('not a finalized legal policy');
+    }
+
+    public function test_listing_top_search_and_external_sort_form_preserve_supported_filters(): void
+    {
+        $response = $this->get('/search?q=boat&sort=title-desc');
+        $response->assertOk()->assertSee('class="listing-search"', false)
+            ->assertSee('form="catalogue-filter-form"', false)->assertSee('Apply sort')
+            ->assertSee('value="boat"', false)->assertDontSee('Lowest price');
+    }
     public function test_home_is_server_rendered_without_database_or_live_offers(): void
     {
         config(['database.default' => 'mysql', 'database.connections.mysql.host' => 'unreachable.invalid']);

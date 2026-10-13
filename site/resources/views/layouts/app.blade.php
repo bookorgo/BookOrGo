@@ -41,7 +41,7 @@
         <div class="container footer-grid">
             <div><a class="wordmark" href="{{ route('home') }}">Book<span>Or</span>Go<span class="brand-dot">.</span></a><p>Room for your next UAE adventure.</p><p class="muted">A fresh start. Thoughtfully built, one step at a time.</p></div>
             <nav aria-label="Explore categories"><h2>Explore</h2>@foreach($categories as $key => $item)<a href="{{ route('category', $key) }}">{{ $item['name'] }}</a>@endforeach</nav>
-            <div><h2>About this preview</h2><p>Category discovery is available. Products, prices, availability and booking services are not published.</p><a class="text-link light" href="{{ route('journal') }}">Visit the travel journal <span aria-hidden="true">→</span></a></div>
+            <nav aria-label="Information and policies"><h2>BookOrGo</h2><a href="{{ route('information', 'about') }}">About</a><a href="{{ route('information', 'contact') }}">Contact</a><a href="{{ route('information', 'disclosure') }}">Affiliate disclosure</a><a href="{{ route('information', 'privacy') }}">Privacy draft</a><a href="{{ route('information', 'terms') }}">Terms draft</a><a href="{{ route('journal') }}">Travel journal</a><p>No live offers. Future checkout is with an external partner.</p></nav>
         </div>
         <div class="container footer-bottom"><span>© {{ date('Y') }} BookOrGo</span><span>Dubai & the United Arab Emirates</span></div>
     </footer>

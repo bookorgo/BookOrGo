@@ -21,6 +21,10 @@ try {
         assert.equal(await page.locator('h1').count(), 1);
         assert.equal(await page.locator('.site-header').evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(6, 43, 111)');
         assert.equal(await page.locator('.hero .search-form').evaluate(el => getComputedStyle(el).borderTopColor), 'rgb(255, 196, 0)');
+        assert.equal(await page.locator('.destination-card').count(), 6);
+        assert.equal(await page.locator('.featured-card').count(), 4);
+        assert.equal(await page.locator('.home-guide').count(), 3);
+        assert.ok(await page.locator('#newsletter-preview').isDisabled());
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
         await page.screenshot({ path: new URL(`homepage-${width}.png`, output).pathname, fullPage: true });
 
@@ -58,6 +62,11 @@ try {
         assert.ok(await page.getByRole('button', { name: /Check verified/ }).isDisabled());
         assert.equal(await page.locator('h1').count(), 1);
         assert.equal(await page.locator('.field-grid > div').count(), 6);
+        assert.equal(await page.locator('.gallery-tile').count(), 4);
+        assert.equal(await page.locator('.detail-faq details').count(), 4);
+        await page.locator('.detail-faq summary').first().focus();
+        await page.keyboard.press('Enter');
+        assert.ok(await page.getByText('The referral control stays disabled', { exact: false }).isVisible());
         assert.ok(await page.locator('.detail-heading').evaluate(el => el.getBoundingClientRect().bottom) <= await page.locator('.detail-art').evaluate(el => el.getBoundingClientRect().top));
         assert.ok(await page.locator('.related-grid article').count() === 2);
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
@@ -110,6 +119,11 @@ try {
     assert.ok(await interactivePage.getByText('Page 2 of 3').isVisible());
     assert.equal(await interactivePage.locator('.experience-card').count(), 6);
     checks.push({ filteredNavigation: 'pass', loadingState: 'pass', pagination: 'pass' });
+    await interactivePage.getByLabel('Sort by').selectOption('title-desc');
+    await interactivePage.getByRole('button', { name: 'Apply sort', exact: true }).click();
+    assert.equal(new URL(interactivePage.url()).searchParams.get('sort'), 'title-desc');
+    assert.equal(new URL(interactivePage.url()).searchParams.get('q'), 'sample');
+    checks.push({ externalFormSort: 'pass', filtersPreserved: 'pass' });
     await interaction.close();
 
     const noJs = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 900 } });
@@ -127,6 +141,9 @@ try {
     await noJsPage.getByLabel('What would you like to explore?').fill('xyz-no-match');
     await noJsPage.getByRole('button', { name: 'Explore' }).click();
     assert.ok(await noJsPage.getByRole('heading', { name: 'No sample cards match' }).isVisible());
+    await noJsPage.goto('http://127.0.0.1:8000/activities/dubai/sample-desert-morning');
+    await noJsPage.locator('.detail-faq summary').first().click();
+    assert.ok(await noJsPage.getByText('The referral control stays disabled', { exact: false }).isVisible());
     await noJsPage.goto('http://127.0.0.1:8000/blog/sample-first-visit-planning');
     assert.ok(await noJsPage.getByRole('navigation', { name: 'On this page' }).isVisible());
     await noJsPage.getByRole('link', { name: 'Start with the purpose of the trip' }).click();

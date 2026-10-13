@@ -7,6 +7,7 @@
     $activeCount = collect($filters)->except(['sort'])->filter(fn ($value) => $value !== '')->count();
 @endphp
 <section class="container page-intro listing-intro">
+    <div class="listing-search"><x-search-form :value="$filters['q']" /></div>
     <a class="breadcrumb" href="{{ route('home') }}">Home</a>
     @if($fixedCategory)<span aria-hidden="true"> / </span><span>{{ $category['name'] }}</span>@endif
     <p class="eyebrow ink">{{ $fixedCategory ? $category['eyebrow'] : 'A transparent first catalogue' }}</p>
@@ -19,7 +20,7 @@
     <aside class="filters-column">
         <details class="listing-filters" open>
             <summary>Filters @if($activeCount)<span>{{ $activeCount }} active</span>@endif</summary>
-            <form method="get" action="{{ $action }}" data-listing-form>
+            <form id="catalogue-filter-form" method="get" action="{{ $action }}" data-listing-form>
                 <div class="filter-field">
                     <label for="catalogue-query">Search samples</label>
                     <input id="catalogue-query" name="q" type="search" maxlength="120" value="{{ $filters['q'] }}" placeholder="Try boat, city or visa">
@@ -53,14 +54,6 @@
                     <label><input type="radio" name="family" value="yes" @checked($filters['family'] === 'yes')> Sample yes</label>
                     <label><input type="radio" name="family" value="no" @checked($filters['family'] === 'no')> Sample no</label>
                 </fieldset>
-                <div class="filter-field">
-                    <label for="catalogue-sort">Sort by</label>
-                    <select id="catalogue-sort" name="sort">
-                        <option value="recommended" @selected($filters['sort'] === 'recommended')>Curated sample order</option>
-                        <option value="title-asc" @selected($filters['sort'] === 'title-asc')>Title A–Z</option>
-                        <option value="title-desc" @selected($filters['sort'] === 'title-desc')>Title Z–A</option>
-                    </select>
-                </div>
                 <button class="button filter-button" type="submit">Apply filters <span aria-hidden="true">→</span></button>
                 <a class="reset-link" href="{{ $action }}">Reset all filters</a>
             </form>
@@ -70,7 +63,7 @@
     <div class="results-column" id="catalogue-results" aria-live="polite">
         <div class="results-toolbar">
             <div><p class="eyebrow ink">Sample results</p><h2 id="results-heading">{{ $total }} {{ $total === 1 ? 'fictional card' : 'fictional cards' }}</h2></div>
-            <p>Page {{ $page }} of {{ $lastPage }}</p>
+            <div class="result-sort"><label for="catalogue-sort">Sort by</label><select id="catalogue-sort" name="sort" form="catalogue-filter-form"><option value="recommended" @selected($filters['sort'] === 'recommended')>Curated sample order</option><option value="title-asc" @selected($filters['sort'] === 'title-asc')>Title A–Z</option><option value="title-desc" @selected($filters['sort'] === 'title-desc')>Title Z–A</option></select><button type="submit" form="catalogue-filter-form">Apply sort</button><p>Page {{ $page }} of {{ $lastPage }}</p></div>
         </div>
         <p class="loading-status" data-loading-status hidden>Updating sample results…</p>
 
