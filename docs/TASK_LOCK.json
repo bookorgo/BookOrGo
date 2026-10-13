@@ -1,12 +1,9 @@
 {
-  "task": "P1-04",
-  "owner": "bookorgo-p1-04-20261013T1202Z",
-  "status": "released",
-  "acquired_at": "2026-10-13T12:02:00Z",
-  "expires_at": "2026-10-13T14:02:00Z",
-  "base_revision": "5e58309824da60d8c17fbbce40dc0d7b36f61e9f",
-  "expected_live_revision": "38c14eddb86c76f909354629e1f4bd4fcd730f12",
-  "released_at": "2026-10-13T12:15:00Z",
-  "completion_revision": "8ad99e9e776aa13d3396c131f445b508e1d015a5",
-  "result": "PASS_CI_ARTICLE_SLICE"
+  "task": "P1-DESIGN-01",
+  "owner": "bookorgo-design-20261013T1305Z",
+  "status": "active",
+  "acquired_at": "2026-10-13T13:05:00Z",
+  "expires_at": "2026-10-13T15:05:00Z",
+  "base_revision": "1ba6ecdccab6c186bc620d5de3b20332250bec85",
+  "expected_live_revision": "38c14eddb86c76f909354629e1f4bd4fcd730f12"
 }
