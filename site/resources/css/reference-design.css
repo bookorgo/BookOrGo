@@ -1,0 +1,53 @@
+/* Owner reference alignment. Original artwork and truthful draft states remain. */
+html body{--navy:#062b6f;--blue:#006ce4;--yellow:#ffc400;--muted:#586b85;--line:#dce5f1;color:#102440}
+body .container{width:min(1120px,calc(100% - 64px))}
+body .header-top{min-height:76px;border-bottom:0}
+body .wordmark{font-size:30px;letter-spacing:-1.6px}
+body .wordmark>span:not(.brand-dot){color:inherit}
+body .desktop-nav{min-height:48px;gap:32px;font-size:13px}
+body .desktop-nav a{padding-block:14px}
+body .hero{background:linear-gradient(110deg,#062b6f,#0c4fab 78%,#0864c7);min-height:420px;overflow:visible}
+body .hero-content{padding-block:52px 30px}
+body .hero h1{max-width:690px;font-size:clamp(2.4rem,4.2vw,3.6rem)}
+body .hero-description{font-size:15px;margin-top:20px}
+body .hero-art{inset:20px 3% 30px 62%;border-radius:50% 50% 18% 18%;opacity:.85;background:linear-gradient(#75c9ef77,#ffffff11);border:1px solid #b7ddff66}
+body .hero-sun{width:170px;height:170px;right:16%;top:20px}
+body .tower-one{right:48%;bottom:0;height:260px}
+body .tower-two{right:25%;bottom:0;height:170px}
+body .tower-three{right:6%;bottom:0;height:120px}
+body .hero .search-form{position:relative;width:100%;margin-top:35px;padding:3px;gap:0;border:3px solid var(--yellow);border-radius:8px;box-shadow:0 12px 24px #051c4629}
+body .hero .search-field{padding:10px 18px}
+body .hero .search-form button{background:var(--blue);color:white;border-radius:3px;min-width:150px}
+body .eyebrow.ink{color:#0062d6}
+body .section{padding-block:54px}
+body .section-heading h2{font-size:28px}
+body .category-grid{gap:18px}
+body .category-card{border-radius:10px;border-color:#dce5f1;box-shadow:0 3px 12px #062b6f08}
+body .category-art{height:190px}
+body .card-copy{padding:20px}
+body .card-copy h3{font-size:21px}
+body .card-action,body .detail-link{color:#0062d6}
+body .journal-banner{background:#edf4ff;border-radius:12px}
+body .listing-intro{padding-block:24px 22px}
+body .listing-intro h1{font-size:30px}
+body .listing-intro .eyebrow{margin-top:18px;margin-bottom:8px}
+body .listing-intro .lead{font-size:13px;max-width:760px}
+body .listing-shell{grid-template-columns:240px minmax(0,1fr);gap:26px}
+body .listing-filters{border-radius:7px;background:white}
+body .experience-card{grid-template-columns:190px minmax(0,1fr);border-radius:8px;box-shadow:none}
+body .experience-art{min-height:210px}
+body .experience-copy{padding:18px 20px}
+body .experience-copy h2{font-size:20px}
+body .attribute-list li{border-radius:4px;background:#edf4ff}
+body .detail-hero{grid-template-columns:1fr;gap:22px;padding-block:24px 30px}
+body .detail-heading{grid-row:1}
+body .detail-heading h1{font-size:clamp(1.8rem,3vw,2.6rem)}
+body .detail-heading .eyebrow{margin-bottom:8px}
+body .detail-heading .attribute-list{margin-block:12px}
+body .detail-art{min-height:360px;border-radius:8px;background:linear-gradient(115deg,#bddcec,#deeafa)}
+body .detail-layout{grid-template-columns:minmax(0,1fr) 310px;gap:34px}
+body .detail-section{border-radius:8px;padding:26px}
+body .detail-action{background:#f6f9ff;border-radius:8px;border-color:#9ebde7}
+body .detail-action h2{font-size:23px}
+@media(max-width:900px){body .desktop-nav{gap:23px}body .hero-art{inset-inline-start:64%;inset-inline-end:3%}body .hero h1{max-width:520px}body .listing-shell{grid-template-columns:210px minmax(0,1fr);gap:20px}body .experience-card{grid-template-columns:150px minmax(0,1fr)}}
+@media(max-width:720px){body .container{width:calc(100% - 36px)}body .header-top{min-height:68px}body .hero{min-height:auto}body .hero-content{padding-block:36px 28px}body .hero h1{max-width:100%;font-size:clamp(2.1rem,9vw,3rem)}body .hero-art{display:none}body .hero .search-form{margin-top:25px;flex-direction:column}body .hero .search-field{padding:12px}body .hero .search-form button{min-width:0;width:100%}body .section{padding-block:38px}body .section-heading h2{font-size:25px}body .category-art{height:160px}body .category-grid{gap:16px}body .listing-shell{display:block}body .experience-card{grid-template-columns:1fr}body .experience-art{min-height:180px}body .listing-intro h1{font-size:27px}body .detail-art{min-height:260px;margin-bottom:0}body .detail-layout{display:block}body .detail-section{padding:21px}body .detail-action{position:static}body .journal-banner{padding:26px}}

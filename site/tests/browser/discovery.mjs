@@ -19,6 +19,8 @@ try {
         assert.equal(response.headers()['x-robots-tag'], 'noindex, nofollow');
         await page.locator('h1').waitFor();
         assert.equal(await page.locator('h1').count(), 1);
+        assert.equal(await page.locator('.site-header').evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(6, 43, 111)');
+        assert.equal(await page.locator('.hero .search-form').evaluate(el => getComputedStyle(el).borderTopColor), 'rgb(255, 196, 0)');
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
         await page.screenshot({ path: new URL(`homepage-${width}.png`, output).pathname, fullPage: true });
 
@@ -56,6 +58,7 @@ try {
         assert.ok(await page.getByRole('button', { name: /Check verified/ }).isDisabled());
         assert.equal(await page.locator('h1').count(), 1);
         assert.equal(await page.locator('.field-grid > div').count(), 6);
+        assert.ok(await page.locator('.detail-heading').evaluate(el => el.getBoundingClientRect().bottom) <= await page.locator('.detail-art').evaluate(el => el.getBoundingClientRect().top));
         assert.ok(await page.locator('.related-grid article').count() === 2);
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
         if (width === 1440 || width === 390) {
