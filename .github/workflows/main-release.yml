@@ -25,7 +25,7 @@ jobs:
       SSH_HOST: 45.137.159.248
       SSH_PORT: '65002'
       SSH_USER: u809119518
-      EXPECTED_PREVIOUS_REVISION: 953665b8db816d7580d025e67fe7d39771078ed8
+      EXPECTED_PREVIOUS_REVISION: 38c14eddb86c76f909354629e1f4bd4fcd730f12
     steps:
       - name: Checkout frozen revision
         uses: actions/checkout@v4
@@ -115,7 +115,7 @@ jobs:
           inventory="$(find "$docroot" -mindepth 1 -maxdepth 1 -printf '%f:%y\n' | LC_ALL=C sort)"
           expected_inventory="$(printf '%s\n' '.htaccess:f' 'build:d' 'default.php:f' 'index.php:f')"
           if [ "$inventory" != "$expected_inventory" ]; then
-            echo 'ABORT: production document root no longer matches the verified P1-02 baseline' >&2
+            echo 'ABORT: production document root no longer matches the verified P1-03 baseline' >&2
             printf '%s\n' "$inventory" >&2
             exit 20
           fi
@@ -127,7 +127,7 @@ jobs:
           available_kb="$(df -Pk "$root" | awk 'NR==2 {print $4}')"
           required_kb="$(( (package_bytes * 4 + 1023) / 1024 ))"
           test "$available_kb" -gt "$required_kb"
-          printf 'status=PASS\nrevision=%s\nprevious_revision=%s\nexisting=P1-02 exact public baseline\npackage_bytes=%s\navailable_kb=%s\n' "$revision" "$expected_previous" "$package_bytes" "$available_kb"
+          printf 'status=PASS\nrevision=%s\nprevious_revision=%s\nexisting=P1-03 exact public baseline\npackage_bytes=%s\navailable_kb=%s\n' "$revision" "$expected_previous" "$package_bytes" "$available_kb"
           REMOTE
 
       - name: Upload release archive outside web root
@@ -305,6 +305,7 @@ jobs:
           mv "$restore/index.php" "$docroot/index.php"
           mv "$restore/.htaccess" "$docroot/.htaccess"
           mv "$restore/build" "$docroot/build"
+          mv "$restore/default.php" "$failed/restored-default-copy.php"
           rmdir "$restore"
           printf '%s\n' "$previous" > "$shared/current-release"
           chmod 600 "$shared/current-release"
@@ -320,7 +321,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: bookorgo-p1-03-main-release-${{ github.sha }}
+          name: bookorgo-p1-design-main-release-${{ github.sha }}
           path: |
             site/test-results/
             release-package.sha256

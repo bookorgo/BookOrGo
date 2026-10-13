@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bounded same-origin HTTP verification for the P1-03 BookOrGo release."""
+"""Bounded same-origin HTTP verification for the complete design BookOrGo release."""
 
 from __future__ import annotations
 
@@ -82,6 +82,14 @@ pages = {
     "/search?category=yachts&area=Dubai%20Marina&duration=under-2-hours&family=yes": "Marina yacht layout concept",
     "/search?q=sample&page=2": "Page 2 of 3",
     "/blog": "The travel journal",
+    "/blog/sample-first-visit-planning": "Draft template preview",
+    "/blog/sample-family-day-planning": "Draft template preview",
+    "/blog/sample-uae-weekend-planning": "Draft template preview",
+    "/about": "A new way to explore the UAE",
+    "/contact": "Contact details are being prepared",
+    "/disclosure": "Know where a booking will happen",
+    "/privacy": "Privacy notice",
+    "/terms": "Terms of use",
     "/activities/dubai/sample-desert-morning": "Activity detail template",
     "/holidays/dubai/sample-city-break": "Holiday detail template",
     "/visas/uae-wide/sample-tourist-visa-guide": "Visa information template",
@@ -121,6 +129,17 @@ for path, marker in pages.items():
         failures.append(f"{path}: missing HTTP noindex")
     if marker not in text:
         failures.append(f"{path}: expected page marker missing")
+    if path == "/":
+        if text.count('class="destination-card"') != 6 or text.count('class="featured-card"') != 4:
+            failures.append("homepage: reference discovery modules missing")
+        if "Subscriptions are not open." not in text:
+            failures.append("homepage: inactive newsletter disclosure missing")
+    if path.startswith("/blog/"):
+        for article_marker in ["No factual sources attached", "Inactive preview — no ad loaded", "Not published"]:
+            if article_marker not in text:
+                failures.append(f"{path}: missing editorial gate {article_marker}")
+        if 'application/ld+json' in text:
+            failures.append(f"{path}: draft unexpectedly has structured data")
     if path in detail_paths:
         if "Layout demonstration only." not in text:
             failures.append(f"{path}: missing detail sample disclosure")
@@ -128,6 +147,8 @@ for path, marker in pages.items():
             failures.append(f"{path}: expected six withheld source fields")
         if "No live option yet" not in text or 'disabled aria-disabled="true"' not in text:
             failures.append(f"{path}: missing honest disabled referral state")
+        if text.count('class="gallery-tile"') != 4 or "Frequently asked questions" not in text:
+            failures.append(f"{path}: gallery or FAQ missing")
     elif path.startswith(("/activities", "/holidays", "/visas", "/cruises", "/yachts", "/events", "/search")):
         if "Demonstration data only." not in text:
             failures.append(f"{path}: missing fictional sample disclosure")
@@ -167,7 +188,7 @@ for item in manifest.values():
         failures.append(f"{asset}: unexpected JavaScript MIME {content_type}")
 
 report = {
-    "task": "P1-03-main-release",
+    "task": "P1-DESIGN-02-03-main-release",
     "checked_at": datetime.now(timezone.utc).isoformat(),
     "origin": ORIGIN,
     "checks": checks,

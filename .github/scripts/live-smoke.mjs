@@ -18,6 +18,11 @@ try {
         assert.equal(response.status(), 200);
         assert.equal(response.headers()['x-robots-tag'], 'noindex, nofollow');
         assert.equal(await page.locator('h1').count(), 1);
+        assert.equal(await page.locator('.destination-card').count(), 6);
+        assert.equal(await page.locator('.featured-card').count(), 4);
+        assert.equal(await page.locator('.home-guide').count(), 3);
+        assert.ok(await page.locator('#newsletter-preview').isDisabled());
+        assert.equal(await page.locator('.site-header').evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(6, 43, 111)');
         assert.ok(await page.getByText('Development preview', { exact: true }).isVisible());
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
         if (width === 390) {
@@ -54,14 +59,28 @@ try {
         assert.ok(await page.getByText('Layout demonstration only.').isVisible());
         assert.ok(await page.getByRole('button', { name: /Check verified cruise options/ }).isDisabled());
         assert.equal(await page.locator('.field-grid > div').count(), 6);
+        assert.equal(await page.locator('.gallery-tile').count(), 4);
+        await page.locator('.detail-faq summary').first().focus();
+        await page.keyboard.press('Enter');
+        assert.ok(await page.getByText('The referral control stays disabled', { exact: false }).isVisible());
         assert.equal(await page.locator('.related-grid article').count(), 2);
         assert.equal(await page.locator('h1').count(), 1);
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+        await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
         await page.screenshot({ path: new URL(`live-detail-${width}.png`, output).pathname, fullPage: true });
+
+        await page.goto(origin + '/blog');
+        assert.equal(await page.locator('.article-card').count(), 3);
+        await page.getByRole('link', { name: 'Open article template' }).first().click();
+        assert.ok(await page.getByText('No factual sources attached').isVisible());
+        assert.ok(await page.getByText('Inactive preview — no ad loaded').isVisible());
+        assert.equal(await page.locator('.article-section').count(), 3);
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+        await page.screenshot({ path: new URL(`live-article-${width}.png`, output).pathname, fullPage: true });
 
         await page.goto(origin + '/');
         await page.screenshot({ path: new URL(`live-homepage-${width}.png`, output).pathname, fullPage: true });
-        checks.push({ viewport: width, homepage: 'pass', listing: 'pass', detail: 'pass', filters: 'pass', overflow: 'pass', menu: width === 390 ? 'pass' : 'not applicable' });
+        checks.push({ viewport: width, homepage: 'pass', listing: 'pass', detail: 'pass', gallery: 'pass', faq: 'pass', article: 'pass', filters: 'pass', overflow: 'pass', menu: width === 390 ? 'pass' : 'not applicable' });
         await context.close();
     }
 
@@ -85,6 +104,11 @@ try {
     assert.ok(await page.getByText('Page 2 of 3').isVisible());
     assert.equal(await page.locator('.experience-card').count(), 6);
     checks.push({ filteredNavigation: 'pass', pagination: 'pass' });
+    await page.getByLabel('Sort by').selectOption('title-desc');
+    await page.getByRole('button', { name: 'Apply sort', exact: true }).click();
+    assert.equal(new URL(page.url()).searchParams.get('sort'), 'title-desc');
+    assert.equal(new URL(page.url()).searchParams.get('q'), 'sample');
+    checks.push({ sorting: 'pass', queryPreserved: 'pass' });
     await interaction.close();
     assert.deepEqual(errors, []);
     await fs.writeFile(new URL('live-browser.json', output), JSON.stringify({ checks, pageErrors: errors }, null, 2));
