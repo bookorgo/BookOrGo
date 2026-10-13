@@ -1,5 +1,8 @@
 # Owner design alignment — 13 October 2026
 
+## Completed implementation and release
+The owner then explicitly requested completion and live deployment. P1-DESIGN-02/03 and the draft P1-04 article package are verified live at `14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b`. See P1_DESIGN_RELEASE.md. Homepage discovery/featured/category/guide modules, listing top search/sort and detail multi-panel gallery/location/FAQ/referral disclosure are implemented. This completes the reference-led layout package, not real catalogue sourcing, final legal policies, monetization or full P1 acceptance. The initial alignment notes below are historical.
+
 Task P1-DESIGN-01. Owner reconfirmed the three homepage, listing and detail PDF references and requested immediate design correction. This takes priority over the pending article-only release.
 
 References are private; do not upload their PDFs or extracted imagery to the public repository. Existing product/data/security requirements remain controlling.

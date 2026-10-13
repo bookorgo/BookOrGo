@@ -1,18 +1,18 @@
 # Current execution plan
 
 ## Latest owner design correction — 13 October 2026
-Owner requested the three supplied homepage/listing/detail reference designs now. See OWNER_DESIGN_ALIGNMENT.md. P1-DESIGN-01 initial shell/layout alignment is CI-verified at `414ff50f965165f838fec0b9db1d1f08f9cb047e`, run 38402443842. This is not full reference-design completion or a live release. Prioritize P1-DESIGN-02 homepage destination/featured-sample modules and P1-DESIGN-03 responsive detail gallery/logistics/FAQ before the combined guarded main release. Preserve URL/data/security/noindex requirements and do not import reference media, reviews or prices. The prior article-only release order below is superseded by this design correction.
+Owner requested completion of the three reference-led designs and live deployment. P1-DESIGN-02/03 are implemented and verified live at `14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b`; run 38405846968 attempt 2 passed. The combined release also deployed P1-04 draft journal/articles and five honest information/policy placeholders. See P1_DESIGN_RELEASE.md. All samples stay labelled/noindex; original vector placeholders are not venue photographs. No real offer, price, review, newsletter collection, account, ad or partner action is active. Next: P1-05 broader accessibility/performance/cross-browser QA and owner visual review, then independent P2 data/CMS work when applicable access is ready. Earlier next-package wording below is historical.
 
 ## Controlling latest owner decision — OWNER-20261012-MAIN
 See OWNER_MAIN_ONLY.md. The owner explicitly reconfirmed main-only incremental development and rejected temporary Hostinger database/staging prerequisites. Begin independent P1 Laravel implementation now; do not run destructive smoke tests against the main database. CI testing remains required, backups/rollback remain required for live changes, and unperformed host checks remain unverified. The older P0-before-P1 stop wording below is historical and superseded for independent feature work.
 
-Updated: 12 October 2026, Asia/Karachi.
+Updated: 13 October 2026, Asia/Karachi.
 Repository: bookorgo/BookOrGo. Fresh application, not an import from the previous prototype.
 Controlling owner decisions: GitHub + Hostinger Premium; main environment requested, no separate staging requested; preserve ALL existing Sites/files. No deletion or overwriting existing application files. Prepare fresh app outside existing document root until a reviewed release/cutover.
 Follow PHASE_ROADMAP.md. Private original Master Requirements V3.1, Playbook V4.1, kickoff and approved reference PDFs remain the authority. Retrieve them from owner Library; never publish full internal documents to this public repository.
 
 ## Current status
-P0 operational checks remain open. P1-01 homepage/navigation, P1-02 listing/filter/state and P1-03 category-aware detail packages are verified live on the main Hostinger site under OWNER-20261012-MAIN. P1-04 journal/article templates are CI-verified and awaiting a guarded main release. The current live release is `38c14eddb86c76f909354629e1f4bd4fcd730f12`; P1 remains in progress. P2-P5 not started; P6-P7 deferred.
+P0 operational checks remain open where relevant. P1-01 through P1-04 and the owner's completed reference-led homepage/listing/detail layout correction are verified live on main Hostinger at `14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b`. 18 tests / 393 assertions, 34 live HTTP/security/asset checks and desktop/mobile browser verification passed. Full P1 acceptance remains open pending wider QA and owner review. P2-P5 not started; P6-P7 deferred.
 Completed bounded package P0-L02a: GitHub Actions SSH, CLI PHP and tooling inventory.
 Evidence: https://github.com/bookorgo/BookOrGo/actions/runs/38169812198
 Tested code revision: abbc16c6e34b1d7cb75555529065f13948053f25

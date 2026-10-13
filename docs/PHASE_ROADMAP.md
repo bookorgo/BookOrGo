@@ -23,7 +23,8 @@ Exit: compatibility, protected checks and rollback evidence pass.
 - P1-01 status: homepage/navigation/search foundation is verified live at revision `6e091e2502f0547c0d5213da1ae2b11a25915dc8`; draft/noindex protection remains. P1 is not complete.
 - P1-02 status: listing/filter/sort/pagination and empty/error/loading states are verified live at release revision `953665b8db816d7580d025e67fe7d39771078ed8`; all fictional samples remain labelled and noindex.
 - P1-03 status: category-aware detail templates are verified live at release revision `38c14eddb86c76f909354629e1f4bd4fcd730f12`; required values remain withheld and actions disabled.
-- P1-04 status: journal hub and draft article template are CI-verified at revision `8ad99e9e776aa13d3396c131f445b508e1d015a5`; guarded main release remains next.
+- P1-04 status: journal hub and draft article template are verified live in combined design release `14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b` (run 38405846968 attempt 2).
+- P1-DESIGN-02/03 status: reference-led homepage discovery modules, top listing search/sort, original media/gallery, location/FAQ/referral hierarchy and footer information routes are verified live. Real sourced content, rights-verified media, final legal policies and P1-05 owner/wider QA acceptance remain.
 - Homepage hero/search and discoverable Activities, Holidays, Visas, Cruises, Yachts, Events.
 - Listing/search filters, sort, pagination, query state and empty/error states.
 - Category-aware detail pages: gallery, sourced information fields, FAQs, related content and honest CTA states.
@@ -31,7 +32,7 @@ Exit: compatibility, protected checks and rollback evidence pass.
 - Mobile/desktop, keyboard/accessibility, Blade-delivered metadata and stable URL checks.
 Exit: representative screenshots/interactions accepted; labelled noindex samples, feature and browser checks evidenced.
 
-Next bounded package: P1-04 guarded main release with exact P1-03 baseline verification, backup/restore comparison and live journal/article checks. Keep every sample labelled and noindex.
+Next bounded package: P1-05 broader accessibility/performance/cross-browser QA and owner review. Keep every sample labelled and noindex; do not activate commercial or indexing features from design completion alone.
 
 ## P2 — Data architecture and editorial CMS
 - Product, Variant, Offer, Partner, Location, Article and SourceEvidence boundaries.
@@ -65,5 +66,5 @@ Separate authorization and legal/commercial/technical feasibility before booking
 Prove Dubai model first; authorize each country's supplier, legal, language/currency and support readiness separately.
 
 ## Next bounded package
-Latest owner override, 13 October: complete the reference-design correction first. P1-DESIGN-01 shared shell/search/listing density/detail hierarchy passed CI; P1-DESIGN-02 homepage modules and P1-DESIGN-03 detail gallery/logistics/FAQ remain. Then guarded combined main release and P1-05 broader QA. See OWNER_DESIGN_ALIGNMENT.md. Earlier next-package wording below is historical.
+Latest owner override, 13 October: reference-design implementation and combined guarded release completed at `14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b`. P1-05 broader QA/owner review is next. See P1_DESIGN_RELEASE.md. Earlier next-package wording below is historical.
 P1-04 is CI-verified at `8ad99e9e776aa13d3396c131f445b508e1d015a5` in run 38395407380; see P1_ARTICLE.md. Prepare its guarded main release next, then complete wider P1 visual/accessibility QA and owner review. P1 is not complete; real sourced content, CMS, indexability, ads/affiliate activation and broader QA remain.

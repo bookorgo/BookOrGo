@@ -1,9 +1,13 @@
 {
   "task": "P1-DESIGN-02-03-main-release",
   "owner": "bookorgo-design-complete-20261013T1314Z",
-  "status": "active",
+  "status": "released",
   "acquired_at": "2026-10-13T13:14:00Z",
   "expires_at": "2026-10-13T15:14:00Z",
   "base_revision": "17fafbb8ab59c8d18276e61fcc9185df2ada5d8c",
-  "expected_live_revision": "38c14eddb86c76f909354629e1f4bd4fcd730f12"
+  "expected_live_revision": "38c14eddb86c76f909354629e1f4bd4fcd730f12",
+  "released_at": "2026-10-13T13:42:00Z",
+  "completion_revision": "14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b",
+  "result": "PASS_LIVE_MAIN_DESIGN",
+  "next_task": "P1-05"
 }

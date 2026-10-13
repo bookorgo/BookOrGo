@@ -1,0 +1,93 @@
+{
+  "task_ids": [
+    "P1-DESIGN-02",
+    "P1-DESIGN-03",
+    "P1-04-main-release"
+  ],
+  "status": "PASS_LIVE_MAIN",
+  "revision": "14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b",
+  "application_ci_revision": "0d756a730ed1eb139641b702a1328a9552ad46ed",
+  "ci_run": 38405559898,
+  "release_run": 38405846968,
+  "release_attempt": 2,
+  "previous_live_revision": "38c14eddb86c76f909354629e1f4bd4fcd730f12",
+  "tests": {
+    "feature_tests": 18,
+    "assertions": 393,
+    "ci_viewports": [
+      1440,
+      768,
+      390,
+      320
+    ],
+    "live_viewports": [
+      1440,
+      390
+    ],
+    "live_http_checks": 34,
+    "live_http_failures": [],
+    "js_disabled_internal_links": 27,
+    "page_errors": [],
+    "backup_restore_comparison": "PASS",
+    "rollback_exercised": false
+  },
+  "artifacts": {
+    "ci": {
+      "id": 11818592057,
+      "name": "bookorgo-p1-article-0d756a730ed1eb139641b702a1328a9552ad46ed",
+      "size_in_bytes": 4127398,
+      "url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11818592057",
+      "archive_download_url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11818592057/zip",
+      "expired": false,
+      "created_at": "2026-10-13T13:31:41Z",
+      "expires_at": "2026-10-27T13:31:40Z",
+      "updated_at": "2026-10-13T13:31:41Z",
+      "digest": "sha256:b3e34f2be3002225fa93461bcacfef4c258a8a5376f54273e0cec6fb95f0eb20",
+      "workflow_run": {
+        "id": 38405559898,
+        "repository_id": 1414693210,
+        "head_repository_id": 1414693210,
+        "head_branch": "main",
+        "head_sha": "0d756a730ed1eb139641b702a1328a9552ad46ed"
+      }
+    },
+    "live": {
+      "id": 11817079419,
+      "name": "bookorgo-p1-design-main-release-14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b",
+      "size_in_bytes": 2865247,
+      "url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11817079419",
+      "archive_download_url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11817079419/zip",
+      "expired": false,
+      "created_at": "2026-10-13T13:38:04Z",
+      "expires_at": "2026-11-12T13:38:03Z",
+      "updated_at": "2026-10-13T13:38:04Z",
+      "digest": "sha256:b90d933ec9d0e5eedddfa2c51374806b990a20edfb408fbc5980b8a143176f55",
+      "workflow_run": {
+        "id": 38405846968,
+        "repository_id": 1414693210,
+        "head_repository_id": 1414693210,
+        "head_branch": "main",
+        "head_sha": "14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b"
+      }
+    }
+  },
+  "deployment": {
+    "origin": "https://bookorgo.com",
+    "status": "VERIFIED_LIVE",
+    "database_touched": false,
+    "dns_changed": false,
+    "old_site_changed": false,
+    "indexing_released": false,
+    "original_default_preserved": true,
+    "backup_basename": "20261013T133712Z-14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b",
+    "backup_sha256": "fad71d9499c0a03a11405e893019eb86ebb58113e6a5bb5383edaca8b978a6e6"
+  },
+  "limits": [
+    "Original illustrations, not rights-verified venue photographs",
+    "Fictional samples and draft articles/policies remain labelled and noindex",
+    "No real commercial actions, ads, newsletter collection, checkout or account services",
+    "Wider WCAG/performance/Firefox/Safari and owner visual acceptance remain",
+    "Attempt 1 SSH timeout before upload/activation; same supported guarded retry succeeded"
+  ],
+  "next_task": "P1-05"
+}
