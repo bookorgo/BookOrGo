@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bounded same-origin HTTP verification for the P1-02 BookOrGo release."""
+"""Bounded same-origin HTTP verification for the P1-03 BookOrGo release."""
 
 from __future__ import annotations
 
@@ -82,7 +82,15 @@ pages = {
     "/search?category=yachts&area=Dubai%20Marina&duration=under-2-hours&family=yes": "Marina yacht layout concept",
     "/search?q=sample&page=2": "Page 2 of 3",
     "/blog": "The travel journal",
+    "/activities/dubai/sample-desert-morning": "Activity detail template",
+    "/holidays/dubai/sample-city-break": "Holiday detail template",
+    "/visas/uae-wide/sample-tourist-visa-guide": "Visa information template",
+    "/cruises/dubai/sample-creek-cruise": "Cruise detail template",
+    "/yachts/dubai-marina/sample-marina-yacht": "Yacht detail template",
+    "/events/dubai/sample-family-event": "Event detail template",
 }
+
+detail_paths = {path for path in pages if path.count("/") == 3}
 
 for path, marker in pages.items():
     status, headers, body = fetch(path)
@@ -113,7 +121,14 @@ for path, marker in pages.items():
         failures.append(f"{path}: missing HTTP noindex")
     if marker not in text:
         failures.append(f"{path}: expected page marker missing")
-    if path.startswith(("/activities", "/holidays", "/visas", "/cruises", "/yachts", "/events", "/search")):
+    if path in detail_paths:
+        if "Layout demonstration only." not in text:
+            failures.append(f"{path}: missing detail sample disclosure")
+        if text.count("Not supplied in this preview") != 6:
+            failures.append(f"{path}: expected six withheld source fields")
+        if "No live option yet" not in text or 'disabled aria-disabled="true"' not in text:
+            failures.append(f"{path}: missing honest disabled referral state")
+    elif path.startswith(("/activities", "/holidays", "/visas", "/cruises", "/yachts", "/events", "/search")):
         if "Demonstration data only." not in text:
             failures.append(f"{path}: missing fictional sample disclosure")
         if "No live offer or price" not in text:
@@ -152,7 +167,7 @@ for item in manifest.values():
         failures.append(f"{asset}: unexpected JavaScript MIME {content_type}")
 
 report = {
-    "task": "P1-02-main-release",
+    "task": "P1-03-main-release",
     "checked_at": datetime.now(timezone.utc).isoformat(),
     "origin": ORIGIN,
     "checks": checks,

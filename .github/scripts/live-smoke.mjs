@@ -46,9 +46,22 @@ try {
         assert.ok(await filters.locator('form').isVisible());
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
         await page.screenshot({ path: new URL(`live-listing-${width}.png`, output).pathname, fullPage: true });
+
+        await Promise.all([
+            page.waitForURL(url => url.pathname.startsWith('/cruises/')),
+            page.getByRole('link', { name: /View sample detail/ }).first().click(),
+        ]);
+        assert.ok(await page.getByText('Layout demonstration only.').isVisible());
+        assert.ok(await page.getByRole('button', { name: /Check verified cruise options/ }).isDisabled());
+        assert.equal(await page.locator('.field-grid > div').count(), 6);
+        assert.equal(await page.locator('.related-grid article').count(), 2);
+        assert.equal(await page.locator('h1').count(), 1);
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+        await page.screenshot({ path: new URL(`live-detail-${width}.png`, output).pathname, fullPage: true });
+
         await page.goto(origin + '/');
         await page.screenshot({ path: new URL(`live-homepage-${width}.png`, output).pathname, fullPage: true });
-        checks.push({ viewport: width, homepage: 'pass', listing: 'pass', filters: 'pass', overflow: 'pass', menu: width === 390 ? 'pass' : 'not applicable' });
+        checks.push({ viewport: width, homepage: 'pass', listing: 'pass', detail: 'pass', filters: 'pass', overflow: 'pass', menu: width === 390 ? 'pass' : 'not applicable' });
         await context.close();
     }
 
