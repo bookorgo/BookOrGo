@@ -1,12 +1,12 @@
 {
-  "task": "P1-03-detail-templates",
-  "owner": "bookorgo-p1-03-20261013T0803Z",
-  "status": "released",
-  "acquired_at": "2026-10-13T08:03:00Z",
-  "expires_at": "2026-10-13T10:03:00Z",
-  "base_revision": "31688b38a6d3696a0b45c002761f751360f07967",
+  "task": "P1-03-main-release",
+  "owner": "bookorgo-p1-03-main-release-20261013T0904Z",
+  "status": "active",
+  "acquired_at": "2026-10-13T09:04:00Z",
+  "expires_at": "2026-10-13T11:04:00Z",
+  "base_revision": "7be4ac9fcf5af4c582cf88939cb7ac6d27add01b",
   "expected_live_revision": "953665b8db816d7580d025e67fe7d39771078ed8",
-  "released_at": "2026-10-13T08:20:00Z",
-  "completion_revision": "210fd669d94dbdff378fceb91fe94a17dc770865",
-  "result": "PASS_CI_DETAIL_SLICE"
+  "released_at": null,
+  "completion_revision": null,
+  "result": "IN_PROGRESS"
 }
