@@ -25,7 +25,7 @@ jobs:
       SSH_HOST: 45.137.159.248
       SSH_PORT: '65002'
       SSH_USER: u809119518
-      EXPECTED_PREVIOUS_REVISION: 38c14eddb86c76f909354629e1f4bd4fcd730f12
+      EXPECTED_PREVIOUS_REVISION: 14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b
     steps:
       - name: Checkout frozen revision
         uses: actions/checkout@v4

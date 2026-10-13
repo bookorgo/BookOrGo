@@ -71,7 +71,7 @@ checks: list[dict] = []
 failures: list[str] = []
 
 pages = {
-    "/": "Your next UAE",
+    "/": "Your next great",
     "/activities": "Activities sample catalogue",
     "/holidays": "Holidays sample catalogue",
     "/visas": "Visas sample catalogue",
@@ -147,7 +147,7 @@ for path, marker in pages.items():
             failures.append(f"{path}: expected six withheld source fields")
         if "No live option yet" not in text or 'disabled aria-disabled="true"' not in text:
             failures.append(f"{path}: missing honest disabled referral state")
-        if text.count('class="gallery-tile"') != 4 or "Frequently asked questions" not in text:
+        if text.count('class="gallery-tile"') != 6 or "Frequently asked questions" not in text:
             failures.append(f"{path}: gallery or FAQ missing")
     elif path.startswith(("/activities", "/holidays", "/visas", "/cruises", "/yachts", "/events", "/search")):
         if "Demonstration data only." not in text:

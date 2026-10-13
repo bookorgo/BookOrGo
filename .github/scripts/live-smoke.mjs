@@ -59,7 +59,7 @@ try {
         assert.ok(await page.getByText('Layout demonstration only.').isVisible());
         assert.ok(await page.getByRole('button', { name: /Check verified cruise options/ }).isDisabled());
         assert.equal(await page.locator('.field-grid > div').count(), 6);
-        assert.equal(await page.locator('.gallery-tile').count(), 4);
+        assert.equal(await page.locator('.gallery-tile').count(), 6);
         await page.locator('.detail-faq summary').first().focus();
         await page.keyboard.press('Enter');
         assert.ok(await page.getByText('The referral control stays disabled', { exact: false }).isVisible());
