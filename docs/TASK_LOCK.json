@@ -1,12 +1,12 @@
 {
   "task": "P1-03-main-release",
   "owner": "bookorgo-p1-03-main-release-20261013T0904Z",
-  "status": "active",
+  "status": "released",
   "acquired_at": "2026-10-13T09:04:00Z",
   "expires_at": "2026-10-13T11:04:00Z",
   "base_revision": "7be4ac9fcf5af4c582cf88939cb7ac6d27add01b",
   "expected_live_revision": "953665b8db816d7580d025e67fe7d39771078ed8",
-  "released_at": null,
-  "completion_revision": null,
-  "result": "IN_PROGRESS"
+  "released_at": "2026-10-13T09:15:00Z",
+  "completion_revision": "38c14eddb86c76f909354629e1f4bd4fcd730f12",
+  "result": "PASS_LIVE_MAIN"
 }

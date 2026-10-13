@@ -1,0 +1,62 @@
+{
+  "task": "P1-03-main-release",
+  "status": "PASS_LIVE_MAIN",
+  "release_revision": "38c14eddb86c76f909354629e1f4bd4fcd730f12",
+  "previous_revision": "953665b8db816d7580d025e67fe7d39771078ed8",
+  "run_url": "https://github.com/bookorgo/BookOrGo/actions/runs/38374158337",
+  "artifact": {
+    "id": 11799804034,
+    "digest": "sha256:ae1a0636a751249ecfa1a8c92e2a06fcadcbef165f392ccc44b05675517918c8",
+    "expires_at": "2026-11-12T09:09:17Z"
+  },
+  "preflight": {
+    "exact_previous_release": "PASS",
+    "public_baseline": "PASS",
+    "strict_host_key_checking": true
+  },
+  "build": {
+    "feature_tests": 11,
+    "assertions": 304,
+    "composer_locked_install": "PASS",
+    "vite_tailwind_build": "PASS",
+    "route_view_config_cache": "PASS"
+  },
+  "backup": {
+    "document_root_archive": "PASS",
+    "extracted_restore_comparison": "PASS",
+    "sha256": "6efb4775db7e386e102bd14d9e02b8bd9e3c423cfae34dc8b75e7a45a122cdb5"
+  },
+  "release_package": {
+    "bytes": 13051493,
+    "sha256": "d9d734705da5e90c355b6556b10e306fb69df44ffaee6da9eb4c6ffa23b5f3da"
+  },
+  "live_verification": {
+    "http_security_checks": 26,
+    "failures": 0,
+    "viewports": [1440, 390],
+    "homepage": "PASS",
+    "listing": "PASS",
+    "detail": "PASS",
+    "filters": "PASS",
+    "filtered_navigation": "PASS",
+    "pagination": "PASS",
+    "mobile_menu": "PASS",
+    "overflow": "PASS",
+    "page_errors": []
+  },
+  "safety": {
+    "default_php_preserved": true,
+    "database_touched": false,
+    "noindex_preserved": true,
+    "dns_changed": false,
+    "audience_changed": false,
+    "payments_ads_or_partners_changed": false,
+    "rollback_required": false
+  },
+  "limitations": [
+    "Fictional labelled samples only; no verified catalogue data, offers, prices, schedules, availability, ratings, partner links or bookings.",
+    "No database, CMS, durable media or scheduler capability was introduced or verified by this release.",
+    "Chromium live checks only; Safari, Firefox, full WCAG/performance review and owner visual acceptance remain."
+  ],
+  "next": "P1-04 reusable blog article layout and listing reuse"
+}
