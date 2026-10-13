@@ -61,6 +61,8 @@ try {
         await page.getByLabel('What would you like to explore?').fill('boat');
         await page.getByRole('button', { name: 'Explore' }).click();
         assert.equal(await page.locator('.experience-card').count(), 6);
+        assert.equal(await page.locator('.inspiration-card').count(), 3);
+        await verifyPhotos(page);
         assert.ok(await page.getByText('6 fictional cards').isVisible());
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
 

@@ -55,7 +55,16 @@
 
         @if(count($items))
             <div class="experience-list">
-                @foreach($items as $item)<x-experience-card :item="$item" :categories="$categories" :durations="$durations" />@endforeach
+                @foreach($items as $item)
+                    <x-experience-card :item="$item" :categories="$categories" :durations="$durations" />
+                    @if($loop->iteration === 5 && count($items) >= 6)
+                    <section class="listing-inspiration" aria-label="More sample inspiration"><h2>More sample inspiration</h2><p>Fictional layouts · no offers or discounts</p><div class="inspiration-grid">
+                        @foreach(array_slice($items, 0, 3) as $inspiration)
+                        <a class="inspiration-card" href="{{ route('experience.detail', ['category'=>$inspiration['category'], 'location'=>$inspiration['location_slug'], 'experience'=>$inspiration['id']]) }}"><x-photo :motif="$inspiration['motif']" /><span><small>Fictional sample</small><strong>{{ $inspiration['title'] }}</strong><small>View layout →</small></span></a>
+                        @endforeach
+                    </div></section>
+                    @endif
+                @endforeach
             </div>
         @else
             <div class="empty-panel listing-empty">
