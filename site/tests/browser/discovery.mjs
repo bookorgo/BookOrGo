@@ -33,8 +33,9 @@ try {
             assert.ok(search.y < hero.y + hero.height && search.y + search.height > hero.y + hero.height, 'search overlaps hero edge');
             assert.equal(Math.round(search.width), 1152);
         }
-        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
         await page.screenshot({ path: new URL(`homepage-${width}.png`, output).pathname, fullPage: true });
+        const overflow = await page.evaluate(() => [...document.querySelectorAll('body *')].filter(el => el.getBoundingClientRect().right > innerWidth + 1).map(el => ({ tag: el.tagName, class: el.getAttribute('class'), right: el.getBoundingClientRect().right })).slice(0, 12));
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), JSON.stringify({ width, overflow }));
 
         if (width < 720) {
             const toggle = page.locator('.mobile-menu summary');
