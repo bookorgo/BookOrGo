@@ -1,13 +1,15 @@
 @extends('layouts.app')
+@section('page_class', 'page-home')
 @section('content')
 <section class="hero">
-    <div class="hero-art" aria-hidden="true"><x-scene motif="arch" /><span class="hero-art-label">Original UAE-inspired illustration</span></div>
+    <div class="hero-art" aria-hidden="true"><div class="hero-portrait"><x-scene motif="arch" /></div><span class="hero-art-label"><b>✦ &nbsp; Made for memories</b><small>Original illustration · Preview</small></span></div>
     <div class="container hero-content">
         <p class="eyebrow"><span aria-hidden="true">✦</span> Explore more. Experience more.</p>
-        <h1>Your next UAE<br>experience <em>starts here.</em></h1>
+        <h1>Your next great<br><em>experience</em> starts here.</h1>
         <p class="hero-description">City days, desert horizons and time on the water.<br>Find your next idea across Dubai and the UAE.</p>
+        <p class="hero-promises">✓ UAE-first discovery &nbsp;&nbsp;&nbsp; ✓ Clearly labelled samples</p>
         <x-search-form />
-        <p class="search-help">Browse our categories while the BookOrGo catalogue takes shape.</p>
+        <p class="search-help">Development preview · Fictional samples, no live offers or bookings.</p>
     </div>
 </section>
 <section class="container section" aria-labelledby="destinations-heading">

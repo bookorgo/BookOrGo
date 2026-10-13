@@ -1,5 +1,8 @@
 # Current execution plan
 
+## Owner rejection and correction — P1-DESIGN-MATCH
+On 13 October the owner explicitly rejected the prior visual match. Earlier implementation/deployment passes do not establish design acceptance. Priority is correcting homepage, listing and detail geometry against the supplied 1920px screenshots. Changes restore a compact utility header, lowercase wordmark, overlapping segmented search, circular hero artwork, compact result rows/sort tabs and seven-panel detail gallery. Samples/noindex remain; unsupported dates/travellers stay disabled. Rights-verified photographs, exact font provenance, real offers/reviews and owner visual acceptance remain unavailable. This is a correction, not a pixel-identical completion claim.
+
 ## Latest owner design correction — 13 October 2026
 Owner requested completion of the three reference-led designs and live deployment. P1-DESIGN-02/03 are implemented and verified live at `14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b`; run 38405846968 attempt 2 passed. The combined release also deployed P1-04 draft journal/articles and five honest information/policy placeholders. See P1_DESIGN_RELEASE.md. All samples stay labelled/noindex; original vector placeholders are not venue photographs. No real offer, price, review, newsletter collection, account, ad or partner action is active. Next: P1-05 broader accessibility/performance/cross-browser QA and owner visual review, then independent P2 data/CMS work when applicable access is ready. Earlier next-package wording below is historical.
 

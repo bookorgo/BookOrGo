@@ -9,7 +9,7 @@ const failures = [];
 const checks = [];
 
 try {
-    for (const width of [1440, 768, 390, 320]) {
+    for (const width of [1920, 1440, 768, 390, 320]) {
         const context = await browser.newContext({ viewport: { width, height: 1000 } });
         const page = await context.newPage();
         page.on('pageerror', error => failures.push(error.message));
@@ -25,6 +25,14 @@ try {
         assert.equal(await page.locator('.featured-card').count(), 4);
         assert.equal(await page.locator('.home-guide').count(), 3);
         assert.ok(await page.locator('#newsletter-preview').isDisabled());
+        assert.ok(await page.locator('#preview-date').isDisabled());
+        assert.ok(await page.locator('#preview-travellers').isDisabled());
+        if (width === 1920) {
+            const hero = await page.locator('.hero').boundingBox();
+            const search = await page.locator('.hero .search-form').boundingBox();
+            assert.ok(search.y < hero.y + hero.height && search.y + search.height > hero.y + hero.height, 'search overlaps hero edge');
+            assert.equal(Math.round(search.width), 1152);
+        }
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
         await page.screenshot({ path: new URL(`homepage-${width}.png`, output).pathname, fullPage: true });
 
@@ -53,7 +61,7 @@ try {
             assert.ok(await listingFilters.locator('form').isVisible());
         }
 
-        if (width === 1440 || width === 390) {
+        if (width === 1920 || width === 1440 || width === 390) {
             await page.screenshot({ path: new URL(`listing-${width}.png`, output).pathname, fullPage: true });
         }
 
@@ -62,7 +70,7 @@ try {
         assert.ok(await page.getByRole('button', { name: /Check verified/ }).isDisabled());
         assert.equal(await page.locator('h1').count(), 1);
         assert.equal(await page.locator('.field-grid > div').count(), 6);
-        assert.equal(await page.locator('.gallery-tile').count(), 4);
+        assert.equal(await page.locator('.gallery-tile').count(), 6);
         assert.equal(await page.locator('.detail-faq details').count(), 4);
         await page.locator('.detail-faq summary').first().focus();
         await page.keyboard.press('Enter');
@@ -70,7 +78,7 @@ try {
         assert.ok(await page.locator('.detail-heading').evaluate(el => el.getBoundingClientRect().bottom) <= await page.locator('.detail-art').evaluate(el => el.getBoundingClientRect().top));
         assert.ok(await page.locator('.related-grid article').count() === 2);
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
-        if (width === 1440 || width === 390) {
+        if (width === 1920 || width === 1440 || width === 390) {
             await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
             await page.screenshot({ path: new URL(`detail-${width}.png`, output).pathname, fullPage: true });
         }

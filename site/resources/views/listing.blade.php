@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('page_class', 'page-listing')
 @section('title', ($fixedCategory ? $category['name'].' sample catalogue' : 'Explore UAE sample listings').' | BookOrGo')
 @section('meta_description', 'Browse BookOrGo’s clearly labelled fictional UAE catalogue samples. No prices, availability, offers or bookings are live.')
 @section('content')
@@ -65,6 +66,11 @@
             <div><p class="eyebrow ink">Sample results</p><h2 id="results-heading">{{ $total }} {{ $total === 1 ? 'fictional card' : 'fictional cards' }}</h2></div>
             <div class="result-sort"><label for="catalogue-sort">Sort by</label><select id="catalogue-sort" name="sort" form="catalogue-filter-form"><option value="recommended" @selected($filters['sort'] === 'recommended')>Curated sample order</option><option value="title-asc" @selected($filters['sort'] === 'title-asc')>Title A–Z</option><option value="title-desc" @selected($filters['sort'] === 'title-desc')>Title Z–A</option></select><button type="submit" form="catalogue-filter-form">Apply sort</button><p>Page {{ $page }} of {{ $lastPage }}</p></div>
         </div>
+        <nav class="sort-tabs" aria-label="Sample sorting">
+            @foreach(['recommended' => 'Our sample order', 'title-asc' => 'Title A–Z', 'title-desc' => 'Title Z–A'] as $sort => $label)
+                <a href="{{ $action.'?'.http_build_query(array_merge($cleanQuery, ['sort' => $sort, 'page' => 1])) }}" @if($filters['sort'] === $sort) aria-current="true" @endif>{{ $label }}</a>
+            @endforeach
+        </nav>
         <p class="loading-status" data-loading-status hidden>Updating sample results…</p>
 
         @if(count($items))

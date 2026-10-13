@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('page_class', 'page-detail')
 @section('title', $item['title'].' | '.$category['name'].' | BookOrGo')
 @section('meta_description', 'A clearly labelled fictional BookOrGo detail-page sample. No live offer, price, availability, advice or booking is provided.')
 @section('content')
@@ -11,7 +12,7 @@
 <section class="container detail-hero">
     <div class="detail-gallery" role="group" aria-label="Original illustration gallery — not venue photographs">
         <div class="detail-art card-{{ $item['motif'] }}"><x-scene :motif="$item['motif']" /><span class="sample-ribbon">Fictional sample</span><p>Original placeholder artwork</p></div>
-        @foreach([1, 2, 3, 4] as $variant)<div class="gallery-tile"><x-scene :motif="$item['motif']" :variant="$variant" />@if($variant === 4)<span>Illustrations only<br>No venue photos supplied</span>@endif</div>@endforeach
+        @foreach([1, 2, 3, 4, 1, 2] as $variant)<div class="gallery-tile"><x-scene :motif="$item['motif']" :variant="$variant" />@if($loop->last)<span>Illustrations only<br>No venue photos supplied</span>@endif</div>@endforeach
     </div>
     <div class="detail-heading">
         <p class="eyebrow ink">{{ $item['template_label'] }}</p>
@@ -22,7 +23,6 @@
             <li>Preview record</li>
         </ul>
         <p class="lead">{{ $item['description'] }}</p>
-        <div class="sample-disclosure" role="note"><strong>Layout demonstration only.</strong> This page is not a real offer, recommendation or source of availability. Its fields are intentionally withheld until approved evidence exists.</div>
     </div>
 </section>
 
@@ -30,6 +30,7 @@
 
 <section class="container detail-layout">
     <div class="detail-content">
+        <div class="sample-disclosure" role="note"><strong>Layout demonstration only.</strong> This page is not a real offer, recommendation or source of availability. Its fields are intentionally withheld until approved evidence exists.</div>
         <section class="detail-section" aria-labelledby="overview-heading">
             <p class="eyebrow ink">Overview</p>
             <h2 id="overview-heading">What a verified page will explain</h2>

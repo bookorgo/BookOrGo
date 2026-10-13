@@ -16,7 +16,7 @@ final class DiscoveryTest extends TestCase
         $this->assertSame(6, substr_count($response->getContent(), 'class="destination-card"'));
         $this->assertSame(4, substr_count($response->getContent(), 'class="featured-card"'));
         $this->assertSame(3, substr_count($response->getContent(), 'class="home-guide"'));
-        $response->assertSee('area=Dubai', false)->assertSee('Original UAE-inspired illustration');
+        $response->assertSee('area=Dubai', false)->assertSee('Original illustration');
     }
 
     public function test_gallery_location_faq_and_referral_disclosure_do_not_fabricate_facts(): void
@@ -26,7 +26,7 @@ final class DiscoveryTest extends TestCase
             ->assertSee('No verified address')->assertSee('Frequently asked questions')
             ->assertSee('No affiliate link is active here.')->assertDontSee('maps.googleapis.com', false)
             ->assertDontSee('application/ld+json', false);
-        $this->assertSame(4, substr_count($response->getContent(), 'class="gallery-tile"'));
+        $this->assertSame(6, substr_count($response->getContent(), 'class="gallery-tile"'));
         $this->assertSame(6, substr_count($response->getContent(), 'Not supplied in this preview'));
     }
 
@@ -52,8 +52,8 @@ final class DiscoveryTest extends TestCase
     {
         config(['database.default' => 'mysql', 'database.connections.mysql.host' => 'unreachable.invalid']);
         $response = $this->get('/');
-        $response->assertOk()->assertSee('Your next UAE', false)->assertSee('Development preview')
-            ->assertSee('No live offers or bookings yet.')->assertSee('noindex, nofollow');
+        $response->assertOk()->assertSee('Your next great', false)->assertSee('Development preview')
+            ->assertSee('No live offers or bookings.')->assertSee('noindex, nofollow');
         $response->assertHeader('X-Robots-Tag', 'noindex, nofollow');
         $response->assertHeader('X-Content-Type-Options', 'nosniff');
         $this->assertSame(1, substr_count($response->getContent(), '<h1'));
