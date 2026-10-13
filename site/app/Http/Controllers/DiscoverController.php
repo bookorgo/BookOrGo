@@ -3,37 +3,61 @@
 namespace App\Http\Controllers;
 
 use App\Domain\Catalog\CategoryDirectory;
+use App\Domain\Catalog\SampleExperienceDirectory;
+use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use InvalidArgumentException;
 
 final class DiscoverController extends Controller
 {
-    public function __construct(private CategoryDirectory $directory) {}
+    public function __construct(
+        private CategoryDirectory $directory,
+        private SampleExperienceDirectory $samples,
+    ) {}
 
     public function home(): View
     {
         return view('home', ['categories' => $this->directory->all()]);
     }
 
-    public function category(string $category): View
+    public function category(Request $request, string $category): View|Response
     {
         $categories = $this->directory->all();
         abort_unless(isset($categories[$category]), 404);
 
-        return view('category', ['categories' => $categories, 'category' => $categories[$category], 'slug' => $category]);
+        return $this->listing($request, $category, $categories[$category]);
     }
 
-    public function search(Request $request): View
+    public function search(Request $request): View|Response
     {
-        $query = $request->query('q', '');
-        abort_unless(is_string($query) && mb_strlen($query) <= 120, 422, 'Enter a search of up to 120 characters.');
-        $query = trim($query);
-
-        return view('search', ['categories' => $this->directory->all(), 'results' => $this->directory->search($query), 'query' => $query]);
+        return $this->listing($request);
     }
 
     public function journal(): View
     {
         return view('journal', ['categories' => $this->directory->all()]);
+    }
+
+    private function listing(Request $request, ?string $fixedCategory = null, ?array $category = null): View|Response
+    {
+        $categories = $this->directory->all();
+
+        try {
+            $listing = $this->samples->browse($request->query(), $fixedCategory);
+        } catch (InvalidArgumentException $exception) {
+            return response()->view('listing-error', [
+                'categories' => $categories,
+                'message' => $exception->getMessage(),
+                'resetUrl' => $fixedCategory === null ? route('search') : route('category', $fixedCategory),
+            ], 422);
+        }
+
+        $listing['categories'] = $categories;
+        $listing['fixedCategory'] = $fixedCategory;
+        $listing['category'] = $category;
+        $listing['action'] = $fixedCategory === null ? route('search') : route('category', $fixedCategory);
+
+        return view('listing', $listing);
     }
 }

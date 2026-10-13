@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Discover Dubai & the UAE | BookOrGo')</title>
-    <meta name="description" content="Explore BookOrGo’s UAE discovery categories. This development preview has no bookable offers or live availability.">
+    <meta name="description" content="@yield('meta_description', 'Explore BookOrGo’s UAE discovery categories. This development preview has no bookable offers or live availability.')">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#082b4c">
     <link rel="canonical" href="{{ rtrim(config('app.url'), '/') . (request()->is('/') ? '/' : '/'.request()->path()) }}">

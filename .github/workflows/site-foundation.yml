@@ -60,7 +60,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: bookorgo-p1-foundation-${{ github.sha }}
+          name: bookorgo-p1-listing-${{ github.sha }}
           path: |
             site/test-results/
             site/composer.lock
