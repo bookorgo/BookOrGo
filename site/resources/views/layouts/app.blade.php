@@ -8,6 +8,7 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#082b4c">
     <link rel="canonical" href="{{ rtrim(config('app.url'), '/') . (request()->is('/') ? '/' : '/'.request()->path()) }}">
+    @yield('social_meta')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>

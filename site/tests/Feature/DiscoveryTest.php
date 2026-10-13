@@ -160,6 +160,43 @@ final class DiscoveryTest extends TestCase
             ->assertSee('<link rel="canonical" href="https://bookorgo.com/search">', false)
             ->assertSee('<meta name="robots" content="noindex, nofollow">', false);
         $this->get('/')->assertSee('<link rel="canonical" href="https://bookorgo.com/">', false);
-        $this->get('/blog')->assertOk()->assertSee('No articles have been published yet.');
+        $this->get('/blog')->assertOk()->assertSee('3 draft guide templates')
+            ->assertSee('Authors, dates, factual sources, imagery and publication approval are intentionally withheld');
+    }
+
+    public function test_journal_hub_has_three_labelled_draft_article_cards(): void
+    {
+        $response = $this->get('/blog');
+        $response->assertOk()->assertSee('Drafts only.')->assertSee('No live ads or affiliate links')
+            ->assertSee('Not assigned')->assertSee('Not published')
+            ->assertHeader('X-Robots-Tag', 'noindex, nofollow');
+        $this->assertSame(3, substr_count($response->getContent(), 'class="article-card"'));
+        $this->assertSame(1, substr_count($response->getContent(), '<h1'));
+    }
+
+    public function test_article_template_exposes_editorial_gates_without_false_publication_claims(): void
+    {
+        $response = $this->get('/blog/sample-first-visit-planning');
+        $response->assertOk()->assertSee('Draft template preview')->assertSee('On this page')
+            ->assertSee('At a glance')->assertSee('Not assigned in this preview')
+            ->assertSee('Not published')->assertSee('No factual sources attached')
+            ->assertSee('Inactive preview — no ad loaded')
+            ->assertSee('No advertisement or affiliate link is active')
+            ->assertHeader('X-Robots-Tag', 'noindex, nofollow');
+        $response->assertDontSee('<script type="application/ld+json">', false);
+        $this->assertSame(1, substr_count($response->getContent(), '<h1'));
+        $this->assertSame(3, substr_count($response->getContent(), 'class="article-section"'));
+        $this->assertSame(2, substr_count($response->getContent(), '<article>'));
+    }
+
+    public function test_all_draft_article_urls_are_stable_and_unknown_articles_are_404(): void
+    {
+        foreach (['sample-first-visit-planning', 'sample-family-day-planning', 'sample-uae-weekend-planning'] as $slug) {
+            $this->get('/blog/'.$slug)->assertOk()
+                ->assertSee('href="'.rtrim(config('app.url'), '/').'/blog/'.$slug.'"', false);
+        }
+
+        $this->get('/blog/sample-unknown-guide')->assertNotFound();
+        $this->get('/blog/not-a-sample')->assertNotFound();
     }
 }

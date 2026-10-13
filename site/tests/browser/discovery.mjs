@@ -62,7 +62,20 @@ try {
             await page.screenshot({ path: new URL(`detail-${width}.png`, output).pathname, fullPage: true });
         }
 
-        checks.push({ viewport: width, homepage: 'pass', listing: 'pass', detail: 'pass', filters: 'pass', overflow: 'pass' });
+        await page.goto('http://127.0.0.1:8000/blog');
+        assert.equal(await page.locator('.article-card').count(), 3);
+        assert.ok(await page.getByText('Drafts only.').isVisible());
+        await page.getByRole('link', { name: 'Open article template' }).first().click();
+        assert.ok(await page.getByText('No factual sources attached').isVisible());
+        assert.ok(await page.getByText('Inactive preview — no ad loaded').isVisible());
+        assert.equal(await page.locator('.article-section').count(), 3);
+        assert.equal(await page.locator('h1').count(), 1);
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+        if (width === 1440 || width === 390) {
+            await page.screenshot({ path: new URL(`article-${width}.png`, output).pathname, fullPage: true });
+        }
+
+        checks.push({ viewport: width, homepage: 'pass', listing: 'pass', detail: 'pass', article: 'pass', filters: 'pass', overflow: 'pass' });
         await context.close();
     }
 
@@ -111,6 +124,10 @@ try {
     await noJsPage.getByLabel('What would you like to explore?').fill('xyz-no-match');
     await noJsPage.getByRole('button', { name: 'Explore' }).click();
     assert.ok(await noJsPage.getByRole('heading', { name: 'No sample cards match' }).isVisible());
+    await noJsPage.goto('http://127.0.0.1:8000/blog/sample-first-visit-planning');
+    assert.ok(await noJsPage.getByRole('navigation', { name: 'On this page' }).isVisible());
+    await noJsPage.getByRole('link', { name: 'Start with the purpose of the trip' }).click();
+    assert.equal(new URL(noJsPage.url()).hash, '#start-with-purpose');
     await noJsPage.screenshot({ path: new URL('listing-empty-390.png', output).pathname, fullPage: true });
     checks.push({ javascriptDisabled: 'pass', internalLinks: paths.length, emptySearch: 'pass' });
     await noJs.close();

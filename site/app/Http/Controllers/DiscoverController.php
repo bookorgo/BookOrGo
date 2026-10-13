@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Domain\Catalog\CategoryDirectory;
 use App\Domain\Catalog\SampleExperienceDirectory;
+use App\Domain\Content\SampleArticleDirectory;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -14,6 +15,7 @@ final class DiscoverController extends Controller
     public function __construct(
         private CategoryDirectory $directory,
         private SampleExperienceDirectory $samples,
+        private SampleArticleDirectory $articles,
     ) {}
 
     public function home(): View
@@ -36,7 +38,31 @@ final class DiscoverController extends Controller
 
     public function journal(): View
     {
-        return view('journal', ['categories' => $this->directory->all()]);
+        return view('journal', [
+            'categories' => $this->directory->all(),
+            'articles' => $this->articles->all(),
+        ]);
+    }
+
+    public function article(string $article): View
+    {
+        $record = $this->articles->find($article);
+        abort_if($record === null, 404);
+
+        $related = [];
+        foreach ($record['related'] as $path) {
+            [$category, $location, $experience] = explode('/', $path);
+            $item = $this->samples->detail($category, $location, $experience);
+            if ($item !== null) {
+                $related[] = $item;
+            }
+        }
+
+        return view('article', [
+            'categories' => $this->directory->all(),
+            'article' => $record,
+            'related' => $related,
+        ]);
     }
 
     public function detail(string $category, string $location, string $experience): View
