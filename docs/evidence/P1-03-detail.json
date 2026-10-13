@@ -1,0 +1,71 @@
+{
+  "task": "P1-03-detail-templates",
+  "status": "PASS_CI_DETAIL_SLICE",
+  "tested_revision": "210fd669d94dbdff378fceb91fe94a17dc770865",
+  "run_url": "https://github.com/bookorgo/BookOrGo/actions/runs/38368020406",
+  "artifact": {
+    "id": 11798225091,
+    "digest": "sha256:1fa60d490aad87a8dd81f702bc12675e3935ee7695fa291ae8c250e7c3df2fbf",
+    "expires_at": "2026-10-27T08:16:31Z"
+  },
+  "requirements": [
+    "Master Requirements V3.1 detail fields, detail template, sourcing, accessibility and indexation controls",
+    "AI Execution Playbook V4.1 P1-03",
+    "OWNER-20261012-MAIN",
+    "Fresh build; no deleted prototype reuse"
+  ],
+  "implementation": {
+    "shared_blade_template": true,
+    "category_variants": 6,
+    "stable_sample_urls": 18,
+    "required_source_fields_per_variant": 6,
+    "related_samples_per_page": 2,
+    "disabled_referral_actions": true,
+    "original_css_placeholder_art": true
+  },
+  "tests": {
+    "php": "8.3.35",
+    "feature_tests": 11,
+    "assertions": 304,
+    "composer_locked_install": "PASS",
+    "vite_tailwind_build": "PASS",
+    "route_view_config_cache": "PASS",
+    "browser": {
+      "viewports": [1440, 768, 390, 320],
+      "homepage": "PASS",
+      "listing": "PASS",
+      "detail": "PASS",
+      "filters": "PASS",
+      "overflow": "PASS",
+      "page_errors": []
+    }
+  },
+  "content_safety": {
+    "fictional_records": 18,
+    "sample_labelled": true,
+    "noindex": true,
+    "prices": false,
+    "availability": false,
+    "ratings": false,
+    "booking_actions": false,
+    "partner_claims": false,
+    "visa_advice_claim": false
+  },
+  "visual_review": {
+    "screenshots": ["detail-1440.png", "detail-390.png"],
+    "result": "No blocking hierarchy, clipping, disclosure, disabled-state or overflow defect found.",
+    "owner_acceptance": "NOT_REQUESTED_OR_RECEIVED"
+  },
+  "deployment": {
+    "performed": false,
+    "live_revision_unchanged": "953665b8db816d7580d025e67fe7d39771078ed8",
+    "reason": "Guarded production upgrade and live route/security/browser verification are a separate bounded package."
+  },
+  "limitations": [
+    "Static fictional source records only; no verified catalogue, database or CMS.",
+    "No approved partner links, prices, schedules, availability, ratings, bookings or advice.",
+    "Chromium CI only; full WCAG, Safari, Firefox, performance and owner visual acceptance remain.",
+    "Hostinger live detail behavior is not claimed until a guarded upgrade release passes."
+  ],
+  "next": "P1-03-main-release"
+}

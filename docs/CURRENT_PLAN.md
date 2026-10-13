@@ -9,7 +9,7 @@ Controlling owner decisions: GitHub + Hostinger Premium; main environment reques
 Follow PHASE_ROADMAP.md. Private original Master Requirements V3.1, Playbook V4.1, kickoff and approved reference PDFs remain the authority. Retrieve them from owner Library; never publish full internal documents to this public repository.
 
 ## Current status
-P0 operational checks remain open. P1-01 homepage/navigation foundation and P1-02 listing/filter/state package are verified live on the main Hostinger site under OWNER-20261012-MAIN. The current live release is `953665b8db816d7580d025e67fe7d39771078ed8`; P1 remains in progress. P2-P5 not started; P6-P7 deferred.
+P0 operational checks remain open. P1-01 homepage/navigation foundation and P1-02 listing/filter/state package are verified live on the main Hostinger site under OWNER-20261012-MAIN. P1-03 category-aware detail templates are CI-verified but not yet deployed. The current live release remains `953665b8db816d7580d025e67fe7d39771078ed8`; P1 remains in progress. P2-P5 not started; P6-P7 deferred.
 Completed bounded package P0-L02a: GitHub Actions SSH, CLI PHP and tooling inventory.
 Evidence: https://github.com/bookorgo/BookOrGo/actions/runs/38169812198
 Tested code revision: abbc16c6e34b1d7cb75555529065f13948053f25
@@ -98,8 +98,17 @@ Guarded production upgrade run https://github.com/bookorgo/BookOrGo/actions/runs
 
 Build/tests passed with 8 feature tests / 159 assertions. Twenty bounded live HTTP/security checks passed across homepage, six category listings, keyword search, filtered result, pagination, blog, safe 422/404 behavior, sensitive path denial/absence and built assets. Desktop 1440 px and mobile 390 px live browser checks passed listing, filters, mobile menu, filtered navigation, pagination and overflow with zero page errors. The release was finalized and its incoming archive removed; rollback was not required. All sample cards remain explicit fictional demonstrations and meta plus HTTP `noindex, nofollow` remains in force.
 
+## Latest application package — P1-03 detail templates
+Completed the bounded category-aware detail package at tested revision `210fd669d94dbdff378fceb91fe94a17dc770865`; successful workflow https://github.com/bookorgo/BookOrGo/actions/runs/38368020406. Eleven feature tests / 304 assertions, locked PHP 8.3 install, production Vite build, route/view/config caches and Chromium checks at 1440/768/390/320 passed.
+
+Implemented 18 unique stable sample-detail URLs through one shared Blade template with six category variants. Activity, holiday, visa, cruise, yacht and event pages expose their required field names but truthfully mark values as not supplied. Pages include breadcrumb navigation, related samples, original CSS placeholder artwork, category-specific source/review notes and disabled referral actions. Visa pages state that the preview is not immigration advice. All records remain fictional, labelled and protected by meta plus HTTP `noindex, nofollow`; there are no partner, price, schedule, availability, rating or booking claims.
+
+Desktop/mobile detail screenshots were visually reviewed with no blocking hierarchy, clipping, disclosure or overflow defect. Artifact `11798225091`, digest `sha256:1fa60d490aad87a8dd81f702bc12675e3935ee7695fa291ae8c250e7c3df2fbf`, expires 27 October 2026. See P1_DETAIL.md and evidence/P1-03-detail.json.
+
+Status: PASS_CI_DETAIL_SLICE. Deployment was not performed; production remains on P1-02 revision `953665b8db816d7580d025e67fe7d39771078ed8`. Safari/Firefox, full WCAG/performance, owner visual acceptance, real sourced records, CMS and partner actions remain outside this package.
+
 ## Ordered next tasks
-1. P1-03: six category-aware detail variants with clearly labelled samples, sourced-field placeholders, stable URLs and honest disabled CTA states; verify before any main release.
+1. P1-03-main-release: extend the guarded current-release workflow for exact P1-02 preflight, backup/restore-check, bounded activation/rollback and live detail/security/browser verification; do not deploy from the CI result alone.
 2. P1-04: reusable blog article layout and listing reuse; then P1-05 wider visual/accessibility QA and owner design review.
 3. P2: main application database configuration, normalized catalog/source data, migrations, minimal editorial CMS and publication roles. Database backup/restore is required before relevant main data changes; do not reuse the isolated temporary-table harness on the main database.
 4. P3: approved partner sourcing, links/disclosures, attribution and freshness checks.

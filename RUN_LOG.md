@@ -168,3 +168,16 @@ Live verification: 20 HTTP/security checks passed with zero failures across home
 Artifact: `11794463207`, digest `sha256:41946381506d85f1b7c805c67d5fbf073ad230395a856903d89cc51f2ffa2d38`, expires 12 November 2026. Evidence: docs/P1_LISTING_RELEASE.md and docs/evidence/P1-02-main-release.json.
 
 Safety/limits: all 18 records remain labelled fictional samples; no real offers, prices, ratings, availability, booking or partner claims. No database, DNS, Site audience, indexability, ads or payments changed. P1 remains incomplete; Safari/Firefox, full WCAG/performance, real data/CMS and owner visual acceptance remain. Repository lease released. Next: P1-03 category-aware detail templates.
+
+## 13 October 2026 — P1-03 category-aware detail templates
+Completed the bounded P1-03 frontend package against Master Requirements V3.1 detail-field, detail-template, sourcing, accessibility and protected-indexation controls; Playbook V4.1 P1-03; OWNER-20261012-MAIN; and the fresh-build rule. Tested source revision: `210fd669d94dbdff378fceb91fe94a17dc770865`. Successful workflow: https://github.com/bookorgo/BookOrGo/actions/runs/38368020406. Result: PASS_CI_DETAIL_SLICE.
+
+Implemented one shared Laravel/Blade detail template with six category variants and 18 unique stable sample URLs. Each page has breadcrumbs, original CSS placeholder art, exactly six category-specific source-required fields, two related samples, a category-specific verification note and an honestly disabled referral action. Visa pages explicitly avoid immigration-advice claims. No prototype code/assets or third-party reference copy/media was imported.
+
+Tests: Composer locked install on PHP 8.3.35; Vite/Tailwind production build; route/view/config caches; 11 feature tests / 304 assertions. Chromium at 1440/768/390/320 passed homepage, listing, detail, filter and overflow checks with zero page errors; existing filtered-navigation, loading, pagination and JavaScript-disabled flows remained green. Desktop/mobile detail screenshots were visually inspected with no blocking defect.
+
+Artifact: ID `11798225091`, digest `sha256:1fa60d490aad87a8dd81f702bc12675e3935ee7695fa291ae8c250e7c3df2fbf`, expires 27 October 2026. Evidence: docs/P1_DETAIL.md and docs/evidence/P1-03-detail.json.
+
+Deployment: NOT PERFORMED. Production remains on verified P1-02 revision `953665b8db816d7580d025e67fe7d39771078ed8`. No Hostinger, database, DNS, Site audience, indexability, ad, payment or partner state changed.
+
+Limitations: static fictional samples only; no verified catalogue/database/CMS, partner links, prices, schedules, availability, ratings, bookings or real advice. Safari/Firefox, full WCAG/performance and owner visual acceptance remain. Next: P1-03-main-release with exact P1-02 preflight, backup/restore-check, bounded rollback and live detail/security/browser verification. Repository lease released.
