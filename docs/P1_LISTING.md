@@ -1,6 +1,6 @@
 # P1-02 — Listing, filters and result states
 
-Date: 13 October 2026. Status: **CI-verified listing slice; not yet deployed**.
+Date: 13 October 2026. Status: **CI-verified listing slice; subsequently verified live**.
 
 Fresh Laravel/Blade source now supplies one shared listing template for search and all six BookOrGo categories. It has server-side keyword/category/area/duration/family filters, deterministic curated/title sorting, stable six-item pagination, responsive filter controls and explicit loading, empty and invalid-query states. Eighteen records are intentionally fictional UI samples: each card says so, exposes no price/rating/availability, and has no actionable booking or detail link. All pages retain meta and HTTP `noindex, nofollow`.
 
@@ -16,6 +16,6 @@ Requirements checked: Master Requirements V3.1 listing structure, accessibility/
 
 Artifact `11792601359`, digest `sha256:a2d9beabda49d16a4a769f5a2a208e5f98574a029947c0c3134c2f4852f2d65e`, expires 27 October 2026. It contains browser evidence plus homepage/listing/empty-state screenshots.
 
-Deployment: **not performed**. The current production release workflow is deliberately pinned to the original one-file Hostinger baseline and cannot safely be reused after P1-01 is live. Production remains on verified P1-01 revision `6e091e2502f0547c0d5213da1ae2b11a25915dc8`. No Hostinger, database, DNS, audience or indexability state changed in this package.
+Deployment was not performed by this implementation checkpoint. It was subsequently completed through the guarded P1-02 main release at revision `953665b8db816d7580d025e67fe7d39771078ed8`; see `P1_LISTING_RELEASE.md`. No database, DNS, audience or indexability state changed.
 
-Limitations: samples are static in source and are not verified catalogue records; category-specific commercial fields, detail pages, real data, CMS, partner links, prices, availability, ratings, booking, cross-browser/WCAG/performance audits and owner visual acceptance remain. Next is `P1-02-main-release`: upgrade the release workflow to require the exact current release marker, back up the existing public application files, activate this tested source with bounded rollback, and verify representative listings live.
+Limitations: samples are static in source and are not verified catalogue records; category-specific commercial fields, detail pages, real data, CMS, partner links, prices, availability, ratings, booking, cross-browser/WCAG/performance audits and owner visual acceptance remain. Next is P1-03 category-aware detail templates.

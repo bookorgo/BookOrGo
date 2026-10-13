@@ -1,0 +1,60 @@
+{
+  "task": "P1-02-main-release",
+  "status": "PASS_LIVE_MAIN",
+  "release_revision": "953665b8db816d7580d025e67fe7d39771078ed8",
+  "previous_revision": "6e091e2502f0547c0d5213da1ae2b11a25915dc8",
+  "run_url": "https://github.com/bookorgo/BookOrGo/actions/runs/38360967725",
+  "artifact": {
+    "id": 11794463207,
+    "digest": "sha256:41946381506d85f1b7c805c67d5fbf073ad230395a856903d89cc51f2ffa2d38",
+    "expires_at": "2026-11-12T07:11:13Z"
+  },
+  "preflight": {
+    "exact_previous_release": "PASS",
+    "public_baseline": "PASS",
+    "strict_host_key_checking": true
+  },
+  "build": {
+    "feature_tests": 8,
+    "assertions": 159,
+    "composer_locked_install": "PASS",
+    "vite_tailwind_build": "PASS",
+    "route_view_config_cache": "PASS"
+  },
+  "backup": {
+    "document_root_archive": "PASS",
+    "extracted_restore_comparison": "PASS",
+    "sha256": "0d370d27d9f0fc3ad1d87ec112d706b15a6ea4c20018d12f9a8ae4fd70e8952f"
+  },
+  "release_package": {
+    "bytes": 13045822,
+    "sha256": "51bde51005488d3ab5f0b85c9927aed4852d156612c7b63eb7ba200fecea0308"
+  },
+  "live_verification": {
+    "http_security_checks": 20,
+    "failures": 0,
+    "viewports": [1440, 390],
+    "listing": "PASS",
+    "filters": "PASS",
+    "filtered_navigation": "PASS",
+    "pagination": "PASS",
+    "mobile_menu": "PASS",
+    "overflow": "PASS",
+    "page_errors": []
+  },
+  "safety": {
+    "default_php_preserved": true,
+    "database_touched": false,
+    "noindex_preserved": true,
+    "dns_changed": false,
+    "audience_changed": false,
+    "payments_or_ads_changed": false,
+    "rollback_required": false
+  },
+  "limitations": [
+    "Fictional labelled samples only; no verified catalogue data, real offers, prices, availability, ratings, partner links or bookings.",
+    "No database, CMS, durable media or scheduler capability was introduced or verified by this release.",
+    "Chromium live checks only; Safari, Firefox, full WCAG/performance review and owner visual acceptance remain."
+  ],
+  "next": "P1-03 category-aware detail templates"
+}
