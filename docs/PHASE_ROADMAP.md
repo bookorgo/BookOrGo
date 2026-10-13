@@ -22,6 +22,8 @@ Exit: compatibility, protected checks and rollback evidence pass.
 ## P1 — Responsive public frontend
 - P1-01 status: homepage/navigation/search foundation is verified live at revision `6e091e2502f0547c0d5213da1ae2b11a25915dc8`; draft/noindex protection remains. P1 is not complete.
 - P1-02 status: listing/filter/sort/pagination and empty/error/loading states are verified live at release revision `953665b8db816d7580d025e67fe7d39771078ed8`; all fictional samples remain labelled and noindex.
+- P1-03 status: category-aware detail templates are verified live at release revision `38c14eddb86c76f909354629e1f4bd4fcd730f12`; required values remain withheld and actions disabled.
+- P1-04 status: journal hub and draft article template are CI-verified at revision `8ad99e9e776aa13d3396c131f445b508e1d015a5`; guarded main release remains next.
 - Homepage hero/search and discoverable Activities, Holidays, Visas, Cruises, Yachts, Events.
 - Listing/search filters, sort, pagination, query state and empty/error states.
 - Category-aware detail pages: gallery, sourced information fields, FAQs, related content and honest CTA states.
@@ -29,7 +31,7 @@ Exit: compatibility, protected checks and rollback evidence pass.
 - Mobile/desktop, keyboard/accessibility, Blade-delivered metadata and stable URL checks.
 Exit: representative screenshots/interactions accepted; labelled noindex samples, feature and browser checks evidenced.
 
-Next bounded package: P1-03 category-aware detail templates with stable URLs, sourced-field placeholders, related sample content and honest disabled CTA states. Keep every sample labelled and noindex.
+Next bounded package: P1-04 guarded main release with exact P1-03 baseline verification, backup/restore comparison and live journal/article checks. Keep every sample labelled and noindex.
 
 ## P2 — Data architecture and editorial CMS
 - Product, Variant, Offer, Partner, Location, Article and SourceEvidence boundaries.
@@ -63,4 +65,4 @@ Separate authorization and legal/commercial/technical feasibility before booking
 Prove Dubai model first; authorize each country's supplier, legal, language/currency and support readiness separately.
 
 ## Next bounded package
-P1-02 is verified live at `953665b8db816d7580d025e67fe7d39771078ed8` in run 38360967725; see P1_LISTING_RELEASE.md. Implement P1-03 detail templates next. P1 is not complete; real catalogue data, article/policy content, visual acceptance and wider QA remain. Keep open P0 operational gates scoped to applicable features; no staging or temporary Hostinger database is required for independent database-free frontend implementation.
+P1-04 is CI-verified at `8ad99e9e776aa13d3396c131f445b508e1d015a5` in run 38395407380; see P1_ARTICLE.md. Prepare its guarded main release next, then complete wider P1 visual/accessibility QA and owner review. P1 is not complete; real sourced content, CMS, indexability, ads/affiliate activation and broader QA remain.

@@ -1,0 +1,51 @@
+{
+  "task": "P1-04",
+  "status": "PASS_CI_ARTICLE_SLICE",
+  "tested_revision": "8ad99e9e776aa13d3396c131f445b508e1d015a5",
+  "run_url": "https://github.com/bookorgo/BookOrGo/actions/runs/38395407380",
+  "artifact": {
+    "id": 11811816142,
+    "digest": "sha256:fd90d2926ac9f144f9c57b436baad540ba699323532da2bccd1d85c7f2d21d8b",
+    "expires_at": "2026-10-27T12:11:46Z"
+  },
+  "build": {
+    "php": "8.3.35",
+    "feature_tests": 14,
+    "assertions": 337,
+    "composer_locked_install": "PASS",
+    "vite_tailwind_build": "PASS",
+    "route_view_config_cache": "PASS"
+  },
+  "browser": {
+    "engine": "Chromium",
+    "viewports": [1440, 768, 390, 320],
+    "homepage": "PASS",
+    "listing": "PASS",
+    "detail": "PASS",
+    "article": "PASS",
+    "filters": "PASS",
+    "toc_without_javascript": "PASS",
+    "overflow": "PASS",
+    "page_errors": []
+  },
+  "content_controls": {
+    "draft_articles": 3,
+    "stable_article_urls": 3,
+    "authors_or_dates_claimed": false,
+    "factual_sources_claimed": false,
+    "live_ads": false,
+    "affiliate_links": false,
+    "article_schema_emitted": false,
+    "noindex_preserved": true
+  },
+  "deployment": {
+    "performed": false,
+    "current_live_revision": "38c14eddb86c76f909354629e1f4bd4fcd730f12"
+  },
+  "limitations": [
+    "Structural draft templates only; no verified article facts, author/reviewer, publication dates or source evidence.",
+    "No rights-cleared social image, Article/BlogPosting schema, active advertising, affiliate action, database or CMS.",
+    "Chromium CI only; Safari, Firefox, full WCAG/performance, live mobile-ad behavior and owner visual acceptance remain."
+  ],
+  "next": "P1-04-main-release"
+}

@@ -9,7 +9,7 @@ Controlling owner decisions: GitHub + Hostinger Premium; main environment reques
 Follow PHASE_ROADMAP.md. Private original Master Requirements V3.1, Playbook V4.1, kickoff and approved reference PDFs remain the authority. Retrieve them from owner Library; never publish full internal documents to this public repository.
 
 ## Current status
-P0 operational checks remain open. P1-01 homepage/navigation, P1-02 listing/filter/state and P1-03 category-aware detail packages are verified live on the main Hostinger site under OWNER-20261012-MAIN. The current live release is `38c14eddb86c76f909354629e1f4bd4fcd730f12`; P1 remains in progress. P2-P5 not started; P6-P7 deferred.
+P0 operational checks remain open. P1-01 homepage/navigation, P1-02 listing/filter/state and P1-03 category-aware detail packages are verified live on the main Hostinger site under OWNER-20261012-MAIN. P1-04 journal/article templates are CI-verified and awaiting a guarded main release. The current live release is `38c14eddb86c76f909354629e1f4bd4fcd730f12`; P1 remains in progress. P2-P5 not started; P6-P7 deferred.
 Completed bounded package P0-L02a: GitHub Actions SSH, CLI PHP and tooling inventory.
 Evidence: https://github.com/bookorgo/BookOrGo/actions/runs/38169812198
 Tested code revision: abbc16c6e34b1d7cb75555529065f13948053f25
@@ -114,13 +114,23 @@ Build/tests passed with 11 feature tests / 304 assertions. Twenty-six live HTTP/
 
 Release archive: 13,051,493 bytes, SHA-256 `d9d734705da5e90c355b6556b10e306fb69df44ffaee6da9eb4c6ffa23b5f3da`. Backup SHA-256: `6efb4775db7e386e102bd14d9e02b8bd9e3c423cfae34dc8b75e7a45a122cdb5`. Finalization wrote the verified-live marker and removed the incoming archive; rollback was available but not required. All detail content remains labelled fictional demonstration data with disabled actions and no price, availability, partner or booking claim. See P1_DETAIL_RELEASE.md and evidence/P1-03-main-release.json.
 
+## Latest application package — P1-04 journal and article templates
+Completed the bounded draft journal/article package at tested revision `8ad99e9e776aa13d3396c131f445b508e1d015a5`; successful workflow https://github.com/bookorgo/BookOrGo/actions/runs/38395407380. Fourteen feature tests / 337 assertions, locked PHP 8.3 install, Vite/Tailwind build, route/view/config caches and Chromium checks at 1440/768/390/320 passed.
+
+Implemented a journal hub with three stable draft article URLs and one shared article template. The template includes breadcrumb/H1, summary, withheld author/date states, original placeholder artwork, at-a-glance panel, TOC, source register, commercial disclosure, inactive ad area and contextual links to fictional detail samples. No factual travel guide, author, date, source, social image right, editorial schema, ad or affiliate link is claimed.
+
+Desktop/mobile article screenshots were visually reviewed with no blocking hierarchy, disclosure, inactive-ad, clipping or overflow defect. Artifact `11811816142`, digest `sha256:fd90d2926ac9f144f9c57b436baad540ba699323532da2bccd1d85c7f2d21d8b`, expires 27 October 2026. See P1_ARTICLE.md and evidence/P1-04-article.json.
+
+Status: PASS_CI_ARTICLE_SLICE. Deployment was not performed; production remains on P1-03 revision `38c14eddb86c76f909354629e1f4bd4fcd730f12`. Safari/Firefox, full WCAG/performance, mobile live-ad behavior, real sourced content/CMS and owner visual acceptance remain outside this package.
+
 ## Ordered next tasks
-1. P1-04: reusable blog article layout and listing reuse; then P1-05 wider visual/accessibility QA and owner design review.
-2. P2: main application database configuration, normalized catalog/source data, migrations, minimal editorial CMS and publication roles. Database backup/restore is required before relevant main data changes; do not reuse the isolated temporary-table harness on the main database.
-3. P3: approved partner sourcing, links/disclosures, attribution and freshness checks.
-4. P4: SEO crawl/indexability controls, eligible schema, original editorial content and search monitoring.
-5. P5: production operations, rollback/monitoring and growth reporting. Keep unresolved operational P0 evidence honest and address each gate when applicable; it is not a blanket ban on independent feature work.
-6. P6/P7 deferred to separate owner authorization.
+1. P1-04-main-release: extend the guarded current-release workflow for exact P1-03 preflight, backup/restore comparison, bounded activation/rollback and live journal/article/security/browser verification.
+2. P1-05: wider visual/accessibility QA and owner design review.
+3. P2: main application database configuration, normalized catalog/source data, migrations, minimal editorial CMS and publication roles. Database backup/restore is required before relevant main data changes; do not reuse the isolated temporary-table harness on the main database.
+4. P3: approved partner sourcing, links/disclosures, attribution and freshness checks.
+5. P4: SEO crawl/indexability controls, eligible schema, original editorial content and search monitoring.
+6. P5: production operations, rollback/monitoring and growth reporting. Keep unresolved operational P0 evidence honest and address each gate when applicable; it is not a blanket ban on independent feature work.
+7. P6/P7 deferred to separate owner authorization.
 
 ## Work rules
 Take one bounded ready package per scheduled run; continue independent prep when another gate needs owner input. Read latest remote source before editing. Avoid overlapping edits; reconcile remote head and active CI runs. Record task IDs, tested revision, actual test results, honest limitations and next task in RUN_LOG.md.

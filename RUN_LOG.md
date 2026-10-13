@@ -194,3 +194,16 @@ Live verification: 26 HTTP/security checks passed with zero failures across home
 Artifact: `11799804034`, digest `sha256:ae1a0636a751249ecfa1a8c92e2a06fcadcbef165f392ccc44b05675517918c8`, expires 12 November 2026. Evidence: docs/P1_DETAIL_RELEASE.md and docs/evidence/P1-03-main-release.json.
 
 Safety/limits: all 18 records remain labelled fictional samples with required values withheld and referral actions disabled. No real offers, prices, schedules, availability, ratings, bookings, partner links, database, DNS, Site audience, indexability, ads or payments changed. P1 remains incomplete; Safari/Firefox, full WCAG/performance, real data/CMS and owner visual acceptance remain. Repository lease released. Next: P1-04 reusable blog article layout and listing reuse.
+
+## 13 October 2026 — P1-04 draft journal and article template
+Completed the bounded P1-04 frontend package against Master Requirements V3.1 sections 17 and 23 P1B; Playbook V4.1 UI-04/P1-04 and shared safeguards; OWNER-20261012-MAIN; and the fresh-build rule. Tested source revision: `8ad99e9e776aa13d3396c131f445b508e1d015a5`. Successful workflow: https://github.com/bookorgo/BookOrGo/actions/runs/38395407380. Result: PASS_CI_ARTICLE_SLICE.
+
+Implemented a reusable Laravel/Blade journal hub with three stable draft article URLs and a distinct shared article template. It includes breadcrumb/H1, summary, withheld author/published/updated states, original placeholder art, at-a-glance panel, TOC, structured original draft sections, source register, commercial disclosure, inactive ad area and contextual fictional detail links. The sample text contains no supplier copy or unverified destination fact.
+
+Tests: Composer locked install on PHP 8.3.35; Vite/Tailwind production build; route/view/config caches; 14 feature tests / 337 assertions. Chromium at 1440/768/390/320 passed homepage, listing, detail, article, filters and overflow with zero page errors; existing filtered navigation, loading, pagination and JavaScript-disabled flows remained green. The TOC worked without JavaScript. Desktop/mobile article screenshots were visually inspected with no blocking hierarchy, disclosure, inactive-ad, clipping or overflow defect.
+
+Artifact: ID `11811816142`, digest `sha256:fd90d2926ac9f144f9c57b436baad540ba699323532da2bccd1d85c7f2d21d8b`, expires 27 October 2026. Evidence: docs/P1_ARTICLE.md and docs/evidence/P1-04-article.json.
+
+Deployment: NOT PERFORMED. Production remains on verified P1-03 revision `38c14eddb86c76f909354629e1f4bd4fcd730f12`. All draft pages retain meta plus HTTP `noindex, nofollow`. No real author/reviewer, dates, sources, media rights, Article/BlogPosting schema, ads, partner links, database, DNS, Site audience, indexability or payments changed.
+
+Limitations: structural drafts only; no verified editorial content, CMS, rights-cleared social image, live ad behavior or affiliate action. Safari/Firefox, full WCAG/performance and owner visual acceptance remain. Next: P1-04-main-release with exact P1-03 preflight, full public-root backup/restore comparison, bounded rollback and live journal/article/security/browser verification. Repository lease released.
