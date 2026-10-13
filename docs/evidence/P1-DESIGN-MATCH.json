@@ -1,0 +1,38 @@
+{
+  "task": "P1-DESIGN-MATCH",
+  "status": "PASS_LIVE_LAYOUT_CORRECTION_ACCEPTANCE_OPEN",
+  "source_revision": "b83e827831a7dbdadcac5af644d0f3cc88add116",
+  "release_revision": "001b5ed75c77f26f2267bfbb001931bb3b37df31",
+  "ci_run": 38435614659,
+  "release_run": 38436156850,
+  "feature_tests": 18,
+  "assertions": 393,
+  "ci_viewports": [
+    1920,
+    1440,
+    768,
+    390,
+    320
+  ],
+  "live_viewports": [
+    1440,
+    390
+  ],
+  "live_http_checks": 34,
+  "live_failures": 0,
+  "ci_artifact": 11833555510,
+  "ci_artifact_sha256": "8b97acc21604ab4bfade0624c001a3e1325801811e94ff58a7338f282e63682e",
+  "live_artifact": 11833236486,
+  "live_artifact_sha256": "bc645219c1489cb9778ed49041025bdc49034ac2b786ec27ef5b02b76fb24ef8",
+  "backup_sha256": "7f948dafa6b8b0fc042c10f278cf4a3fa0462e7876f87ce78b122d45debf2164",
+  "backup_restore_comparison": "passed",
+  "rollback": "not required",
+  "database_touched": false,
+  "limitations": [
+    "Original illustrations, not rights-verified photographs",
+    "Exact font provenance unverified",
+    "Real catalogue/prices/reviews/availability withheld",
+    "Owner visual acceptance open",
+    "Safari/Firefox/full accessibility and operational DB/cron/storage checks remain open"
+  ]
+}

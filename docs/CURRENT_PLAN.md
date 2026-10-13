@@ -1,5 +1,9 @@
 # Current execution plan
 
+## P1-DESIGN-MATCH — verified live correction, 13 October 2026
+Release `001b5ed75c77f26f2267bfbb001931bb3b37df31` is verified live at https://bookorgo.com; guarded run https://github.com/bookorgo/BookOrGo/actions/runs/38436156850 succeeded. Tested source b83e827831a7dbdadcac5af644d0f3cc88add116; CI run 38435614659. 18 tests / 393 assertions, Chromium 1920/1440/768/390/320, no-JS 27 links, filters/sort/pagination/FAQ passed. Live: 34 HTTP/security/asset checks, zero failures; 1440/390 browser flows, no page errors or horizontal overflow. Screenshots reviewed. Backup/extracted restore comparison passed; original default.php and previous release retained; no database operation. Rollback was available but not needed.
+The initial corrected build f5da73b failed tablet overflow; screenshot review found search/header stacking. Both were fixed before deployment. Prior design acceptance was explicitly rejected by the owner; this release is a layout correction, NOT an exact/pixel-identical design acceptance. Photographs, verified font assets, live offer/review content and owner acceptance remain open. Samples/noindex and disabled dates/travellers remain. Next: P1-05 accessibility/cross-browser QA and remaining reference differences; obtain rights-verified imagery/font assets before claiming full visual equivalence. Independent authorized tasks remain, so the schedule is not paused.
+
 ## Owner rejection and correction — P1-DESIGN-MATCH
 On 13 October the owner explicitly rejected the prior visual match. Earlier implementation/deployment passes do not establish design acceptance. Priority is correcting homepage, listing and detail geometry against the supplied 1920px screenshots. Changes restore a compact utility header, lowercase wordmark, overlapping segmented search, circular hero artwork, compact result rows/sort tabs and seven-panel detail gallery. Samples/noindex remain; unsupported dates/travellers stay disabled. Rights-verified photographs, exact font provenance, real offers/reviews and owner visual acceptance remain unavailable. This is a correction, not a pixel-identical completion claim.
 
@@ -15,7 +19,7 @@ Controlling owner decisions: GitHub + Hostinger Premium; main environment reques
 Follow PHASE_ROADMAP.md. Private original Master Requirements V3.1, Playbook V4.1, kickoff and approved reference PDFs remain the authority. Retrieve them from owner Library; never publish full internal documents to this public repository.
 
 ## Current status
-P0 operational checks remain open where relevant. P1-01 through P1-04 and the owner's completed reference-led homepage/listing/detail layout correction are verified live on main Hostinger at `14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b`. 18 tests / 393 assertions, 34 live HTTP/security/asset checks and desktop/mobile browser verification passed. Full P1 acceptance remains open pending wider QA and owner review. P2-P5 not started; P6-P7 deferred.
+P0 operational checks remain open where relevant. P1-01 through P1-04 and the previous reference-led homepage/listing/detail implementation (visual match subsequently rejected) are verified live on main Hostinger at `14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b`. 18 tests / 393 assertions, 34 live HTTP/security/asset checks and desktop/mobile browser verification passed. Full P1 acceptance remains open pending wider QA and owner review. P2-P5 not started; P6-P7 deferred.
 Completed bounded package P0-L02a: GitHub Actions SSH, CLI PHP and tooling inventory.
 Evidence: https://github.com/bookorgo/BookOrGo/actions/runs/38169812198
 Tested code revision: abbc16c6e34b1d7cb75555529065f13948053f25
