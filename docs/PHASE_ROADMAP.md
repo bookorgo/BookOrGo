@@ -65,4 +65,5 @@ Separate authorization and legal/commercial/technical feasibility before booking
 Prove Dubai model first; authorize each country's supplier, legal, language/currency and support readiness separately.
 
 ## Next bounded package
+Latest owner override, 13 October: complete the reference-design correction first. P1-DESIGN-01 shared shell/search/listing density/detail hierarchy passed CI; P1-DESIGN-02 homepage modules and P1-DESIGN-03 detail gallery/logistics/FAQ remain. Then guarded combined main release and P1-05 broader QA. See OWNER_DESIGN_ALIGNMENT.md. Earlier next-package wording below is historical.
 P1-04 is CI-verified at `8ad99e9e776aa13d3396c131f445b508e1d015a5` in run 38395407380; see P1_ARTICLE.md. Prepare its guarded main release next, then complete wider P1 visual/accessibility QA and owner review. P1 is not complete; real sourced content, CMS, indexability, ads/affiliate activation and broader QA remain.

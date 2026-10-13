@@ -1,5 +1,8 @@
 # Current execution plan
 
+## Latest owner design correction — 13 October 2026
+Owner requested the three supplied homepage/listing/detail reference designs now. See OWNER_DESIGN_ALIGNMENT.md. P1-DESIGN-01 initial shell/layout alignment is CI-verified at `414ff50f965165f838fec0b9db1d1f08f9cb047e`, run 38402443842. This is not full reference-design completion or a live release. Prioritize P1-DESIGN-02 homepage destination/featured-sample modules and P1-DESIGN-03 responsive detail gallery/logistics/FAQ before the combined guarded main release. Preserve URL/data/security/noindex requirements and do not import reference media, reviews or prices. The prior article-only release order below is superseded by this design correction.
+
 ## Controlling latest owner decision — OWNER-20261012-MAIN
 See OWNER_MAIN_ONLY.md. The owner explicitly reconfirmed main-only incremental development and rejected temporary Hostinger database/staging prerequisites. Begin independent P1 Laravel implementation now; do not run destructive smoke tests against the main database. CI testing remains required, backups/rollback remain required for live changes, and unperformed host checks remain unverified. The older P0-before-P1 stop wording below is historical and superseded for independent feature work.
 
