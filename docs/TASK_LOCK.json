@@ -3,6 +3,8 @@
   "owner": "bookorgo-p1-02-20261012T1908Z",
   "status": "active",
   "acquired_at": "2026-10-12T19:08:00Z",
-  "expires_at": "2026-10-12T20:38:00Z",
-  "base_revision": "56d41624bd6e3f1de5a92bb45b403dc35dd847e4"
+  "expires_at": "2026-10-13T07:30:00Z",
+  "base_revision": "56d41624bd6e3f1de5a92bb45b403dc35dd847e4",
+  "refreshed_at": "2026-10-13T05:58:00Z",
+  "resume_revision": "2986977de7de633870f3bbd64c6fc42753a26c8b"
 }
