@@ -25,6 +25,7 @@ jobs:
       SSH_HOST: 45.137.159.248
       SSH_PORT: '65002'
       SSH_USER: u809119518
+      EXPECTED_PREVIOUS_REVISION: 6e091e2502f0547c0d5213da1ae2b11a25915dc8
     steps:
       - name: Checkout frozen revision
         uses: actions/checkout@v4
@@ -94,29 +95,39 @@ jobs:
           set -euo pipefail
           mkdir -p site/test-results
           package_bytes="$(stat -c %s bookorgo-release.tgz)"
-          ssh -i .release-ssh/key -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=.release-ssh/known_hosts "$SSH_USER@$SSH_HOST" "bash -s -- '$GITHUB_SHA' '$package_bytes'" <<'REMOTE' | tee site/test-results/release-preflight.txt
+          ssh -i .release-ssh/key -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=.release-ssh/known_hosts "$SSH_USER@$SSH_HOST" "bash -s -- '$GITHUB_SHA' '$package_bytes' '$EXPECTED_PREVIOUS_REVISION'" <<'REMOTE' | tee site/test-results/release-preflight.txt
           set -euo pipefail
           revision="$1"
           package_bytes="$2"
+          expected_previous="$3"
           root="$HOME/domains/bookorgo.com"
           docroot="$root/public_html"
+          shared="$root/shared"
+          previous_release="$root/releases/$expected_previous"
           test "$revision" != ""
           test -d "$docroot"
           test ! -L "$docroot"
+          test -f "$shared/current-release"
+          test "$(cat "$shared/current-release")" = "$expected_previous"
+          test -f "$previous_release/.verified-live"
           test -f "$docroot/default.php"
           test ! -L "$docroot/default.php"
           inventory="$(find "$docroot" -mindepth 1 -maxdepth 1 -printf '%f:%y\n' | LC_ALL=C sort)"
-          if [ "$inventory" != 'default.php:f' ]; then
-            echo 'ABORT: production document root no longer matches the verified one-file baseline' >&2
+          expected_inventory="$(printf '%s\n' '.htaccess:f' 'build:d' 'default.php:f' 'index.php:f')"
+          if [ "$inventory" != "$expected_inventory" ]; then
+            echo 'ABORT: production document root no longer matches the verified P1-01 baseline' >&2
             printf '%s\n' "$inventory" >&2
             exit 20
           fi
+          grep -q "releases/$expected_previous/vendor" "$docroot/index.php"
+          cmp "$docroot/.htaccess" "$previous_release/public/.htaccess"
+          diff -qr "$docroot/build" "$previous_release/public/build" >/dev/null
           test -x /opt/alt/php84/usr/bin/php
           test -f /usr/local/bin/composer
           available_kb="$(df -Pk "$root" | awk 'NR==2 {print $4}')"
           required_kb="$(( (package_bytes * 4 + 1023) / 1024 ))"
           test "$available_kb" -gt "$required_kb"
-          printf 'status=PASS\nrevision=%s\nexisting=default.php only\npackage_bytes=%s\navailable_kb=%s\n' "$revision" "$package_bytes" "$available_kb"
+          printf 'status=PASS\nrevision=%s\nprevious_revision=%s\nexisting=P1-01 exact public baseline\npackage_bytes=%s\navailable_kb=%s\n' "$revision" "$expected_previous" "$package_bytes" "$available_kb"
           REMOTE
 
       - name: Upload release archive outside web root
@@ -129,10 +140,11 @@ jobs:
         run: |
           set -euo pipefail
           package_sha="$(cut -d' ' -f1 release-package.sha256)"
-          ssh -i .release-ssh/key -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=.release-ssh/known_hosts "$SSH_USER@$SSH_HOST" "bash -s -- '$GITHUB_SHA' '$package_sha'" <<'REMOTE' | tee site/test-results/release-activation.txt
+          ssh -i .release-ssh/key -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=.release-ssh/known_hosts "$SSH_USER@$SSH_HOST" "bash -s -- '$GITHUB_SHA' '$package_sha' '$EXPECTED_PREVIOUS_REVISION'" <<'REMOTE' | tee site/test-results/release-activation.txt
           set -euo pipefail
           revision="$1"
           expected_sha="$2"
+          expected_previous="$3"
           root="$HOME/domains/bookorgo.com"
           docroot="$root/public_html"
           releases="$root/releases"
@@ -147,8 +159,16 @@ jobs:
             exit 21
           fi
           trap 'rmdir "$lock" 2>/dev/null || true' EXIT
+          test -f "$shared/current-release"
+          test "$(cat "$shared/current-release")" = "$expected_previous"
+          previous_release="$releases/$expected_previous"
+          test -f "$previous_release/.verified-live"
           inventory="$(find "$docroot" -mindepth 1 -maxdepth 1 -printf '%f:%y\n' | LC_ALL=C sort)"
-          test "$inventory" = 'default.php:f'
+          expected_inventory="$(printf '%s\n' '.htaccess:f' 'build:d' 'default.php:f' 'index.php:f')"
+          test "$inventory" = "$expected_inventory"
+          grep -q "releases/$expected_previous/vendor" "$docroot/index.php"
+          cmp "$docroot/.htaccess" "$previous_release/public/.htaccess"
+          diff -qr "$docroot/build" "$previous_release/public/build" >/dev/null
           test -f "$incoming"
           actual_sha="$(sha256sum "$incoming" | awk '{print $1}')"
           test "$actual_sha" = "$expected_sha"
@@ -168,7 +188,7 @@ jobs:
           tar -tzf "$backup/public_html-before.tar.gz" > "$backup/public_html-before.files"
           mkdir "$backup/restore-check"
           tar -xzf "$backup/public_html-before.tar.gz" -C "$backup/restore-check"
-          cmp "$docroot/default.php" "$backup/restore-check/default.php"
+          diff -qr "$docroot" "$backup/restore-check" >/dev/null
           find "$backup/restore-check" -type f -exec chmod 600 {} +
           mkdir -m 700 "$release"
           tar -xzf "$incoming" --strip-components=1 -C "$release"
@@ -177,27 +197,15 @@ jobs:
           test -f "$release/public/.htaccess"
           test -s "$release/public/build/manifest.json"
           /opt/alt/php84/usr/bin/php /usr/local/bin/composer check-platform-reqs --no-dev --working-dir="$release"
-          if [ ! -f "$shared/.env" ]; then
-            app_key="$(/opt/alt/php84/usr/bin/php -r 'echo "base64:".base64_encode(random_bytes(32));')"
-            {
-              printf 'APP_NAME=BookOrGo\nAPP_ENV=production\nAPP_KEY=%s\n' "$app_key"
-              printf 'APP_DEBUG=false\nAPP_URL=https://bookorgo.com\nAPP_LOCALE=en\nAPP_FALLBACK_LOCALE=en\n'
-              printf 'LOG_CHANNEL=stack\nLOG_STACK=single\nLOG_LEVEL=warning\n'
-              printf 'DB_CONNECTION=mysql\nDB_HOST=127.0.0.1\nDB_PORT=3306\nDB_DATABASE=\nDB_USERNAME=\nDB_PASSWORD=\n'
-              printf 'SESSION_DRIVER=file\nSESSION_SECURE_COOKIE=true\nSESSION_HTTP_ONLY=true\nSESSION_SAME_SITE=lax\n'
-              printf 'CACHE_STORE=file\nQUEUE_CONNECTION=sync\nFILESYSTEM_DISK=local\n'
-            } > "$shared/.env"
-            chmod 600 "$shared/.env"
-            unset app_key
-          fi
+          test -f "$shared/.env"
+          test ! -L "$shared/.env"
+          test "$(stat -c %a "$shared/.env")" = 600
           ln -s "$shared/.env" "$release/.env"
           find "$release/storage" "$release/bootstrap/cache" -type d -exec chmod 700 {} +
           find "$release/storage" "$release/bootstrap/cache" -type f -exec chmod 600 {} +
           /opt/alt/php84/usr/bin/php "$release/artisan" config:cache
           /opt/alt/php84/usr/bin/php "$release/artisan" route:cache
           /opt/alt/php84/usr/bin/php "$release/artisan" view:cache
-          touch "$release/.activation-attempted"
-          chmod 600 "$release/.activation-attempted"
           build_new="$docroot/.bookorgo-build-$revision"
           mkdir "$build_new"
           cp -a "$release/public/build/." "$build_new/"
@@ -211,13 +219,20 @@ jobs:
             "$release/public/index.php" > "$docroot/index.php.new-$revision"
           grep -q "releases/$revision/vendor" "$docroot/index.php.new-$revision"
           chmod 644 "$docroot/.htaccess.new-$revision" "$docroot/index.php.new-$revision"
+          printf '%s\n' "$expected_previous" > "$release/.previous-revision"
+          printf '%s\n' "$backup" > "$release/.backup-path"
+          touch "$release/.activation-attempted"
+          chmod 600 "$release/.previous-revision" "$release/.backup-path" "$release/.activation-attempted"
+          mv "$docroot/build" "$backup/active-build"
           mv "$build_new" "$docroot/build"
+          mv "$docroot/.htaccess" "$backup/active-htaccess"
           mv "$docroot/.htaccess.new-$revision" "$docroot/.htaccess"
+          mv "$docroot/index.php" "$backup/active-index.php"
+          mv "$docroot/index.php.new-$revision" "$docroot/index.php"
           printf '%s\n' "$revision" > "$shared/current-release"
           chmod 600 "$shared/current-release"
-          mv "$docroot/index.php.new-$revision" "$docroot/index.php"
-          printf 'status=ACTIVATED\nrevision=%s\npackage_sha256=%s\nbackup=%s\nbackup_sha256=%s\nexisting_default_preserved=yes\ndatabase_touched=no\n' \
-            "$revision" "$actual_sha" "$backup" "$(awk '{print $1}' "$backup/public_html-before.sha256")"
+          printf 'status=ACTIVATED\nrevision=%s\nprevious_revision=%s\npackage_sha256=%s\nbackup=%s\nbackup_sha256=%s\nexisting_default_preserved=yes\ndatabase_touched=no\n' \
+            "$revision" "$expected_previous" "$actual_sha" "$backup" "$(awk '{print $1}' "$backup/public_html-before.sha256")"
           REMOTE
 
       - name: Verify live HTTP and browser behavior
@@ -238,21 +253,26 @@ jobs:
           release="$root/releases/$revision"
           incoming="$root/.bookorgo-incoming-$revision.tgz"
           test -f "$release/.activation-attempted"
+          test -f "$root/shared/current-release"
+          test "$(cat "$root/shared/current-release")" = "$revision"
+          grep -q "releases/$revision/vendor" "$root/public_html/index.php"
           printf '%s\n' "$revision" > "$release/.verified-live"
           chmod 600 "$release/.verified-live"
           rm -f "$incoming"
           printf 'status=VERIFIED_LIVE\nrevision=%s\nincoming_removed=yes\n' "$revision"
           REMOTE
 
-      - name: Roll back exact first-release files on failure
+      - name: Roll back exact previous public release on failure
         if: ${{ failure() && steps.activation.outcome != 'skipped' }}
         run: |
           set -euo pipefail
-          ssh -i .release-ssh/key -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=.release-ssh/known_hosts "$SSH_USER@$SSH_HOST" "bash -s -- '$GITHUB_SHA'" <<'REMOTE' | tee site/test-results/release-rollback.txt
+          ssh -i .release-ssh/key -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=.release-ssh/known_hosts "$SSH_USER@$SSH_HOST" "bash -s -- '$GITHUB_SHA' '$EXPECTED_PREVIOUS_REVISION'" <<'REMOTE' | tee site/test-results/release-rollback.txt
           set -euo pipefail
           revision="$1"
+          expected_previous="$2"
           root="$HOME/domains/bookorgo.com"
           docroot="$root/public_html"
+          shared="$root/shared"
           release="$root/releases/$revision"
           incoming="$root/.bookorgo-incoming-$revision.tgz"
           failed="$root/releases/.failed-public-$revision"
@@ -261,26 +281,46 @@ jobs:
             printf 'status=NO_ACTIVATION_TO_ROLL_BACK\nrevision=%s\n' "$revision"
             exit 0
           fi
+          previous="$(cat "$release/.previous-revision")"
+          test "$previous" = "$expected_previous"
+          backup="$(cat "$release/.backup-path")"
+          case "$backup" in "$root/backups/"*) ;; *) echo 'Unsafe backup path' >&2; exit 23;; esac
+          test -f "$backup/public_html-before.tar.gz"
+          sha256sum -c "$backup/public_html-before.sha256"
+          restore="$root/.bookorgo-rollback-$revision"
+          test ! -e "$restore"
+          mkdir -m 700 "$restore"
+          tar -xzf "$backup/public_html-before.tar.gz" -C "$restore"
+          test -f "$restore/default.php"
+          test -f "$restore/index.php"
+          test -f "$restore/.htaccess"
+          test -s "$restore/build/manifest.json"
+          grep -q "releases/$previous/vendor" "$restore/index.php"
           mkdir -m 700 "$failed"
-          if [ -f "$docroot/index.php" ] && grep -q "releases/$revision/vendor" "$docroot/index.php"; then
-            mv "$docroot/index.php" "$failed/index.php"
-          fi
-          if [ -f "$docroot/.htaccess" ] && cmp -s "$docroot/.htaccess" "$release/public/.htaccess"; then
-            mv "$docroot/.htaccess" "$failed/.htaccess"
-          fi
-          if [ -d "$docroot/build" ] && cmp -s "$docroot/build/manifest.json" "$release/public/build/manifest.json"; then
-            mv "$docroot/build" "$failed/build"
-          fi
           test -f "$docroot/default.php"
+          cmp "$docroot/default.php" "$restore/default.php"
+          if [ -f "$docroot/index.php" ]; then mv "$docroot/index.php" "$failed/index.php"; fi
+          if [ -f "$docroot/.htaccess" ]; then mv "$docroot/.htaccess" "$failed/.htaccess"; fi
+          if [ -d "$docroot/build" ]; then mv "$docroot/build" "$failed/build"; fi
+          mv "$restore/index.php" "$docroot/index.php"
+          mv "$restore/.htaccess" "$docroot/.htaccess"
+          mv "$restore/build" "$docroot/build"
+          rmdir "$restore"
+          printf '%s\n' "$previous" > "$shared/current-release"
+          chmod 600 "$shared/current-release"
+          cmp "$docroot/default.php" "$backup/restore-check/default.php"
+          cmp "$docroot/index.php" "$backup/restore-check/index.php"
+          cmp "$docroot/.htaccess" "$backup/restore-check/.htaccess"
+          diff -qr "$docroot/build" "$backup/restore-check/build" >/dev/null
           rm -f "$incoming"
-          printf 'status=ROLLED_BACK_TO_PRESERVED_DEFAULT\nrevision=%s\ndatabase_touched=no\n' "$revision"
+          printf 'status=ROLLED_BACK\nfailed_revision=%s\nrestored_revision=%s\ndatabase_touched=no\n' "$revision" "$previous"
           REMOTE
 
       - name: Upload bounded release evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: bookorgo-main-release-${{ github.sha }}
+          name: bookorgo-p1-02-main-release-${{ github.sha }}
           path: |
             site/test-results/
             release-package.sha256

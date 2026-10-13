@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bounded same-origin HTTP verification for the first BookOrGo release."""
+"""Bounded same-origin HTTP verification for the P1-02 BookOrGo release."""
 
 from __future__ import annotations
 
@@ -72,13 +72,15 @@ failures: list[str] = []
 
 pages = {
     "/": "Your next UAE",
-    "/activities": "Activities in the UAE",
-    "/holidays": "Holidays in the UAE",
-    "/visas": "Visas in the UAE",
-    "/cruises": "Cruises in the UAE",
-    "/yachts": "Yachts in the UAE",
-    "/events": "Events in the UAE",
-    "/search?q=boat": "Category matches",
+    "/activities": "Activities sample catalogue",
+    "/holidays": "Holidays sample catalogue",
+    "/visas": "Visas sample catalogue",
+    "/cruises": "Cruises sample catalogue",
+    "/yachts": "Yachts sample catalogue",
+    "/events": "Events sample catalogue",
+    "/search?q=boat": "6 fictional cards",
+    "/search?category=yachts&area=Dubai%20Marina&duration=under-2-hours&family=yes": "Marina yacht layout concept",
+    "/search?q=sample&page=2": "Page 2 of 3",
     "/blog": "The travel journal",
 }
 
@@ -111,6 +113,19 @@ for path, marker in pages.items():
         failures.append(f"{path}: missing HTTP noindex")
     if marker not in text:
         failures.append(f"{path}: expected page marker missing")
+    if path.startswith(("/activities", "/holidays", "/visas", "/cruises", "/yachts", "/events", "/search")):
+        if "Demonstration data only." not in text:
+            failures.append(f"{path}: missing fictional sample disclosure")
+        if "No live offer or price" not in text:
+            failures.append(f"{path}: missing no-offer card state")
+
+status, headers, body = fetch("/search?category=hotels")
+text = body.decode("utf-8", "replace")
+checks.append({"path": "/search?category=hotels", "status": status, "safe_error": "We couldn’t apply those filters" in text})
+if status != 422 or "We couldn’t apply those filters" not in text:
+    failures.append("invalid catalogue filter did not return the safe 422 state")
+if headers.get("X-Robots-Tag", "").lower() != "noindex, nofollow":
+    failures.append("invalid catalogue filter lost HTTP noindex")
 
 status, _, body = fetch("/definitely-not-a-bookorgo-route")
 checks.append({"path": "/definitely-not-a-bookorgo-route", "status": status})
@@ -137,14 +152,14 @@ for item in manifest.values():
         failures.append(f"{asset}: unexpected JavaScript MIME {content_type}")
 
 report = {
-    "task": "P1-01-main-release",
+    "task": "P1-02-main-release",
     "checked_at": datetime.now(timezone.utc).isoformat(),
     "origin": ORIGIN,
     "checks": checks,
     "failures": failures,
     "limits": [
         "Same-origin bounded HTTP checks only",
-        "No indexing release, supplier, payment, database or scheduler check",
+        "No indexing release, supplier, payment, database or scheduler change",
     ],
 }
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
