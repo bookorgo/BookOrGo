@@ -76,6 +76,25 @@ final class SampleExperienceDirectory
         ];
     }
 
+    public function detail(string $category, string $location, string $id): ?array
+    {
+        foreach ($this->items() as $item) {
+            if ($item['category'] === $category && $item['location_slug'] === $location && $item['id'] === $id) {
+                return [...$item, ...$this->detailBlueprint($category)];
+            }
+        }
+
+        return null;
+    }
+
+    public function related(string $category, string $exceptId): array
+    {
+        return array_slice(array_values(array_filter(
+            $this->items(),
+            fn (array $item): bool => $item['category'] === $category && $item['id'] !== $exceptId,
+        )), 0, 2);
+    }
+
     private function string(array $input, string $key, int $maximum): string
     {
         $value = $input[$key] ?? '';
@@ -130,7 +149,11 @@ final class SampleExperienceDirectory
 
     private function items(): array
     {
-        return [
+        return array_map(function (array $item): array {
+            $item['location_slug'] = mb_strtolower(str_replace([' ', '_'], '-', $item['area']));
+
+            return $item;
+        }, [
             ['id' => 'sample-desert-morning', 'title' => 'Desert morning activity concept', 'category' => 'activities', 'area' => 'Dubai', 'duration' => 'half-day', 'family' => true, 'order' => 10, 'motif' => 'sun', 'tags' => ['sample', 'desert', 'outdoors'], 'description' => 'A fictional card for testing activity discovery and filters.'],
             ['id' => 'sample-city-view', 'title' => 'City viewpoint activity concept', 'category' => 'activities', 'area' => 'Abu Dhabi', 'duration' => 'under-2-hours', 'family' => true, 'order' => 20, 'motif' => 'arch', 'tags' => ['sample', 'city', 'view'], 'description' => 'A fictional card for testing short activity results.'],
             ['id' => 'sample-mountain-day', 'title' => 'Mountain day activity concept', 'category' => 'activities', 'area' => 'Ras Al Khaimah', 'duration' => 'full-day', 'family' => false, 'order' => 30, 'motif' => 'spark', 'tags' => ['sample', 'mountain', 'adventure'], 'description' => 'A fictional card for testing outdoor activity states.'],
@@ -149,6 +172,49 @@ final class SampleExperienceDirectory
             ['id' => 'sample-family-event', 'title' => 'Family event layout concept', 'category' => 'events', 'area' => 'Dubai', 'duration' => 'half-day', 'family' => true, 'order' => 160, 'motif' => 'spark', 'tags' => ['sample', 'event', 'family'], 'description' => 'A fictional card with no date, ticket or availability claim.'],
             ['id' => 'sample-cultural-event', 'title' => 'Cultural event layout concept', 'category' => 'events', 'area' => 'Sharjah', 'duration' => 'full-day', 'family' => true, 'order' => 170, 'motif' => 'spark', 'tags' => ['sample', 'event', 'culture'], 'description' => 'A fictional card awaiting a verified event source.'],
             ['id' => 'sample-evening-event', 'title' => 'Evening event layout concept', 'category' => 'events', 'area' => 'Abu Dhabi', 'duration' => 'under-2-hours', 'family' => false, 'order' => 180, 'motif' => 'spark', 'tags' => ['sample', 'event', 'evening'], 'description' => 'A fictional card with no schedule or ticket claim.'],
-        ];
+        ]);
+    }
+
+    private function detailBlueprint(string $category): array
+    {
+        return match ($category) {
+            'activities' => [
+                'template_label' => 'Activity detail template',
+                'field_labels' => ['Ticket variant', 'Age rules', 'Operating times', 'Meeting or pickup point', 'Inclusions', 'Accessibility'],
+                'decision_note' => 'Times, access rules and what is included must come from an approved current source before this page can become a real activity listing.',
+                'cta_label' => 'Check verified activity options',
+            ],
+            'holidays' => [
+                'template_label' => 'Holiday detail template',
+                'field_labels' => ['Itinerary', 'Number of nights', 'Accommodation basis', 'Travel window', 'Inclusions and exclusions', 'Guest limits'],
+                'decision_note' => 'Accommodation, dates, guest limits and package inclusions must be verified together before a holiday referral can be enabled.',
+                'cta_label' => 'Check verified holiday options',
+            ],
+            'visas' => [
+                'template_label' => 'Visa information template',
+                'field_labels' => ['Visa type', 'Applicant eligibility', 'Required documents', 'Processing range', 'Official source', 'Last verified date'],
+                'decision_note' => 'This placeholder is not immigration advice. Eligibility, documents, timelines and any referral route require current official sources and editorial review.',
+                'cta_label' => 'View verified visa guidance',
+            ],
+            'cruises' => [
+                'template_label' => 'Cruise detail template',
+                'field_labels' => ['Route', 'Boarding point', 'Duration', 'Departure time', 'Dining options', 'Inclusions'],
+                'decision_note' => 'The route, boarding instructions, timing and inclusions must be supplied and checked before a cruise referral can be shown.',
+                'cta_label' => 'Check verified cruise options',
+            ],
+            'yachts' => [
+                'template_label' => 'Yacht detail template',
+                'field_labels' => ['Capacity', 'Rental duration', 'Boarding point', 'Inclusions', 'Optional add-ons', 'Package constraints'],
+                'decision_note' => 'Capacity, operator terms, boarding details and package constraints must be verified before a yacht referral can be enabled.',
+                'cta_label' => 'Check verified yacht options',
+            ],
+            'events' => [
+                'template_label' => 'Event detail template',
+                'field_labels' => ['Event date', 'Venue', 'Ticket category', 'Age restrictions', 'Access policy', 'Official source'],
+                'decision_note' => 'Dates, venue access, age rules and ticket categories must be checked against an approved source before publication.',
+                'cta_label' => 'Check verified event options',
+            ],
+            default => throw new InvalidArgumentException('Unknown detail category.'),
+        };
     }
 }

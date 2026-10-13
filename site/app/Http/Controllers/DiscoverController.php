@@ -39,6 +39,22 @@ final class DiscoverController extends Controller
         return view('journal', ['categories' => $this->directory->all()]);
     }
 
+    public function detail(string $category, string $location, string $experience): View
+    {
+        $categories = $this->directory->all();
+        abort_unless(isset($categories[$category]), 404);
+
+        $item = $this->samples->detail($category, $location, $experience);
+        abort_if($item === null, 404);
+
+        return view('detail', [
+            'categories' => $categories,
+            'category' => $categories[$category],
+            'item' => $item,
+            'related' => $this->samples->related($category, $experience),
+        ]);
+    }
+
     private function listing(Request $request, ?string $fixedCategory = null, ?array $category = null): View|Response
     {
         $categories = $this->directory->all();

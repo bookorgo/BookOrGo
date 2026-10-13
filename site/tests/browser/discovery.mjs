@@ -51,7 +51,18 @@ try {
             await page.screenshot({ path: new URL(`listing-${width}.png`, output).pathname, fullPage: true });
         }
 
-        checks.push({ viewport: width, homepage: 'pass', listing: 'pass', filters: 'pass', overflow: 'pass' });
+        await page.getByRole('link', { name: /View sample detail/ }).first().click();
+        assert.ok(await page.getByText('Layout demonstration only.').isVisible());
+        assert.ok(await page.getByRole('button', { name: /Check verified/ }).isDisabled());
+        assert.equal(await page.locator('h1').count(), 1);
+        assert.equal(await page.locator('.field-grid > div').count(), 6);
+        assert.ok(await page.locator('.related-grid article').count() === 2);
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+        if (width === 1440 || width === 390) {
+            await page.screenshot({ path: new URL(`detail-${width}.png`, output).pathname, fullPage: true });
+        }
+
+        checks.push({ viewport: width, homepage: 'pass', listing: 'pass', detail: 'pass', filters: 'pass', overflow: 'pass' });
         await context.close();
     }
 

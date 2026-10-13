@@ -21,7 +21,7 @@
                 <summary>Menu <span aria-hidden="true">☰</span></summary>
                 <nav aria-label="Mobile navigation">
                     @foreach($categories as $key => $item)
-                        <a href="{{ route('category', $key) }}" @if(request()->is($key)) aria-current="page" @endif>{{ $item['name'] }}</a>
+                        <a href="{{ route('category', $key) }}" @if(request()->is($key, $key.'/*')) aria-current="page" @endif>{{ $item['name'] }}</a>
                     @endforeach
                     <a href="{{ route('journal') }}">Travel journal</a>
                 </nav>
@@ -29,7 +29,7 @@
         </div>
         <nav class="container desktop-nav" aria-label="Main navigation">
             @foreach($categories as $key => $item)
-                <a href="{{ route('category', $key) }}" @if(request()->is($key)) aria-current="page" @endif>{{ $item['name'] }}</a>
+                <a href="{{ route('category', $key) }}" @if(request()->is($key, $key.'/*')) aria-current="page" @endif>{{ $item['name'] }}</a>
             @endforeach
             <span class="region">Dubai & the UAE</span>
         </nav>

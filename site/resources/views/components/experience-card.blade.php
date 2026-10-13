@@ -15,7 +15,7 @@
         <p>{{ $item['description'] }}</p>
         <div class="card-footer">
             <strong>No live offer or price</strong>
-            <span class="disabled-action">Details follow in P1-03</span>
+            <a class="detail-link" href="{{ route('experience.detail', ['category' => $item['category'], 'location' => $item['location_slug'], 'experience' => $item['id']]) }}">View sample detail <span aria-hidden="true">→</span></a>
         </div>
     </div>
 </article>

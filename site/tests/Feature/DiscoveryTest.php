@@ -34,6 +34,57 @@ final class DiscoveryTest extends TestCase
         $this->get('/activities/nonexistent-offer')->assertNotFound();
     }
 
+    public function test_each_category_has_a_category_aware_detail_variant(): void
+    {
+        $cases = [
+            '/activities/dubai/sample-desert-morning' => ['Activity detail template', 'Ticket variant', 'Accessibility'],
+            '/holidays/dubai/sample-city-break' => ['Holiday detail template', 'Number of nights', 'Guest limits'],
+            '/visas/uae-wide/sample-tourist-visa-guide' => ['Visa information template', 'Applicant eligibility', 'Last verified date'],
+            '/cruises/dubai/sample-creek-cruise' => ['Cruise detail template', 'Boarding point', 'Dining options'],
+            '/yachts/dubai-marina/sample-marina-yacht' => ['Yacht detail template', 'Capacity', 'Package constraints'],
+            '/events/dubai/sample-family-event' => ['Event detail template', 'Event date', 'Access policy'],
+        ];
+
+        foreach ($cases as $path => $expected) {
+            $response = $this->get($path);
+            $response->assertOk()->assertSee($expected)->assertSee('Fictional sample')
+                ->assertSee('Not supplied in this preview')->assertSee('No live option yet')
+                ->assertSee('disabled aria-disabled="true"', false)
+                ->assertHeader('X-Robots-Tag', 'noindex, nofollow');
+            $this->assertSame(1, substr_count($response->getContent(), '<h1'));
+        }
+
+        $this->get('/visas/uae-wide/sample-tourist-visa-guide')
+            ->assertSee('not immigration advice')->assertSee('current official sources');
+    }
+
+    public function test_all_sample_cards_link_to_unique_stable_detail_urls(): void
+    {
+        $directory = app(SampleExperienceDirectory::class);
+        $items = [];
+        foreach ([1, 2, 3] as $page) {
+            $items = [...$items, ...$directory->browse(['page' => (string) $page])['items']];
+        }
+
+        $urls = [];
+        foreach ($items as $item) {
+            $path = sprintf('/%s/%s/%s', $item['category'], $item['location_slug'], $item['id']);
+            $urls[] = $path;
+            $this->get($path)->assertOk()->assertSee($item['title'])
+                ->assertSee('href="'.rtrim(config('app.url'), '/').$path.'"', false);
+        }
+
+        $this->assertCount(18, array_unique($urls));
+    }
+
+    public function test_detail_routes_reject_mismatched_or_unknown_records(): void
+    {
+        $this->get('/activities/abu-dhabi/sample-desert-morning')->assertNotFound();
+        $this->get('/events/dubai/sample-desert-morning')->assertNotFound();
+        $this->get('/activities/dubai/sample-unknown')->assertNotFound();
+        $this->get('/activities/dubai/not-a-sample')->assertNotFound();
+    }
+
     public function test_search_matches_cards_and_has_an_honest_empty_state(): void
     {
         $boat = $this->get('/search?q=boat');
@@ -98,6 +149,7 @@ final class DiscoveryTest extends TestCase
             $this->assertArrayNotHasKey('price', $item);
             $this->assertArrayNotHasKey('availability', $item);
             $this->assertArrayNotHasKey('rating', $item);
+            $this->assertMatchesRegularExpression('/^[a-z0-9-]+$/', $item['location_slug']);
         }
     }
 
