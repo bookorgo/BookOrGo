@@ -71,6 +71,7 @@ try {
         assert.ok(await page.locator('.related-grid article').count() === 2);
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
         if (width === 1440 || width === 390) {
+            await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
             await page.screenshot({ path: new URL(`detail-${width}.png`, output).pathname, fullPage: true });
         }
 
