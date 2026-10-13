@@ -1,14 +1,9 @@
 {
-  "task": "P1-DESIGN-MATCH",
-  "owner": "bookorgo-reference-correction-20261013T1404Z",
-  "status": "released",
-  "acquired_at": "2026-10-13T14:04:00Z",
-  "expires_at": "2026-10-13T18:58:00Z",
-  "base_revision": "e58346d4910f6889fc6fbc4e631f6959bf39c5e6",
-  "expected_live_revision": "14a68ed92047aa0bebe657e87fe3bc32a9fd0b5b",
-  "renewed_at": "2026-10-13T16:58:00Z",
-  "released_at": "2026-10-13T17:11:00Z",
-  "completion_revision": "001b5ed75c77f26f2267bfbb001931bb3b37df31",
-  "result": "PASS_LIVE_LAYOUT_CORRECTION_ACCEPTANCE_OPEN",
-  "next_task": "P1-05 and remaining visual assets"
+  "task": "P1-DESIGN-FIDELITY",
+  "owner": "bookorgo-fidelity-20261013T1741Z",
+  "status": "active",
+  "acquired_at": "2026-10-13T17:41:00Z",
+  "expires_at": "2026-10-13T19:41:00Z",
+  "base_revision": "390ba7b0d9c2f38c8a7925e23dba457612a31941",
+  "expected_live_revision": "001b5ed75c77f26f2267bfbb001931bb3b37df31"
 }
