@@ -1,9 +1,9 @@
 {
-  "task": "P1-DESIGN-FIDELITY",
-  "owner": "bookorgo-fidelity-20261013T2205Z",
+  "task": "P1-DESIGN-FIDELITY-main-release",
+  "owner": "bookorgo-release-20261014T0357Z",
   "status": "active",
-  "acquired_at": "2026-10-13T22:05:19Z",
-  "expires_at": "2026-10-14T00:05:19Z",
-  "base_revision": "d4d2401f613db7d1c255d65e5518afcffaf7bebe",
+  "acquired_at": "2026-10-14T03:57:25Z",
+  "expires_at": "2026-10-14T05:57:25Z",
+  "base_revision": "c6f4b5f117043b83d3b3c1e307d579fbc3fafd02",
   "expected_live_revision": "001b5ed75c77f26f2267bfbb001931bb3b37df31"
 }
