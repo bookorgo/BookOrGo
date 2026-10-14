@@ -25,7 +25,7 @@ jobs:
       SSH_HOST: 45.137.159.248
       SSH_PORT: '65002'
       SSH_USER: u809119518
-      EXPECTED_PREVIOUS_REVISION: 001b5ed75c77f26f2267bfbb001931bb3b37df31
+      EXPECTED_PREVIOUS_REVISION: 775e77bf827d8de3d7161bc5a3d59995ac065c59
     steps:
       - name: Checkout frozen revision
         uses: actions/checkout@v4
@@ -242,6 +242,9 @@ jobs:
           npm install --prefix /tmp/bookorgo-live-browser --no-save --package-lock=false playwright@1.56.1
           /tmp/bookorgo-live-browser/node_modules/.bin/playwright install --with-deps chromium
           node .github/scripts/live-smoke.mjs
+          npm install --prefix /tmp/bookorgo-quality --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          /tmp/bookorgo-quality/node_modules/.bin/playwright install --with-deps chromium firefox webkit
+          BOOKORGO_REQUIRE_CLEAN_A11Y=true node .github/scripts/quality-audit.mjs
 
       - name: Mark verified release and remove incoming archive
         run: |

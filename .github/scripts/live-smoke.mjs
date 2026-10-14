@@ -92,6 +92,8 @@ try {
         await page.screenshot({ path: new URL(`live-article-${width}.png`, output).pathname, fullPage: true });
 
         await page.goto(origin + '/');
+        await verifyPhotos(page);
+        await page.evaluate(async () => { await document.fonts.ready; });
         await page.screenshot({ path: new URL(`live-homepage-${width}.png`, output).pathname, fullPage: true });
         checks.push({ viewport: width, homepage: 'pass', listing: 'pass', detail: 'pass', gallery: 'pass', faq: 'pass', article: 'pass', filters: 'pass', overflow: 'pass', menu: width === 390 ? 'pass' : 'not applicable' });
         await context.close();
