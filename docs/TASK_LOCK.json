@@ -1,9 +1,9 @@
 {
-  "task": "P1-05b",
-  "owner": "bookorgo-fix-20261014",
+  "task": "P1-05b-evidence-finalization",
+  "owner": "bookorgo-finalize-20261014",
   "status": "active",
-  "acquired_at": "2026-10-14T06:02:45Z",
-  "expires_at": "2026-10-14T08:02:00Z",
-  "base_revision": "e1367b9eb6e59a4433d528ec96a2d6a3e76a4aff",
-  "expected_live_revision": "775e77bf827d8de3d7161bc5a3d59995ac065c59"
+  "acquired_at": "2026-10-14T09:03:26Z",
+  "expires_at": "2026-10-14T10:03:00Z",
+  "base_revision": "dd5294a6c6ccb538b0f532b782507ede284d90a6",
+  "live_revision": "dd5294a6c6ccb538b0f532b782507ede284d90a6"
 }
