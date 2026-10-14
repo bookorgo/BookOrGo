@@ -1,8 +1,9 @@
 {
-  "task": "P1-05a",
-  "status": "released",
-  "owner": "bookorgo-quality-20261014",
-  "released_at": "2026-10-14T05:11:56Z",
-  "tested_revision": "3ad8b9bb003e36a85cf1d22d3275235fc2a26b03",
-  "next_task": "P1-05b accessibility fixes"
+  "task": "P1-05b",
+  "owner": "bookorgo-fix-20261014",
+  "status": "active",
+  "acquired_at": "2026-10-14T06:02:45Z",
+  "expires_at": "2026-10-14T08:02:00Z",
+  "base_revision": "e1367b9eb6e59a4433d528ec96a2d6a3e76a4aff",
+  "expected_live_revision": "775e77bf827d8de3d7161bc5a3d59995ac065c59"
 }
