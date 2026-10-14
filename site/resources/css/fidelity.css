@@ -94,3 +94,12 @@ body .gallery-summary>strong{display:block;color:#003b83;font-size:18px}body .ga
 
 /* Larger mobile row hit areas retain the reference's compact 14px visual radio. */
 @media(max-width:720px){body .filter-choices label{min-height:36px}}
+
+/* Stable caption contrast even over the brightest licensed photo crop.
+   Keep the reference geometry; backing/halo does not move or resize text. */
+body .destination-copy,body .region-card>span,body .inspiration-card>span,
+body .detail-gallery .detail-art>p,body .gallery-tile>span{
+    background:rgba(6,43,111,.9);color:white;border-radius:3px;
+    box-shadow:0 0 0 4px rgba(6,43,111,.9);
+}
+body .category-card .card-copy{background:rgba(6,43,111,.9)}

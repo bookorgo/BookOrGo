@@ -71,7 +71,7 @@
     </div>
 
     <aside class="detail-action" aria-labelledby="action-heading">
-<p class="eyebrow ink">Referral status</p><h2>Tickets and options</h2><p>Dates and options are not available for this sample.</p><div class="date-preview" aria-label="Inactive date preview">@foreach(range(1,4) as $slot)<button type="button" disabled aria-label="Date unavailable"><small>Date</small><strong>—</strong><span>Unavailable</span></button>@endforeach</div><div class="ticket-preview">
+<p class="eyebrow ink">Referral status</p><h2>Tickets and options</h2><p>Dates and options are not available for this sample.</p><div class="date-preview" role="group" aria-label="Inactive date preview">@foreach(range(1,4) as $slot)<button type="button" disabled aria-label="Date unavailable"><small>Date</small><strong>—</strong><span>Unavailable</span></button>@endforeach</div><div class="ticket-preview">
         <h2 id="action-heading">No live option yet</h2>
         <p>No partner, price, schedule or availability has been connected to this fictional sample.</p>
         <button type="button" disabled aria-disabled="true">{{ $item['cta_label'] }}</button>

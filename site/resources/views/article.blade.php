@@ -35,7 +35,7 @@
                 <p class="eyebrow ink">On this page</p>
                 <ol>@foreach($article['sections'] as $section)<li><a href="#{{ $section['id'] }}">{{ $section['title'] }}</a></li>@endforeach<li><a href="#sources">Source status</a></li></ol>
             </nav>
-            <div class="inactive-ad" aria-label="Inactive advertising preview"><strong>Advertising area</strong><span>Inactive preview — no ad loaded</span></div>
+            <div class="inactive-ad" role="group" aria-label="Inactive advertising preview"><strong>Advertising area</strong><span>Inactive preview — no ad loaded</span></div>
         </div>
         <div class="article-body">
             <section class="article-summary">

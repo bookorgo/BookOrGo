@@ -9,6 +9,32 @@ const output = 'site/test-results/quality';
 await fs.mkdir(output, { recursive: true });
 const routes = [['home', '/'], ['listing', '/search?q=boat'], ['detail', '/cruises/dubai/sample-creek-cruise'], ['article', '/blog/sample-first-visit-planning']];
 const rows = [], failures = [];
+const luminance = rgb => rgb.slice(0, 3).map(value => value / 255).map(value => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4).reduce((sum, value, index) => sum + value * [.2126, .7152, .0722][index], 0);
+const contrast = (a, b) => (Math.max(luminance(a), luminance(b)) + .05) / (Math.min(luminance(a), luminance(b)) + .05);
+async function checkCaptionContrast(page) {
+    // Conservative bound: composite the backing on pure white, brighter than
+    // any photo. This checks these captions only, not every page pixel.
+    const samples = await page.locator('.destination-copy, .category-card .card-copy, .region-card>span, .inspiration-card>span, .detail-gallery .detail-art>p, .gallery-tile>span').evaluateAll(elements => elements.flatMap(element => {
+        if (!element.getClientRects().length) return [];
+        const rgba = value => value.match(/[\d.]+/g).map(Number);
+        const background = rgba(getComputedStyle(element).backgroundColor);
+        return [element, ...element.querySelectorAll('*')].filter(node => [...node.childNodes].some(child => child.nodeType === Node.TEXT_NODE && child.textContent.trim()) && !node.closest('[aria-hidden="true"]')).map(node => ({
+            text: node.textContent.trim(), background, foreground: rgba(getComputedStyle(node).color),
+            opacity: getComputedStyle(node).opacity, containerOpacity: getComputedStyle(element).opacity,
+        }));
+    }));
+    for (const sample of samples) {
+        const alpha = sample.background[3] ?? 1;
+        assert.ok(alpha >= .9, 'caption needs an effective backing');
+        assert.equal(sample.opacity, '1');
+        assert.equal(sample.containerOpacity, '1');
+        assert.equal(sample.foreground[3] ?? 1, 1);
+        const brightest = sample.background.slice(0, 3).map(value => value * alpha + 255 * (1 - alpha));
+        sample.minimumRatio = Number(contrast(sample.foreground, brightest).toFixed(3));
+        assert.ok(sample.minimumRatio >= 4.5, `caption contrast: ${sample.text}`);
+    }
+    return samples;
+}
 for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
     const browser = await type.launch();
     try {
@@ -44,6 +70,9 @@ for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
                         assert.equal(await page.evaluate(() => document.activeElement?.tagName), 'SUMMARY');
                     }
                     if (name === 'detail') {
+                        const dates = page.getByRole('group', { name: 'Inactive date preview', exact: true });
+                        assert.equal(await dates.getByRole('button', { name: 'Date unavailable' }).count(), 4);
+                        for (const button of await dates.getByRole('button').all()) assert.ok(await button.isDisabled());
                         assert.ok(await page.getByRole('button', { name: /Check verified/ }).isDisabled());
                         await page.locator('.detail-faq summary').first().focus();
                         await page.keyboard.press('Enter');
@@ -52,12 +81,15 @@ for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
                     if (name === 'listing') {
                         await page.locator('.listing-filters').evaluate(el => el.setAttribute('open', ''));
                     }
+                    if (name === 'article') assert.ok(await page.getByRole('group', { name: 'Inactive advertising preview', exact: true }).isVisible());
+                    row.captionContrast = await checkCaptionContrast(page);
                     await page.addScriptTag({ path: '/tmp/bookorgo-quality/node_modules/axe-core/axe.min.js' });
                     const audit = await page.evaluate(async () => axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'] } }));
                     const filename = `${engine}-${width}-${name}`;
                     await fs.writeFile(`${output}/${filename}-axe.json`, JSON.stringify(audit, null, 2));
                     row.violations = audit.violations.map(rule => ({ id: rule.id, impact: rule.impact, help: rule.help, helpUrl: rule.helpUrl, nodes: rule.nodes.map(node => ({ target: node.target, failureSummary: node.failureSummary })) }));
                     row.manualReviewRules = audit.incomplete.map(rule => rule.id);
+                    assert.ok(!row.manualReviewRules.includes('aria-prohibited-attr'), 'remaining ARIA naming issue requires review');
                     row.functional = 'PASS';
                     row.accessibility = row.violations.length ? 'FINDINGS_REQUIRE_FIX' : 'NO_AUTOMATED_VIOLATIONS';
                     await page.evaluate(() => { document.activeElement?.blur(); scrollTo(0, 0); });
