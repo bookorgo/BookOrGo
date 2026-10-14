@@ -1,9 +1,9 @@
 {
-  "task": "P1-05b",
-  "status": "released",
-  "owner": "bookorgo-finalize-20261014",
-  "released_at": "2026-10-14T09:05:11Z",
-  "tested_revision": "c867f5510c60388927daa8792f363f185ed1c796",
-  "live_revision": "dd5294a6c6ccb538b0f532b782507ede284d90a6",
-  "next_task": "P1-05c scoped manual ARIA/overlay contrast review"
+  "task": "P1-05c",
+  "status": "active",
+  "owner": "bookorgo-p105c-20261014",
+  "acquired_at": "2026-10-14T09:56:23.136Z",
+  "expires_at": "2026-10-14T11:26:23.137Z",
+  "base_revision": "0d040f5a1ba6aee0e7c6cce58bad26d9cf754dc9",
+  "scope": "Bounded ARIA naming and photo-overlay contrast review; tested guarded main release."
 }
