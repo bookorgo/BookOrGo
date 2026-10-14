@@ -7,6 +7,19 @@ use Tests\TestCase;
 
 final class DiscoveryTest extends TestCase
 {
+    public function test_accessible_notice_and_sidebar_regions_preserve_preview_safeguards(): void
+    {
+        foreach (['/', '/search', '/blog/sample-first-visit-planning'] as $path) {
+            $this->get($path)->assertOk()
+                ->assertSee('class="preview-notice" role="region" aria-label="Development preview status"', false)
+                ->assertHeader('X-Robots-Tag', 'noindex, nofollow');
+        }
+        $this->get('/search')->assertSee('class="filters-column" role="region" aria-label="Catalogue filters"', false)
+            ->assertDontSee('<aside class="filters-column">', false);
+        $this->get('/blog/sample-first-visit-planning')->assertSee('<div class="article-aside">', false)
+            ->assertDontSee('<aside class="article-aside">', false);
+    }
+
     public function test_reference_homepage_modules_are_original_uae_only_and_non_commercial(): void
     {
         $response = $this->get('/');

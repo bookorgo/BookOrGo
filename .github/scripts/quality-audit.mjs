@@ -3,7 +3,8 @@ import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 
-const origin = 'https://bookorgo.com';
+const origin = process.env.BOOKORGO_AUDIT_ORIGIN || 'https://bookorgo.com';
+assert.ok(['https://bookorgo.com', 'http://127.0.0.1:8000'].includes(origin), 'approved audit origin only');
 const output = 'site/test-results/quality';
 await fs.mkdir(output, { recursive: true });
 const routes = [['home', '/'], ['listing', '/search?q=boat'], ['detail', '/cruises/dubai/sample-creek-cruise'], ['article', '/blog/sample-first-visit-planning']];
@@ -84,7 +85,9 @@ for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
     } finally { await browser.close(); }
 }
 const uniqueRules = [...new Set(rows.flatMap(row => (row.violations || []).map(rule => rule.id)))];
-const report = { task: 'P1-05a', sourceRevision: process.env.GITHUB_SHA, expectedLiveRevision: '775e77bf827d8de3d7161bc5a3d59995ac065c59', readOnly: true, checkedAt: new Date().toISOString(), rows, failures, uniqueRules, limitations: 'Automated audit, not WCAG certification. Browser engines are not physical Safari/iOS/Android devices. No performance/CWV or screen-reader acceptance claim. Accessibility findings do not make this an accessibility pass.' };
+const report = { task: 'P1-05a', sourceRevision: process.env.GITHUB_SHA, targetOrigin: origin, mode: origin.startsWith('http://127.0.0.1') ? 'CI_SOURCE' : 'LIVE_READ_ONLY', readOnly: true, checkedAt: new Date().toISOString(), rows, failures, uniqueRules, limitations: 'Automated audit, not WCAG certification. Browser engines are not physical Safari/iOS/Android devices. No performance/CWV or screen-reader acceptance claim. Accessibility findings do not make this an accessibility pass.' };
 await fs.writeFile(output + '/summary.json', JSON.stringify(report, null, 2));
 console.log(JSON.stringify({ pages: rows.length, functionalFailures: failures.length, pagesWithAccessibilityFindings: rows.filter(row => row.violations?.length).length, uniqueRules }));
 assert.deepEqual(failures, [], 'functional/browser failures: see saved summary');
+
+if (process.env.BOOKORGO_REQUIRE_CLEAN_A11Y === 'true') assert.deepEqual(uniqueRules, [], 'automated accessibility findings: see saved report');

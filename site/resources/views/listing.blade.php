@@ -18,7 +18,7 @@
 </section>
 
 <section class="container listing-shell" aria-labelledby="results-heading">
-    <aside class="filters-column">
+    <div class="filters-column" role="region" aria-label="Catalogue filters">
         <details class="listing-filters" open>
             <summary>Filters @if($activeCount)<span>{{ $activeCount }} active</span>@endif</summary>
             <form id="catalogue-filter-form" method="get" action="{{ $action }}" data-listing-form>
@@ -39,7 +39,7 @@
                 <a class="reset-link" href="{{ $action }}">Reset all filters</a>
             </form>
         </details>
-    </aside>
+    </div>
 
     <div class="results-column" id="catalogue-results" aria-live="polite">
         <div class="results-toolbar">

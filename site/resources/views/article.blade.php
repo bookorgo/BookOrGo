@@ -30,13 +30,13 @@
         </div>
     </header>
     <div class="container article-shell">
-        <aside class="article-aside">
+        <div class="article-aside">
             <nav class="article-toc" aria-label="On this page">
                 <p class="eyebrow ink">On this page</p>
                 <ol>@foreach($article['sections'] as $section)<li><a href="#{{ $section['id'] }}">{{ $section['title'] }}</a></li>@endforeach<li><a href="#sources">Source status</a></li></ol>
             </nav>
             <div class="inactive-ad" aria-label="Inactive advertising preview"><strong>Advertising area</strong><span>Inactive preview — no ad loaded</span></div>
-        </aside>
+        </div>
         <div class="article-body">
             <section class="article-summary">
                 <p class="eyebrow ink">At a glance</p>

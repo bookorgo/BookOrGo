@@ -35,7 +35,7 @@
         </nav>
     </header>
     <main id="main" tabindex="-1">@yield('content')</main>
-    <div class="preview-notice"><div class="container"><span class="status-dot" aria-hidden="true"></span><strong>Development preview</strong><span>Fictional samples. Destination photos are illustrative. No live offers or bookings.</span></div></div>
+    <div class="preview-notice" role="region" aria-label="Development preview status"><div class="container"><span class="status-dot" aria-hidden="true"></span><strong>Development preview</strong><span>Fictional samples. Destination photos are illustrative. No live offers or bookings.</span></div></div>
     <footer class="site-footer">
         <div class="container footer-grid">
             <div><a class="wordmark" href="{{ route('home') }}">bookorgo<span class="brand-dot">.</span></a><p>Room for your next UAE adventure.</p><p class="muted">Discover more and go further.</p></div>
