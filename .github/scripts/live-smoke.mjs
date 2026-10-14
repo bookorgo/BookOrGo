@@ -9,6 +9,13 @@ const browser = await chromium.launch();
 const checks = [];
 const errors = [];
 
+async function verifyPhotos(page) {
+ const results = await page.locator('img.destination-photo').evaluateAll(async images => Promise.all(images.map(async image => {
+ image.loading = 'eager'; try { await image.decode(); } catch {}
+ return image.complete && image.naturalWidth > 0 && new URL(image.currentSrc).origin === location.origin;
+ })));
+ assert.ok(results.length > 0 && results.every(Boolean), 'all destination photos load from the same origin');
+}
 try {
     for (const width of [1440, 390]) {
         const context = await browser.newContext({ viewport: { width, height: 1000 } });
@@ -20,7 +27,9 @@ try {
         assert.equal(await page.locator('h1').count(), 1);
         assert.equal(await page.locator('.destination-card').count(), 6);
         assert.equal(await page.locator('.featured-card').count(), 4);
-        assert.equal(await page.locator('.home-guide').count(), 3);
+        assert.equal(await page.locator('.region-card').count(), 8);
+        await verifyPhotos(page);
+        assert.ok(await page.evaluate(async () => { await document.fonts.load('700 32px Inter'); return document.fonts.check('700 32px Inter'); }));
         assert.ok(await page.locator('#newsletter-preview').isDisabled());
         assert.equal(await page.locator('.site-header').evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(6, 43, 111)');
         assert.ok(await page.getByText('Development preview', { exact: true }).isVisible());
@@ -39,6 +48,8 @@ try {
             page.getByRole('button', { name: 'Explore' }).click(),
         ]);
         assert.equal(await page.locator('.experience-card').count(), 6);
+        assert.equal(await page.locator('.inspiration-card').count(), 3);
+        await verifyPhotos(page);
         assert.ok(await page.getByText('6 fictional cards').isVisible());
         assert.ok(await page.getByText('Demonstration data only.').isVisible());
         const filters = page.locator('.listing-filters');
@@ -60,6 +71,8 @@ try {
         assert.ok(await page.getByRole('button', { name: /Check verified cruise options/ }).isDisabled());
         assert.equal(await page.locator('.field-grid > div').count(), 6);
         assert.equal(await page.locator('.gallery-tile').count(), 6);
+        await verifyPhotos(page);
+        assert.equal(await page.locator('.review-empty-grid > div').count(), 2);
         await page.locator('.detail-faq summary').first().focus();
         await page.keyboard.press('Enter');
         assert.ok(await page.getByText('The referral control stays disabled', { exact: false }).isVisible());
@@ -89,9 +102,9 @@ try {
     page.on('pageerror', error => errors.push(error.message));
     await page.goto(origin + '/search');
     await page.locator('.listing-filters summary').click();
-    await page.getByLabel('Category').selectOption('yachts');
-    await page.getByLabel('Area').selectOption('Dubai Marina');
-    await page.getByLabel('Duration').selectOption('under-2-hours');
+    await page.locator('input[name="category"][value="yachts"]').check();
+    await page.locator('input[name="area"][value="Dubai Marina"]').check();
+    await page.locator('input[name="duration"][value="under-2-hours"]').check();
     await page.getByLabel('Sample yes').check();
     await Promise.all([
         page.waitForURL(url => url.pathname === '/search' && url.searchParams.get('category') === 'yachts'),
@@ -104,8 +117,7 @@ try {
     assert.ok(await page.getByText('Page 2 of 3').isVisible());
     assert.equal(await page.locator('.experience-card').count(), 6);
     checks.push({ filteredNavigation: 'pass', pagination: 'pass' });
-    await page.getByLabel('Sort by').selectOption('title-desc');
-    await page.getByRole('button', { name: 'Apply sort', exact: true }).click();
+    await page.getByRole('link', { name: 'Title Z–A', exact: true }).click();
     assert.equal(new URL(page.url()).searchParams.get('sort'), 'title-desc');
     assert.equal(new URL(page.url()).searchParams.get('q'), 'sample');
     checks.push({ sorting: 'pass', queryPreserved: 'pass' });

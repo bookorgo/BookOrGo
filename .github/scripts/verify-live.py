@@ -90,6 +90,7 @@ pages = {
     "/disclosure": "Know where a booking will happen",
     "/privacy": "Privacy notice",
     "/terms": "Terms of use",
+    "/photo-credits": "Photo credits",
     "/activities/dubai/sample-desert-morning": "Activity detail template",
     "/holidays/dubai/sample-city-break": "Holiday detail template",
     "/visas/uae-wide/sample-tourist-visa-guide": "Visa information template",
