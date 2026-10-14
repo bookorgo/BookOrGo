@@ -1,0 +1,90 @@
+import { chromium, firefox, webkit } from '/tmp/bookorgo-quality/node_modules/playwright/index.mjs';
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+
+const origin = 'https://bookorgo.com';
+const output = 'site/test-results/quality';
+await fs.mkdir(output, { recursive: true });
+const routes = [['home', '/'], ['listing', '/search?q=boat'], ['detail', '/cruises/dubai/sample-creek-cruise'], ['article', '/blog/sample-first-visit-planning']];
+const rows = [], failures = [];
+for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
+    const browser = await type.launch();
+    try {
+        for (const width of [1440, 390]) {
+            const context = await browser.newContext({ viewport: { width, height: 1000 } });
+            const page = await context.newPage();
+            const errors = [];
+            page.on('pageerror', error => errors.push(error.message));
+            for (const [name, path] of routes) {
+                const row = { engine, width, page: name, path, checkedAt: new Date().toISOString() };
+                rows.push(row);
+                try {
+                    const response = await page.goto(origin + path, { waitUntil: 'networkidle' });
+                    assert.equal(response.status(), 200);
+                    assert.equal(response.headers()['x-robots-tag'], 'noindex, nofollow');
+                    assert.equal(await page.locator('h1').count(), 1);
+                    assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), origin + path.split('?')[0]);
+                    const body = await response.body();
+                    row.htmlSha256 = createHash('sha256').update(body).digest('hex');
+                    await page.locator('img.destination-photo').evaluateAll(async images => Promise.all(images.map(async image => { image.loading = 'eager'; await image.decode(); })));
+                    await page.evaluate(async () => { await document.fonts.ready; });
+                    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+                    await page.keyboard.press('Tab');
+                    assert.equal(await page.evaluate(() => document.activeElement?.getAttribute('href')), '#main');
+                    await page.keyboard.press('Enter');
+                    assert.equal(await page.evaluate(() => document.activeElement?.id), 'main');
+                    if (name === 'home' && width === 390) {
+                        await page.locator('.mobile-menu summary').focus();
+                        await page.keyboard.press('Enter');
+                        assert.ok(await page.locator('.mobile-menu nav').isVisible());
+                        await page.keyboard.press('Escape');
+                        assert.equal(await page.locator('.mobile-menu').getAttribute('open'), null);
+                        assert.equal(await page.evaluate(() => document.activeElement?.tagName), 'SUMMARY');
+                    }
+                    if (name === 'detail') {
+                        assert.ok(await page.getByRole('button', { name: /Check verified/ }).isDisabled());
+                        await page.locator('.detail-faq summary').first().focus();
+                        await page.keyboard.press('Enter');
+                        assert.ok(await page.getByText('The referral control stays disabled', { exact: false }).isVisible());
+                    }
+                    if (name === 'listing') {
+                        await page.locator('.listing-filters').evaluate(el => el.setAttribute('open', ''));
+                    }
+                    await page.addScriptTag({ path: '/tmp/bookorgo-quality/node_modules/axe-core/axe.min.js' });
+                    const audit = await page.evaluate(async () => axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'] } }));
+                    const filename = `${engine}-${width}-${name}`;
+                    await fs.writeFile(`${output}/${filename}-axe.json`, JSON.stringify(audit, null, 2));
+                    row.violations = audit.violations.map(rule => ({ id: rule.id, impact: rule.impact, help: rule.help, helpUrl: rule.helpUrl, nodes: rule.nodes.map(node => ({ target: node.target, failureSummary: node.failureSummary })) }));
+                    row.manualReviewRules = audit.incomplete.map(rule => rule.id);
+                    row.functional = 'PASS';
+                    row.accessibility = row.violations.length ? 'FINDINGS_REQUIRE_FIX' : 'NO_AUTOMATED_VIOLATIONS';
+                    await page.evaluate(() => { document.activeElement?.blur(); scrollTo(0, 0); });
+                    await page.screenshot({ path: `${output}/${filename}.png`, fullPage: true });
+                } catch (error) {
+                    row.functional = 'FAIL'; row.error = error.message;
+                    failures.push({ engine, width, page: name, error: error.message });
+                }
+            }
+            try {
+                await page.goto(origin + '/search');
+                await page.locator('.listing-filters').evaluate(el => el.setAttribute('open', ''));
+                await page.locator('input[name="category"][value="yachts"]').check();
+                await page.locator('input[name="area"][value="Dubai Marina"]').check();
+                await page.getByRole('button', { name: /Apply filters/ }).click();
+                assert.equal(await page.locator('.experience-card').count(), 1);
+                await page.getByRole('link', { name: 'Title Z–A', exact: true }).click();
+                assert.equal(new URL(page.url()).searchParams.get('category'), 'yachts');
+                assert.equal(new URL(page.url()).searchParams.get('area'), 'Dubai Marina');
+                assert.equal(new URL(page.url()).searchParams.get('sort'), 'title-desc');
+            } catch (error) { failures.push({ engine, width, page: 'filter-sort', error: error.message }); }
+            for (const error of errors) failures.push({ engine, width, page: 'runtime', error });
+            await context.close();
+        }
+    } finally { await browser.close(); }
+}
+const uniqueRules = [...new Set(rows.flatMap(row => (row.violations || []).map(rule => rule.id)))];
+const report = { task: 'P1-05a', sourceRevision: process.env.GITHUB_SHA, expectedLiveRevision: '775e77bf827d8de3d7161bc5a3d59995ac065c59', readOnly: true, checkedAt: new Date().toISOString(), rows, failures, uniqueRules, limitations: 'Automated audit, not WCAG certification. Browser engines are not physical Safari/iOS/Android devices. No performance/CWV or screen-reader acceptance claim. Accessibility findings do not make this an accessibility pass.' };
+await fs.writeFile(output + '/summary.json', JSON.stringify(report, null, 2));
+console.log(JSON.stringify({ pages: rows.length, functionalFailures: failures.length, pagesWithAccessibilityFindings: rows.filter(row => row.violations?.length).length, uniqueRules }));
+assert.deepEqual(failures, [], 'functional/browser failures: see saved summary');

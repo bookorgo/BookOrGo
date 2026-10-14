@@ -1,0 +1,33 @@
+name: BookOrGo P1 quality audit
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/quality-audit.yml', '.github/scripts/quality-audit.mjs']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: bookorgo-readonly-quality
+  cancel-in-progress: false
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install pinned audit dependencies
+        run: |
+          npm install --prefix /tmp/bookorgo-quality --no-save --package-lock=false playwright@1.56.1 axe-core@4.10.3
+          /tmp/bookorgo-quality/node_modules/.bin/playwright install --with-deps chromium firefox webkit
+      - name: Read-only functional and accessibility audit
+        run: node .github/scripts/quality-audit.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bookorgo-quality-${{ github.sha }}
+          path: site/test-results/quality/
+          retention-days: 14
+          if-no-files-found: warn
