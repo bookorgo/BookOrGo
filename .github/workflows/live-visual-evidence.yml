@@ -1,0 +1,29 @@
+name: BookOrGo read-only live visual evidence
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/live-visual-evidence.yml', '.github/scripts/live-visual-evidence.mjs']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install browser
+        run: |
+          npm install --prefix /tmp/bookorgo-visual --no-save --package-lock=false playwright@1.56.1
+          /tmp/bookorgo-visual/node_modules/.bin/playwright install --with-deps chromium
+      - name: Read-only live screenshot checks
+        run: node .github/scripts/live-visual-evidence.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bookorgo-live-visual-${{ github.sha }}
+          path: site/test-results/live-visual/
+          retention-days: 14
