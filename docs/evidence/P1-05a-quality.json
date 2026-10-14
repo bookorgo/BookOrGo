@@ -1,0 +1,493 @@
+{
+  "task": "P1-05a",
+  "sourceRevision": "3ad8b9bb003e36a85cf1d22d3275235fc2a26b03",
+  "expectedLiveRevision": "775e77bf827d8de3d7161bc5a3d59995ac065c59",
+  "checkedAt": "2026-10-14T05:09:40.812Z",
+  "readOnly": true,
+  "states": 24,
+  "functionalFailures": [],
+  "issues": [
+    {
+      "id": "region",
+      "impact": "moderate",
+      "help": "All page content should be contained by landmarks",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI",
+      "observedStates": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "page": "home"
+        },
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "page": "listing"
+        },
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "page": "detail"
+        },
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "page": "article"
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "page": "home"
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "page": "listing"
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "page": "detail"
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "page": "article"
+        },
+        {
+          "engine": "firefox",
+          "width": 1440,
+          "page": "home"
+        },
+        {
+          "engine": "firefox",
+          "width": 1440,
+          "page": "listing"
+        },
+        {
+          "engine": "firefox",
+          "width": 1440,
+          "page": "detail"
+        },
+        {
+          "engine": "firefox",
+          "width": 1440,
+          "page": "article"
+        },
+        {
+          "engine": "firefox",
+          "width": 390,
+          "page": "home"
+        },
+        {
+          "engine": "firefox",
+          "width": 390,
+          "page": "listing"
+        },
+        {
+          "engine": "firefox",
+          "width": 390,
+          "page": "detail"
+        },
+        {
+          "engine": "firefox",
+          "width": 390,
+          "page": "article"
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "page": "home"
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "page": "listing"
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "page": "detail"
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "page": "article"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "page": "home"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "page": "listing"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "page": "detail"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "page": "article"
+        }
+      ],
+      "targets": [
+        {
+          "target": [
+            ".container > strong"
+          ],
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": [
+            ".container > span:nth-child(3)"
+          ],
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        },
+        {
+          "target": [
+            "span:nth-child(3)"
+          ],
+          "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+        }
+      ]
+    },
+    {
+      "id": "landmark-complementary-is-top-level",
+      "impact": "moderate",
+      "help": "Aside should not be contained in another landmark",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/landmark-complementary-is-top-level?application=axeAPI",
+      "observedStates": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "page": "listing"
+        },
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "page": "article"
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "page": "listing"
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "page": "article"
+        },
+        {
+          "engine": "firefox",
+          "width": 1440,
+          "page": "listing"
+        },
+        {
+          "engine": "firefox",
+          "width": 1440,
+          "page": "article"
+        },
+        {
+          "engine": "firefox",
+          "width": 390,
+          "page": "listing"
+        },
+        {
+          "engine": "firefox",
+          "width": 390,
+          "page": "article"
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "page": "listing"
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "page": "article"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "page": "listing"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "page": "article"
+        }
+      ],
+      "targets": [
+        {
+          "target": [
+            "aside"
+          ],
+          "failureSummary": "Fix any of the following:\n  The null landmark is contained in another landmark."
+        }
+      ]
+    },
+    {
+      "id": "target-size",
+      "impact": "serious",
+      "help": "All touch targets must be 24px large, or leave sufficient space",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/target-size?application=axeAPI",
+      "observedStates": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "page": "listing"
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "page": "listing"
+        },
+        {
+          "engine": "firefox",
+          "width": 1440,
+          "page": "listing"
+        },
+        {
+          "engine": "firefox",
+          "width": 390,
+          "page": "listing"
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "page": "listing"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "page": "listing"
+        }
+      ],
+      "targets": [
+        {
+          "target": [
+            "input[value=\"\"][name=\"area\"][type=\"radio\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"Abu Dhabi\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"Dubai\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"Dubai Marina\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"Fujairah\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"Ras Al Khaimah\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"Sharjah\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"UAE-wide\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"\"][name=\"category\"][type=\"radio\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"activities\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"holidays\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"visas\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"cruises\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"yachts\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"events\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"\"][name=\"duration\"][type=\"radio\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"under-2-hours\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"half-day\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"full-day\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"multi-day\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        },
+        {
+          "target": [
+            "input[value=\"information\"]"
+          ],
+          "failureSummary": "Fix any of the following:\n  Target has insufficient size (14px by 14px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px instead of at least 24px."
+        }
+      ]
+    },
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+      "observedStates": [
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "page": "detail"
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "page": "detail"
+        },
+        {
+          "engine": "firefox",
+          "width": 1440,
+          "page": "detail"
+        },
+        {
+          "engine": "firefox",
+          "width": 390,
+          "page": "detail"
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "page": "detail"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "page": "detail"
+        }
+      ],
+      "targets": [
+        {
+          "target": [
+            ".review-metrics > div:nth-child(1) > strong"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #777777, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": [
+            ".review-metrics > div:nth-child(2) > strong"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #777777, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": [
+            ".review-metrics > div:nth-child(3) > strong"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #777777, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": [
+            "div:nth-child(4) > strong"
+          ],
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #777777, background color: #ffffff, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    }
+  ],
+  "manualReviewRules": [
+    "color-contrast",
+    "aria-prohibited-attr"
+  ],
+  "limitations": "Automated audit, not WCAG certification. Browser engines are not physical Safari/iOS/Android devices. No performance/CWV or screen-reader acceptance claim. Accessibility findings do not make this an accessibility pass.",
+  "workflowRun": 38514992538,
+  "artifact": {
+    "id": 11872175676,
+    "name": "bookorgo-quality-3ad8b9bb003e36a85cf1d22d3275235fc2a26b03",
+    "size_in_bytes": 25859892,
+    "url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11872175676",
+    "archive_download_url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11872175676/zip",
+    "expired": false,
+    "created_at": "2026-10-14T05:09:43Z",
+    "expires_at": "2026-10-28T05:09:41Z",
+    "updated_at": "2026-10-14T05:09:43Z",
+    "digest": "sha256:564459cdc0e04c7f9b41f7d0434e6f9b5748ddca8f361bc94752ffa2303d5554",
+    "workflow_run": {
+      "id": 38514992538,
+      "repository_id": 1414693210,
+      "head_repository_id": 1414693210,
+      "head_branch": "main",
+      "head_sha": "3ad8b9bb003e36a85cf1d22d3275235fc2a26b03"
+    }
+  },
+  "status": "AUDIT_COMPLETE_WITH_FINDINGS",
+  "deployment": "NOT_PERFORMED; live remains 775e77bf827d8de3d7161bc5a3d59995ac065c59",
+  "nextTask": "P1-05b: fix target size and contrast, then landmark semantics, rerun all audit states before guarded live release."
+}
