@@ -1,0 +1,120 @@
+{
+  "task": "P1-DESIGN-FIDELITY",
+  "source_revision": "c6f4b5f117043b83d3b3c1e307d579fbc3fafd02",
+  "ci_run": 38476477536,
+  "ci_artifact": {
+    "id": 11855115017,
+    "name": "bookorgo-p1-article-c6f4b5f117043b83d3b3c1e307d579fbc3fafd02",
+    "size_in_bytes": 16527494,
+    "url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11855115017",
+    "archive_download_url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11855115017/zip",
+    "expired": false,
+    "created_at": "2026-10-13T22:16:09Z",
+    "expires_at": "2026-10-27T22:16:07Z",
+    "updated_at": "2026-10-13T22:16:09Z",
+    "digest": "sha256:6f2ae09f13ccfc30f17077a6db6ab139acde27382e19a86e4c9583f4c829c039",
+    "workflow_run": {
+      "id": 38476477536,
+      "repository_id": 1414693210,
+      "head_repository_id": 1414693210,
+      "head_branch": "main",
+      "head_sha": "c6f4b5f117043b83d3b3c1e307d579fbc3fafd02"
+    }
+  },
+  "feature_tests": 18,
+  "assertions": 398,
+  "viewports": [
+    1920,
+    1440,
+    768,
+    390,
+    320
+  ],
+  "no_js_internal_links": 27,
+  "ci_page_errors": [],
+  "visual_review": "Homepage/listing/detail desktop and mobile screenshots inspected. New photo-based layout, compact filters, inspiration strip and unrated gallery summary present. Not pixel-identical or owner accepted.",
+  "release_revision": "775e77bf827d8de3d7161bc5a3d59995ac065c59",
+  "release_run": 38509065461,
+  "previous_release": "001b5ed75c77f26f2267bfbb001931bb3b37df31",
+  "limits": [
+    "Independent licensed photographs differ from reference assets",
+    "Fictional sample data and disabled date/offer/review actions",
+    "Wider accessibility/performance/Safari/Firefox QA and owner design acceptance remain",
+    "Database/scheduler/storage operational gates remain open"
+  ],
+  "unchanged": [
+    "database",
+    "DNS",
+    "Site audience",
+    "indexability",
+    "payments",
+    "ads",
+    "partner integrations"
+  ],
+  "deployment_status": "VERIFIED_LIVE",
+  "live_http_checks": 43,
+  "live_failures": [],
+  "live_viewports": [
+    1440,
+    390
+  ],
+  "live_page_errors": [],
+  "backup_restore_comparison": "passed",
+  "backup_sha256": "5b379ba0f505d8e030fef5dc02da92cdebf065064169dea388e9b6c04e3f5915",
+  "rollback": "available, not needed",
+  "live_artifact": {
+    "id": 11868613104,
+    "name": "bookorgo-p1-design-main-release-775e77bf827d8de3d7161bc5a3d59995ac065c59",
+    "size_in_bytes": 6999765,
+    "url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11868613104",
+    "archive_download_url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11868613104/zip",
+    "expired": false,
+    "created_at": "2026-10-14T04:00:45Z",
+    "expires_at": "2026-11-13T04:00:44Z",
+    "updated_at": "2026-10-14T04:00:45Z",
+    "digest": "sha256:b24a961bd757e2949b0e6544e66e163efa4c67e7a56a94e8ff8a483461f2ff44",
+    "workflow_run": {
+      "id": 38509065461,
+      "repository_id": 1414693210,
+      "head_repository_id": 1414693210,
+      "head_branch": "main",
+      "head_sha": "775e77bf827d8de3d7161bc5a3d59995ac065c59"
+    }
+  },
+  "screenshot_capture_issue": "Initial final-homepage screenshot was taken after navigation without decoding lazy images; functional image checks passed on initial visit. Separate read-only all-images-decoded capture was added.",
+  "visual_run": 38509466280,
+  "visual_artifact": {
+    "id": 11868803212,
+    "name": "bookorgo-live-visual-2ea555d7f1511ede8521fea2deb93abff18f7841",
+    "size_in_bytes": 7117800,
+    "url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11868803212",
+    "archive_download_url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11868803212/zip",
+    "expired": false,
+    "created_at": "2026-10-14T04:04:35Z",
+    "expires_at": "2026-10-28T04:04:33Z",
+    "updated_at": "2026-10-14T04:04:35Z",
+    "digest": "sha256:56c946c83a45bbe9d390f4374914aaa2b34c25201159bf92fcd134cc9ca02ba3",
+    "workflow_run": {
+      "id": 38509466280,
+      "repository_id": 1414693210,
+      "head_repository_id": 1414693210,
+      "head_branch": "main",
+      "head_sha": "2ea555d7f1511ede8521fea2deb93abff18f7841"
+    }
+  },
+  "visual_checks": {
+    "viewports": [
+      1440,
+      390
+    ],
+    "images_per_page": {
+      "home": 25,
+      "listing": 9,
+      "detail": 10
+    },
+    "all_decoded": true,
+    "page_errors": [],
+    "overflow": false
+  },
+  "next_task": "P1-05 wider accessibility/performance/cross-browser QA and owner visual review; P1 not complete."
+}
