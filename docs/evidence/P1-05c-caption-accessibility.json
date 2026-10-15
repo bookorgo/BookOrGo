@@ -1,0 +1,43 @@
+{
+  "task": "P1-05c",
+  "status": "SOURCE_VERIFIED_RELEASE_PENDING",
+  "application_source": "0403dcfe464a99a70655b6367dd962d313439e5d",
+  "quality_revision": "21cfd2fa44a473ebeaabf7c56fc87863a67f42aa",
+  "foundation_run": 38546505440,
+  "quality_run": 38695916440,
+  "tests": 19,
+  "assertions": 414,
+  "browser_states": 24,
+  "caption_checks": 342,
+  "minimum_caption_ratio": 9.174,
+  "quality_artifact": {
+    "id": 11953734297,
+    "name": "bookorgo-quality-21cfd2fa44a473ebeaabf7c56fc87863a67f42aa",
+    "size_in_bytes": 24083609,
+    "url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11953734297",
+    "archive_download_url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/11953734297/zip",
+    "expired": false,
+    "created_at": "2026-10-15T07:02:20Z",
+    "expires_at": "2026-10-29T07:02:19Z",
+    "updated_at": "2026-10-15T07:02:20Z",
+    "digest": "sha256:83587fce4bbe893f80708bd1c3bd6dbd30c6cf03cd2c0d1c42bab73def625adb",
+    "workflow_run": {
+      "id": 38695916440,
+      "repository_id": 1414693210,
+      "head_repository_id": 1414693210,
+      "head_branch": "main",
+      "head_sha": "21cfd2fa44a473ebeaabf7c56fc87863a67f42aa"
+    }
+  },
+  "previous_live": "dd5294a6c6ccb538b0f532b782507ede284d90a6",
+  "limits": [
+    "axe color-contrast incomplete retained",
+    "No full WCAG/device/screen-reader certification",
+    "Owner design acceptance pending",
+    "Performance/CWV unmeasured"
+  ],
+  "references": [
+    "https://www.w3.org/TR/wai-aria-1.2/#group",
+    "https://www.w3.org/WAI/WCAG22/Techniques/general/G18"
+  ]
+}
