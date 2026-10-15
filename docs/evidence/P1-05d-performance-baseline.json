@@ -1,0 +1,1607 @@
+{
+  "task": "P1-05d",
+  "mode": "LIVE_READ_ONLY_LAB",
+  "measuredAt": "2026-10-15T18:05:16.098Z",
+  "harnessRevision": "3a5e65e5f3e8f3cccf2e43ba0a866c663c75b268",
+  "expectedLiveRevision": "74d38aae688127681208c12298aaf8e0f77dd3db",
+  "attribution": "Expected release from verified deployment log; before/after built asset URLs checked. No runtime revision endpoint asserted.",
+  "origin": "https://bookorgo.com",
+  "repeats": 3,
+  "before": [
+    {
+      "page": "home",
+      "assets": [
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp"
+      ],
+      "htmlSha256": "2c3b2a583ce07a70e667e650c91f2af442b37ad15392f93de391662149d40a77"
+    },
+    {
+      "page": "listing",
+      "assets": [
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp"
+      ],
+      "htmlSha256": "9cf46b19853934c670697a614918a3975c7599c4087bb0c2cf807cff14ca3aa8"
+    },
+    {
+      "page": "detail",
+      "assets": [
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp"
+      ],
+      "htmlSha256": "9660b1846e12d72deb0cfa19e4d440be22dda3f2cefcd0bbbb13b90be568edea"
+    },
+    {
+      "page": "article",
+      "assets": [
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css"
+      ],
+      "htmlSha256": "c827c02269b2c1fb412262e77b39142c27671a5526ceba4d7d0fd5af8c0de557"
+    }
+  ],
+  "after": [
+    {
+      "page": "home",
+      "assets": [
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp"
+      ],
+      "htmlSha256": "2c3b2a583ce07a70e667e650c91f2af442b37ad15392f93de391662149d40a77"
+    },
+    {
+      "page": "listing",
+      "assets": [
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp"
+      ],
+      "htmlSha256": "9cf46b19853934c670697a614918a3975c7599c4087bb0c2cf807cff14ca3aa8"
+    },
+    {
+      "page": "detail",
+      "assets": [
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp"
+      ],
+      "htmlSha256": "9660b1846e12d72deb0cfa19e4d440be22dda3f2cefcd0bbbb13b90be568edea"
+    },
+    {
+      "page": "article",
+      "assets": [
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-CaFeYuqD.js",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css"
+      ],
+      "htmlSha256": "c827c02269b2c1fb412262e77b39142c27671a5526ceba4d7d0fd5af8c0de557"
+    }
+  ],
+  "groups": [
+    {
+      "profile": "mobile",
+      "page": "home",
+      "metrics": {
+        "score": {
+          "min": 86,
+          "median": 90,
+          "max": 98
+        },
+        "lcpMs": {
+          "min": 1927.448,
+          "median": 2816.0959999999995,
+          "max": 3159.1539999999995
+        },
+        "fcpMs": {
+          "min": 1927.448,
+          "median": 2816.0959999999995,
+          "max": 3159.1539999999995
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0.5
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 2627.765665111507,
+          "median": 3456.0503559999843,
+          "max": 3960.3172680000066
+        },
+        "transferBytes": {
+          "min": 989973,
+          "median": 990019,
+          "max": 990070
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": false,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "metrics": {
+        "score": {
+          "min": 68,
+          "median": 92,
+          "max": 95
+        },
+        "lcpMs": {
+          "min": 2607.889,
+          "median": 3257.8545,
+          "max": 3356.7239999999997
+        },
+        "fcpMs": {
+          "min": 1785.5319999999997,
+          "median": 1911.451,
+          "max": 2018.711
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 6
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0.5790088357772298
+        },
+        "speedIndexMs": {
+          "min": 1785.5319999999997,
+          "median": 2221.8473919999774,
+          "max": 2862.603893999987
+        },
+        "transferBytes": {
+          "min": 391156,
+          "median": 391200,
+          "max": 391213
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": false,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "metrics": {
+        "score": {
+          "min": 73,
+          "median": 82,
+          "max": 85
+        },
+        "lcpMs": {
+          "min": 4104.241999999999,
+          "median": 4812.288,
+          "max": 5614.025
+        },
+        "fcpMs": {
+          "min": 1734.174,
+          "median": 1927.2980000000002,
+          "max": 2795.2429999999995
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 1734.174,
+          "median": 2393.963699999998,
+          "max": 4227.034220000008
+        },
+        "transferBytes": {
+          "min": 637055,
+          "median": 637081,
+          "max": 637106
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": false,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "metrics": {
+        "score": {
+          "min": 86,
+          "median": 99,
+          "max": 99
+        },
+        "lcpMs": {
+          "min": 1727.6419999999998,
+          "median": 1790.202,
+          "max": 3193.412
+        },
+        "fcpMs": {
+          "min": 1727.6419999999998,
+          "median": 1790.202,
+          "max": 3193.412
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 1727.6419999999998,
+          "median": 2001.566609999984,
+          "max": 3794.0280539999785
+        },
+        "transferBytes": {
+          "min": 35064,
+          "median": 35094,
+          "max": 35111
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "metrics": {
+        "score": {
+          "min": 69,
+          "median": 85,
+          "max": 96
+        },
+        "lcpMs": {
+          "min": 1294.572,
+          "median": 2052.635,
+          "max": 3037.6440000000002
+        },
+        "fcpMs": {
+          "min": 900.7199999999999,
+          "median": 1415.0900000000001,
+          "max": 2505.7500000000005
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0.00025981709750213616,
+          "median": 0.00025981709750213616,
+          "max": 0.00025981709750213616
+        },
+        "speedIndexMs": {
+          "min": 900.7199999999999,
+          "median": 1424.5820975833344,
+          "max": 2506.8534244999983
+        },
+        "transferBytes": {
+          "min": 989996,
+          "median": 990013,
+          "max": 990068
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "metrics": {
+        "score": {
+          "min": 89,
+          "median": 91,
+          "max": 99
+        },
+        "lcpMs": {
+          "min": 769.3219999999999,
+          "median": 1619.486,
+          "max": 1705.94
+        },
+        "fcpMs": {
+          "min": 679.2399999999999,
+          "median": 1175.468,
+          "max": 1303.634
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 679.2399999999999,
+          "median": 1175.468,
+          "max": 1398.0431988333257
+        },
+        "transferBytes": {
+          "min": 391162,
+          "median": 391194,
+          "max": 391197
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "metrics": {
+        "score": {
+          "min": 70,
+          "median": 87,
+          "max": 99
+        },
+        "lcpMs": {
+          "min": 951.6770000000001,
+          "median": 1792.523,
+          "max": 3046.5060000000003
+        },
+        "fcpMs": {
+          "min": 483.7175000000001,
+          "median": 1369.145,
+          "max": 2257.428
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 483.7175000000001,
+          "median": 1573.3519715833377,
+          "max": 2257.428
+        },
+        "transferBytes": {
+          "min": 637052,
+          "median": 637064,
+          "max": 637081
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "metrics": {
+        "score": {
+          "min": 96,
+          "median": 97,
+          "max": 100
+        },
+        "lcpMs": {
+          "min": 481.9920000000001,
+          "median": 990.1380000000001,
+          "max": 1055.44
+        },
+        "fcpMs": {
+          "min": 481.9920000000001,
+          "median": 990.1380000000001,
+          "max": 1055.44
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 481.9920000000001,
+          "median": 1128.3125750000063,
+          "max": 1214.1548666666613
+        },
+        "transferBytes": {
+          "min": 35068,
+          "median": 35068,
+          "max": 35090
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "Simulated Lighthouse navigation lab measurements on shared CI hardware, not field p75 or physical-device measurements.",
+    "TBT is a lab diagnostic, not measured INP. Field CWV acceptance remains open.",
+    "Fresh browser profiles; server/CDN caches may be warm. Browser/version/config captured per run.",
+    "Read-only page navigation; no forms, database writes, indexing, ads or deployment.",
+    "A successful workflow means all audits executed, not that all performance targets passed."
+  ],
+  "status": "BASELINE_COMPLETE_WITH_FINDINGS",
+  "workflow_run": 38782140030,
+  "workflow_url": "https://github.com/bookorgo/BookOrGo/actions/runs/38782140030",
+  "artifact": {
+    "id": 11996017912,
+    "sha256": "f8c22dd73908b7ee4e05b3c8afac79533559ebd78c63181dd0faae2ad5b15528",
+    "expires_at": "2026-11-14T18:05:18Z",
+    "raw_json_reports": 24,
+    "raw_html_reports": 24
+  },
+  "tests": {
+    "aggregation": {
+      "passed": 3,
+      "failed": 0
+    },
+    "navigation_audits": {
+      "completed": 24,
+      "failures": 0
+    },
+    "pre_post_http_noindex_asset_checks": "passed"
+  },
+  "deployment": {
+    "performed": false,
+    "live_revision": "74d38aae688127681208c12298aaf8e0f77dd3db"
+  },
+  "requirements": [
+    "Master V3.1 nonfunctional performance targets",
+    "Playbook V4.1 performance QA and evidence bundle",
+    "OWNER-20261012-MAIN"
+  ],
+  "runs": [
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 1,
+      "fetchTime": "2026-10-15T18:01:59.853Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2447,
+        "credits": {}
+      },
+      "score": 90,
+      "lcpMs": 2816.0959999999995,
+      "fcpMs": 2816.0959999999995,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 3456.0503559999843,
+      "transferBytes": 990019,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 1,
+      "fetchTime": "2026-10-15T18:02:10.455Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2466.5,
+        "credits": {}
+      },
+      "score": 95,
+      "lcpMs": 2607.889,
+      "fcpMs": 1911.451,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 2862.603893999987,
+      "transferBytes": 391156,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 1,
+      "fetchTime": "2026-10-15T18:02:18.587Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2456.5,
+        "credits": {}
+      },
+      "score": 73,
+      "lcpMs": 5614.025,
+      "fcpMs": 2795.2429999999995,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 4227.034220000008,
+      "transferBytes": 637055,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 1,
+      "fetchTime": "2026-10-15T18:02:27.919Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2435,
+        "credits": {}
+      },
+      "score": 99,
+      "lcpMs": 1727.6419999999998,
+      "fcpMs": 1727.6419999999998,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1727.6419999999998,
+      "transferBytes": 35094,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 1,
+      "fetchTime": "2026-10-15T18:02:34.644Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2433.5,
+        "credits": {}
+      },
+      "score": 69,
+      "lcpMs": 3037.6440000000002,
+      "fcpMs": 2505.7500000000005,
+      "tbtMs": 0,
+      "cls": 0.00025981709750213616,
+      "speedIndexMs": 2506.8534244999983,
+      "transferBytes": 989996,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 1,
+      "fetchTime": "2026-10-15T18:02:46.076Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2465,
+        "credits": {}
+      },
+      "score": 89,
+      "lcpMs": 1705.94,
+      "fcpMs": 1303.634,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1398.0431988333257,
+      "transferBytes": 391162,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 1,
+      "fetchTime": "2026-10-15T18:02:54.285Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2441,
+        "credits": {}
+      },
+      "score": 87,
+      "lcpMs": 1792.523,
+      "fcpMs": 1369.145,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1573.3519715833377,
+      "transferBytes": 637081,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 1,
+      "fetchTime": "2026-10-15T18:03:02.854Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2452.5,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 481.9920000000001,
+      "fcpMs": 481.9920000000001,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 481.9920000000001,
+      "transferBytes": 35090,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 2,
+      "fetchTime": "2026-10-15T18:03:09.286Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2467.5,
+        "credits": {}
+      },
+      "score": 86,
+      "lcpMs": 3159.1539999999995,
+      "fcpMs": 3159.1539999999995,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 3960.3172680000066,
+      "transferBytes": 989973,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 2,
+      "fetchTime": "2026-10-15T18:03:20.375Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2455,
+        "credits": {}
+      },
+      "score": 68,
+      "lcpMs": 3356.7239999999997,
+      "fcpMs": 2018.711,
+      "tbtMs": 0,
+      "cls": 0.5790088357772298,
+      "speedIndexMs": 2221.8473919999774,
+      "transferBytes": 391200,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 2,
+      "fetchTime": "2026-10-15T18:03:28.027Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2467,
+        "credits": {}
+      },
+      "score": 85,
+      "lcpMs": 4104.241999999999,
+      "fcpMs": 1927.2980000000002,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 2393.963699999998,
+      "transferBytes": 637106,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 2,
+      "fetchTime": "2026-10-15T18:03:35.805Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2450.5,
+        "credits": {}
+      },
+      "score": 86,
+      "lcpMs": 3193.412,
+      "fcpMs": 3193.412,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 3794.0280539999785,
+      "transferBytes": 35064,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 2,
+      "fetchTime": "2026-10-15T18:03:44.431Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2440.5,
+        "credits": {}
+      },
+      "score": 96,
+      "lcpMs": 1294.572,
+      "fcpMs": 900.7199999999999,
+      "tbtMs": 0,
+      "cls": 0.00025981709750213616,
+      "speedIndexMs": 900.7199999999999,
+      "transferBytes": 990013,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 2,
+      "fetchTime": "2026-10-15T18:03:52.433Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2461.5,
+        "credits": {}
+      },
+      "score": 99,
+      "lcpMs": 769.3219999999999,
+      "fcpMs": 679.2399999999999,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 679.2399999999999,
+      "transferBytes": 391197,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 2,
+      "fetchTime": "2026-10-15T18:03:59.486Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2439,
+        "credits": {}
+      },
+      "score": 99,
+      "lcpMs": 951.6770000000001,
+      "fcpMs": 483.7175000000001,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 483.7175000000001,
+      "transferBytes": 637064,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 2,
+      "fetchTime": "2026-10-15T18:04:06.522Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2433.5,
+        "credits": {}
+      },
+      "score": 96,
+      "lcpMs": 1055.44,
+      "fcpMs": 1055.44,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1214.1548666666613,
+      "transferBytes": 35068,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 3,
+      "fetchTime": "2026-10-15T18:04:14.012Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2436.5,
+        "credits": {}
+      },
+      "score": 98,
+      "lcpMs": 1927.448,
+      "fcpMs": 1927.448,
+      "tbtMs": 0.5,
+      "cls": 0,
+      "speedIndexMs": 2627.765665111507,
+      "transferBytes": 990070,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 3,
+      "fetchTime": "2026-10-15T18:04:22.681Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2476.5,
+        "credits": {}
+      },
+      "score": 92,
+      "lcpMs": 3257.8545,
+      "fcpMs": 1785.5319999999997,
+      "tbtMs": 6,
+      "cls": 0,
+      "speedIndexMs": 1785.5319999999997,
+      "transferBytes": 391213,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 3,
+      "fetchTime": "2026-10-15T18:04:29.360Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2380.5,
+        "credits": {}
+      },
+      "score": 82,
+      "lcpMs": 4812.288,
+      "fcpMs": 1734.174,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1734.174,
+      "transferBytes": 637081,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 3,
+      "fetchTime": "2026-10-15T18:04:36.066Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2450.5,
+        "credits": {}
+      },
+      "score": 99,
+      "lcpMs": 1790.202,
+      "fcpMs": 1790.202,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 2001.566609999984,
+      "transferBytes": 35111,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 3,
+      "fetchTime": "2026-10-15T18:04:43.300Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2474.5,
+        "credits": {}
+      },
+      "score": 85,
+      "lcpMs": 2052.635,
+      "fcpMs": 1415.0900000000001,
+      "tbtMs": 0,
+      "cls": 0.00025981709750213616,
+      "speedIndexMs": 1424.5820975833344,
+      "transferBytes": 990068,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 3,
+      "fetchTime": "2026-10-15T18:04:52.640Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2459,
+        "credits": {}
+      },
+      "score": 91,
+      "lcpMs": 1619.486,
+      "fcpMs": 1175.468,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1175.468,
+      "transferBytes": 391194,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 3,
+      "fetchTime": "2026-10-15T18:05:00.093Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2426.5,
+        "credits": {}
+      },
+      "score": 70,
+      "lcpMs": 3046.5060000000003,
+      "fcpMs": 2257.428,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 2257.428,
+      "transferBytes": 637052,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 3,
+      "fetchTime": "2026-10-15T18:05:09.163Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 2454.5,
+        "credits": {}
+      },
+      "score": 97,
+      "lcpMs": 990.1380000000001,
+      "fcpMs": 990.1380000000001,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1128.3125750000063,
+      "transferBytes": 35068,
+      "warnings": []
+    }
+  ],
+  "profiles": {
+    "mobile": {
+      "output": [
+        "json",
+        "html"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 1000,
+      "pauseAfterLoadMs": 1000,
+      "networkQuietThresholdMs": 1000,
+      "cpuQuietThresholdMs": 1000,
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "throttlingMethod": "simulate",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "node",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance"
+      ],
+      "skipAudits": null
+    },
+    "desktop": {
+      "output": [
+        "json",
+        "html"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 1000,
+      "pauseAfterLoadMs": 1000,
+      "networkQuietThresholdMs": 1000,
+      "cpuQuietThresholdMs": 1000,
+      "formFactor": "desktop",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "throttlingMethod": "simulate",
+      "screenEmulation": {
+        "mobile": false,
+        "width": 1350,
+        "height": 940,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "node",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance"
+      ],
+      "skipAudits": null
+    }
+  },
+  "diagnostic_evidence": {
+    "mobile-detail-3": {
+      "lcp-lazy-loaded": {
+        "score": 0,
+        "numericValue": null,
+        "displayValue": null,
+        "metricSavings": {
+          "LCP": 700
+        },
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "node",
+              "valueType": "node",
+              "label": "Element"
+            }
+          ],
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-2-IMG",
+                "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,0,DIV,0,IMG",
+                "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+                "boundingRect": {
+                  "top": 178,
+                  "bottom": 398,
+                  "left": 16,
+                  "right": 396,
+                  "width": 380,
+                  "height": 220
+                },
+                "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                "nodeLabel": "section.container > div.detail-gallery > div.detail-art > img.scene"
+              }
+            }
+          ]
+        }
+      },
+      "uses-responsive-images": {
+        "score": 0,
+        "numericValue": 2770,
+        "displayValue": "Est savings of 537\u00a0KiB",
+        "metricSavings": {
+          "FCP": 0,
+          "LCP": 2750
+        },
+        "details": {
+          "type": "opportunity",
+          "headings": [
+            {
+              "key": "node",
+              "valueType": "node",
+              "label": ""
+            },
+            {
+              "key": "url",
+              "valueType": "url",
+              "label": "URL"
+            },
+            {
+              "key": "totalBytes",
+              "valueType": "bytes",
+              "label": "Resource Size"
+            },
+            {
+              "key": "wastedBytes",
+              "valueType": "bytes",
+              "label": "Est Savings"
+            }
+          ],
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-8-IMG",
+                "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,6,DIV,0,IMG",
+                "selector": "section.container > div.detail-gallery > div.gallery-tile > img.scene",
+                "boundingRect": {
+                  "top": 486,
+                  "bottom": 566,
+                  "left": 272,
+                  "right": 396,
+                  "width": 124,
+                  "height": 80
+                },
+                "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                "nodeLabel": "section.container > div.detail-gallery > div.gallery-tile > img.scene"
+              },
+              "url": "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+              "totalBytes": 138218,
+              "wastedBytes": 133844,
+              "wastedPercent": 96.83541666666666
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-10-IMG",
+                "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,0,DIV,6,SECTION,2,DIV,1,IMG",
+                "selector": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene",
+                "boundingRect": {
+                  "top": 2176,
+                  "bottom": 2281,
+                  "left": 145,
+                  "right": 267,
+                  "width": 121,
+                  "height": 105
+                },
+                "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/marina-DFUF1aBx.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                "nodeLabel": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene"
+              },
+              "url": "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+              "totalBytes": 127042,
+              "wastedBytes": 122465,
+              "wastedPercent": 96.39730902777778
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-9-IMG",
+                "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,0,DIV,6,SECTION,2,DIV,0,IMG",
+                "selector": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene",
+                "boundingRect": {
+                  "top": 2176,
+                  "bottom": 2281,
+                  "left": 16,
+                  "right": 137,
+                  "width": 121,
+                  "height": 105
+                },
+                "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                "nodeLabel": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene"
+              },
+              "url": "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+              "totalBytes": 115250,
+              "wastedBytes": 110596,
+              "wastedPercent": 95.9621147260274
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-7-IMG",
+                "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,5,DIV,0,IMG",
+                "selector": "section.container > div.detail-gallery > div.gallery-tile > img.scene",
+                "boundingRect": {
+                  "top": 486,
+                  "bottom": 566,
+                  "left": 144,
+                  "right": 268,
+                  "width": 124,
+                  "height": 80
+                },
+                "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/mountains-v4B4C27y.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                "nodeLabel": "section.container > div.detail-gallery > div.gallery-tile > img.scene"
+              },
+              "url": "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+              "totalBytes": 78090,
+              "wastedBytes": 75161,
+              "wastedPercent": 96.24938271604938
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-2-IMG",
+                "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,0,DIV,0,IMG",
+                "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+                "boundingRect": {
+                  "top": 178,
+                  "bottom": 398,
+                  "left": 16,
+                  "right": 396,
+                  "width": 380,
+                  "height": 220
+                },
+                "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                "nodeLabel": "section.container > div.detail-gallery > div.detail-art > img.scene"
+              },
+              "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+              "totalBytes": 66308,
+              "wastedBytes": 38363,
+              "wastedPercent": 57.855967078189295
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-6-IMG",
+                "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,4,DIV,0,IMG",
+                "selector": "section.container > div.detail-gallery > div.gallery-tile > img.scene",
+                "boundingRect": {
+                  "top": 486,
+                  "bottom": 566,
+                  "left": 16,
+                  "right": 140,
+                  "width": 124,
+                  "height": 80
+                },
+                "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                "nodeLabel": "section.container > div.detail-gallery > div.gallery-tile > img.scene"
+              },
+              "url": "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+              "totalBytes": 39306,
+              "wastedBytes": 38062,
+              "wastedPercent": 96.83541666666666
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-11-IMG",
+                "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,0,DIV,6,SECTION,2,DIV,2,IMG",
+                "selector": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene",
+                "boundingRect": {
+                  "top": 2176,
+                  "bottom": 2281,
+                  "left": 275,
+                  "right": 396,
+                  "width": 121,
+                  "height": 105
+                },
+                "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/desert-BMXSEf1J.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                "nodeLabel": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene"
+              },
+              "url": "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+              "totalBytes": 32326,
+              "wastedBytes": 31016,
+              "wastedPercent": 95.94697265625
+            }
+          ],
+          "overallSavingsMs": 2770,
+          "overallSavingsBytes": 549507,
+          "sortedBy": [
+            "wastedBytes"
+          ],
+          "debugData": {
+            "type": "debugdata",
+            "metricSavings": {
+              "FCP": 0,
+              "LCP": 2770
+            }
+          }
+        }
+      },
+      "lcp-discovery-insight": {
+        "score": 0,
+        "numericValue": null,
+        "displayValue": null,
+        "metricSavings": {
+          "LCP": 0
+        },
+        "details": {
+          "type": "list",
+          "items": [
+            {
+              "type": "checklist",
+              "items": {
+                "priorityHinted": {
+                  "label": "fetchpriority=high should be applied",
+                  "value": false
+                },
+                "requestDiscoverable": {
+                  "label": "Request is discoverable in initial document",
+                  "value": true
+                },
+                "eagerlyLoaded": {
+                  "label": "lazy load not applied",
+                  "value": false
+                }
+              }
+            },
+            {
+              "type": "node",
+              "lhId": "page-5-IMG",
+              "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,0,DIV,0,IMG",
+              "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+              "boundingRect": {
+                "top": 178,
+                "bottom": 398,
+                "left": 16,
+                "right": 396,
+                "width": 380,
+                "height": 220
+              },
+              "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+              "nodeLabel": "section.container > div.detail-gallery > div.detail-art > img.scene"
+            }
+          ]
+        }
+      }
+    },
+    "mobile-listing-2": {
+      "layout-shifts": {
+        "score": 0,
+        "numericValue": null,
+        "displayValue": "1 layout shift found",
+        "metricSavings": {
+          "CLS": 0.579
+        },
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "node",
+              "valueType": "node",
+              "subItemsHeading": {
+                "key": "extra"
+              },
+              "label": "Element"
+            },
+            {
+              "key": "score",
+              "valueType": "numeric",
+              "subItemsHeading": {
+                "key": "cause",
+                "valueType": "text"
+              },
+              "granularity": 0.001,
+              "label": "Layout shift score"
+            }
+          ],
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-5-DIV",
+                "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,1,DIV",
+                "selector": "body.page-listing > main#main > section.container > div#catalogue-results",
+                "boundingRect": {
+                  "top": 317,
+                  "bottom": 1808,
+                  "left": 16,
+                  "right": 396,
+                  "width": 380,
+                  "height": 1491
+                },
+                "snippet": "<div class=\"results-column\" id=\"catalogue-results\" aria-live=\"polite\">",
+                "nodeLabel": "18 fictional cards\n\nPage 1 of 3\n\nOur sample order\nTitle A\u2013Z\nTitle Z\u2013A\nSAMPLE LA\u2026"
+              },
+              "score": 0.5790088357772298
+            }
+          ]
+        }
+      },
+      "lcp-lazy-loaded": {
+        "score": 0,
+        "numericValue": null,
+        "displayValue": null,
+        "metricSavings": {
+          "LCP": 500
+        },
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "node",
+              "valueType": "node",
+              "label": "Element"
+            }
+          ],
+          "items": [
+            {
+              "node": {
+                "type": "node",
+                "lhId": "1-2-IMG",
+                "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,1,DIV,3,DIV,0,ARTICLE,0,DIV,1,IMG",
+                "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+                "boundingRect": {
+                  "top": 398,
+                  "bottom": 558,
+                  "left": 16,
+                  "right": 128,
+                  "width": 112,
+                  "height": 160
+                },
+                "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/desert-BMXSEf1J.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                "nodeLabel": "div.experience-list > article.experience-card > div.experience-art > img.scene"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "prioritized_findings": [
+    {
+      "id": "PERF-01",
+      "finding": "Mobile listing CLS maximum 0.5790088 in repeat 2, although median is zero. Do not hide outlier. Shifted node #catalogue-results.",
+      "hypothesis": "app.js removes open from listing filters after JavaScript loads on mobile; cause requires a delayed-JS reproduction before declaring fixed."
+    },
+    {
+      "id": "PERF-02",
+      "finding": "Mobile detail LCP median 4812ms, all three runs above 2500ms. Main above-fold detail image is loading=lazy; first listing LCP image is also lazy.",
+      "next": "Bounded eager/priority policy for critical images; retain lazy loading below fold."
+    },
+    {
+      "id": "PERF-03",
+      "finding": "Responsive-image diagnostic flags oversized image delivery; detail repeat 3 estimates 537KiB savings. Estimate is not measured improvement.",
+      "next": "Generate responsive derivatives from licensed existing originals, preserve crop/geometry/credits and verify before/after."
+    },
+    {
+      "id": "PERF-04",
+      "finding": "Home transfers approximately 990KB including full variable font; mobile LCP median 2816ms.",
+      "next": "Evaluate measured image savings first, then font subsetting/loading without changing design."
+    }
+  ],
+  "next_task": "P1-05e: reproduce/fix mobile listing initial filter shift and above-fold detail/listing image priority, source tests and guarded release; then responsive-image optimization."
+}
