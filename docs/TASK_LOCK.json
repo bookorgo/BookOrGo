@@ -1,9 +1,9 @@
 {
   "task": "P1-05d",
   "status": "active",
-  "owner": "bookorgo-p105d-20261015-1757",
-  "acquired_at": "2026-10-15T17:57:14Z",
-  "expires_at": "2026-10-15T19:27:14Z",
-  "base_revision": "94c676adfaa29eeee3d208572ab491e4be8f06a1",
-  "scope": "Read-only mobile/desktop lab performance baseline; no deployment"
+  "owner": "bookorgo-p105d-evidence-20261015-2300",
+  "acquired_at": "2026-10-15T23:00:12Z",
+  "expires_at": "2026-10-16T00:00:12Z",
+  "base_revision": "3a5e65e5f3e8f3cccf2e43ba0a866c663c75b268",
+  "scope": "Finalize completed performance measurements and next optimization; no deployment"
 }
