@@ -7,7 +7,7 @@ const origin = process.env.BOOKORGO_AUDIT_ORIGIN || 'https://bookorgo.com';
 assert.ok(['https://bookorgo.com', 'http://127.0.0.1:8000'].includes(origin), 'approved audit origin only');
 const output = 'site/test-results/quality';
 await fs.mkdir(output, { recursive: true });
-const routes = [['home', '/'], ['listing', '/search?q=boat'], ['detail', '/cruises/dubai/sample-creek-cruise'], ['article', '/blog/sample-first-visit-planning']];
+const routes = [['home', '/'], ['listing', '/search'], ['detail', '/cruises/dubai/sample-creek-cruise'], ['article', '/blog/sample-first-visit-planning']];
 const rows = [], failures = [];
 const luminance = rgb => rgb.slice(0, 3).map(value => value / 255).map(value => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4).reduce((sum, value, index) => sum + value * [.2126, .7152, .0722][index], 0);
 const contrast = (a, b) => (Math.max(luminance(a), luminance(b)) + .05) / (Math.min(luminance(a), luminance(b)) + .05);
@@ -80,6 +80,7 @@ for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
                     }
                     if (name === 'listing') {
                         await page.locator('.listing-filters').evaluate(el => el.setAttribute('open', ''));
+                        assert.equal(await page.locator('.inspiration-card').count(), 3);
                     }
                     if (name === 'article') assert.ok(await page.getByRole('group', { name: 'Inactive advertising preview', exact: true }).isVisible());
                     row.captionContrast = await checkCaptionContrast(page);
