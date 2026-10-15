@@ -1,8 +1,9 @@
 {
-  "task": "P1-05c",
-  "status": "released",
-  "owner": "bookorgo-p105c-20261015",
-  "released_at": "2026-10-15T12:49:21.945Z",
-  "live_revision": "74d38aae688127681208c12298aaf8e0f77dd3db",
-  "next_task": "P1-05d measured lab performance baseline"
+  "task": "P1-05d",
+  "status": "active",
+  "owner": "bookorgo-p105d-20261015-1757",
+  "acquired_at": "2026-10-15T17:57:14Z",
+  "expires_at": "2026-10-15T19:27:14Z",
+  "base_revision": "94c676adfaa29eeee3d208572ab491e4be8f06a1",
+  "scope": "Read-only mobile/desktop lab performance baseline; no deployment"
 }
