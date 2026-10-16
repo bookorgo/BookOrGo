@@ -1,0 +1,755 @@
+{
+  "task": "P1-05e",
+  "status": "VERIFIED_LIVE",
+  "source_revision": "8759b1b76b3bb5a975c97e68de82c1be69ccf9f4",
+  "release_revision": "881201d5d20c3b4742443ac58e577f8e21824b6e",
+  "previous_live_revision": "74d38aae688127681208c12298aaf8e0f77dd3db",
+  "foundation_run": 38848724402,
+  "source_quality_run": 38848724424,
+  "release_run": 38849110131,
+  "release_quality_run": 38849110115,
+  "feature_tests": {
+    "passed": 20,
+    "assertions": 444
+  },
+  "source_artifact": {
+    "id": 12024137717,
+    "sha256": "7876e995c8652660c05c7cb418000b767c9d0baf35d44539500ec992c77847f8"
+  },
+  "live_artifact": {
+    "id": 12023819237,
+    "sha256": "f44ffe229a4d32367f90b64fe8aaeba8157f1ec676f1ca9f893144f3d97c8db3",
+    "expires_at": "2026-11-15T04:12:24Z",
+    "download_hash_verified": true
+  },
+  "live_http": {
+    "task": "P1-DESIGN-02-03-main-release",
+    "checked_at": "2026-10-16T04:09:51.422965+00:00",
+    "origin": "https://bookorgo.com",
+    "checks": [
+      {
+        "path": "/",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/activities",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/activities"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/holidays",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/holidays"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/visas",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/visas"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/cruises",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/cruises"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/yachts",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/yachts"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/events",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/events"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/search?q=boat",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/search"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/search?category=yachts&area=Dubai%20Marina&duration=under-2-hours&family=yes",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/search"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/search?q=sample&page=2",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/search"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/blog",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/blog"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/blog/sample-first-visit-planning",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/blog/sample-first-visit-planning"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/blog/sample-family-day-planning",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/blog/sample-family-day-planning"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/blog/sample-uae-weekend-planning",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/blog/sample-uae-weekend-planning"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/about",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/about"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/contact",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/contact"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/disclosure",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/disclosure"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/privacy",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/privacy"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/terms",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/terms"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/photo-credits",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/photo-credits"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/activities/dubai/sample-desert-morning",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/activities/dubai/sample-desert-morning"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/holidays/dubai/sample-city-break",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/holidays/dubai/sample-city-break"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/visas/uae-wide/sample-tourist-visa-guide",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/visas/uae-wide/sample-tourist-visa-guide"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/cruises/dubai/sample-creek-cruise",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/cruises/dubai/sample-creek-cruise"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/yachts/dubai-marina/sample-marina-yacht",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/yachts/dubai-marina/sample-marina-yacht"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/events/dubai/sample-family-event",
+        "status": 200,
+        "h1_count": 1,
+        "canonical": [
+          "https://bookorgo.com/events/dubai/sample-family-event"
+        ],
+        "robots": [
+          "noindex, nofollow"
+        ],
+        "x_robots_tag": "noindex, nofollow",
+        "marker_present": true
+      },
+      {
+        "path": "/search?category=hotels",
+        "status": 422,
+        "safe_error": true
+      },
+      {
+        "path": "/definitely-not-a-bookorgo-route",
+        "status": 404
+      },
+      {
+        "path": "/.env",
+        "status": 403,
+        "bytes": 1154
+      },
+      {
+        "path": "/composer.json",
+        "status": 404,
+        "bytes": 6953
+      },
+      {
+        "path": "/artisan",
+        "status": 404,
+        "bytes": 6953
+      },
+      {
+        "path": "/vendor/autoload.php",
+        "status": 404,
+        "bytes": 6953
+      },
+      {
+        "path": "/storage/logs/laravel.log",
+        "status": 403,
+        "bytes": 31380
+      },
+      {
+        "path": "/build/assets/app-WO4fbt3_.css",
+        "status": 200,
+        "bytes": 80939,
+        "content_type": "text/css"
+      },
+      {
+        "path": "/build/assets/InterVariable-DiVDrmQJ.woff2",
+        "status": 200,
+        "bytes": 352240,
+        "content_type": "font/woff2"
+      },
+      {
+        "path": "/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "status": 200,
+        "bytes": 39306,
+        "content_type": "image/webp"
+      },
+      {
+        "path": "/build/assets/desert-BMXSEf1J.webp",
+        "status": 200,
+        "bytes": 32326,
+        "content_type": "image/webp"
+      },
+      {
+        "path": "/build/assets/dubai-BZiRHNpi.webp",
+        "status": 200,
+        "bytes": 115250,
+        "content_type": "image/webp"
+      },
+      {
+        "path": "/build/assets/fujairah-CLKq3rnP.webp",
+        "status": 200,
+        "bytes": 138218,
+        "content_type": "image/webp"
+      },
+      {
+        "path": "/build/assets/marina-DFUF1aBx.webp",
+        "status": 200,
+        "bytes": 127042,
+        "content_type": "image/webp"
+      },
+      {
+        "path": "/build/assets/mountains-v4B4C27y.webp",
+        "status": 200,
+        "bytes": 78090,
+        "content_type": "image/webp"
+      },
+      {
+        "path": "/build/assets/sharjah-DPcNNgwU.webp",
+        "status": 200,
+        "bytes": 66308,
+        "content_type": "image/webp"
+      },
+      {
+        "path": "/build/assets/app-pEMnZ8nR.js",
+        "status": 200,
+        "bytes": 655,
+        "content_type": "application/x-javascript"
+      }
+    ],
+    "failures": [],
+    "limits": [
+      "Same-origin bounded HTTP checks only",
+      "No indexing release, supplier, payment, database or scheduler change"
+    ]
+  },
+  "live_browser": {
+    "checks": [
+      {
+        "viewport": 1440,
+        "homepage": "pass",
+        "listing": "pass",
+        "detail": "pass",
+        "gallery": "pass",
+        "faq": "pass",
+        "article": "pass",
+        "filters": "pass",
+        "overflow": "pass",
+        "menu": "not applicable"
+      },
+      {
+        "viewport": 390,
+        "homepage": "pass",
+        "listing": "pass",
+        "detail": "pass",
+        "gallery": "pass",
+        "faq": "pass",
+        "article": "pass",
+        "filters": "pass",
+        "overflow": "pass",
+        "menu": "pass"
+      },
+      {
+        "filteredNavigation": "pass",
+        "pagination": "pass"
+      },
+      {
+        "sorting": "pass",
+        "queryPreserved": "pass"
+      }
+    ],
+    "pageErrors": []
+  },
+  "live_stability": {
+    "origin": "https://bookorgo.com",
+    "baseline": false,
+    "rows": [
+      {
+        "engine": "chromium",
+        "width": 390,
+        "before": {
+          "top": 331.96875,
+          "open": false
+        },
+        "after": {
+          "top": 331.96875,
+          "open": false
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "chromium",
+        "width": 720,
+        "before": {
+          "top": 316.96875,
+          "open": false
+        },
+        "after": {
+          "top": 316.96875,
+          "open": false
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "chromium",
+        "width": 768,
+        "before": {
+          "top": 298.875,
+          "open": false
+        },
+        "after": {
+          "top": 298.875,
+          "open": true
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "chromium",
+        "width": 1440,
+        "before": {
+          "top": 283.875,
+          "open": false
+        },
+        "after": {
+          "top": 283.875,
+          "open": true
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "chromium",
+        "mode": "no-js",
+        "filters": "native submit passed",
+        "detailPriority": "passed"
+      },
+      {
+        "engine": "firefox",
+        "width": 390,
+        "before": {
+          "top": 331.98333740234375,
+          "open": false
+        },
+        "after": {
+          "top": 331.98333740234375,
+          "open": false
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "firefox",
+        "width": 720,
+        "before": {
+          "top": 316.98333740234375,
+          "open": false
+        },
+        "after": {
+          "top": 316.98333740234375,
+          "open": false
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "firefox",
+        "width": 768,
+        "before": {
+          "top": 298.8833312988281,
+          "open": false
+        },
+        "after": {
+          "top": 298.8833312988281,
+          "open": true
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "firefox",
+        "width": 1440,
+        "before": {
+          "top": 283.8833312988281,
+          "open": false
+        },
+        "after": {
+          "top": 283.8833312988281,
+          "open": true
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "firefox",
+        "mode": "no-js",
+        "filters": "native submit passed",
+        "detailPriority": "passed"
+      },
+      {
+        "engine": "webkit",
+        "width": 390,
+        "before": {
+          "top": 331,
+          "open": false
+        },
+        "after": {
+          "top": 331,
+          "open": false
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "webkit",
+        "width": 720,
+        "before": {
+          "top": 316,
+          "open": false
+        },
+        "after": {
+          "top": 316,
+          "open": false
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "webkit",
+        "width": 768,
+        "before": {
+          "top": 298,
+          "open": false
+        },
+        "after": {
+          "top": 298,
+          "open": true
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "webkit",
+        "width": 1440,
+        "before": {
+          "top": 283,
+          "open": false
+        },
+        "after": {
+          "top": 283,
+          "open": true
+        },
+        "movement": 0,
+        "blocked": 2
+      },
+      {
+        "engine": "webkit",
+        "mode": "no-js",
+        "filters": "native submit passed",
+        "detailPriority": "passed"
+      }
+    ],
+    "failures": []
+  },
+  "quality": {
+    "states": 24,
+    "failures": [],
+    "violation_rules": []
+  },
+  "preflight": "status=PASS\nrevision=881201d5d20c3b4742443ac58e577f8e21824b6e\nprevious_revision=74d38aae688127681208c12298aaf8e0f77dd3db\nexisting=P1-03 exact public baseline\npackage_bytes=14997106\navailable_kb=11068309804\n",
+  "finalization": "status=VERIFIED_LIVE\nrevision=881201d5d20c3b4742443ac58e577f8e21824b6e\nincoming_removed=yes\n",
+  "backup_sha256": "15fe99d0dbe84bcd25cf0a226712f06494b36c34c42400b87902a6dbe7788665",
+  "package_sha256": "f94188558f0e8d6dfa281c227b941e70b11524573f4c3601879a2fc24b7bfbb8",
+  "rollback": "Available; skipped after successful live verification",
+  "requirements": [
+    "Master V3.1 performance/accessibility targets",
+    "Playbook V4.1 responsive/functionality/performance QA",
+    "OWNER-20261012-MAIN"
+  ],
+  "changes": [
+    "SSR filter disclosure initially closed; mobile initial JavaScript no longer collapses it",
+    "Desktop initial sidebar expansion and breakpoint behavior retained",
+    "First listing photo and main detail photo eager/high priority; remaining photos lazy",
+    "Permanent three-engine delayed-script and native no-JS regression checks"
+  ],
+  "visual_review": [
+    "Source desktop listing and WebKit mobile expanded filters inspected",
+    "Live WebKit mobile expanded filters inspected; no blocking clipping/overflow"
+  ],
+  "limitations": [
+    "Known filter transition is stable; not a claim of zero total CLS under every condition",
+    "No fresh post-release Lighthouse speed comparison yet; LCP improvement not quantified",
+    "Field p75 CWV/INP, physical-device/screen-reader and exact owner design acceptance remain open",
+    "Desktop without JavaScript uses an initially closed but operable native disclosure",
+    "Existing P0 database/cron/storage gates remain open where applicable; P6/P7 deferred"
+  ],
+  "next_task": "P1-05f: repeat live Lighthouse comparison against P1-05d and prioritize responsive-image derivatives without changing crops/rights/design",
+  "recorded_at": "2026-10-16 10:01:52 UTC",
+  "old_live_reproduction": {
+    "artifact_id": 12024137717,
+    "source_run": 38848724424,
+    "engines": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "mobile_widths": [
+      390,
+      720
+    ],
+    "mobile_movement_px": 1253,
+    "firefox_floating_point_value": 1253.0000610351562,
+    "desktop_widths": [
+      768,
+      1440
+    ],
+    "desktop_movement_px": 0,
+    "failures": 0,
+    "note": "Read from source CI logs during original reproduction; raw JSON retained in source artifact."
+  }
+}
