@@ -1,8 +1,9 @@
 {
-  "task": "P1-05e",
-  "status": "released",
-  "owner": "bookorgo-p105e-finalize-20261016",
-  "released_at": "2026-10-16 10:01:52 UTC",
-  "live_revision": "881201d5d20c3b4742443ac58e577f8e21824b6e",
-  "next_task": "P1-05f: repeat live Lighthouse comparison against P1-05d and prioritize responsive-image derivatives without changing crops/rights/design"
+  "task": "P1-05f",
+  "status": "active",
+  "owner": "bookorgo-p105f-20261016",
+  "acquired_at": "2026-10-16T11:04:28Z",
+  "expires_at": "2026-10-16T11:49:28Z",
+  "base_revision": "27286ecd0aac6052bb3fdec3b519d50f1b2ad912",
+  "scope": "Read-only live performance comparison; no deployment"
 }
