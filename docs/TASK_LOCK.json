@@ -2,8 +2,8 @@
   "task": "P1-05e",
   "status": "active",
   "owner": "bookorgo-p105e-20261016",
-  "acquired_at": "2026-10-16T00:00:00Z",
-  "expires_at": "2026-10-16T01:30:00Z",
-  "base_revision": "4c1fa4ed1b9a4a79d3f07c26aaa7d9911e4e153f",
+  "acquired_at": "2026-10-16T04:03:21Z",
+  "expires_at": "2026-10-16T05:33:21Z",
+  "base_revision": "492154c4e05c022ced001e986504f14759116505",
   "scope": "Mobile filter stability and critical-image loading; source tests then guarded release"
 }
