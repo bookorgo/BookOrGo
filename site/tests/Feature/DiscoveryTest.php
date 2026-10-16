@@ -7,6 +7,25 @@ use Tests\TestCase;
 
 final class DiscoveryTest extends TestCase
 {
+    public function test_initial_filters_and_critical_photo_policy_are_server_rendered(): void
+    {
+        foreach (['/search', '/search?page=2', '/activities'] as $path) {
+            $response = $this->get($path)->assertOk()
+                ->assertSee('<details class="listing-filters">', false)
+                ->assertDontSee('<details class="listing-filters" open>', false)
+                ->assertHeader('X-Robots-Tag', 'noindex, nofollow');
+            $html = $response->getContent();
+            $this->assertSame(1, substr_count($html, 'fetchpriority="high"'));
+            $this->assertSame(1, substr_count($html, 'loading="eager"'));
+            $this->assertStringContainsString('loading="lazy"', $html);
+        }
+        $detail = $this->get('/cruises/dubai/sample-creek-cruise')->assertOk()
+            ->assertHeader('X-Robots-Tag', 'noindex, nofollow');
+        $this->assertSame(1, substr_count($detail->getContent(), 'fetchpriority="high"'));
+        $this->assertSame(1, substr_count($detail->getContent(), 'loading="eager"'));
+        $this->assertSame(9, substr_count($detail->getContent(), 'loading="lazy"'));
+    }
+
     public function test_accessible_notice_and_sidebar_regions_preserve_preview_safeguards(): void
     {
         foreach (['/', '/search', '/blog/sample-first-visit-planning'] as $path) {

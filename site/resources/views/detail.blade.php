@@ -11,7 +11,7 @@
 
 <section class="container detail-hero">
     <div class="detail-gallery" role="group" aria-label="Illustrative UAE destination gallery — not photographs of this sample">
-        <div class="detail-art card-{{ $item['motif'] }}"><x-photo :motif="$item['motif']" /><div class="gallery-summary"><strong>Not rated</strong><span>No verified reviews</span><hr><b>Guest feedback</b><p>This fictional sample has no verified guest feedback. No rating or quotation is invented.</p><small>Fictional sample</small></div><p>Destination photo · Not this sample</p></div>
+        <div class="detail-art card-{{ $item['motif'] }}"><x-photo :motif="$item['motif']" :eager="true" /><div class="gallery-summary"><strong>Not rated</strong><span>No verified reviews</span><hr><b>Guest feedback</b><p>This fictional sample has no verified guest feedback. No rating or quotation is invented.</p><small>Fictional sample</small></div><p>Destination photo · Not this sample</p></div>
         @foreach(['marina','dubai','desert','abu-dhabi','mountains','fujairah'] as $photo)<div class="gallery-tile"><x-photo :name="$photo" />@if($loop->last)<span>Destination photos<br>Illustrative only</span>@endif</div>@endforeach
     </div>
     <div class="detail-heading">

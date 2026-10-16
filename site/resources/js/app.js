@@ -11,7 +11,8 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-// Desktop starts expanded; compact screens get a disclosure to save space.
+// SSR starts closed: mobile geometry is stable even when JavaScript is delayed.
+// Only expand the independent desktop sidebar during initial enhancement.
 const compactListing = window.matchMedia('(max-width: 720px)');
 const syncListingFilters = () => {
     document.querySelectorAll('.listing-filters').forEach((filters) => {
@@ -23,7 +24,7 @@ const syncListingFilters = () => {
     });
 };
 
-syncListingFilters();
+if (!compactListing.matches) syncListingFilters();
 compactListing.addEventListener('change', syncListingFilters);
 
 document.querySelectorAll('[data-listing-form]').forEach((form) => {

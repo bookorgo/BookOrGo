@@ -19,7 +19,7 @@
 
 <section class="container listing-shell" aria-labelledby="results-heading">
     <div class="filters-column" role="region" aria-label="Catalogue filters">
-        <details class="listing-filters" open>
+        <details class="listing-filters">
             <summary>Filters @if($activeCount)<span>{{ $activeCount }} active</span>@endif</summary>
             <form id="catalogue-filter-form" method="get" action="{{ $action }}" data-listing-form>
                 <input type="hidden" name="sort" value="{{ $filters['sort'] }}"><div class="filter-field">
@@ -56,7 +56,7 @@
         @if(count($items))
             <div class="experience-list">
                 @foreach($items as $item)
-                    <x-experience-card :item="$item" :categories="$categories" :durations="$durations" />
+                    <x-experience-card :item="$item" :categories="$categories" :durations="$durations" :eager="$loop->first" />
                     @if($loop->iteration === 5 && count($items) >= 6)
                     <section class="listing-inspiration" aria-label="More sample inspiration"><h2>More sample inspiration</h2><p>Fictional layouts · no offers or discounts</p><div class="inspiration-grid">
                         @foreach(array_slice($items, 0, 3) as $inspiration)
