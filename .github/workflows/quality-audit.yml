@@ -51,12 +51,6 @@ jobs:
           done
           node .github/scripts/quality-audit.mjs
           node .github/scripts/loading-stability.mjs
-      - name: Reproduce original mobile shift against unchanged live baseline
-        if: github.sha != ''
-        env:
-          BOOKORGO_AUDIT_ORIGIN: https://bookorgo.com
-          BOOKORGO_REPRODUCE_OLD_SHIFT: 'true'
-        run: node .github/scripts/loading-stability.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
