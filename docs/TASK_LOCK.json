@@ -1,9 +1,9 @@
 {
-  "task": "P1-05d",
-  "status": "released",
-  "owner": "bookorgo-p105d-evidence-20261015-2300",
-  "released_at": "2026-10-15 23:01:34 UTC",
-  "harness_revision": "3a5e65e5f3e8f3cccf2e43ba0a866c663c75b268",
-  "live_revision": "74d38aae688127681208c12298aaf8e0f77dd3db",
-  "next_task": "P1-05e mobile listing layout stability and critical-image priority"
+  "task": "P1-05e",
+  "status": "active",
+  "owner": "bookorgo-p105e-20261016",
+  "acquired_at": "2026-10-16T00:00:00Z",
+  "expires_at": "2026-10-16T01:30:00Z",
+  "base_revision": "4c1fa4ed1b9a4a79d3f07c26aaa7d9911e4e153f",
+  "scope": "Mobile filter stability and critical-image loading; source tests then guarded release"
 }
