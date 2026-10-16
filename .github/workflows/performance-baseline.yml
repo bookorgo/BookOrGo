@@ -19,13 +19,15 @@ jobs:
         with:
           node-version: '24'
       - name: Test measurement aggregation
-        run: node --test .github/scripts/performance-summary.test.mjs
+        run: node --test .github/scripts/performance-summary.test.mjs .github/scripts/performance-comparison.test.mjs
       - name: Install pinned lab tools
         run: |
           npm install --prefix /tmp/bookorgo-performance --no-save --package-lock=false lighthouse@12.8.2 playwright@1.56.1
           /tmp/bookorgo-performance/node_modules/.bin/playwright install --with-deps chromium
       - name: Measure four live templates, three repeats, mobile and desktop
         run: node .github/scripts/performance-baseline.mjs
+      - name: Compare with P1-05d using matching measurement settings
+        run: node .github/scripts/performance-comparison.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
