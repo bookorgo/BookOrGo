@@ -1,9 +1,9 @@
 {
-  "task": "P1-05f",
-  "status": "released",
-  "owner": "bookorgo-p105f-finalize-20261018",
-  "released_at": "2026-10-17T21:07:00Z",
-  "tested_revision": "a5849a0064d807ed5c3bea400de3968b3737fe7a",
-  "live_revision": "881201d5d20c3b4742443ac58e577f8e21824b6e",
-  "next_task": "P1-05g: responsive-image derivatives, source verification and guarded release; preserve original assets, crop, geometry and credits"
+  "task": "P1-05g",
+  "status": "active",
+  "owner": "bookorgo-p105g-20261018",
+  "acquired_at": "2026-10-17T21:57:17Z",
+  "expires_at": "2026-10-17T22:42:17Z",
+  "base_revision": "6f202fe158694d34cef5496781a7618fbccfc8db",
+  "scope": "Responsive image source/build/browser verification; guarded release only after verified source"
 }
