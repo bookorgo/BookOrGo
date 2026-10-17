@@ -1,5 +1,6 @@
 // Bundle locally stored, credited destination photography. No image host requests at runtime.
 import.meta.glob('../images/*.webp', { eager: true, query: '?url', import: 'default' });
+import.meta.glob('../images/responsive/*.webp', { eager: true, query: '?url', import: 'default' });
 // Navigation and search work without JavaScript. Escape closes the native mobile menu.
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {

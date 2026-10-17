@@ -2,7 +2,7 @@ name: BookOrGo P1 quality audit
 on:
   push:
     branches: [main]
-    paths: ['site/**', '.github/workflows/quality-audit.yml', '.github/scripts/quality-audit.mjs', '.github/scripts/loading-stability.mjs']
+    paths: ['site/**', '.github/workflows/quality-audit.yml', '.github/scripts/quality-audit.mjs', '.github/scripts/loading-stability.mjs', '.github/scripts/responsive-images.mjs']
   workflow_dispatch:
 permissions:
   contents: read
@@ -32,6 +32,7 @@ jobs:
           composer install --no-interaction --prefer-dist --no-progress
           npm ci --ignore-scripts
           npm run build
+          npm run test:images
           cp .env.example .env
           printf '\nAPP_ENV=testing\nAPP_URL=http://127.0.0.1:8000\nSESSION_SECURE_COOKIE=false\n' >> .env
           php artisan key:generate --ansi
@@ -51,6 +52,7 @@ jobs:
           done
           node .github/scripts/quality-audit.mjs
           node .github/scripts/loading-stability.mjs
+          node .github/scripts/responsive-images.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

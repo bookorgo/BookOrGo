@@ -11,8 +11,8 @@
 
 <section class="container detail-hero">
     <div class="detail-gallery" role="group" aria-label="Illustrative UAE destination gallery — not photographs of this sample">
-        <div class="detail-art card-{{ $item['motif'] }}"><x-photo :motif="$item['motif']" :eager="true" /><div class="gallery-summary"><strong>Not rated</strong><span>No verified reviews</span><hr><b>Guest feedback</b><p>This fictional sample has no verified guest feedback. No rating or quotation is invented.</p><small>Fictional sample</small></div><p>Destination photo · Not this sample</p></div>
-        @foreach(['marina','dubai','desert','abu-dhabi','mountains','fujairah'] as $photo)<div class="gallery-tile"><x-photo :name="$photo" />@if($loop->last)<span>Destination photos<br>Illustrative only</span>@endif</div>@endforeach
+        <div class="detail-art card-{{ $item['motif'] }}"><x-photo :motif="$item['motif']" :eager="true" image-slot="detail-main" /><div class="gallery-summary"><strong>Not rated</strong><span>No verified reviews</span><hr><b>Guest feedback</b><p>This fictional sample has no verified guest feedback. No rating or quotation is invented.</p><small>Fictional sample</small></div><p>Destination photo · Not this sample</p></div>
+        @foreach(['marina','dubai','desert','abu-dhabi','mountains','fujairah'] as $photo)<div class="gallery-tile"><x-photo :name="$photo" :image-slot="$loop->index < 2 ? 'detail-tall' : 'detail-small'" />@if($loop->last)<span>Destination photos<br>Illustrative only</span>@endif</div>@endforeach
     </div>
     <div class="detail-heading">
         <p class="eyebrow ink">{{ $item['template_label'] }}</p>
@@ -59,7 +59,7 @@
             <p>Directions, transport context and accessibility must be checked before release. No external map or location tracking is loaded in this preview.</p>
         </section>
 <section class="detail-section review-preview" aria-labelledby="reviews-heading"><h2 id="reviews-heading">User ratings</h2><p>No verified ratings or reviews are available for this fictional sample.</p><div class="review-metrics">@foreach(['Overall experience','Facilities','Quality of service','Ease of access'] as $metric)<div><span>{{ $metric }}</span><strong>Not rated</strong><div class="unrated-track"></div></div>@endforeach</div><h2>What guests loved most</h2><div class="review-empty-grid"><div><span class="review-avatar" aria-hidden="true">—</span><strong>No guest reviews yet</strong><p>Verified guest feedback has not been supplied.</p></div><div><span class="review-avatar" aria-hidden="true">—</span><strong>Reviews awaiting verification</strong><p>No customer quotation or rating is invented.</p></div></div></section>
-<section class="detail-section"><h2>Destination photos</h2><p class="image-context">Illustrative UAE imagery, not traveller photos of this sample.</p><div class="traveller-photo-row"><x-photo name="dubai" /><x-photo name="marina" /><x-photo name="desert" /></div></section>
+<section class="detail-section"><h2>Destination photos</h2><p class="image-context">Illustrative UAE imagery, not traveller photos of this sample.</p><div class="traveller-photo-row"><x-photo image-slot="detail-row" name="dubai" /><x-photo image-slot="detail-row" name="marina" /><x-photo image-slot="detail-row" name="desert" /></div></section>
 <section class="detail-section detail-faq" aria-labelledby="faq-heading">
             <p class="eyebrow ink">Before you decide</p><h2 id="faq-heading">Frequently asked questions</h2>
             <details><summary>Can I book this sample?</summary><p>No. This is a fictional layout record. The referral control stays disabled until a real offer and approved partner link are verified.</p></details>

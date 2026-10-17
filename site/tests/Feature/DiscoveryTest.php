@@ -7,6 +7,26 @@ use Tests\TestCase;
 
 final class DiscoveryTest extends TestCase
 {
+    public function test_detail_responsive_photos_keep_original_fallbacks_and_draft_guards(): void
+    {
+        $response = $this->get('/cruises/dubai/sample-creek-cruise')->assertOk()
+            ->assertHeader('X-Robots-Tag', 'noindex, nofollow')
+            ->assertSee('Illustrative only')->assertSee('No affiliate link is active here.');
+        $html = $response->getContent();
+        $this->assertSame(10, substr_count($html, 'srcset="'));
+        $this->assertSame(10, substr_count($html, 'sizes="'));
+        $this->assertSame(1, substr_count($html, 'fetchpriority="high"'));
+        $this->assertSame(9, substr_count($html, 'loading="lazy"'));
+        $this->assertStringContainsString('320w', $html);
+        $this->assertStringContainsString('675w', $html);
+        $this->assertStringContainsString('1200w', $html);
+        foreach (['/', '/search'] as $path) {
+            $this->assertStringNotContainsString('srcset="', $this->get($path)->assertOk()->getContent());
+        }
+        $this->expectException(\InvalidArgumentException::class);
+        \App\Support\ResponsivePhoto::forSlot('dubai', 'unrecognized');
+    }
+
     public function test_initial_filters_and_critical_photo_policy_are_server_rendered(): void
     {
         foreach (['/search', '/search?page=2', '/activities'] as $path) {
