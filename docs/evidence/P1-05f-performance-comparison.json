@@ -1,0 +1,2551 @@
+{
+  "task": "P1-05f",
+  "mode": "LIVE_READ_ONLY_LAB",
+  "measuredAt": "2026-10-16T11:11:22.299Z",
+  "harnessRevision": "a5849a0064d807ed5c3bea400de3968b3737fe7a",
+  "expectedLiveRevision": "881201d5d20c3b4742443ac58e577f8e21824b6e",
+  "attribution": "Expected release from verified deployment log; before/after built asset URLs checked. No runtime revision endpoint asserted.",
+  "origin": "https://bookorgo.com",
+  "repeats": 3,
+  "before": [
+    {
+      "page": "home",
+      "assets": [
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp"
+      ],
+      "htmlSha256": "6bd7c25e6b8e0c49ddfb66c7a6047c530a973bd9d5c9870420e06d3ac7883373"
+    },
+    {
+      "page": "listing",
+      "assets": [
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp"
+      ],
+      "htmlSha256": "d0eb8e457a461c6233bbf73e2191921e8dfa6a55ecf6f703a8719830a95fa451"
+    },
+    {
+      "page": "detail",
+      "assets": [
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp"
+      ],
+      "htmlSha256": "9fb3da81ba4f2d9a6b99400d0b8382fa3ff889af47b34b4cac41b639bdc30aaa"
+    },
+    {
+      "page": "article",
+      "assets": [
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js"
+      ],
+      "htmlSha256": "535b81fdb732c6bf1566c2b170c075c198ccd59a165c8d8e47687cf7397fe596"
+    }
+  ],
+  "after": [
+    {
+      "page": "home",
+      "assets": [
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp"
+      ],
+      "htmlSha256": "6bd7c25e6b8e0c49ddfb66c7a6047c530a973bd9d5c9870420e06d3ac7883373"
+    },
+    {
+      "page": "listing",
+      "assets": [
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp"
+      ],
+      "htmlSha256": "d0eb8e457a461c6233bbf73e2191921e8dfa6a55ecf6f703a8719830a95fa451"
+    },
+    {
+      "page": "detail",
+      "assets": [
+        "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+        "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+        "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+        "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp"
+      ],
+      "htmlSha256": "9fb3da81ba4f2d9a6b99400d0b8382fa3ff889af47b34b4cac41b639bdc30aaa"
+    },
+    {
+      "page": "article",
+      "assets": [
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js",
+        "https://bookorgo.com/build/assets/app-pEMnZ8nR.js"
+      ],
+      "htmlSha256": "535b81fdb732c6bf1566c2b170c075c198ccd59a165c8d8e47687cf7397fe596"
+    }
+  ],
+  "groups": [
+    {
+      "profile": "mobile",
+      "page": "home",
+      "metrics": {
+        "score": {
+          "min": 97,
+          "median": 97,
+          "max": 98
+        },
+        "lcpMs": {
+          "min": 2208.982,
+          "median": 2277.136,
+          "max": 2316.416
+        },
+        "fcpMs": {
+          "min": 1697.3629999999998,
+          "median": 1724.159,
+          "max": 1725.4720000000002
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 1697.3629999999998,
+          "median": 1724.159,
+          "max": 1725.4720000000002
+        },
+        "transferBytes": {
+          "min": 990058,
+          "median": 990081,
+          "max": 990110
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "metrics": {
+        "score": {
+          "min": 99,
+          "median": 99,
+          "max": 99
+        },
+        "lcpMs": {
+          "min": 1719.782,
+          "median": 1740.857,
+          "max": 1814.4390000000003
+        },
+        "fcpMs": {
+          "min": 1713.2820000000002,
+          "median": 1717.8670000000002,
+          "max": 1740.857
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 1713.2820000000002,
+          "median": 1717.8670000000002,
+          "max": 1740.857
+        },
+        "transferBytes": {
+          "min": 391267,
+          "median": 391271,
+          "max": 391296
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "metrics": {
+        "score": {
+          "min": 98,
+          "median": 98,
+          "max": 98
+        },
+        "lcpMs": {
+          "min": 1985.5010000000002,
+          "median": 2014.1660000000002,
+          "max": 2079.7019999999998
+        },
+        "fcpMs": {
+          "min": 1724.7385000000002,
+          "median": 1736.813,
+          "max": 1781.2369999999996
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 1724.7385000000002,
+          "median": 1736.813,
+          "max": 1781.2369999999996
+        },
+        "transferBytes": {
+          "min": 637106,
+          "median": 637117,
+          "max": 637142
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "metrics": {
+        "score": {
+          "min": 99,
+          "median": 99,
+          "max": 100
+        },
+        "lcpMs": {
+          "min": 1317.8599999999997,
+          "median": 1707.2060000000001,
+          "max": 1755.7390000000003
+        },
+        "fcpMs": {
+          "min": 1317.8599999999997,
+          "median": 1707.2060000000001,
+          "max": 1755.7390000000003
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 1317.8599999999997,
+          "median": 1707.2060000000001,
+          "max": 1755.7390000000003
+        },
+        "transferBytes": {
+          "min": 35070,
+          "median": 35085,
+          "max": 35086
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "metrics": {
+        "score": {
+          "min": 99,
+          "median": 100,
+          "max": 100
+        },
+        "lcpMs": {
+          "min": 689.5329999999999,
+          "median": 808.3320000000001,
+          "max": 977.126
+        },
+        "fcpMs": {
+          "min": 438.82599999999996,
+          "median": 478.4,
+          "max": 506.26
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0.00025981709750213616,
+          "median": 0.00025981709750213616,
+          "max": 0.00025981709750213616
+        },
+        "speedIndexMs": {
+          "min": 478.4,
+          "median": 490.8370905875556,
+          "max": 506.26
+        },
+        "transferBytes": {
+          "min": 990033,
+          "median": 990053,
+          "max": 990088
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "metrics": {
+        "score": {
+          "min": 100,
+          "median": 100,
+          "max": 100
+        },
+        "lcpMs": {
+          "min": 461.9299999999999,
+          "median": 506.8140000000001,
+          "max": 582.5519999999999
+        },
+        "fcpMs": {
+          "min": 431.48699999999997,
+          "median": 460.42999999999995,
+          "max": 478.8670000000001
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 460.42999999999995,
+          "median": 462.31859675000373,
+          "max": 478.8670000000001
+        },
+        "transferBytes": {
+          "min": 391227,
+          "median": 391234,
+          "max": 391234
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "metrics": {
+        "score": {
+          "min": 100,
+          "median": 100,
+          "max": 100
+        },
+        "lcpMs": {
+          "min": 571.923,
+          "median": 646.881,
+          "max": 689.04
+        },
+        "fcpMs": {
+          "min": 446.747,
+          "median": 469.465,
+          "max": 492.85249999999996
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 446.747,
+          "median": 483.77677566667785,
+          "max": 492.85249999999996
+        },
+        "transferBytes": {
+          "min": 637101,
+          "median": 637111,
+          "max": 637120
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "metrics": {
+        "score": {
+          "min": 100,
+          "median": 100,
+          "max": 100
+        },
+        "lcpMs": {
+          "min": 493.00199999999995,
+          "median": 500.536,
+          "max": 529.8989999999999
+        },
+        "fcpMs": {
+          "min": 493.00199999999995,
+          "median": 500.536,
+          "max": 529.8989999999999
+        },
+        "tbtMs": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "cls": {
+          "min": 0,
+          "median": 0,
+          "max": 0
+        },
+        "speedIndexMs": {
+          "min": 493.00199999999995,
+          "median": 500.536,
+          "max": 529.8989999999999
+        },
+        "transferBytes": {
+          "min": 35063,
+          "median": 35091,
+          "max": 35118
+        }
+      },
+      "labTargets": {
+        "lcpMedianWithin2500ms": true,
+        "clsMedianWithin01": true
+      }
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "Simulated Lighthouse navigation lab measurements on shared CI hardware, not field p75 or physical-device measurements.",
+    "TBT is a lab diagnostic, not measured INP. Field CWV acceptance remains open.",
+    "Fresh browser profiles; server/CDN caches may be warm. Browser/version/config captured per run.",
+    "Read-only page navigation; no forms, database writes, indexing, ads or deployment.",
+    "A successful workflow means all audits executed, not that all performance targets passed.",
+    "Desktop and unchanged article also measured faster; cannot attribute all timing changes to P1-05e. Shared runner/network/CDN variance remains.",
+    "CI public GET/browser measurement passed; earlier workspace-only 403 cause remains unresolved, not proof of all-client availability.",
+    "No new screenshot/design acceptance, PHP test or deployment claim for this read-only package."
+  ],
+  "runs": [
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 1,
+      "fetchTime": "2026-10-16T11:08:47.878Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3735.5,
+        "credits": {}
+      },
+      "score": 97,
+      "lcpMs": 2316.416,
+      "fcpMs": 1725.4720000000002,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1725.4720000000002,
+      "transferBytes": 990058,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 1,
+      "fetchTime": "2026-10-16T11:08:55.494Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3258,
+        "credits": {}
+      },
+      "score": 99,
+      "lcpMs": 1740.857,
+      "fcpMs": 1740.857,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1740.857,
+      "transferBytes": 391296,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 1,
+      "fetchTime": "2026-10-16T11:09:01.993Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3643,
+        "credits": {}
+      },
+      "score": 98,
+      "lcpMs": 1985.5010000000002,
+      "fcpMs": 1724.7385000000002,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1724.7385000000002,
+      "transferBytes": 637106,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 1,
+      "fetchTime": "2026-10-16T11:09:08.403Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3383,
+        "credits": {}
+      },
+      "score": 99,
+      "lcpMs": 1707.2060000000001,
+      "fcpMs": 1707.2060000000001,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1707.2060000000001,
+      "transferBytes": 35070,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 1,
+      "fetchTime": "2026-10-16T11:09:14.694Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3601.5,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 689.5329999999999,
+      "fcpMs": 438.82599999999996,
+      "tbtMs": 0,
+      "cls": 0.00025981709750213616,
+      "speedIndexMs": 490.8370905875556,
+      "transferBytes": 990033,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 1,
+      "fetchTime": "2026-10-16T11:09:21.480Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3315.5,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 461.9299999999999,
+      "fcpMs": 460.42999999999995,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 460.42999999999995,
+      "transferBytes": 391234,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 1,
+      "fetchTime": "2026-10-16T11:09:28.396Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3531,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 646.881,
+      "fcpMs": 446.747,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 446.747,
+      "transferBytes": 637111,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 1,
+      "fetchTime": "2026-10-16T11:09:34.823Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3287.5,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 529.8989999999999,
+      "fcpMs": 529.8989999999999,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 529.8989999999999,
+      "transferBytes": 35118,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 2,
+      "fetchTime": "2026-10-16T11:09:41.134Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3712,
+        "credits": {}
+      },
+      "score": 98,
+      "lcpMs": 2208.982,
+      "fcpMs": 1697.3629999999998,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1697.3629999999998,
+      "transferBytes": 990081,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 2,
+      "fetchTime": "2026-10-16T11:09:47.887Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3664.5,
+        "credits": {}
+      },
+      "score": 99,
+      "lcpMs": 1719.782,
+      "fcpMs": 1713.2820000000002,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1713.2820000000002,
+      "transferBytes": 391267,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 2,
+      "fetchTime": "2026-10-16T11:09:54.109Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3639,
+        "credits": {}
+      },
+      "score": 98,
+      "lcpMs": 2079.7019999999998,
+      "fcpMs": 1781.2369999999996,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1781.2369999999996,
+      "transferBytes": 637117,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 2,
+      "fetchTime": "2026-10-16T11:10:00.528Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3255,
+        "credits": {}
+      },
+      "score": 99,
+      "lcpMs": 1755.7390000000003,
+      "fcpMs": 1755.7390000000003,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1755.7390000000003,
+      "transferBytes": 35085,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 2,
+      "fetchTime": "2026-10-16T11:10:06.678Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3770.5,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 808.3320000000001,
+      "fcpMs": 478.4,
+      "tbtMs": 0,
+      "cls": 0.00025981709750213616,
+      "speedIndexMs": 478.4,
+      "transferBytes": 990053,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 2,
+      "fetchTime": "2026-10-16T11:10:13.346Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3664,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 506.8140000000001,
+      "fcpMs": 478.8670000000001,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 478.8670000000001,
+      "transferBytes": 391227,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 2,
+      "fetchTime": "2026-10-16T11:10:19.659Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3656.5,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 571.923,
+      "fcpMs": 492.85249999999996,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 492.85249999999996,
+      "transferBytes": 637120,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 2,
+      "fetchTime": "2026-10-16T11:10:26.012Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3667.5,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 500.536,
+      "fcpMs": 500.536,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 500.536,
+      "transferBytes": 35091,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 3,
+      "fetchTime": "2026-10-16T11:10:32.147Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3652.5,
+        "credits": {}
+      },
+      "score": 97,
+      "lcpMs": 2277.136,
+      "fcpMs": 1724.159,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1724.159,
+      "transferBytes": 990110,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 3,
+      "fetchTime": "2026-10-16T11:10:38.882Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3667,
+        "credits": {}
+      },
+      "score": 99,
+      "lcpMs": 1814.4390000000003,
+      "fcpMs": 1717.8670000000002,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1717.8670000000002,
+      "transferBytes": 391271,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 3,
+      "fetchTime": "2026-10-16T11:10:45.110Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3726.5,
+        "credits": {}
+      },
+      "score": 98,
+      "lcpMs": 2014.1660000000002,
+      "fcpMs": 1736.813,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1736.813,
+      "transferBytes": 637142,
+      "warnings": []
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 3,
+      "fetchTime": "2026-10-16T11:10:51.484Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3714.5,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 1317.8599999999997,
+      "fcpMs": 1317.8599999999997,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 1317.8599999999997,
+      "transferBytes": 35086,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 3,
+      "fetchTime": "2026-10-16T11:10:57.534Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3623,
+        "credits": {}
+      },
+      "score": 99,
+      "lcpMs": 977.126,
+      "fcpMs": 506.26,
+      "tbtMs": 0,
+      "cls": 0.00025981709750213616,
+      "speedIndexMs": 506.26,
+      "transferBytes": 990088,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 3,
+      "fetchTime": "2026-10-16T11:11:04.299Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3634,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 582.5519999999999,
+      "fcpMs": 431.48699999999997,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 462.31859675000373,
+      "transferBytes": 391234,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 3,
+      "fetchTime": "2026-10-16T11:11:10.774Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3680,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 689.04,
+      "fcpMs": 469.465,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 483.77677566667785,
+      "transferBytes": 637101,
+      "warnings": []
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 3,
+      "fetchTime": "2026-10-16T11:11:17.310Z",
+      "lighthouseVersion": "12.8.2",
+      "environment": {
+        "networkUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+        "benchmarkIndex": 3718.5,
+        "credits": {}
+      },
+      "score": 100,
+      "lcpMs": 493.00199999999995,
+      "fcpMs": 493.00199999999995,
+      "tbtMs": 0,
+      "cls": 0,
+      "speedIndexMs": 493.00199999999995,
+      "transferBytes": 35063,
+      "warnings": []
+    }
+  ],
+  "profiles": {
+    "mobile": {
+      "output": [
+        "json",
+        "html"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 1000,
+      "pauseAfterLoadMs": 1000,
+      "networkQuietThresholdMs": 1000,
+      "cpuQuietThresholdMs": 1000,
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "throttlingMethod": "simulate",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "node",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance"
+      ],
+      "skipAudits": null
+    },
+    "desktop": {
+      "output": [
+        "json",
+        "html"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 1000,
+      "pauseAfterLoadMs": 1000,
+      "networkQuietThresholdMs": 1000,
+      "cpuQuietThresholdMs": 1000,
+      "formFactor": "desktop",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "throttlingMethod": "simulate",
+      "screenEmulation": {
+        "mobile": false,
+        "width": 1350,
+        "height": 940,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "node",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance"
+      ],
+      "skipAudits": null
+    }
+  },
+  "diagnostic_evidence": [
+    {
+      "page": "home",
+      "findings": [
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "displayValue": "Est savings of 425 KiB",
+          "numericValue": 0,
+          "savings": {
+            "FCP": 0,
+            "LCP": 0
+          },
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": ""
+              },
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Resource Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-7-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,1,DIV,4,A,0,IMG",
+                  "selector": "section.container > div.destination-grid > a.destination-card > img.scene",
+                  "boundingRect": {
+                    "top": 1113,
+                    "bottom": 1263,
+                    "left": 16,
+                    "right": 198,
+                    "width": 182,
+                    "height": 149
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "section.container > div.destination-grid > a.destination-card > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+                "totalBytes": 138218,
+                "wastedBytes": 126261,
+                "wastedPercent": 91.34907552083334
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-17-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,1,DIV,4,A,0,DIV,0,IMG",
+                  "selector": "div.category-grid > a.category-card > div.category-art > img.scene",
+                  "boundingRect": {
+                    "top": 2862,
+                    "bottom": 3017,
+                    "left": 16,
+                    "right": 198,
+                    "width": 182,
+                    "height": 155
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/marina-DFUF1aBx.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "div.category-grid > a.category-card > div.category-art > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+                "totalBytes": 127042,
+                "wastedBytes": 116879,
+                "wastedPercent": 92.00063657407406
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-18-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,1,DIV,5,A,0,DIV,0,IMG",
+                  "selector": "div.category-grid > a.category-card > div.category-art > img.scene",
+                  "boundingRect": {
+                    "top": 2862,
+                    "bottom": 3017,
+                    "left": 214,
+                    "right": 396,
+                    "width": 182,
+                    "height": 155
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/mountains-v4B4C27y.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "div.category-grid > a.category-card > div.category-art > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+                "totalBytes": 78090,
+                "wastedBytes": 69761,
+                "wastedPercent": 89.33418209876544
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-16-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,1,DIV,3,A,0,DIV,0,IMG",
+                  "selector": "div.category-grid > a.category-card > div.category-art > img.scene",
+                  "boundingRect": {
+                    "top": 2691,
+                    "bottom": 2846,
+                    "left": 214,
+                    "right": 396,
+                    "width": 182,
+                    "height": 155
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "div.category-grid > a.category-card > div.category-art > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+                "totalBytes": 66308,
+                "wastedBytes": 56878,
+                "wastedPercent": 85.77890946502058
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-15-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,1,DIV,2,A,0,DIV,0,IMG",
+                  "selector": "div.category-grid > a.category-card > div.category-art > img.scene",
+                  "boundingRect": {
+                    "top": 2691,
+                    "bottom": 2846,
+                    "left": 16,
+                    "right": 198,
+                    "width": 182,
+                    "height": 155
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "div.category-grid > a.category-card > div.category-art > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+                "totalBytes": 39306,
+                "wastedBytes": 35769,
+                "wastedPercent": 91.00071614583334
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-13-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,1,DIV,0,A,0,DIV,0,IMG",
+                  "selector": "div.category-grid > a.category-card > div.category-art > img.scene",
+                  "boundingRect": {
+                    "top": 2520,
+                    "bottom": 2675,
+                    "left": 16,
+                    "right": 198,
+                    "width": 182,
+                    "height": 155
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/desert-BMXSEf1J.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "div.category-grid > a.category-card > div.category-art > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+                "totalBytes": 32326,
+                "wastedBytes": 29417,
+                "wastedPercent": 91.00071614583334
+              }
+            ],
+            "overallSavingsMs": 0,
+            "overallSavingsBytes": 434965,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "page": "listing",
+      "findings": [
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "displayValue": "Est savings of 322 KiB",
+          "numericValue": 140,
+          "savings": {
+            "FCP": 0,
+            "LCP": 150
+          },
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": ""
+              },
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Resource Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-6-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,1,DIV,3,DIV,4,ARTICLE,0,DIV,1,IMG",
+                  "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+                  "boundingRect": {
+                    "top": 1134,
+                    "bottom": 1294,
+                    "left": 16,
+                    "right": 128,
+                    "width": 112,
+                    "height": 160
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/marina-DFUF1aBx.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "div.experience-list > article.experience-card > div.experience-art > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+                "totalBytes": 127042,
+                "wastedBytes": 120586,
+                "wastedPercent": 94.91851851851851
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-8-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,1,DIV,3,DIV,5,SECTION,2,DIV,1,A,0,IMG",
+                  "selector": "section.listing-inspiration > div.inspiration-grid > a.inspiration-card > img.scene",
+                  "boundingRect": {
+                    "top": 1378,
+                    "bottom": 1558,
+                    "left": 145,
+                    "right": 267,
+                    "width": 121,
+                    "height": 180
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "section.listing-inspiration > div.inspiration-grid > a.inspiration-card > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+                "totalBytes": 115250,
+                "wastedBytes": 107272,
+                "wastedPercent": 93.07791095890411
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-9-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,1,DIV,3,DIV,5,SECTION,2,DIV,2,A,0,IMG",
+                  "selector": "section.listing-inspiration > div.inspiration-grid > a.inspiration-card > img.scene",
+                  "boundingRect": {
+                    "top": 1378,
+                    "bottom": 1558,
+                    "left": 275,
+                    "right": 396,
+                    "width": 121,
+                    "height": 180
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/mountains-v4B4C27y.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "section.listing-inspiration > div.inspiration-grid > a.inspiration-card > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+                "totalBytes": 78090,
+                "wastedBytes": 71660,
+                "wastedPercent": 91.76527777777778
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-7-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,1,DIV,3,DIV,5,SECTION,2,DIV,0,A,0,IMG",
+                  "selector": "section.listing-inspiration > div.inspiration-grid > a.inspiration-card > img.scene",
+                  "boundingRect": {
+                    "top": 1378,
+                    "bottom": 1558,
+                    "left": 16,
+                    "right": 137,
+                    "width": 121,
+                    "height": 180
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/desert-BMXSEf1J.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "section.listing-inspiration > div.inspiration-grid > a.inspiration-card > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+                "totalBytes": 32326,
+                "wastedBytes": 30080,
+                "wastedPercent": 93.051953125
+              }
+            ],
+            "overallSavingsMs": 140,
+            "overallSavingsBytes": 329598,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 140
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "page": "detail",
+      "findings": [
+        {
+          "id": "uses-responsive-images",
+          "title": "Properly size images",
+          "displayValue": "Est savings of 537 KiB",
+          "numericValue": 300,
+          "savings": {
+            "FCP": 0,
+            "LCP": 300
+          },
+          "details": {
+            "type": "opportunity",
+            "headings": [
+              {
+                "key": "node",
+                "valueType": "node",
+                "label": ""
+              },
+              {
+                "key": "url",
+                "valueType": "url",
+                "label": "URL"
+              },
+              {
+                "key": "totalBytes",
+                "valueType": "bytes",
+                "label": "Resource Size"
+              },
+              {
+                "key": "wastedBytes",
+                "valueType": "bytes",
+                "label": "Est Savings"
+              }
+            ],
+            "items": [
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-8-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,6,DIV,0,IMG",
+                  "selector": "section.container > div.detail-gallery > div.gallery-tile > img.scene",
+                  "boundingRect": {
+                    "top": 486,
+                    "bottom": 566,
+                    "left": 272,
+                    "right": 396,
+                    "width": 124,
+                    "height": 80
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "section.container > div.detail-gallery > div.gallery-tile > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/fujairah-CLKq3rnP.webp",
+                "totalBytes": 138218,
+                "wastedBytes": 133844,
+                "wastedPercent": 96.83541666666666
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-10-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,0,DIV,6,SECTION,2,DIV,1,IMG",
+                  "selector": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene",
+                  "boundingRect": {
+                    "top": 2176,
+                    "bottom": 2281,
+                    "left": 145,
+                    "right": 267,
+                    "width": 121,
+                    "height": 105
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/marina-DFUF1aBx.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/marina-DFUF1aBx.webp",
+                "totalBytes": 127042,
+                "wastedBytes": 122465,
+                "wastedPercent": 96.39730902777778
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-9-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,0,DIV,6,SECTION,2,DIV,0,IMG",
+                  "selector": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene",
+                  "boundingRect": {
+                    "top": 2176,
+                    "bottom": 2281,
+                    "left": 16,
+                    "right": 137,
+                    "width": 121,
+                    "height": 105
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/dubai-BZiRHNpi.webp",
+                "totalBytes": 115250,
+                "wastedBytes": 110596,
+                "wastedPercent": 95.9621147260274
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-7-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,5,DIV,0,IMG",
+                  "selector": "section.container > div.detail-gallery > div.gallery-tile > img.scene",
+                  "boundingRect": {
+                    "top": 486,
+                    "bottom": 566,
+                    "left": 144,
+                    "right": 268,
+                    "width": 124,
+                    "height": 80
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/mountains-v4B4C27y.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "section.container > div.detail-gallery > div.gallery-tile > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/mountains-v4B4C27y.webp",
+                "totalBytes": 78090,
+                "wastedBytes": 75161,
+                "wastedPercent": 96.24938271604938
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-2-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,0,DIV,0,IMG",
+                  "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+                  "boundingRect": {
+                    "top": 178,
+                    "bottom": 398,
+                    "left": 16,
+                    "right": 396,
+                    "width": 380,
+                    "height": 220
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"eager\" decoding=\"async\" fetchpriority=\"high\">",
+                  "nodeLabel": "section.container > div.detail-gallery > div.detail-art > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+                "totalBytes": 66308,
+                "wastedBytes": 38363,
+                "wastedPercent": 57.855967078189295
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-6-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,4,DIV,0,IMG",
+                  "selector": "section.container > div.detail-gallery > div.gallery-tile > img.scene",
+                  "boundingRect": {
+                    "top": 486,
+                    "bottom": 566,
+                    "left": 16,
+                    "right": 140,
+                    "width": 124,
+                    "height": 80
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "section.container > div.detail-gallery > div.gallery-tile > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/abu-dhabi-aj06Mp1I.webp",
+                "totalBytes": 39306,
+                "wastedBytes": 38062,
+                "wastedPercent": 96.83541666666666
+              },
+              {
+                "node": {
+                  "type": "node",
+                  "lhId": "1-11-IMG",
+                  "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,0,DIV,6,SECTION,2,DIV,2,IMG",
+                  "selector": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene",
+                  "boundingRect": {
+                    "top": 2176,
+                    "bottom": 2281,
+                    "left": 275,
+                    "right": 396,
+                    "width": 121,
+                    "height": 105
+                  },
+                  "snippet": "<img class=\"scene destination-photo photo-variant-0\" src=\"https://bookorgo.com/build/assets/desert-BMXSEf1J.webp\" width=\"1400\" height=\"933\" alt=\"\" loading=\"lazy\" decoding=\"async\">",
+                  "nodeLabel": "div.detail-content > section.detail-section > div.traveller-photo-row > img.scene"
+                },
+                "url": "https://bookorgo.com/build/assets/desert-BMXSEf1J.webp",
+                "totalBytes": 32326,
+                "wastedBytes": 31016,
+                "wastedPercent": 95.94697265625
+              }
+            ],
+            "overallSavingsMs": 300,
+            "overallSavingsBytes": 549507,
+            "sortedBy": [
+              "wastedBytes"
+            ],
+            "debugData": {
+              "type": "debugdata",
+              "metricSavings": {
+                "FCP": 0,
+                "LCP": 300
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "page": "article",
+      "findings": []
+    }
+  ],
+  "comparison": {
+    "task": "P1-05f",
+    "baselineRevision": "74d38aae688127681208c12298aaf8e0f77dd3db",
+    "currentRevision": "881201d5d20c3b4742443ac58e577f8e21824b6e",
+    "baselineMeasuredAt": "2026-10-15T18:05:16.098Z",
+    "currentMeasuredAt": "2026-10-16T11:11:22.299Z",
+    "rows": [
+      {
+        "profile": "mobile",
+        "page": "home",
+        "metrics": {
+          "score": {
+            "before": {
+              "min": 86,
+              "median": 90,
+              "max": 98
+            },
+            "after": {
+              "min": 97,
+              "median": 97,
+              "max": 98
+            },
+            "medianDelta": 7
+          },
+          "lcpMs": {
+            "before": {
+              "min": 1927.448,
+              "median": 2816.0959999999995,
+              "max": 3159.1539999999995
+            },
+            "after": {
+              "min": 2208.982,
+              "median": 2277.136,
+              "max": 2316.416
+            },
+            "medianDelta": -538.9599999999996
+          },
+          "fcpMs": {
+            "before": {
+              "min": 1927.448,
+              "median": 2816.0959999999995,
+              "max": 3159.1539999999995
+            },
+            "after": {
+              "min": 1697.3629999999998,
+              "median": 1724.159,
+              "max": 1725.4720000000002
+            },
+            "medianDelta": -1091.9369999999994
+          },
+          "tbtMs": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0.5
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "cls": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "speedIndexMs": {
+            "before": {
+              "min": 2627.765665111507,
+              "median": 3456.0503559999843,
+              "max": 3960.3172680000066
+            },
+            "after": {
+              "min": 1697.3629999999998,
+              "median": 1724.159,
+              "max": 1725.4720000000002
+            },
+            "medianDelta": -1731.8913559999842
+          },
+          "transferBytes": {
+            "before": {
+              "min": 989973,
+              "median": 990019,
+              "max": 990070
+            },
+            "after": {
+              "min": 990058,
+              "median": 990081,
+              "max": 990110
+            },
+            "medianDelta": 62
+          }
+        },
+        "everyObservedLcpWithin2500ms": true,
+        "everyObservedClsWithin01": true
+      },
+      {
+        "profile": "mobile",
+        "page": "listing",
+        "metrics": {
+          "score": {
+            "before": {
+              "min": 68,
+              "median": 92,
+              "max": 95
+            },
+            "after": {
+              "min": 99,
+              "median": 99,
+              "max": 99
+            },
+            "medianDelta": 7
+          },
+          "lcpMs": {
+            "before": {
+              "min": 2607.889,
+              "median": 3257.8545,
+              "max": 3356.7239999999997
+            },
+            "after": {
+              "min": 1719.782,
+              "median": 1740.857,
+              "max": 1814.4390000000003
+            },
+            "medianDelta": -1516.9975
+          },
+          "fcpMs": {
+            "before": {
+              "min": 1785.5319999999997,
+              "median": 1911.451,
+              "max": 2018.711
+            },
+            "after": {
+              "min": 1713.2820000000002,
+              "median": 1717.8670000000002,
+              "max": 1740.857
+            },
+            "medianDelta": -193.58399999999983
+          },
+          "tbtMs": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 6
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "cls": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0.5790088357772298
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "speedIndexMs": {
+            "before": {
+              "min": 1785.5319999999997,
+              "median": 2221.8473919999774,
+              "max": 2862.603893999987
+            },
+            "after": {
+              "min": 1713.2820000000002,
+              "median": 1717.8670000000002,
+              "max": 1740.857
+            },
+            "medianDelta": -503.9803919999772
+          },
+          "transferBytes": {
+            "before": {
+              "min": 391156,
+              "median": 391200,
+              "max": 391213
+            },
+            "after": {
+              "min": 391267,
+              "median": 391271,
+              "max": 391296
+            },
+            "medianDelta": 71
+          }
+        },
+        "everyObservedLcpWithin2500ms": true,
+        "everyObservedClsWithin01": true
+      },
+      {
+        "profile": "mobile",
+        "page": "detail",
+        "metrics": {
+          "score": {
+            "before": {
+              "min": 73,
+              "median": 82,
+              "max": 85
+            },
+            "after": {
+              "min": 98,
+              "median": 98,
+              "max": 98
+            },
+            "medianDelta": 16
+          },
+          "lcpMs": {
+            "before": {
+              "min": 4104.241999999999,
+              "median": 4812.288,
+              "max": 5614.025
+            },
+            "after": {
+              "min": 1985.5010000000002,
+              "median": 2014.1660000000002,
+              "max": 2079.7019999999998
+            },
+            "medianDelta": -2798.1219999999994
+          },
+          "fcpMs": {
+            "before": {
+              "min": 1734.174,
+              "median": 1927.2980000000002,
+              "max": 2795.2429999999995
+            },
+            "after": {
+              "min": 1724.7385000000002,
+              "median": 1736.813,
+              "max": 1781.2369999999996
+            },
+            "medianDelta": -190.48500000000013
+          },
+          "tbtMs": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "cls": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "speedIndexMs": {
+            "before": {
+              "min": 1734.174,
+              "median": 2393.963699999998,
+              "max": 4227.034220000008
+            },
+            "after": {
+              "min": 1724.7385000000002,
+              "median": 1736.813,
+              "max": 1781.2369999999996
+            },
+            "medianDelta": -657.1506999999979
+          },
+          "transferBytes": {
+            "before": {
+              "min": 637055,
+              "median": 637081,
+              "max": 637106
+            },
+            "after": {
+              "min": 637106,
+              "median": 637117,
+              "max": 637142
+            },
+            "medianDelta": 36
+          }
+        },
+        "everyObservedLcpWithin2500ms": true,
+        "everyObservedClsWithin01": true
+      },
+      {
+        "profile": "mobile",
+        "page": "article",
+        "metrics": {
+          "score": {
+            "before": {
+              "min": 86,
+              "median": 99,
+              "max": 99
+            },
+            "after": {
+              "min": 99,
+              "median": 99,
+              "max": 100
+            },
+            "medianDelta": 0
+          },
+          "lcpMs": {
+            "before": {
+              "min": 1727.6419999999998,
+              "median": 1790.202,
+              "max": 3193.412
+            },
+            "after": {
+              "min": 1317.8599999999997,
+              "median": 1707.2060000000001,
+              "max": 1755.7390000000003
+            },
+            "medianDelta": -82.99599999999987
+          },
+          "fcpMs": {
+            "before": {
+              "min": 1727.6419999999998,
+              "median": 1790.202,
+              "max": 3193.412
+            },
+            "after": {
+              "min": 1317.8599999999997,
+              "median": 1707.2060000000001,
+              "max": 1755.7390000000003
+            },
+            "medianDelta": -82.99599999999987
+          },
+          "tbtMs": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "cls": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "speedIndexMs": {
+            "before": {
+              "min": 1727.6419999999998,
+              "median": 2001.566609999984,
+              "max": 3794.0280539999785
+            },
+            "after": {
+              "min": 1317.8599999999997,
+              "median": 1707.2060000000001,
+              "max": 1755.7390000000003
+            },
+            "medianDelta": -294.3606099999838
+          },
+          "transferBytes": {
+            "before": {
+              "min": 35064,
+              "median": 35094,
+              "max": 35111
+            },
+            "after": {
+              "min": 35070,
+              "median": 35085,
+              "max": 35086
+            },
+            "medianDelta": -9
+          }
+        },
+        "everyObservedLcpWithin2500ms": true,
+        "everyObservedClsWithin01": true
+      },
+      {
+        "profile": "desktop",
+        "page": "home",
+        "metrics": {
+          "score": {
+            "before": {
+              "min": 69,
+              "median": 85,
+              "max": 96
+            },
+            "after": {
+              "min": 99,
+              "median": 100,
+              "max": 100
+            },
+            "medianDelta": 15
+          },
+          "lcpMs": {
+            "before": {
+              "min": 1294.572,
+              "median": 2052.635,
+              "max": 3037.6440000000002
+            },
+            "after": {
+              "min": 689.5329999999999,
+              "median": 808.3320000000001,
+              "max": 977.126
+            },
+            "medianDelta": -1244.303
+          },
+          "fcpMs": {
+            "before": {
+              "min": 900.7199999999999,
+              "median": 1415.0900000000001,
+              "max": 2505.7500000000005
+            },
+            "after": {
+              "min": 438.82599999999996,
+              "median": 478.4,
+              "max": 506.26
+            },
+            "medianDelta": -936.6900000000002
+          },
+          "tbtMs": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "cls": {
+            "before": {
+              "min": 0.00025981709750213616,
+              "median": 0.00025981709750213616,
+              "max": 0.00025981709750213616
+            },
+            "after": {
+              "min": 0.00025981709750213616,
+              "median": 0.00025981709750213616,
+              "max": 0.00025981709750213616
+            },
+            "medianDelta": 0
+          },
+          "speedIndexMs": {
+            "before": {
+              "min": 900.7199999999999,
+              "median": 1424.5820975833344,
+              "max": 2506.8534244999983
+            },
+            "after": {
+              "min": 478.4,
+              "median": 490.8370905875556,
+              "max": 506.26
+            },
+            "medianDelta": -933.7450069957788
+          },
+          "transferBytes": {
+            "before": {
+              "min": 989996,
+              "median": 990013,
+              "max": 990068
+            },
+            "after": {
+              "min": 990033,
+              "median": 990053,
+              "max": 990088
+            },
+            "medianDelta": 40
+          }
+        },
+        "everyObservedLcpWithin2500ms": true,
+        "everyObservedClsWithin01": true
+      },
+      {
+        "profile": "desktop",
+        "page": "listing",
+        "metrics": {
+          "score": {
+            "before": {
+              "min": 89,
+              "median": 91,
+              "max": 99
+            },
+            "after": {
+              "min": 100,
+              "median": 100,
+              "max": 100
+            },
+            "medianDelta": 9
+          },
+          "lcpMs": {
+            "before": {
+              "min": 769.3219999999999,
+              "median": 1619.486,
+              "max": 1705.94
+            },
+            "after": {
+              "min": 461.9299999999999,
+              "median": 506.8140000000001,
+              "max": 582.5519999999999
+            },
+            "medianDelta": -1112.672
+          },
+          "fcpMs": {
+            "before": {
+              "min": 679.2399999999999,
+              "median": 1175.468,
+              "max": 1303.634
+            },
+            "after": {
+              "min": 431.48699999999997,
+              "median": 460.42999999999995,
+              "max": 478.8670000000001
+            },
+            "medianDelta": -715.0380000000001
+          },
+          "tbtMs": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "cls": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "speedIndexMs": {
+            "before": {
+              "min": 679.2399999999999,
+              "median": 1175.468,
+              "max": 1398.0431988333257
+            },
+            "after": {
+              "min": 460.42999999999995,
+              "median": 462.31859675000373,
+              "max": 478.8670000000001
+            },
+            "medianDelta": -713.1494032499963
+          },
+          "transferBytes": {
+            "before": {
+              "min": 391162,
+              "median": 391194,
+              "max": 391197
+            },
+            "after": {
+              "min": 391227,
+              "median": 391234,
+              "max": 391234
+            },
+            "medianDelta": 40
+          }
+        },
+        "everyObservedLcpWithin2500ms": true,
+        "everyObservedClsWithin01": true
+      },
+      {
+        "profile": "desktop",
+        "page": "detail",
+        "metrics": {
+          "score": {
+            "before": {
+              "min": 70,
+              "median": 87,
+              "max": 99
+            },
+            "after": {
+              "min": 100,
+              "median": 100,
+              "max": 100
+            },
+            "medianDelta": 13
+          },
+          "lcpMs": {
+            "before": {
+              "min": 951.6770000000001,
+              "median": 1792.523,
+              "max": 3046.5060000000003
+            },
+            "after": {
+              "min": 571.923,
+              "median": 646.881,
+              "max": 689.04
+            },
+            "medianDelta": -1145.6419999999998
+          },
+          "fcpMs": {
+            "before": {
+              "min": 483.7175000000001,
+              "median": 1369.145,
+              "max": 2257.428
+            },
+            "after": {
+              "min": 446.747,
+              "median": 469.465,
+              "max": 492.85249999999996
+            },
+            "medianDelta": -899.6800000000001
+          },
+          "tbtMs": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "cls": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "speedIndexMs": {
+            "before": {
+              "min": 483.7175000000001,
+              "median": 1573.3519715833377,
+              "max": 2257.428
+            },
+            "after": {
+              "min": 446.747,
+              "median": 483.77677566667785,
+              "max": 492.85249999999996
+            },
+            "medianDelta": -1089.5751959166598
+          },
+          "transferBytes": {
+            "before": {
+              "min": 637052,
+              "median": 637064,
+              "max": 637081
+            },
+            "after": {
+              "min": 637101,
+              "median": 637111,
+              "max": 637120
+            },
+            "medianDelta": 47
+          }
+        },
+        "everyObservedLcpWithin2500ms": true,
+        "everyObservedClsWithin01": true
+      },
+      {
+        "profile": "desktop",
+        "page": "article",
+        "metrics": {
+          "score": {
+            "before": {
+              "min": 96,
+              "median": 97,
+              "max": 100
+            },
+            "after": {
+              "min": 100,
+              "median": 100,
+              "max": 100
+            },
+            "medianDelta": 3
+          },
+          "lcpMs": {
+            "before": {
+              "min": 481.9920000000001,
+              "median": 990.1380000000001,
+              "max": 1055.44
+            },
+            "after": {
+              "min": 493.00199999999995,
+              "median": 500.536,
+              "max": 529.8989999999999
+            },
+            "medianDelta": -489.60200000000015
+          },
+          "fcpMs": {
+            "before": {
+              "min": 481.9920000000001,
+              "median": 990.1380000000001,
+              "max": 1055.44
+            },
+            "after": {
+              "min": 493.00199999999995,
+              "median": 500.536,
+              "max": 529.8989999999999
+            },
+            "medianDelta": -489.60200000000015
+          },
+          "tbtMs": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "cls": {
+            "before": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "after": {
+              "min": 0,
+              "median": 0,
+              "max": 0
+            },
+            "medianDelta": 0
+          },
+          "speedIndexMs": {
+            "before": {
+              "min": 481.9920000000001,
+              "median": 1128.3125750000063,
+              "max": 1214.1548666666613
+            },
+            "after": {
+              "min": 493.00199999999995,
+              "median": 500.536,
+              "max": 529.8989999999999
+            },
+            "medianDelta": -627.7765750000062
+          },
+          "transferBytes": {
+            "before": {
+              "min": 35068,
+              "median": 35068,
+              "max": 35090
+            },
+            "after": {
+              "min": 35063,
+              "median": 35091,
+              "max": 35118
+            },
+            "medianDelta": 23
+          }
+        },
+        "everyObservedLcpWithin2500ms": true,
+        "everyObservedClsWithin01": true
+      }
+    ],
+    "limitations": [
+      "Independent small lab samples on shared CI; differences are observations, not a controlled causal estimate or field p75.",
+      "TBT is not INP. Preserve min/max outliers; a median alone does not establish stability.",
+      "Release attribution uses deployment logs and stable asset checks, not an asserted runtime revision endpoint."
+    ]
+  },
+  "status": "COMPARISON_COMPLETE_WITH_REMAINING_OPTIMIZATION",
+  "workflow_run": 38891777361,
+  "workflow_url": "https://github.com/bookorgo/BookOrGo/actions/runs/38891777361",
+  "artifact": {
+    "id": 12041539562,
+    "sha256": "f64c47ed128588abdfc54ac23796078d920fa415e8ebda00a35623d01c18a22c",
+    "download_hash_verified": true,
+    "expires_at": "2026-11-15T11:11:25Z",
+    "raw_json_reports": 24,
+    "raw_html_reports": 24
+  },
+  "tests": {
+    "unit_tests_passed": 6,
+    "navigation_audits_completed": 24,
+    "failures": 0,
+    "pre_post_http_noindex_asset_checks": "passed",
+    "measurement_method_comparison": "passed"
+  },
+  "deployment": {
+    "performed": false,
+    "live_revision": "881201d5d20c3b4742443ac58e577f8e21824b6e"
+  },
+  "requirements": [
+    "Master V3.1 nonfunctional performance targets",
+    "Playbook V4.1 performance QA/evidence",
+    "OWNER-20261012-MAIN"
+  ],
+  "next_task": "P1-05g: responsive-image derivatives and srcset/sizes from existing licensed originals; preserve crops, geometry, provenance and credits; source tests and guarded release required."
+}
