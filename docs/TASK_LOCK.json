@@ -1,9 +1,9 @@
 {
   "task": "P1-05f",
   "status": "active",
-  "owner": "bookorgo-p105f-finalize-20261016",
-  "acquired_at": "2026-10-16T15:05:47Z",
-  "expires_at": "2026-10-16T15:35:47Z",
-  "base_revision": "a5849a0064d807ed5c3bea400de3968b3737fe7a",
-  "scope": "Finalize successful performance evidence; no deployment"
+  "owner": "bookorgo-p105f-finalize-20261018",
+  "acquired_at": "2026-10-17T21:06:17Z",
+  "expires_at": "2026-10-17T21:36:17Z",
+  "base_revision": "46e48b3f8471146d2f8615732219baa0706109bf",
+  "scope": "Finalize completed comparison, no deployment"
 }
