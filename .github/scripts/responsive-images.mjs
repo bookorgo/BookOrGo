@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 
 const origin = process.env.BOOKORGO_AUDIT_ORIGIN || 'http://127.0.0.1:8000';
-assert.equal(origin, 'http://127.0.0.1:8000', 'source verification only; no implied production release');
+assert.ok(['http://127.0.0.1:8000', 'https://bookorgo.com'].includes(origin), 'explicit source/live origin allowlist');
 const manifest = JSON.parse(await fs.readFile('site/resources/images/responsive/manifest.json', 'utf8'));
 const vite = JSON.parse(await fs.readFile('site/public/build/manifest.json', 'utf8'));
 const byUrl = new Map(Object.values(manifest).flatMap(photo => photo.variants.map(v => [new URL(`/build/${vite[v.path].file}`, origin).href, { ...v, original: photo.variants.at(-1), source: photo }])));
@@ -21,7 +21,7 @@ async function waitForPhoto(photo, fallback = false) {
     } while (Date.now() < deadline);
     throw new Error(`Image load timed out (${fallback ? 'original fallback' : 'responsive'})`);
 }
-const save = () => fs.writeFile(`${output}/responsive-images.json`, JSON.stringify({ task: 'P1-05g', rows, failures, scope: 'CI source; unique selected file sizes, not network transfer or LCP; no-JS DPR1/2, original fallback and geometry/crop checks.' }, null, 2));
+const save = () => fs.writeFile(`${output}/responsive-images.json`, JSON.stringify({ task: 'P1-05g', sourceRevision: process.env.GITHUB_SHA || null, origin, mode: origin === 'https://bookorgo.com' ? 'LIVE_READ_ONLY' : 'CI_SOURCE', checkedAt: new Date().toISOString(), rows, failures, scope: 'Unique selected file sizes, not network transfer or LCP; no-JS DPR1/2, original fallback and geometry/crop checks.' }, null, 2));
 for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
     const browser = await type.launch();
     try {

@@ -25,7 +25,7 @@ jobs:
       SSH_HOST: 45.137.159.248
       SSH_PORT: '65002'
       SSH_USER: u809119518
-      EXPECTED_PREVIOUS_REVISION: 74d38aae688127681208c12298aaf8e0f77dd3db
+      EXPECTED_PREVIOUS_REVISION: 881201d5d20c3b4742443ac58e577f8e21824b6e
     steps:
       - name: Checkout frozen revision
         uses: actions/checkout@v4
@@ -55,6 +55,7 @@ jobs:
           composer install --no-interaction --prefer-dist --no-progress
           npm ci --ignore-scripts
           npm run build
+          npm run test:images
           cp .env.example .env
           printf '\nAPP_ENV=testing\nAPP_URL=http://127.0.0.1\nSESSION_SECURE_COOKIE=false\n' >> .env
           php artisan key:generate --ansi
@@ -246,6 +247,7 @@ jobs:
           /tmp/bookorgo-quality/node_modules/.bin/playwright install --with-deps chromium firefox webkit
           BOOKORGO_REQUIRE_CLEAN_A11Y=true node .github/scripts/quality-audit.mjs
           node .github/scripts/loading-stability.mjs
+          BOOKORGO_AUDIT_ORIGIN=https://bookorgo.com node .github/scripts/responsive-images.mjs
 
       - name: Mark verified release and remove incoming archive
         run: |
