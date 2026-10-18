@@ -1,9 +1,9 @@
 {
   "task": "P1-05g",
   "status": "active",
-  "owner": "bookorgo-p105g-resume-20261018",
-  "acquired_at": "2026-10-18T02:58:00Z",
-  "expires_at": "2026-10-18T03:43:00Z",
-  "base_revision": "3588faeac0cdc839c048ffde3576341c9f3b4d82",
-  "scope": "Repair bounded responsive browser verification, checkpoint evidence; no live replacement before complete verification"
+  "owner": "bookorgo-p105g-evidence-20261018",
+  "acquired_at": "2026-10-18T08:02:00Z",
+  "expires_at": "2026-10-18T08:32:00Z",
+  "base_revision": "a00c13e99f15484f6d44524996ccab3b99e3097d",
+  "scope": "Finalize verified live P1-05g evidence checkpoint; no deployment"
 }
