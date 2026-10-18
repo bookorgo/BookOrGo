@@ -10,13 +10,23 @@ final class ResponsivePhoto
         $manifest ??= json_decode(file_get_contents(resource_path('images/responsive/manifest.json')), true, flags: JSON_THROW_ON_ERROR);
         $photo = $manifest[$name];
         $ratio = $photo['width'] / $photo['height'];
-        $cover = static fn (int $height): string => number_format($height * $ratio, 2, '.', '').'px';
+        $px = static fn (float $value): string => number_format($value, 2, '.', '').'px';
+        // Use ordered media conditions instead of nested min()/max() in sizes.
+        // Some engines accept those CSS functions but ignore them in image sizes.
+        $segment = static function (int $limit, float $vw, int $subtract, int $height) use ($ratio, $px): string {
+            $floor = $height * $ratio;
+            $crossing = ($floor + $subtract) * 100 / $vw;
+            if ($crossing >= $limit) {
+                return '(max-width: '.$limit.'px) '.$px($floor).', ';
+            }
+            return '(max-width: '.$px($crossing).') '.$px($floor).', (max-width: '.$limit.'px) calc('.$vw.'vw - '.$subtract.'px), ';
+        };
         // sizes represents the source pixels needed for object-fit:cover, including tall cells.
         $sizes = match ($slot) {
-            'detail-main' => '(max-width: 720px) max(calc(100vw - 32px), '.$cover(220).'), (max-width: 900px) max(calc(60vw - 36px), '.$cover(338).'), max(min(calc(60vw - 36px), 639px), '.$cover(478).')',
-            'detail-tall' => '(max-width: 720px) max(calc(33.333vw - 14px), '.$cover(80).'), (max-width: 900px) max(calc(20vw - 12px), '.$cover(166).'), max(min(calc(20vw - 12px), 213px), '.$cover(236).')',
-            'detail-small' => '(max-width: 720px) max(calc(33.333vw - 14px), '.$cover(80).'), (max-width: 900px) max(calc(20vw - 12px), '.$cover(80).'), max(min(calc(20vw - 12px), 213px), '.$cover(115).')',
-            'detail-row' => '(max-width: 720px) max(calc(33.333vw - 16px), '.$cover(105).'), max(240px, '.$cover(185).')',
+            'detail-main' => $segment(720, 100, 32, 220).$segment(900, 60, 36, 338).$px(max(639, 478 * $ratio)),
+            'detail-tall' => $segment(720, 33.333, 14, 80).$segment(900, 20, 12, 166).$px(max(213, 236 * $ratio)),
+            'detail-small' => $segment(720, 33.333, 14, 80).$segment(900, 20, 12, 80).$px(max(213, 115 * $ratio)),
+            'detail-row' => $segment(720, 33.333, 16, 105).$px(max(240, 185 * $ratio)),
             default => throw new \InvalidArgumentException('Unknown responsive photo slot'),
         };
 

@@ -57,6 +57,7 @@ for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
                 const unique = values => [...new Map(values.map(v => [v.path, v])).values()];
                 const chosenBytes = unique(selected).reduce((sum, v) => sum + v.bytes, 0);
                 const originalBytes = unique(selected.map(v => v.original)).reduce((sum, v) => sum + v.bytes, 0);
+                console.log(JSON.stringify({ event: 'selection', engine, width, dpr, chosenBytes, originalBytes, selected: unique(selected).map(v => ({ path: v.path, width: v.width, bytes: v.bytes })) }));
                 assert.ok(chosenBytes < originalBytes, 'smaller unique selected image bytes');
                 if (dpr === 1 && (width === 390 || width === 1440) && engine === 'chromium') {
                     await page.evaluate(() => scrollTo(0, 0));
