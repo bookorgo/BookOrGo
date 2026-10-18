@@ -1,5 +1,7 @@
 # P1-05h — homepage/listing responsive images
 
+Final status: VERIFIED_LIVE at 0d51ce8d7a29a7a235502aebedd9c02c39943a43, successful guarded run 39129839868. All 69 live HTTP/security/asset checks, 144 responsive cases and existing functional/accessibility/stability gates passed. Backup/extracted comparison passed, rollback not needed. Live artifact digest independently verified. See docs/evidence/P1-05h-responsive-images.json. Pending wording below is historical preparation, not current deployment status.
+
 ## Scope and requirements
 Master V3.1 permitted media and non-functional performance; Playbook V4.1 responsive QA and mandatory evidence; OWNER-20261012-MAIN. Owner documents read privately, not published. Reuse the seven rights-registered originals and existing 26 build-time derivatives from P1-05g; no new media, dependency, CSS, crop, content, URL or indexability changes.
 
