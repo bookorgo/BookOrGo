@@ -40,7 +40,7 @@ export function compare(baseline, current) {
             everyObservedLcpWithin2500ms: metrics.lcpMs.after.max <= 2500,
             everyObservedClsWithin01: metrics.cls.after.max <= .1 };
     });
-    return { task: 'P1-05f', baselineRevision: baseline.expectedLiveRevision,
+    return { task: current.task, baselineRevision: baseline.expectedLiveRevision,
         currentRevision: current.expectedLiveRevision, baselineMeasuredAt: baseline.measuredAt,
         currentMeasuredAt: current.measuredAt, rows,
         limitations: ['Independent small lab samples on shared CI; differences are observations, not a controlled causal estimate or field p75.',
@@ -49,7 +49,7 @@ export function compare(baseline, current) {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-    const baseline = JSON.parse(await fs.readFile('docs/evidence/P1-05d-performance-baseline.json', 'utf8'));
+    const baseline = JSON.parse(await fs.readFile('docs/evidence/P1-05f-performance-comparison.json', 'utf8'));
     const current = JSON.parse(await fs.readFile('site/test-results/performance/summary.json', 'utf8'));
     const result = compare(baseline, current);
     await fs.writeFile('site/test-results/performance/comparison.json', JSON.stringify(result, null, 2));
