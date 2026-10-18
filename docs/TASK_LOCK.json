@@ -1,9 +1,12 @@
 {
   "task": "P1-05i",
-  "status": "active",
+  "status": "released",
   "owner": "bookorgo-p105i-20261018-resume",
   "acquired_at": "2026-10-18T19:02:00Z",
   "expires_at": "2026-10-18T19:47:00Z",
   "base_revision": "30c0aa27094579ad995112986efc3ed86a7bcbe1",
-  "scope": "Resume read-only performance comparison; previous lease expired; no active runs or application deployment"
+  "scope": "Resume read-only performance comparison; previous lease expired; no active runs or application deployment",
+  "released_at": "2026-10-18T19:10:00Z",
+  "outcome": "COMPLETE_WITH_FINDINGS: 24 audits and 7 CI tests, transfer reductions measured; 3 LCP target misses retained; no deployment",
+  "next_task": "P1-05j bounded LCP regression/outlier diagnosis"
 }
