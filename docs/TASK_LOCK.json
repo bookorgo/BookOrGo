@@ -1,9 +1,9 @@
 {
   "task": "P1-05h",
   "status": "active",
-  "owner": "bookorgo-p105h-20261018",
-  "acquired_at": "2026-10-18T09:00:00Z",
-  "expires_at": "2026-10-18T09:50:00Z",
-  "base_revision": "bab3972a6801414d724e6a0fdf605e38866606c4",
-  "scope": "Homepage/listing responsive image source, CI verification and guarded release if verified"
+  "owner": "bookorgo-p105h-release-20261018",
+  "acquired_at": "2026-10-18T13:01:00Z",
+  "expires_at": "2026-10-18T13:46:00Z",
+  "base_revision": "5d4c6a18fadecc38024e129eef6fa6d388b4f53d",
+  "scope": "Resume verified homepage/listing responsive-image release and evidence checkpoint; previous lease expired, no active runs"
 }
