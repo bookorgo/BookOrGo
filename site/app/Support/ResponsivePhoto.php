@@ -31,7 +31,7 @@ final class ResponsivePhoto
                 .$segment(900, 50, 30, 224)
                 .$px(max(374, 215 * $ratio, $name === 'dubai' ? 301 * $ratio : 0)),
             // Include the taller inspiration tiles, not only the result-card width.
-            'listing' => '(max-width: 720px) '.$px(max(112, 180 * $ratio)).', '.$px(max(247, 300 * $ratio)),
+            'listing' => $segment(720, 33.333, 16, 180).$px(max(247, 300 * $ratio)),
             'detail-main' => $segment(720, 100, 32, 220).$segment(900, 60, 36, 338).$px(max(639, 478 * $ratio)),
             'detail-tall' => $segment(720, 33.333, 14, 80).$segment(900, 20, 12, 166).$px(max(213, 236 * $ratio)),
             'detail-small' => $segment(720, 33.333, 14, 80).$segment(900, 20, 12, 80).$px(max(213, 115 * $ratio)),

@@ -30,7 +30,7 @@ const save = () => fs.writeFile(`${output}/responsive-images.json`, JSON.stringi
 for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
     const browser = await type.launch();
     try {
-        for (const target of pages) for (const width of [320, 390, 768, 1440]) for (const dpr of [1, 2]) {
+        for (const target of pages) for (const width of [320, 360, 390, 720, 768, 900, 1100, 1440]) for (const dpr of [1, 2]) {
             const context = await browser.newContext({ viewport: { width, height: 1000 }, deviceScaleFactor: dpr, javaScriptEnabled: false });
             const page = await context.newPage();
             page.setDefaultTimeout(15000);
