@@ -2,7 +2,7 @@
 <article class="experience-card">
     <div class="experience-art card-{{ $item['motif'] }}" aria-hidden="true">
         <span class="sample-ribbon">Sample layout</span>
-        <x-photo :motif="$item['motif']" :eager="$eager" />
+        <x-photo image-slot="listing" :motif="$item['motif']" :eager="$eager" />
     </div>
     <div class="experience-copy">
         <div class="card-kicker"><span>{{ $categories[$item['category']]['name'] }}</span><span>Fictional sample</span></div>

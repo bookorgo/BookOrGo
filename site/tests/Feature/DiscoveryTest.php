@@ -20,11 +20,28 @@ final class DiscoveryTest extends TestCase
         $this->assertStringContainsString('320w', $html);
         $this->assertStringContainsString('675w', $html);
         $this->assertStringContainsString('1200w', $html);
-        foreach (['/', '/search'] as $path) {
-            $this->assertStringNotContainsString('srcset="', $this->get($path)->assertOk()->getContent());
-        }
         $this->expectException(\InvalidArgumentException::class);
         \App\Support\ResponsivePhoto::forSlot('dubai', 'unrecognized');
+    }
+
+    public function test_home_and_listing_responsive_photos_preserve_fallbacks_and_priorities(): void
+    {
+        foreach (['/' => 25, '/search' => 9, '/search?page=2' => 9] as $path => $count) {
+            $response = $this->get($path)->assertOk()->assertHeader('X-Robots-Tag', 'noindex, nofollow');
+            $html = $response->getContent();
+            $this->assertSame($count, substr_count($html, 'srcset="'));
+            $this->assertSame($count, substr_count($html, 'sizes="'));
+            $this->assertSame(1, substr_count($html, 'fetchpriority="high"'));
+            $this->assertSame(1, substr_count($html, 'loading="eager"'));
+            $this->assertSame($count - 1, substr_count($html, 'loading="lazy"'));
+            preg_match_all('/<img[^>]+>/', $html, $images);
+            foreach ($images[0] as $image) {
+                $this->assertMatchesRegularExpression('/src="[^" ]+\\.webp"/', $image);
+                $this->assertStringContainsString('width="1400" height="933" alt=""', $image);
+                $this->assertStringContainsString('320w', $image);
+            }
+        }
+        $this->get('/search?q=zzzz-no-sample')->assertOk()->assertDontSee('srcset="', false);
     }
 
     public function test_initial_filters_and_critical_photo_policy_are_server_rendered(): void
