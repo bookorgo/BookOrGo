@@ -1,11 +1,9 @@
 {
-  "task": "P1-05g",
-  "status": "released",
-  "owner": "bookorgo-p105g-evidence-20261018",
-  "acquired_at": "2026-10-18T08:02:00Z",
-  "expires_at": "2026-10-18T08:32:00Z",
-  "released_at": "2026-10-18T08:05:00Z",
-  "base_revision": "a00c13e99f15484f6d44524996ccab3b99e3097d",
-  "outcome": "VERIFIED_LIVE evidence recovered and checkpointed; no redeployment",
-  "next_task": "P1-05h homepage/listing responsive images"
+  "task": "P1-05h",
+  "status": "active",
+  "owner": "bookorgo-p105h-20261018",
+  "acquired_at": "2026-10-18T09:00:00Z",
+  "expires_at": "2026-10-18T09:50:00Z",
+  "base_revision": "bab3972a6801414d724e6a0fdf605e38866606c4",
+  "scope": "Homepage/listing responsive image source, CI verification and guarded release if verified"
 }
