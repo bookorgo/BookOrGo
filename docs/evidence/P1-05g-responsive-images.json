@@ -1,0 +1,1850 @@
+{
+  "task": "P1-05g",
+  "status": "VERIFIED_LIVE",
+  "sourceRevision": "fc7c1517ea977181e992d2c4dd6b23e3a9c66a9a",
+  "releaseRevision": "a00c13e99f15484f6d44524996ccab3b99e3097d",
+  "releaseRun": 39092665192,
+  "releaseSourceQualityRun": 39092665197,
+  "sourceRuns": {
+    "foundation": 39092321287,
+    "quality": 39092321271
+  },
+  "requirements": [
+    "Master V3.1 permitted media/performance",
+    "Playbook V4.1 responsive QA/evidence",
+    "OWNER-20261012-MAIN"
+  ],
+  "liveArtifact": {
+    "id": 12123681191,
+    "name": "bookorgo-p1-design-main-release-a00c13e99f15484f6d44524996ccab3b99e3097d",
+    "size_in_bytes": 37105242,
+    "url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/12123681191",
+    "archive_download_url": "https://api.github.com/repos/bookorgo/BookOrGo/actions/artifacts/12123681191/zip",
+    "expired": false,
+    "created_at": "2026-10-18T03:13:52Z",
+    "expires_at": "2026-11-17T03:13:50Z",
+    "updated_at": "2026-10-18T03:13:52Z",
+    "digest": "sha256:cdef21a2cb120e4ff0c1ed8385d62644c089ee96deafa680b3c46a4ddc976b50",
+    "workflow_run": {
+      "id": 39092665192,
+      "repository_id": 1414693210,
+      "head_repository_id": 1414693210,
+      "head_branch": "main",
+      "head_sha": "a00c13e99f15484f6d44524996ccab3b99e3097d"
+    }
+  },
+  "artifactDigestIndependentlyVerified": true,
+  "tests": {
+    "phpTests": 21,
+    "phpAssertions": 461,
+    "assetTests": 2,
+    "http": {
+      "task": "P1-DESIGN-02-03-main-release",
+      "checked_at": "2026-10-18T03:11:11.417355+00:00",
+      "origin": "https://bookorgo.com",
+      "checks": [
+        {
+          "path": "/",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/activities",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/activities"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/holidays",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/holidays"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/visas",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/visas"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/cruises",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/cruises"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/yachts",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/yachts"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/events",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/events"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/search?q=boat",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/search"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/search?category=yachts&area=Dubai%20Marina&duration=under-2-hours&family=yes",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/search"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/search?q=sample&page=2",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/search"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/blog",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/blog"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/blog/sample-first-visit-planning",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/blog/sample-first-visit-planning"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/blog/sample-family-day-planning",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/blog/sample-family-day-planning"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/blog/sample-uae-weekend-planning",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/blog/sample-uae-weekend-planning"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/about",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/about"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/contact",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/contact"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/disclosure",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/disclosure"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/privacy",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/privacy"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/terms",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/terms"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/photo-credits",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/photo-credits"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/activities/dubai/sample-desert-morning",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/activities/dubai/sample-desert-morning"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/holidays/dubai/sample-city-break",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/holidays/dubai/sample-city-break"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/visas/uae-wide/sample-tourist-visa-guide",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/visas/uae-wide/sample-tourist-visa-guide"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/cruises/dubai/sample-creek-cruise",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/cruises/dubai/sample-creek-cruise"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/yachts/dubai-marina/sample-marina-yacht",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/yachts/dubai-marina/sample-marina-yacht"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/events/dubai/sample-family-event",
+          "status": 200,
+          "h1_count": 1,
+          "canonical": [
+            "https://bookorgo.com/events/dubai/sample-family-event"
+          ],
+          "robots": [
+            "noindex, nofollow"
+          ],
+          "x_robots_tag": "noindex, nofollow",
+          "marker_present": true
+        },
+        {
+          "path": "/search?category=hotels",
+          "status": 422,
+          "safe_error": true
+        },
+        {
+          "path": "/definitely-not-a-bookorgo-route",
+          "status": 404
+        },
+        {
+          "path": "/.env",
+          "status": 403,
+          "bytes": 1154
+        },
+        {
+          "path": "/composer.json",
+          "status": 404,
+          "bytes": 6953
+        },
+        {
+          "path": "/artisan",
+          "status": 404,
+          "bytes": 6953
+        },
+        {
+          "path": "/vendor/autoload.php",
+          "status": 404,
+          "bytes": 6953
+        },
+        {
+          "path": "/storage/logs/laravel.log",
+          "status": 403,
+          "bytes": 31380
+        },
+        {
+          "path": "/build/assets/app-WMfHBrE1.css",
+          "status": 200,
+          "bytes": 80963,
+          "content_type": "text/css"
+        },
+        {
+          "path": "/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "status": 200,
+          "bytes": 352240,
+          "content_type": "font/woff2"
+        },
+        {
+          "path": "/build/assets/abu-dhabi-aj06Mp1I.webp",
+          "status": 200,
+          "bytes": 39306,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/desert-BMXSEf1J.webp",
+          "status": 200,
+          "bytes": 32326,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/dubai-BZiRHNpi.webp",
+          "status": 200,
+          "bytes": 115250,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/fujairah-CLKq3rnP.webp",
+          "status": 200,
+          "bytes": 138218,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/marina-DFUF1aBx.webp",
+          "status": 200,
+          "bytes": 127042,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/mountains-v4B4C27y.webp",
+          "status": 200,
+          "bytes": 78090,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/abu-dhabi-320-DztpZhON.webp",
+          "status": 200,
+          "bytes": 5028,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/abu-dhabi-480-D7t3liiS.webp",
+          "status": 200,
+          "bytes": 10498,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/abu-dhabi-640-D9I3BAqP.webp",
+          "status": 200,
+          "bytes": 18400,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/abu-dhabi-960-y5cxvaTV.webp",
+          "status": 200,
+          "bytes": 31710,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/desert-320-DisR7nzG.webp",
+          "status": 200,
+          "bytes": 7648,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/desert-480-BLVgYkUy.webp",
+          "status": 200,
+          "bytes": 13308,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/desert-640-BrldqCDL.webp",
+          "status": 200,
+          "bytes": 19718,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/desert-960-CKTa6Ciq.webp",
+          "status": 200,
+          "bytes": 30842,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/dubai-320-CbrF_hB0.webp",
+          "status": 200,
+          "bytes": 7918,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/dubai-480-B3NaoLz_.webp",
+          "status": 200,
+          "bytes": 15292,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/dubai-640-Daq5ny1U.webp",
+          "status": 200,
+          "bytes": 23948,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/dubai-960-_XFFqF5M.webp",
+          "status": 200,
+          "bytes": 43828,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/fujairah-320-CzLCW3Iq.webp",
+          "status": 200,
+          "bytes": 20490,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/fujairah-480-CuCMapFa.webp",
+          "status": 200,
+          "bytes": 43100,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/fujairah-640-CIlQ3pnJ.webp",
+          "status": 200,
+          "bytes": 69606,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/fujairah-960-BywWHZRR.webp",
+          "status": 200,
+          "bytes": 121598,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/marina-320-CwPDTLjE.webp",
+          "status": 200,
+          "bytes": 19814,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/marina-480-DZ-noxG5.webp",
+          "status": 200,
+          "bytes": 39926,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/marina-640-BEF7xR2O.webp",
+          "status": 200,
+          "bytes": 63596,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/marina-960-jDHHNFEf.webp",
+          "status": 200,
+          "bytes": 110412,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/mountains-320-M5Ow1xEs.webp",
+          "status": 200,
+          "bytes": 12704,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/mountains-480-Dmf522NF.webp",
+          "status": 200,
+          "bytes": 25598,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/mountains-640-XpjWI75j.webp",
+          "status": 200,
+          "bytes": 40740,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/mountains-960-DQTt27RP.webp",
+          "status": 200,
+          "bytes": 68012,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/sharjah-320-CEfBNryY.webp",
+          "status": 200,
+          "bytes": 24976,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/sharjah-480-4sFRpTcA.webp",
+          "status": 200,
+          "bytes": 47116,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/sharjah-DPcNNgwU.webp",
+          "status": 200,
+          "bytes": 66308,
+          "content_type": "image/webp"
+        },
+        {
+          "path": "/build/assets/app-pEMnZ8nR.js",
+          "status": 200,
+          "bytes": 655,
+          "content_type": "application/x-javascript"
+        }
+      ],
+      "failures": [],
+      "limits": [
+        "Same-origin bounded HTTP checks only",
+        "No indexing release, supplier, payment, database or scheduler change"
+      ]
+    },
+    "browser": {
+      "checks": [
+        {
+          "viewport": 1440,
+          "homepage": "pass",
+          "listing": "pass",
+          "detail": "pass",
+          "gallery": "pass",
+          "faq": "pass",
+          "article": "pass",
+          "filters": "pass",
+          "overflow": "pass",
+          "menu": "not applicable"
+        },
+        {
+          "viewport": 390,
+          "homepage": "pass",
+          "listing": "pass",
+          "detail": "pass",
+          "gallery": "pass",
+          "faq": "pass",
+          "article": "pass",
+          "filters": "pass",
+          "overflow": "pass",
+          "menu": "pass"
+        },
+        {
+          "filteredNavigation": "pass",
+          "pagination": "pass"
+        },
+        {
+          "sorting": "pass",
+          "queryPreserved": "pass"
+        }
+      ],
+      "pageErrors": []
+    },
+    "quality": {
+      "sourceRevision": "a00c13e99f15484f6d44524996ccab3b99e3097d",
+      "checkedAt": "2026-10-18T03:12:58.923Z",
+      "states": 24,
+      "failures": [],
+      "uniqueRules": []
+    },
+    "responsive": {
+      "task": "P1-05g",
+      "sourceRevision": "a00c13e99f15484f6d44524996ccab3b99e3097d",
+      "origin": "https://bookorgo.com",
+      "mode": "LIVE_READ_ONLY",
+      "checkedAt": "2026-10-18T03:13:49.215Z",
+      "rows": [
+        {
+          "engine": "chromium",
+          "width": 390,
+          "dpr": 1,
+          "javaScriptEnabled": false,
+          "chosenBytes": 120718,
+          "originalBytes": 596540,
+          "reduction": 0.7976363697321219,
+          "selected": [
+            {
+              "path": "resources/images/responsive/sharjah-480.webp",
+              "width": 480,
+              "bytes": 47116
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "chromium",
+          "width": 390,
+          "dpr": 2,
+          "javaScriptEnabled": false,
+          "chosenBytes": 139910,
+          "originalBytes": 596540,
+          "reduction": 0.7654641767526067,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "chromium",
+          "width": 768,
+          "dpr": 1,
+          "javaScriptEnabled": false,
+          "chosenBytes": 120718,
+          "originalBytes": 596540,
+          "reduction": 0.7976363697321219,
+          "selected": [
+            {
+              "path": "resources/images/responsive/sharjah-480.webp",
+              "width": 480,
+              "bytes": 47116
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "chromium",
+          "width": 768,
+          "dpr": 2,
+          "javaScriptEnabled": false,
+          "chosenBytes": 259366,
+          "originalBytes": 596540,
+          "reduction": 0.5652160793911556,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-480.webp",
+              "width": 480,
+              "bytes": 39926
+            },
+            {
+              "path": "resources/images/responsive/dubai-640.webp",
+              "width": 640,
+              "bytes": 23948
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            },
+            {
+              "path": "resources/images/responsive/marina-640.webp",
+              "width": 640,
+              "bytes": 63596
+            },
+            {
+              "path": "resources/images/responsive/desert-640.webp",
+              "width": 640,
+              "bytes": 19718
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "dpr": 1,
+          "javaScriptEnabled": false,
+          "chosenBytes": 155202,
+          "originalBytes": 596540,
+          "reduction": 0.7398296845140309,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-480.webp",
+              "width": 480,
+              "bytes": 15292
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "dpr": 2,
+          "javaScriptEnabled": false,
+          "chosenBytes": 309902,
+          "originalBytes": 596540,
+          "reduction": 0.4805008884567673,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-640.webp",
+              "width": 640,
+              "bytes": 63596
+            },
+            {
+              "path": "resources/images/responsive/dubai-960.webp",
+              "width": 960,
+              "bytes": 43828
+            },
+            {
+              "path": "resources/images/responsive/desert-480.webp",
+              "width": 480,
+              "bytes": 13308
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-480.webp",
+              "width": 480,
+              "bytes": 10498
+            },
+            {
+              "path": "resources/images/responsive/mountains-480.webp",
+              "width": 480,
+              "bytes": 25598
+            },
+            {
+              "path": "resources/images/responsive/fujairah-480.webp",
+              "width": 480,
+              "bytes": 43100
+            },
+            {
+              "path": "resources/images/responsive/dubai-640.webp",
+              "width": 640,
+              "bytes": 23948
+            },
+            {
+              "path": "resources/images/responsive/desert-640.webp",
+              "width": 640,
+              "bytes": 19718
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "firefox",
+          "width": 390,
+          "dpr": 1,
+          "javaScriptEnabled": false,
+          "chosenBytes": 120718,
+          "originalBytes": 596540,
+          "reduction": 0.7976363697321219,
+          "selected": [
+            {
+              "path": "resources/images/responsive/sharjah-480.webp",
+              "width": 480,
+              "bytes": 47116
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "firefox",
+          "width": 390,
+          "dpr": 2,
+          "javaScriptEnabled": false,
+          "chosenBytes": 139910,
+          "originalBytes": 596540,
+          "reduction": 0.7654641767526067,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "firefox",
+          "width": 768,
+          "dpr": 1,
+          "javaScriptEnabled": false,
+          "chosenBytes": 120718,
+          "originalBytes": 596540,
+          "reduction": 0.7976363697321219,
+          "selected": [
+            {
+              "path": "resources/images/responsive/sharjah-480.webp",
+              "width": 480,
+              "bytes": 47116
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "firefox",
+          "width": 768,
+          "dpr": 2,
+          "javaScriptEnabled": false,
+          "chosenBytes": 259366,
+          "originalBytes": 596540,
+          "reduction": 0.5652160793911556,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-480.webp",
+              "width": 480,
+              "bytes": 39926
+            },
+            {
+              "path": "resources/images/responsive/dubai-640.webp",
+              "width": 640,
+              "bytes": 23948
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            },
+            {
+              "path": "resources/images/responsive/marina-640.webp",
+              "width": 640,
+              "bytes": 63596
+            },
+            {
+              "path": "resources/images/responsive/desert-640.webp",
+              "width": 640,
+              "bytes": 19718
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "firefox",
+          "width": 1440,
+          "dpr": 1,
+          "javaScriptEnabled": false,
+          "chosenBytes": 155202,
+          "originalBytes": 596540,
+          "reduction": 0.7398296845140309,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-480.webp",
+              "width": 480,
+              "bytes": 15292
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "firefox",
+          "width": 1440,
+          "dpr": 2,
+          "javaScriptEnabled": false,
+          "chosenBytes": 309902,
+          "originalBytes": 596540,
+          "reduction": 0.4805008884567673,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-640.webp",
+              "width": 640,
+              "bytes": 63596
+            },
+            {
+              "path": "resources/images/responsive/dubai-960.webp",
+              "width": 960,
+              "bytes": 43828
+            },
+            {
+              "path": "resources/images/responsive/desert-480.webp",
+              "width": 480,
+              "bytes": 13308
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-480.webp",
+              "width": 480,
+              "bytes": 10498
+            },
+            {
+              "path": "resources/images/responsive/mountains-480.webp",
+              "width": 480,
+              "bytes": 25598
+            },
+            {
+              "path": "resources/images/responsive/fujairah-480.webp",
+              "width": 480,
+              "bytes": 43100
+            },
+            {
+              "path": "resources/images/responsive/dubai-640.webp",
+              "width": 640,
+              "bytes": 23948
+            },
+            {
+              "path": "resources/images/responsive/desert-640.webp",
+              "width": 640,
+              "bytes": 19718
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "dpr": 1,
+          "javaScriptEnabled": false,
+          "chosenBytes": 120718,
+          "originalBytes": 596540,
+          "reduction": 0.7976363697321219,
+          "selected": [
+            {
+              "path": "resources/images/responsive/sharjah-480.webp",
+              "width": 480,
+              "bytes": 47116
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "dpr": 2,
+          "javaScriptEnabled": false,
+          "chosenBytes": 139910,
+          "originalBytes": 596540,
+          "reduction": 0.7654641767526067,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "webkit",
+          "width": 768,
+          "dpr": 1,
+          "javaScriptEnabled": false,
+          "chosenBytes": 120718,
+          "originalBytes": 596540,
+          "reduction": 0.7976363697321219,
+          "selected": [
+            {
+              "path": "resources/images/responsive/sharjah-480.webp",
+              "width": 480,
+              "bytes": 47116
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "webkit",
+          "width": 768,
+          "dpr": 2,
+          "javaScriptEnabled": false,
+          "chosenBytes": 259366,
+          "originalBytes": 596540,
+          "reduction": 0.5652160793911556,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-480.webp",
+              "width": 480,
+              "bytes": 39926
+            },
+            {
+              "path": "resources/images/responsive/dubai-640.webp",
+              "width": 640,
+              "bytes": 23948
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            },
+            {
+              "path": "resources/images/responsive/marina-640.webp",
+              "width": 640,
+              "bytes": 63596
+            },
+            {
+              "path": "resources/images/responsive/desert-640.webp",
+              "width": 640,
+              "bytes": 19718
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "dpr": 1,
+          "javaScriptEnabled": false,
+          "chosenBytes": 155202,
+          "originalBytes": 596540,
+          "reduction": 0.7398296845140309,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-320.webp",
+              "width": 320,
+              "bytes": 19814
+            },
+            {
+              "path": "resources/images/responsive/dubai-480.webp",
+              "width": 480,
+              "bytes": 15292
+            },
+            {
+              "path": "resources/images/responsive/desert-320.webp",
+              "width": 320,
+              "bytes": 7648
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-320.webp",
+              "width": 320,
+              "bytes": 5028
+            },
+            {
+              "path": "resources/images/responsive/mountains-320.webp",
+              "width": 320,
+              "bytes": 12704
+            },
+            {
+              "path": "resources/images/responsive/fujairah-320.webp",
+              "width": 320,
+              "bytes": 20490
+            },
+            {
+              "path": "resources/images/responsive/dubai-320.webp",
+              "width": 320,
+              "bytes": 7918
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "dpr": 2,
+          "javaScriptEnabled": false,
+          "chosenBytes": 309902,
+          "originalBytes": 596540,
+          "reduction": 0.4805008884567673,
+          "selected": [
+            {
+              "path": "resources/images/sharjah.webp",
+              "width": 675,
+              "bytes": 66308
+            },
+            {
+              "path": "resources/images/responsive/marina-640.webp",
+              "width": 640,
+              "bytes": 63596
+            },
+            {
+              "path": "resources/images/responsive/dubai-960.webp",
+              "width": 960,
+              "bytes": 43828
+            },
+            {
+              "path": "resources/images/responsive/desert-480.webp",
+              "width": 480,
+              "bytes": 13308
+            },
+            {
+              "path": "resources/images/responsive/abu-dhabi-480.webp",
+              "width": 480,
+              "bytes": 10498
+            },
+            {
+              "path": "resources/images/responsive/mountains-480.webp",
+              "width": 480,
+              "bytes": 25598
+            },
+            {
+              "path": "resources/images/responsive/fujairah-480.webp",
+              "width": 480,
+              "bytes": 43100
+            },
+            {
+              "path": "resources/images/responsive/dubai-640.webp",
+              "width": 640,
+              "bytes": 23948
+            },
+            {
+              "path": "resources/images/responsive/desert-640.webp",
+              "width": 640,
+              "bytes": 19718
+            }
+          ],
+          "geometryAndCropUnchanged": true
+        }
+      ],
+      "failures": [],
+      "scope": "Unique selected file sizes, not network transfer or LCP; no-JS DPR1/2, original fallback and geometry/crop checks."
+    },
+    "stability": {
+      "origin": "https://bookorgo.com",
+      "baseline": false,
+      "rows": [
+        {
+          "engine": "chromium",
+          "width": 390,
+          "before": {
+            "top": 331.96875,
+            "open": false
+          },
+          "after": {
+            "top": 331.96875,
+            "open": false
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "chromium",
+          "width": 720,
+          "before": {
+            "top": 316.96875,
+            "open": false
+          },
+          "after": {
+            "top": 316.96875,
+            "open": false
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "chromium",
+          "width": 768,
+          "before": {
+            "top": 298.875,
+            "open": false
+          },
+          "after": {
+            "top": 298.875,
+            "open": true
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "before": {
+            "top": 283.875,
+            "open": false
+          },
+          "after": {
+            "top": 283.875,
+            "open": true
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "chromium",
+          "mode": "no-js",
+          "filters": "native submit passed",
+          "detailPriority": "passed"
+        },
+        {
+          "engine": "firefox",
+          "width": 390,
+          "before": {
+            "top": 331.98333740234375,
+            "open": false
+          },
+          "after": {
+            "top": 331.98333740234375,
+            "open": false
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "firefox",
+          "width": 720,
+          "before": {
+            "top": 316.98333740234375,
+            "open": false
+          },
+          "after": {
+            "top": 316.98333740234375,
+            "open": false
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "firefox",
+          "width": 768,
+          "before": {
+            "top": 298.8833312988281,
+            "open": false
+          },
+          "after": {
+            "top": 298.8833312988281,
+            "open": true
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "firefox",
+          "width": 1440,
+          "before": {
+            "top": 283.8833312988281,
+            "open": false
+          },
+          "after": {
+            "top": 283.8833312988281,
+            "open": true
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "firefox",
+          "mode": "no-js",
+          "filters": "native submit passed",
+          "detailPriority": "passed"
+        },
+        {
+          "engine": "webkit",
+          "width": 390,
+          "before": {
+            "top": 331,
+            "open": false
+          },
+          "after": {
+            "top": 331,
+            "open": false
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "webkit",
+          "width": 720,
+          "before": {
+            "top": 316,
+            "open": false
+          },
+          "after": {
+            "top": 316,
+            "open": false
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "webkit",
+          "width": 768,
+          "before": {
+            "top": 298,
+            "open": false
+          },
+          "after": {
+            "top": 298,
+            "open": true
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "before": {
+            "top": 283,
+            "open": false
+          },
+          "after": {
+            "top": 283,
+            "open": true
+          },
+          "movement": 0,
+          "blocked": 2
+        },
+        {
+          "engine": "webkit",
+          "mode": "no-js",
+          "filters": "native submit passed",
+          "detailPriority": "passed"
+        }
+      ],
+      "failures": []
+    }
+  },
+  "media": {
+    "originalsPreserved": 7,
+    "smallerVariants": 26,
+    "layoutCssUnchanged": true,
+    "scope": "Detail template only; selected asset bytes, not network transfer or LCP"
+  },
+  "release": {
+    "previous": "881201d5d20c3b4742443ac58e577f8e21824b6e",
+    "backupExtractedComparison": "PASS",
+    "backupSha256": "7d95aeed9aaaa6e0614d60d50dbc4d1f366ed6fac4ecae86bc251edc96f84755",
+    "packageSha256": "6c4912161688e737787ac1ad4e67e5ec2f9d84986a22359427e94fb488945f61",
+    "finalize": "status=VERIFIED_LIVE\nrevision=a00c13e99f15484f6d44524996ccab3b99e3097d\nincoming_removed=yes\n",
+    "rollback": "Available; skipped after success",
+    "databaseTouched": false,
+    "defaultPhpPreserved": true
+  },
+  "failedAttempts": [
+    {
+      "run": 39073527347,
+      "status": "cancelled",
+      "reason": "Unbounded decode wait; prior subchecks passed, full run not passed"
+    },
+    {
+      "run": 39092004863,
+      "status": "failure",
+      "reason": "Three WebKit byte-selection assertions failed; corrected by ordered media sizes before release"
+    }
+  ],
+  "visualReview": [
+    "Source desktop/mobile and live Chromium desktop/WebKit mobile screenshots reviewed; no blocking clipping or missing photos",
+    "Not exact owner design acceptance"
+  ],
+  "limitations": [
+    "No new network-transfer, Lighthouse LCP or field CWV result",
+    "Not physical-device, screen-reader or full WCAG certification",
+    "P0 database/cron/storage remain open where applicable; P6/P7 deferred",
+    "No private document wholesale publication or commercial/indexing activation"
+  ],
+  "nextTask": "P1-05h homepage/listing responsive-image adaptation and source/live verification"
+}

@@ -1,5 +1,7 @@
 # P1-05g — detail-page responsive images
 
+Final status: VERIFIED_LIVE at a00c13e99f15484f6d44524996ccab3b99e3097d, run 39092665192. All 69 actual HTTP/security/asset checks, 18 image cases and existing quality/stability checks passed. Generated variants expanded the earlier 43-check plan to 69. Backup/extracted restore check passed; rollback not needed. See docs/evidence/P1-05g-responsive-images.json. Pending wording below is historical pre-release planning.
+
 Bounded source slice: ten images on the detail template use build-time WebP derivatives and server-rendered srcset/sizes. Other templates retain their existing image selection. No CSS, original asset, crop, caption, credit, label, URL or indexing setting is changed. Photos remain illustrative, not images of fictional experiences.
 
 The build-only sharp dependency is exactly pinned in package-lock.json. The build verifies all seven originals against the existing media provenance register, resizes the full frame without upscaling, and omits re-encoded candidates that are not smaller than their original. The generated manifest and variants remain in the release package; Vite emits hashed assets. Node/image processing is not required at Hostinger runtime. Run from site/: npm ci --ignore-scripts; npm run build; npm run test:images.
