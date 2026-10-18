@@ -10,20 +10,34 @@ const byUrl = new Map(Object.values(manifest).flatMap(photo => photo.variants.ma
 const output = 'site/test-results/quality';
 await fs.mkdir(output, { recursive: true });
 const rows = [], failures = [];
+// Poll from Node: image.decode() can stay pending in a no-script browser context.
+// Every wait is bounded and every case is persisted before starting the next.
+async function waitForPhoto(photo, fallback = false) {
+    await photo.scrollIntoViewIfNeeded();
+    const deadline = Date.now() + 10000;
+    do {
+        if (await photo.evaluate((image, original) => image.complete && image.naturalWidth > 0 && (!original || image.currentSrc === image.src), fallback)) return;
+        await new Promise(resolve => setTimeout(resolve, 100));
+    } while (Date.now() < deadline);
+    throw new Error(`Image load timed out (${fallback ? 'original fallback' : 'responsive'})`);
+}
+const save = () => fs.writeFile(`${output}/responsive-images.json`, JSON.stringify({ task: 'P1-05g', rows, failures, scope: 'CI source; unique selected file sizes, not network transfer or LCP; no-JS DPR1/2, original fallback and geometry/crop checks.' }, null, 2));
 for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
     const browser = await type.launch();
     try {
         for (const width of [390, 768, 1440]) for (const dpr of [1, 2]) {
             const context = await browser.newContext({ viewport: { width, height: 1000 }, deviceScaleFactor: dpr, javaScriptEnabled: false });
             const page = await context.newPage();
+            page.setDefaultTimeout(15000);
+            page.setDefaultNavigationTimeout(20000);
+            let phase = 'navigation';
+            console.log(JSON.stringify({ event: 'start', engine, width, dpr }));
             try {
                 await page.goto(`${origin}/cruises/dubai/sample-creek-cruise`);
                 const photos = page.locator('img.destination-photo');
                 assert.equal(await photos.count(), 10);
-                for (const photo of await photos.all()) {
-                    await photo.scrollIntoViewIfNeeded();
-                    await photo.evaluate(image => image.decode());
-                }
+                phase = 'responsive load';
+                for (const photo of await photos.all()) await waitForPhoto(photo);
                 const capture = () => photos.evaluateAll(images => images.map(image => {
                     const r = image.getBoundingClientRect(), css = getComputedStyle(image);
                     return { currentSrc: image.currentSrc, src: image.src, width: r.width, height: r.height,
@@ -49,8 +63,9 @@ for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
                     await page.screenshot({ path: `${output}/responsive-detail-${width}.png`, fullPage: true });
                 }
                 // Remove responsive attributes to render exact original fallback and compare geometry/crop policy.
+                phase = 'original fallback';
                 await photos.evaluateAll(images => images.forEach(image => { image.removeAttribute('srcset'); image.removeAttribute('sizes'); }));
-                for (const photo of await photos.all()) await photo.evaluate(image => image.decode());
+                for (const photo of await photos.all()) await waitForPhoto(photo, true);
                 const fallback = await capture();
                 for (let i = 0; i < fallback.length; i++) {
                     assert.equal(fallback[i].currentSrc, fallback[i].src);
@@ -60,11 +75,15 @@ for (const [engine, type] of Object.entries({ chromium, firefox, webkit })) {
                 assert.equal(await page.locator('img[fetchpriority="high"]').count(), 1);
                 assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
                 rows.push({ engine, width, dpr, javaScriptEnabled: false, chosenBytes, originalBytes, reduction: 1 - chosenBytes / originalBytes, selected: unique(selected).map(({ path, width, bytes }) => ({ path, width, bytes })), geometryAndCropUnchanged: true });
-            } catch (error) { failures.push({ engine, width, dpr, error: error.message }); }
-            finally { await context.close(); }
+            } catch (error) { failures.push({ engine, width, dpr, phase, error: error.message }); }
+            finally {
+                await context.close();
+                await save();
+                console.log(JSON.stringify({ event: 'finished', engine, width, dpr, passed: rows.length, failures }));
+            }
         }
     } finally { await browser.close(); }
 }
-await fs.writeFile(`${output}/responsive-images.json`, JSON.stringify({ task: 'P1-05g', rows, failures, scope: 'CI source; unique selected file sizes, not network transfer or LCP; no-JS DPR1/2, original fallback and geometry/crop checks.' }, null, 2));
+await save();
 console.log(JSON.stringify({ rows: rows.length, failures }));
 if (failures.length) process.exitCode = 1;
