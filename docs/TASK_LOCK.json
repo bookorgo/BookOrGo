@@ -1,9 +1,9 @@
 {
   "task": "P1-05i",
   "status": "active",
-  "owner": "bookorgo-p105i-20261018",
-  "acquired_at": "2026-10-18T14:03:00Z",
-  "expires_at": "2026-10-18T14:48:00Z",
-  "base_revision": "f2e2fd41a6a4ee0ee6509f99218967a5104e7702",
-  "scope": "Read-only live performance comparison after responsive images; no application release"
+  "owner": "bookorgo-p105i-20261018-resume",
+  "acquired_at": "2026-10-18T19:02:00Z",
+  "expires_at": "2026-10-18T19:47:00Z",
+  "base_revision": "30c0aa27094579ad995112986efc3ed86a7bcbe1",
+  "scope": "Resume read-only performance comparison; previous lease expired; no active runs or application deployment"
 }
