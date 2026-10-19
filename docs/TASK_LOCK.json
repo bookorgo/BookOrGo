@@ -1,13 +1,9 @@
 {
-  "task": "P1-05j",
-  "status": "released",
-  "owner": "bookorgo-p105j-20261019-resume",
-  "acquired_at": "2026-10-19T00:01:00Z",
-  "expires_at": "2026-10-19T00:46:00Z",
-  "base_revision": "0ca16a79e2bd9870506421e40216a7cf4dbd7412",
-  "scope": "Recover offline diagnosis, verify existing artifacts and checkpoint tested analyzer; no production writes",
-  "released_at": "2026-10-19T00:10:00Z",
-  "source_revision": "ce43b75cb2620e21190c7f0e0d647cab91c7aafb",
-  "ci_run": 39179485958,
-  "next_task": "P1-05k"
+  "task": "P1-05k",
+  "status": "active",
+  "owner": "bookorgo-p105k-20261019",
+  "acquired_at": "2026-10-19T00:58:10Z",
+  "expires_at": "2026-10-19T01:43:10Z",
+  "base_revision": "7c82dbd7234f4f6e525db6643a5a1983a1c3f9b9",
+  "scope": "Six controlled read-only navigations and trace evidence; no deployment"
 }
