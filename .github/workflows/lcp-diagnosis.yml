@@ -1,0 +1,19 @@
+name: BookOrGo offline LCP diagnosis tests
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/lcp-diagnosis.yml', '.github/scripts/lcp-diagnosis*.mjs']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Test offline diagnosis without production requests
+        run: node --test .github/scripts/lcp-diagnosis.test.mjs
