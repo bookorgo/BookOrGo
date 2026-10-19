@@ -1,13 +1,9 @@
 {
-  "task": "P1-05k",
-  "status": "released",
-  "owner": "bookorgo-p105k-20261019",
-  "acquired_at": "2026-10-19T00:58:10Z",
-  "expires_at": "2026-10-19T01:43:10Z",
-  "base_revision": "7c82dbd7234f4f6e525db6643a5a1983a1c3f9b9",
-  "scope": "Six controlled read-only navigations and trace evidence; no deployment",
-  "released_at": "2026-10-19T01:05:00Z",
-  "source_revision": "17293e50b696300a94617781cf54f7d9a5ae2e36",
-  "ci_run": 39183442377,
-  "next_task": "P1-DESIGN-GAP-01"
+  "task": "P1-DESIGN-GAP-01",
+  "status": "active",
+  "owner": "bookorgo-home-gap-20261019",
+  "acquired_at": "2026-10-19T06:09:00Z",
+  "expires_at": "2026-10-19T06:54:00Z",
+  "base_revision": "ed763125986afd89916306ca86af771791b8f90f",
+  "scope": "One measured homepage design correction, CI and guarded release if verified; preserve existing content/URLs"
 }
