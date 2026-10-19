@@ -26,4 +26,18 @@ Prior verified release expected: `0d51ce8d7a29a7a235502aebedd9c02c39943a43`. Bui
 - https://playwright.dev/docs/api/class-cdpsession
 - https://chromedevtools.github.io/devtools-protocol/tot/Network/
 
-Next decision: inspect all six traces, retain unreproduced results honestly, and identify a justified bounded source correction only if supported. Do not keep repeating performance investigations indefinitely; return to outstanding design-reference gaps once this fixed experiment is checkpointed.
+## Verified result — 19 October 2026
+
+Source `17293e50b696300a94617781cf54f7d9a5ae2e36`; [CI 39183442377](https://github.com/bookorgo/BookOrGo/actions/runs/39183442377) passed seven tests and all six capture gates. All six downloaded trace hashes and 33,858 event records verified. Durable evidence: `docs/evidence/P1-05k-lcp-traces.json`. Full sanitized trace artifact 12157495930 has independently matched SHA256 `b892b72fc2f4dccd1fd61d00f779ddf657944caa31cc3734cab2278e9d6b3597`, expires 18 November 2026.
+
+| Page | Cold observed LCP | Warm observed LCP | Warm cache events |
+|---|---:|---:|---:|
+| Home | 756ms | 212ms | 11 |
+| Detail | 288ms | 132ms | 10 |
+| Article | 216ms | 152ms | 3 |
+
+These unthrottled single pairs do not replace the earlier simulated Lighthouse failures. Prior heading outliers were not reproduced; no cause has been retroactively established. Cold home includes responseStart 626.9ms (server-reported cfOrigin 451ms, not independently verified) and one 58.348ms renderer task containing 48.284ms Layout. Its font completes at 810.8ms, after LCP. Detail currentSrc confirms the original Sharjah asset; cold ResourceTiming duration 41.6ms, warm cached transfer 0 bytes. All recorded documents remain visible. Warm CDP response timing can carry the cold requestTime; cache events and ResourceTiming identify reuse, not a second slow transfer.
+
+Each warm navigation retains one Ping ERR_ABORTED; no document/CSS/image failures were observed. Action runtime/dependency deprecations are retained. No application change or deployment and no field-speed or exact-design acceptance claim.
+
+Next P1-DESIGN-GAP-01: re-read private homepage reference, compare current 1920/390px rendering, implement one measurable geometry/typography gap with CI and guarded release if verified. Preserve accessibility, rights, original files, URLs and sample/noindex. Do not claim owner acceptance. This fixed performance investigation is checkpointed rather than repeated until green.
