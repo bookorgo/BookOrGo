@@ -1,9 +1,9 @@
 {
   "task": "P1-05j",
   "status": "active",
-  "owner": "bookorgo-p105j-20261018",
-  "acquired_at": "2026-10-18T19:58:18.000Z",
-  "expires_at": "2026-10-18T20:43:18.000Z",
-  "base_revision": "8b9117cd7d02f3fc058d1a04ccd506fd41b3f736",
-  "scope": "Offline raw-report diagnosis with tested reusable analyzer; no fresh production audits or application release"
+  "owner": "bookorgo-p105j-20261019-resume",
+  "acquired_at": "2026-10-19T00:01:00Z",
+  "expires_at": "2026-10-19T00:46:00Z",
+  "base_revision": "0ca16a79e2bd9870506421e40216a7cf4dbd7412",
+  "scope": "Recover offline diagnosis, verify existing artifacts and checkpoint tested analyzer; no production writes"
 }
