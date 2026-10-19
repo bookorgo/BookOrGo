@@ -1,0 +1,4134 @@
+{
+  "task": "P1-05j",
+  "mode": "OFFLINE_EXISTING_REPORT_DIAGNOSIS",
+  "reportCount": 48,
+  "before": [
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 1,
+      "name": "mobile-home-1",
+      "reportSha256": "752b503424bcf61d2c299fb15abf8943d4c2e159ffd0545355db8984dbdfe7f9",
+      "fetchTime": "2026-10-16T11:08:47.878Z",
+      "simulatedLcpMs": 2316.416,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 450,
+        "observedLargestContentfulPaint": 450,
+        "observedDomContentLoaded": 445,
+        "observedLoad": 531
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 332.9739999999851,
+        "elementRenderDelay": 117.2140000000149
+      },
+      "lcpNode": {
+        "selector": "main#main > section.hero > div.container > h1",
+        "bounds": {
+          "top": 130,
+          "bottom": 241,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 111
+        }
+      },
+      "discovery": null,
+      "longTasks": [
+        {
+          "url": "Unattributable",
+          "duration": 141,
+          "startTime": 919.777
+        },
+        {
+          "url": "https://bookorgo.com/",
+          "duration": 95,
+          "startTime": 824.777
+        }
+      ],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -81,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.279999999984284,
+          "endMs": 332.69699999998556,
+          "durationMs": 331.4170000000013,
+          "resourceBytes": 23132,
+          "transferBytes": 5976,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 340.66999999999825,
+          "endMs": 381.38700000000244,
+          "durationMs": 40.71700000000419,
+          "resourceBytes": 80939,
+          "transferBytes": 16015,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 439.0749999999971,
+          "endMs": 518.2899999999936,
+          "durationMs": 79.21499999999651,
+          "resourceBytes": 352240,
+          "transferBytes": 352900,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 438.8610000000044,
+          "endMs": 505.06099999998696,
+          "durationMs": 66.19999999998254,
+          "resourceBytes": 66308,
+          "transferBytes": 66920,
+          "priority": "Low",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 2,
+      "name": "mobile-home-2",
+      "reportSha256": "98696091cc7addc31cb1ba1bee9888f320aae243994e219595cf23b7f3ff846d",
+      "fetchTime": "2026-10-16T11:09:41.134Z",
+      "simulatedLcpMs": 2208.982,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 447,
+        "observedLargestContentfulPaint": 447,
+        "observedDomContentLoaded": 391,
+        "observedLoad": 526
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 308.964,
+        "elementRenderDelay": 137.79
+      },
+      "lcpNode": {
+        "selector": "main#main > section.hero > div.container > h1",
+        "bounds": {
+          "top": 130,
+          "bottom": 241,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 111
+        }
+      },
+      "discovery": null,
+      "longTasks": [
+        {
+          "url": "https://bookorgo.com/",
+          "duration": 87,
+          "startTime": 795.897
+        }
+      ],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -79,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.2700000000186265,
+          "endMs": 308.5560000000114,
+          "durationMs": 307.2859999999928,
+          "resourceBytes": 23132,
+          "transferBytes": 5979,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 316.01799999998184,
+          "endMs": 385.02700000000186,
+          "durationMs": 69.00900000002002,
+          "resourceBytes": 80939,
+          "transferBytes": 16016,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 431.33599999998114,
+          "endMs": 495.09500000000116,
+          "durationMs": 63.75900000002002,
+          "resourceBytes": 352240,
+          "transferBytes": 352919,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 436.22000000000116,
+          "endMs": 502.4800000000105,
+          "durationMs": 66.26000000000931,
+          "resourceBytes": 66308,
+          "transferBytes": 66919,
+          "priority": "Low",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 3,
+      "name": "mobile-home-3",
+      "reportSha256": "4c581740776ccb03e65817f32ee82ad498f074f9fbecda1c45efb48f61128578",
+      "fetchTime": "2026-10-16T11:10:32.147Z",
+      "simulatedLcpMs": 2277.136,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 422,
+        "observedLargestContentfulPaint": 422,
+        "observedDomContentLoaded": 419,
+        "observedLoad": 483
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 314.1999999999702,
+        "elementRenderDelay": 107.7600000000298
+      },
+      "lcpNode": {
+        "selector": "main#main > section.hero > div.container > h1",
+        "bounds": {
+          "top": 130,
+          "bottom": 241,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 111
+        }
+      },
+      "discovery": null,
+      "longTasks": [
+        {
+          "url": "https://bookorgo.com/",
+          "duration": 91,
+          "startTime": 811.961
+        }
+      ],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -61,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.2580000000016298,
+          "endMs": 313.7030000000086,
+          "durationMs": 312.445000000007,
+          "resourceBytes": 23132,
+          "transferBytes": 5985,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 321.35800000000745,
+          "endMs": 360.10599999999977,
+          "durationMs": 38.74799999999232,
+          "resourceBytes": 80939,
+          "transferBytes": 16014,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 413.0480000000098,
+          "endMs": 471.7980000000098,
+          "durationMs": 58.75,
+          "resourceBytes": 352240,
+          "transferBytes": 352926,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 411.33400000003166,
+          "endMs": 469.6590000000142,
+          "durationMs": 58.32499999998254,
+          "resourceBytes": 66308,
+          "transferBytes": 66917,
+          "priority": "Low",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 1,
+      "name": "mobile-listing-1",
+      "reportSha256": "eb31b356a7783fbb45331776dfc32b7cb4dbd98f6b2ed90cfb2e62dea7a1b007",
+      "fetchTime": "2026-10-16T11:08:55.494Z",
+      "simulatedLcpMs": 1740.857,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 420,
+        "observedLargestContentfulPaint": 420,
+        "observedDomContentLoaded": 381,
+        "observedLoad": 408
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 317.291,
+        "resourceLoadDelay": 8.857,
+        "resourceLoadDuration": 54.299,
+        "elementRenderDelay": 39.195
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 398,
+          "bottom": 558,
+          "left": 16,
+          "right": 128,
+          "width": 112,
+          "height": 160
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [
+        {
+          "url": "https://bookorgo.com/search",
+          "duration": 51,
+          "startTime": 835.637
+        }
+      ],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 12,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 1.3340000000025611,
+          "endMs": 316.79099999999744,
+          "durationMs": 315.4569999999949,
+          "resourceBytes": 20856,
+          "transferBytes": 5725,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 324.93099999999686,
+          "endMs": 372.92399999999907,
+          "durationMs": 47.99300000000221,
+          "resourceBytes": 80939,
+          "transferBytes": 16013,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 2,
+      "name": "mobile-listing-2",
+      "reportSha256": "1a0f7895ebb94718cac43fa4cdf7003eb487fe7585e5b03e43d851c68ea17181",
+      "fetchTime": "2026-10-16T11:09:47.887Z",
+      "simulatedLcpMs": 1719.782,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 244,
+        "observedLargestContentfulPaint": 248,
+        "observedDomContentLoaded": 239,
+        "observedLoad": 242
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 170.796,
+        "resourceLoadDelay": 7.85,
+        "resourceLoadDuration": 41.11,
+        "elementRenderDelay": 28.541
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 398,
+          "bottom": 558,
+          "left": 16,
+          "right": 128,
+          "width": 112,
+          "height": 160
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 2,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 1.1539999999804422,
+          "endMs": 170.3740000000107,
+          "durationMs": 169.22000000003027,
+          "resourceBytes": 20856,
+          "transferBytes": 5716,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 177.95000000001164,
+          "endMs": 208.80799999999,
+          "durationMs": 30.857999999978347,
+          "resourceBytes": 80939,
+          "transferBytes": 16015,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 3,
+      "name": "mobile-listing-3",
+      "reportSha256": "16282dd8361a917bfb4b6d03b79e304877149bf2826e76fb5f651b4ef2e45ea3",
+      "fetchTime": "2026-10-16T11:10:38.882Z",
+      "simulatedLcpMs": 1814.4390000000003,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 271,
+        "observedLargestContentfulPaint": 279,
+        "observedDomContentLoaded": 267,
+        "observedLoad": 270
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 187.645,
+        "resourceLoadDelay": 8.014,
+        "resourceLoadDuration": 50.694,
+        "elementRenderDelay": 32.985
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 398,
+          "bottom": 558,
+          "left": 16,
+          "right": 128,
+          "width": 112,
+          "height": 160
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 1,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 1.5209999999788124,
+          "endMs": 187.28200000000652,
+          "durationMs": 185.7610000000277,
+          "resourceBytes": 20856,
+          "transferBytes": 5723,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 194.53899999998976,
+          "endMs": 237.36799999998766,
+          "durationMs": 42.828999999997905,
+          "resourceBytes": 80939,
+          "transferBytes": 16013,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 1,
+      "name": "mobile-detail-1",
+      "reportSha256": "a555f5ef8c32b7e2141a689bbfc5bb7cba4467aed4cd9fe8a3ac101099bd080a",
+      "fetchTime": "2026-10-16T11:09:01.993Z",
+      "simulatedLcpMs": 1985.5010000000002,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 262,
+        "observedLargestContentfulPaint": 269,
+        "observedDomContentLoaded": 255,
+        "observedLoad": 255
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 169.3410000000149,
+        "resourceLoadDelay": 8.335999999985098,
+        "resourceLoadDuration": 67.125,
+        "elementRenderDelay": 24.509
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 178,
+          "bottom": 398,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 7,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.2050000000162981,
+          "endMs": 168.91800000000512,
+          "durationMs": 167.71299999998882,
+          "resourceBytes": 16770,
+          "transferBytes": 5936,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 176.67399999999907,
+          "endMs": 223.11599999997998,
+          "durationMs": 46.44199999998091,
+          "resourceBytes": 80939,
+          "transferBytes": 16014,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 176.99799999999232,
+          "endMs": 243.54099999999744,
+          "durationMs": 66.54300000000512,
+          "resourceBytes": 66308,
+          "transferBytes": 66917,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 2,
+      "name": "mobile-detail-2",
+      "reportSha256": "19629825c1c1c85b588bd3c6c6a52508171e435217508fbf4b90238679c4dca7",
+      "fetchTime": "2026-10-16T11:09:54.109Z",
+      "simulatedLcpMs": 2079.7019999999998,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 308,
+        "observedLargestContentfulPaint": 308,
+        "observedDomContentLoaded": 278,
+        "observedLoad": 281
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 195.178,
+        "resourceLoadDelay": 8.138,
+        "resourceLoadDuration": 68.227,
+        "elementRenderDelay": 36.162
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 178,
+          "bottom": 398,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 27,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.4270000000251457,
+          "endMs": 194.7860000000219,
+          "durationMs": 193.35899999999674,
+          "resourceBytes": 16770,
+          "transferBytes": 5941,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 202.3060000000405,
+          "endMs": 272.1280000000261,
+          "durationMs": 69.82199999998556,
+          "resourceBytes": 80939,
+          "transferBytes": 16023,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 202.82500000004075,
+          "endMs": 270.4080000000249,
+          "durationMs": 67.58299999998417,
+          "resourceBytes": 66308,
+          "transferBytes": 66911,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 3,
+      "name": "mobile-detail-3",
+      "reportSha256": "e8d75111210f0924af5e968ed1b506e2e69035c6d30d024f51d926ba41477287",
+      "fetchTime": "2026-10-16T11:10:45.110Z",
+      "simulatedLcpMs": 2014.1660000000002,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 293,
+        "observedLargestContentfulPaint": 293,
+        "observedDomContentLoaded": 261,
+        "observedLoad": 283
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 185.327,
+        "resourceLoadDelay": 8.54,
+        "resourceLoadDuration": 45.783,
+        "elementRenderDelay": 53.114
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 178,
+          "bottom": 398,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 10,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.1379999999771826,
+          "endMs": 184.8189999999886,
+          "durationMs": 183.6810000000114,
+          "resourceBytes": 16770,
+          "transferBytes": 5944,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 193.70599999997648,
+          "endMs": 255.75499999997555,
+          "durationMs": 62.04899999999907,
+          "resourceBytes": 80939,
+          "transferBytes": 16014,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 194.93399999997928,
+          "endMs": 238.44099999999162,
+          "durationMs": 43.50700000001234,
+          "resourceBytes": 66308,
+          "transferBytes": 66915,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 1,
+      "name": "mobile-article-1",
+      "reportSha256": "095f3b296d68b08e9430cb0cec9536d15c609bc6e9ac94ee77a3404697cddcf2",
+      "fetchTime": "2026-10-16T11:09:08.403Z",
+      "simulatedLcpMs": 1707.2060000000001,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 396,
+        "observedLargestContentfulPaint": 396,
+        "observedDomContentLoaded": 391,
+        "observedLoad": 391
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 315.565,
+        "elementRenderDelay": 80.186
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 151,
+          "bottom": 286,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 135
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 5,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.3379999999888241,
+          "endMs": 315.04000000000815,
+          "durationMs": 313.7020000000193,
+          "resourceBytes": 10983,
+          "transferBytes": 4742,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 322.945000000007,
+          "endMs": 361.1840000000084,
+          "durationMs": 38.2390000000014,
+          "resourceBytes": 80939,
+          "transferBytes": 16018,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 2,
+      "name": "mobile-article-2",
+      "reportSha256": "faee3aa90c1d4b734bf38b1aad964cc7cfef168a22ad372000cae185d29fb18f",
+      "fetchTime": "2026-10-16T11:10:00.528Z",
+      "simulatedLcpMs": 1755.7390000000003,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 283,
+        "observedLargestContentfulPaint": 283,
+        "observedDomContentLoaded": 278,
+        "observedLoad": 278
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 196.167,
+        "elementRenderDelay": 87.207
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 151,
+          "bottom": 286,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 135
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 5,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.271999999997206,
+          "endMs": 195.79699999999139,
+          "durationMs": 194.52499999999418,
+          "resourceBytes": 10983,
+          "transferBytes": 4739,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 204.00499999997555,
+          "endMs": 255.90600000001723,
+          "durationMs": 51.90100000004168,
+          "resourceBytes": 80939,
+          "transferBytes": 16013,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 3,
+      "name": "mobile-article-3",
+      "reportSha256": "9cc5c4fb9c7cdbbd40173c157c2b792a865ab232a0d349b76ae5e7c4ffc25b33",
+      "fetchTime": "2026-10-16T11:10:51.484Z",
+      "simulatedLcpMs": 1317.8599999999997,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 232,
+        "observedLargestContentfulPaint": 232,
+        "observedDomContentLoaded": 264,
+        "observedLoad": 265
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 159.758,
+        "elementRenderDelay": 71.977
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 151,
+          "bottom": 286,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 135
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -33,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.4170000000158325,
+          "endMs": 159.16800000000512,
+          "durationMs": 157.7509999999893,
+          "resourceBytes": 10983,
+          "transferBytes": 4742,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 166.66300000000047,
+          "endMs": 205.50599999999395,
+          "durationMs": 38.84299999999348,
+          "resourceBytes": 80939,
+          "transferBytes": 16017,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 1,
+      "name": "desktop-home-1",
+      "reportSha256": "9f48cebfd58f1032f0724a929f5c935a8bf90c662e9537890c75e8a89d377733",
+      "fetchTime": "2026-10-16T11:09:14.694Z",
+      "simulatedLcpMs": 689.5329999999999,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 449,
+        "observedLargestContentfulPaint": 479,
+        "observedDomContentLoaded": 427,
+        "observedLoad": 498
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 325.477,
+        "resourceLoadDelay": 6.303,
+        "resourceLoadDuration": 55.305,
+        "elementRenderDelay": 92.235
+      },
+      "lcpNode": {
+        "selector": "section.hero > div.hero-art > div.hero-portrait > img.scene",
+        "bounds": {
+          "top": 155,
+          "bottom": 453,
+          "left": 923,
+          "right": 1244,
+          "width": 320,
+          "height": 298
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -49,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.4170000000158325,
+          "endMs": 325.00599999999395,
+          "durationMs": 323.5889999999781,
+          "resourceBytes": 23132,
+          "transferBytes": 5982,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 330.76600000000326,
+          "endMs": 354.3209999999963,
+          "durationMs": 23.554999999993015,
+          "resourceBytes": 80939,
+          "transferBytes": 16015,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 415.68700000003446,
+          "endMs": 486.34800000002724,
+          "durationMs": 70.66099999999278,
+          "resourceBytes": 352240,
+          "transferBytes": 352893,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 415.15200000000186,
+          "endMs": 443.3889999999956,
+          "durationMs": 28.236999999993714,
+          "resourceBytes": 66308,
+          "transferBytes": 66912,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 2,
+      "name": "desktop-home-2",
+      "reportSha256": "9503239dc2236d3970b760eb972ed1663e6af1f4af4369373a40b2915fa1cce8",
+      "fetchTime": "2026-10-16T11:10:06.678Z",
+      "simulatedLcpMs": 808.3320000000001,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 318,
+        "observedLargestContentfulPaint": 350,
+        "observedDomContentLoaded": 293,
+        "observedLoad": 370
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 189.358,
+        "resourceLoadDelay": 5.668,
+        "resourceLoadDuration": 48.254,
+        "elementRenderDelay": 106.22
+      },
+      "lcpNode": {
+        "selector": "section.hero > div.hero-art > div.hero-portrait > img.scene",
+        "bounds": {
+          "top": 155,
+          "bottom": 453,
+          "left": 923,
+          "right": 1244,
+          "width": 320,
+          "height": 298
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -52,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.3559999999997672,
+          "endMs": 189.0009999999893,
+          "durationMs": 187.64499999998952,
+          "resourceBytes": 23132,
+          "transferBytes": 5980,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 193.91800000000512,
+          "endMs": 226.41800000000512,
+          "durationMs": 32.5,
+          "resourceBytes": 80939,
+          "transferBytes": 16015,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 287.7869999999821,
+          "endMs": 356.8880000000063,
+          "durationMs": 69.10100000002421,
+          "resourceBytes": 352240,
+          "transferBytes": 352897,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 286.0089999999909,
+          "endMs": 320.4409999999916,
+          "durationMs": 34.4320000000007,
+          "resourceBytes": 66308,
+          "transferBytes": 66918,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 3,
+      "name": "desktop-home-3",
+      "reportSha256": "6249d0203172a325b7f0aaa0a1341c45adcd2563bed44c89a893e30c5f2aba12",
+      "fetchTime": "2026-10-16T11:10:57.534Z",
+      "simulatedLcpMs": 977.126,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 345,
+        "observedLargestContentfulPaint": 384,
+        "observedDomContentLoaded": 313,
+        "observedLoad": 415
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 179.3,
+        "resourceLoadDelay": 5.948,
+        "resourceLoadDuration": 72.963,
+        "elementRenderDelay": 125.958
+      },
+      "lcpNode": {
+        "selector": "section.hero > div.hero-art > div.hero-portrait > img.scene",
+        "bounds": {
+          "top": 155,
+          "bottom": 453,
+          "left": 923,
+          "right": 1244,
+          "width": 320,
+          "height": 298
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -70,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.3410000000149012,
+          "endMs": 178.94100000002072,
+          "durationMs": 177.60000000000582,
+          "resourceBytes": 23132,
+          "transferBytes": 5978,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 184.09500000000116,
+          "endMs": 253.47600000002421,
+          "durationMs": 69.38100000002305,
+          "resourceBytes": 80939,
+          "transferBytes": 16014,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 309.0709999999963,
+          "endMs": 393.56100000001607,
+          "durationMs": 84.49000000001979,
+          "resourceBytes": 352240,
+          "transferBytes": 352913,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 307.68799999999464,
+          "endMs": 392.0219999999972,
+          "durationMs": 84.33400000000256,
+          "resourceBytes": 66308,
+          "transferBytes": 66920,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 1,
+      "name": "desktop-listing-1",
+      "reportSha256": "ef91f989a142496ffe8606c4c36647c8f3044998624b1e90d6e8a92cc12d9c89",
+      "fetchTime": "2026-10-16T11:09:21.480Z",
+      "simulatedLcpMs": 461.9299999999999,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 238,
+        "observedLargestContentfulPaint": 252,
+        "observedDomContentLoaded": 220,
+        "observedLoad": 222
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 154.651,
+        "resourceLoadDelay": 5.381,
+        "resourceLoadDuration": 27.556,
+        "elementRenderDelay": 64.429
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 363,
+          "bottom": 583,
+          "left": 438,
+          "right": 658,
+          "width": 220,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 16,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 1.4420000000100117,
+          "endMs": 153.5220000000263,
+          "durationMs": 152.0800000000163,
+          "resourceBytes": 20856,
+          "transferBytes": 5726,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 158.29400000002352,
+          "endMs": 180.8080000000191,
+          "durationMs": 22.513999999995576,
+          "resourceBytes": 80939,
+          "transferBytes": 16011,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 2,
+      "name": "desktop-listing-2",
+      "reportSha256": "193819bb6f16163be937584e26ba655b35089403465feefb583ff5a428e59bfe",
+      "fetchTime": "2026-10-16T11:10:13.346Z",
+      "simulatedLcpMs": 506.8140000000001,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 281,
+        "observedLargestContentfulPaint": 281,
+        "observedDomContentLoaded": 263,
+        "observedLoad": 266
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 185.151,
+        "resourceLoadDelay": 5.833,
+        "resourceLoadDuration": 37.214,
+        "elementRenderDelay": 52.377
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 363,
+          "bottom": 583,
+          "left": 438,
+          "right": 658,
+          "width": 220,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 15,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 1.4490000000223517,
+          "endMs": 184.78100000001723,
+          "durationMs": 183.33199999999488,
+          "resourceBytes": 20856,
+          "transferBytes": 5723,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 189.81300000002375,
+          "endMs": 231.1270000000368,
+          "durationMs": 41.31400000001304,
+          "resourceBytes": 80939,
+          "transferBytes": 16012,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 3,
+      "name": "desktop-listing-3",
+      "reportSha256": "149f5244710b87eeaa83cab90ddeb12c9c32043219b34335466a714a3f51d995",
+      "fetchTime": "2026-10-16T11:11:04.299Z",
+      "simulatedLcpMs": 582.5519999999999,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 423,
+        "observedLargestContentfulPaint": 436,
+        "observedDomContentLoaded": 401,
+        "observedLoad": 402
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 316.1109999999702,
+        "resourceLoadDelay": 5.527000000029802,
+        "resourceLoadDuration": 50.436,
+        "elementRenderDelay": 63.926
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 363,
+          "bottom": 583,
+          "left": 438,
+          "right": 658,
+          "width": 220,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 21,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 1.3529999999736901,
+          "endMs": 315.6119999999646,
+          "durationMs": 314.2589999999909,
+          "resourceBytes": 20856,
+          "transferBytes": 5719,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 320.457000000024,
+          "endMs": 361.3549999999814,
+          "durationMs": 40.89799999995739,
+          "resourceBytes": 80939,
+          "transferBytes": 16014,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 1,
+      "name": "desktop-detail-1",
+      "reportSha256": "8e0f86f1b014d9092ec3e0bb35b2a121d5110b877d03e63ba47b9097849b877b",
+      "fetchTime": "2026-10-16T11:09:28.396Z",
+      "simulatedLcpMs": 646.881,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 274,
+        "observedLargestContentfulPaint": 274,
+        "observedDomContentLoaded": 216,
+        "observedLoad": 246
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 156.83,
+        "resourceLoadDelay": 5.615,
+        "resourceLoadDuration": 47.775,
+        "elementRenderDelay": 63.422
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 255,
+          "bottom": 733,
+          "left": 130,
+          "right": 768,
+          "width": 638,
+          "height": 478
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 28,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.2540000000153668,
+          "endMs": 156.16600000002654,
+          "durationMs": 154.91200000001118,
+          "resourceBytes": 16770,
+          "transferBytes": 5948,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 161.18800000002375,
+          "endMs": 210.31400000001304,
+          "durationMs": 49.12599999998929,
+          "resourceBytes": 80939,
+          "transferBytes": 16022,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 161.48200000001816,
+          "endMs": 208.76900000002934,
+          "durationMs": 47.287000000011176,
+          "resourceBytes": 66308,
+          "transferBytes": 66913,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 2,
+      "name": "desktop-detail-2",
+      "reportSha256": "2ccf722db45b1b73c8c34957399aee3e6e22beda714f480e13d5cbf3cbb343b1",
+      "fetchTime": "2026-10-16T11:10:19.659Z",
+      "simulatedLcpMs": 571.923,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 277,
+        "observedLargestContentfulPaint": 277,
+        "observedDomContentLoaded": 256,
+        "observedLoad": 257
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 161.962,
+        "resourceLoadDelay": 5.714,
+        "resourceLoadDuration": 45.321,
+        "elementRenderDelay": 64.098
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 255,
+          "bottom": 733,
+          "left": 130,
+          "right": 768,
+          "width": 638,
+          "height": 478
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 20,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.253999999986263,
+          "endMs": 161.28799999997136,
+          "durationMs": 160.0339999999851,
+          "resourceBytes": 16770,
+          "transferBytes": 5939,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 166.36499999996158,
+          "endMs": 220.58599999998114,
+          "durationMs": 54.22100000001956,
+          "resourceBytes": 80939,
+          "transferBytes": 16021,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 166.79999999998836,
+          "endMs": 211.545999999973,
+          "durationMs": 44.74599999998463,
+          "resourceBytes": 66308,
+          "transferBytes": 66914,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 3,
+      "name": "desktop-detail-3",
+      "reportSha256": "9b9f0e112f9813d5bf8be8dcfe89e7f0bd8a51eade0d7b9f4a53941634aeebe9",
+      "fetchTime": "2026-10-16T11:11:10.774Z",
+      "simulatedLcpMs": 689.04,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 412,
+        "observedLargestContentfulPaint": 428,
+        "observedDomContentLoaded": 394,
+        "observedLoad": 394
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 312.6900000000298,
+        "resourceLoadDelay": 5.348999999970197,
+        "resourceLoadDuration": 68.77799999997019,
+        "elementRenderDelay": 41.5000000000298
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 255,
+          "bottom": 733,
+          "left": 130,
+          "right": 768,
+          "width": 638,
+          "height": 478
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 18,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.728000000002794,
+          "endMs": 312.3489999999874,
+          "durationMs": 310.62099999998463,
+          "resourceBytes": 16770,
+          "transferBytes": 5940,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 317.06300000002375,
+          "endMs": 357.85800000000745,
+          "durationMs": 40.7949999999837,
+          "resourceBytes": 80939,
+          "transferBytes": 16015,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 317.3609999999753,
+          "endMs": 385.6149999999325,
+          "durationMs": 68.25399999995716,
+          "resourceBytes": 66308,
+          "transferBytes": 66918,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 1,
+      "name": "desktop-article-1",
+      "reportSha256": "5ddee588a6de95f59df6db3ff37bde99fa4e96ea560a8595b56a9aa9ccd64247",
+      "fetchTime": "2026-10-16T11:09:34.823Z",
+      "simulatedLcpMs": 529.8989999999999,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 448,
+        "observedLargestContentfulPaint": 448,
+        "observedDomContentLoaded": 431,
+        "observedLoad": 431
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 347.725,
+        "elementRenderDelay": 100.765
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 255,
+          "bottom": 453,
+          "left": 92,
+          "right": 668,
+          "width": 576,
+          "height": 199
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 17,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.782999999995809,
+          "endMs": 347.3420000000042,
+          "durationMs": 345.5590000000084,
+          "resourceBytes": 10983,
+          "transferBytes": 4740,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 352.78900000001886,
+          "endMs": 399.08400000000256,
+          "durationMs": 46.2949999999837,
+          "resourceBytes": 80939,
+          "transferBytes": 16022,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 2,
+      "name": "desktop-article-2",
+      "reportSha256": "d124841a8b816b858a6a83ce8ffae1ac5bc320bf13af1e4af8f75bf161bfe22d",
+      "fetchTime": "2026-10-16T11:10:26.012Z",
+      "simulatedLcpMs": 500.536,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 274,
+        "observedLargestContentfulPaint": 274,
+        "observedDomContentLoaded": 259,
+        "observedLoad": 259
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 174.1519999999702,
+        "elementRenderDelay": 99.49300000002981
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 255,
+          "bottom": 453,
+          "left": 92,
+          "right": 668,
+          "width": 576,
+          "height": 199
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 15,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.3869999999878928,
+          "endMs": 172.87200000000303,
+          "durationMs": 171.48500000001513,
+          "resourceBytes": 10983,
+          "transferBytes": 4736,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 178.15499999999884,
+          "endMs": 228.0100000000093,
+          "durationMs": 49.85500000001048,
+          "resourceBytes": 80939,
+          "transferBytes": 16014,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 3,
+      "name": "desktop-article-3",
+      "reportSha256": "388f405c12973a8572a049db5ce07c168ec0f3099e459d83a2b9635c939c671a",
+      "fetchTime": "2026-10-16T11:11:17.310Z",
+      "simulatedLcpMs": 493.00199999999995,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 273,
+        "observedLargestContentfulPaint": 273,
+        "observedDomContentLoaded": 251,
+        "observedLoad": 251
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 166.597,
+        "elementRenderDelay": 106.798
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 255,
+          "bottom": 453,
+          "left": 92,
+          "right": 668,
+          "width": 576,
+          "height": 199
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 22,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.4930000000167638,
+          "endMs": 166.09800000005635,
+          "durationMs": 164.60500000003958,
+          "resourceBytes": 10983,
+          "transferBytes": 4737,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WO4fbt3_.css",
+          "type": "Stylesheet",
+          "startMs": 170.89300000004005,
+          "endMs": 222.53899999998976,
+          "durationMs": 51.64599999994971,
+          "resourceBytes": 80939,
+          "transferBytes": 16012,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    }
+  ],
+  "after": [
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 1,
+      "name": "mobile-home-1",
+      "reportSha256": "91ca019e8f1dcae06ecdd78ad7049f62dba1225bb0b9cdef9999526c5488acb8",
+      "fetchTime": "2026-10-18T19:03:59.764Z",
+      "simulatedLcpMs": 4324.778,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 1416,
+        "observedLargestContentfulPaint": 1416,
+        "observedDomContentLoaded": 545,
+        "observedLoad": 1197
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 242.647,
+        "elementRenderDelay": 1173.664
+      },
+      "lcpNode": {
+        "selector": "main#main > section.hero > div.container > h1",
+        "bounds": {
+          "top": 130,
+          "bottom": 241,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 111
+        }
+      },
+      "discovery": null,
+      "longTasks": [
+        {
+          "url": "https://bookorgo.com/",
+          "duration": 134,
+          "startTime": 1036.459
+        }
+      ],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 219,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.430000000007567,
+          "endMs": 242.5329999999958,
+          "durationMs": 241.10299999998824,
+          "resourceBytes": 37251,
+          "transferBytes": 6932,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 249.82399999999325,
+          "endMs": 539.4440000000031,
+          "durationMs": 289.6200000000099,
+          "resourceBytes": 80963,
+          "transferBytes": 16019,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 609.7369999999937,
+          "endMs": 1187.0219999999972,
+          "durationMs": 577.2850000000035,
+          "resourceBytes": 352240,
+          "transferBytes": 352901,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-480-4sFRpTcA.webp",
+          "type": "Image",
+          "startMs": 1401.7660000000033,
+          "endMs": 1732.6810000000114,
+          "durationMs": 330.91500000000815,
+          "resourceBytes": 47116,
+          "transferBytes": 47714,
+          "priority": "Low",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 2,
+      "name": "mobile-home-2",
+      "reportSha256": "4b0a099d6e289711b46c6559302f8683497380f1fe9189960bd8917aea769171",
+      "fetchTime": "2026-10-18T19:04:53.886Z",
+      "simulatedLcpMs": 1794.245,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 363,
+        "observedLargestContentfulPaint": 363,
+        "observedDomContentLoaded": 321,
+        "observedLoad": 878
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 234.9539999999851,
+        "elementRenderDelay": 128.2690000000149
+      },
+      "lcpNode": {
+        "selector": "main#main > section.hero > div.container > h1",
+        "bounds": {
+          "top": 130,
+          "bottom": 241,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 111
+        }
+      },
+      "discovery": null,
+      "longTasks": [
+        {
+          "url": "https://bookorgo.com/",
+          "duration": 64,
+          "startTime": 896.1859999999999
+        }
+      ],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -515,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.0910000000003492,
+          "endMs": 235.00700000001234,
+          "durationMs": 233.916000000012,
+          "resourceBytes": 37251,
+          "transferBytes": 6934,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 242.8179999999993,
+          "endMs": 315.8300000000163,
+          "durationMs": 73.012000000017,
+          "resourceBytes": 80963,
+          "transferBytes": 16021,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 350.10700000001816,
+          "endMs": 867.6650000000081,
+          "durationMs": 517.55799999999,
+          "resourceBytes": 352240,
+          "transferBytes": 352901,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-480-4sFRpTcA.webp",
+          "type": "Image",
+          "startMs": 353.788000000015,
+          "endMs": 649.0650000000169,
+          "durationMs": 295.27700000000186,
+          "resourceBytes": 47116,
+          "transferBytes": 47710,
+          "priority": "Low",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "home",
+      "repeat": 3,
+      "name": "mobile-home-3",
+      "reportSha256": "2ad785fe1ab6bbd0ee562deba11480e9a17250de449ce013a464b563e862a869",
+      "fetchTime": "2026-10-18T19:05:44.738Z",
+      "simulatedLcpMs": 1706.429,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 289,
+        "observedLargestContentfulPaint": 289,
+        "observedDomContentLoaded": 284,
+        "observedLoad": 408
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 200.3609999999702,
+        "elementRenderDelay": 88.7870000000298
+      },
+      "lcpNode": {
+        "selector": "main#main > section.hero > div.container > h1",
+        "bounds": {
+          "top": 130,
+          "bottom": 241,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 111
+        }
+      },
+      "discovery": null,
+      "longTasks": [
+        {
+          "url": "https://bookorgo.com/",
+          "duration": 68,
+          "startTime": 809.7249999999999
+        }
+      ],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -119,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.106999999989057,
+          "endMs": 200.41500000000815,
+          "durationMs": 199.3080000000191,
+          "resourceBytes": 37251,
+          "transferBytes": 6933,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 207.8080000000191,
+          "endMs": 240.85000000000582,
+          "durationMs": 33.04199999998673,
+          "resourceBytes": 80963,
+          "transferBytes": 16019,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 278.68899999998393,
+          "endMs": 397.4640000000072,
+          "durationMs": 118.77500000002328,
+          "resourceBytes": 352240,
+          "transferBytes": 352943,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-480-4sFRpTcA.webp",
+          "type": "Image",
+          "startMs": 278.5000000000291,
+          "endMs": 363.3550000000105,
+          "durationMs": 84.85499999998137,
+          "resourceBytes": 47116,
+          "transferBytes": 47720,
+          "priority": "Low",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 1,
+      "name": "mobile-listing-1",
+      "reportSha256": "554747bea71a4cdbea9ec98af2734c18d92219cdae8013ea98209f66c7ae3776",
+      "fetchTime": "2026-10-18T19:04:07.705Z",
+      "simulatedLcpMs": 1717.165,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 284,
+        "observedLargestContentfulPaint": 284,
+        "observedDomContentLoaded": 265,
+        "observedLoad": 272
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 169.315,
+        "resourceLoadDelay": 9.91,
+        "resourceLoadDuration": 32.535,
+        "elementRenderDelay": 72.413
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 398,
+          "bottom": 558,
+          "left": 16,
+          "right": 128,
+          "width": 112,
+          "height": 160
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 12,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 1.30899999999383,
+          "endMs": 169.1759999999922,
+          "durationMs": 167.86699999999837,
+          "resourceBytes": 24273,
+          "transferBytes": 6125,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 178.3399999999965,
+          "endMs": 231.75999999999476,
+          "durationMs": 53.419999999998254,
+          "resourceBytes": 80963,
+          "transferBytes": 16014,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 2,
+      "name": "mobile-listing-2",
+      "reportSha256": "e192ace166d243a2369f981b1d94458cf067ade7c875ae891acfe2eb261bf3a4",
+      "fetchTime": "2026-10-18T19:05:00.940Z",
+      "simulatedLcpMs": 1721.245,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 313,
+        "observedLargestContentfulPaint": 313,
+        "observedDomContentLoaded": 306,
+        "observedLoad": 309
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 222.6629999999851,
+        "resourceLoadDelay": 8.564000000014902,
+        "resourceLoadDuration": 38.6189999999851,
+        "elementRenderDelay": 43.0490000000149
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 398,
+          "bottom": 558,
+          "left": 16,
+          "right": 128,
+          "width": 112,
+          "height": 160
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 4,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 1.0669999999954598,
+          "endMs": 222.47699999999895,
+          "durationMs": 221.4100000000035,
+          "resourceBytes": 24273,
+          "transferBytes": 6125,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 230.21300000001793,
+          "endMs": 280.041000000012,
+          "durationMs": 49.82799999999406,
+          "resourceBytes": 80963,
+          "transferBytes": 16022,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "listing",
+      "repeat": 3,
+      "name": "mobile-listing-3",
+      "reportSha256": "90b0caaf3bb43063830d29e4a0f20aa26741bc96e7514405090559a313b81295",
+      "fetchTime": "2026-10-18T19:05:51.346Z",
+      "simulatedLcpMs": 1404.615,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 238,
+        "observedLargestContentfulPaint": 246,
+        "observedDomContentLoaded": 272,
+        "observedLoad": 282
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 169.773,
+        "resourceLoadDelay": 8.231,
+        "resourceLoadDuration": 36.288,
+        "elementRenderDelay": 31.816
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 398,
+          "bottom": 558,
+          "left": 16,
+          "right": 128,
+          "width": 112,
+          "height": 160
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -44,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 1.2840000000142027,
+          "endMs": 169.43400000000838,
+          "durationMs": 168.14999999999418,
+          "resourceBytes": 24273,
+          "transferBytes": 6129,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 176.6480000000156,
+          "endMs": 210.37300000002142,
+          "durationMs": 33.72500000000582,
+          "resourceBytes": 80963,
+          "transferBytes": 16018,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 1,
+      "name": "mobile-detail-1",
+      "reportSha256": "dc1b6e883a36be8fca52351b32a395ca8ef535e4d594ad5960ab7367f5ca668f",
+      "fetchTime": "2026-10-18T19:04:13.893Z",
+      "simulatedLcpMs": 2492.634,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 263,
+        "observedLargestContentfulPaint": 609,
+        "observedDomContentLoaded": 264,
+        "observedLoad": 593
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 197.254,
+        "resourceLoadDelay": 8.523,
+        "resourceLoadDuration": 386.486,
+        "elementRenderDelay": 16.585
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 178,
+          "bottom": 398,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -330,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.1670000000012806,
+          "endMs": 197.25,
+          "durationMs": 196.08299999999872,
+          "resourceBytes": 21307,
+          "transferBytes": 6712,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 204.84100000000035,
+          "endMs": 237.86599999999453,
+          "durationMs": 33.02499999999418,
+          "resourceBytes": 80963,
+          "transferBytes": 16018,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 205.16300000000047,
+          "endMs": 591.1630000000005,
+          "durationMs": 386,
+          "resourceBytes": 66308,
+          "transferBytes": 66916,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 2,
+      "name": "mobile-detail-2",
+      "reportSha256": "872158e57f4613d03e4dbcb3132264212bc149424f1e15a9fc90f19736fad2a7",
+      "fetchTime": "2026-10-18T19:05:07.101Z",
+      "simulatedLcpMs": 2557.127,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 331,
+        "observedLargestContentfulPaint": 411,
+        "observedDomContentLoaded": 328,
+        "observedLoad": 410
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 226.509,
+        "resourceLoadDelay": 8.559,
+        "resourceLoadDuration": 154.734,
+        "elementRenderDelay": 20.717
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 178,
+          "bottom": 398,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -79,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.1520000000018626,
+          "endMs": 226.45000000001164,
+          "durationMs": 225.29800000000978,
+          "resourceBytes": 21307,
+          "transferBytes": 6714,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 234.01799999998184,
+          "endMs": 300.1019999999844,
+          "durationMs": 66.08400000000256,
+          "resourceBytes": 80963,
+          "transferBytes": 16018,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 234.67999999999302,
+          "endMs": 388.6790000000037,
+          "durationMs": 153.9990000000107,
+          "resourceBytes": 66308,
+          "transferBytes": 66916,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "detail",
+      "repeat": 3,
+      "name": "mobile-detail-3",
+      "reportSha256": "5ff4b1bab332bafb913f82fd2a5d9384069a53f8c1d16a9787138ba34d71a458",
+      "fetchTime": "2026-10-18T19:05:57.480Z",
+      "simulatedLcpMs": 2164.504,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 251,
+        "observedLargestContentfulPaint": 281,
+        "observedDomContentLoaded": 256,
+        "observedLoad": 257
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 179.98,
+        "resourceLoadDelay": 8.495,
+        "resourceLoadDuration": 68.247,
+        "elementRenderDelay": 24.391
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 178,
+          "bottom": 398,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -6,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.2229999999981374,
+          "endMs": 179.87099999998463,
+          "durationMs": 178.6479999999865,
+          "resourceBytes": 21307,
+          "transferBytes": 6710,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 187.4899999999907,
+          "endMs": 222.01500000001397,
+          "durationMs": 34.52500000002328,
+          "resourceBytes": 80963,
+          "transferBytes": 16023,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 188.34599999999045,
+          "endMs": 255.5570000000007,
+          "durationMs": 67.21100000001024,
+          "resourceBytes": 66308,
+          "transferBytes": 66920,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 1,
+      "name": "mobile-article-1",
+      "reportSha256": "ba001b7ede76ccb98ab18c8fa956ee3017f1af339da725342139f3dc8d3c9b3a",
+      "fetchTime": "2026-10-18T19:04:20.469Z",
+      "simulatedLcpMs": 2554.3250000000003,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 1459,
+        "observedLargestContentfulPaint": 1459,
+        "observedDomContentLoaded": 514,
+        "observedLoad": 517
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 298.141,
+        "elementRenderDelay": 1160.676
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 151,
+          "bottom": 286,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 135
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 942,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.338000000003376,
+          "endMs": 298.0369999999966,
+          "durationMs": 296.69899999999325,
+          "resourceBytes": 10983,
+          "transferBytes": 4741,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 305.6270000000077,
+          "endMs": 509.51200000000244,
+          "durationMs": 203.88499999999476,
+          "resourceBytes": 80963,
+          "transferBytes": 16014,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 2,
+      "name": "mobile-article-2",
+      "reportSha256": "cfdc0b2be307be08a1a3cba584b7b650b25fe4045b8d4d87dd12c7d4a753da09",
+      "fetchTime": "2026-10-18T19:05:13.504Z",
+      "simulatedLcpMs": 1752.0140000000001,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 260,
+        "observedLargestContentfulPaint": 260,
+        "observedDomContentLoaded": 256,
+        "observedLoad": 257
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 178.4389999999702,
+        "elementRenderDelay": 81.2490000000298
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 151,
+          "bottom": 286,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 135
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 3,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.1189999999769498,
+          "endMs": 178.43600000001607,
+          "durationMs": 177.31700000003912,
+          "resourceBytes": 10983,
+          "transferBytes": 4735,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 186.13899999999558,
+          "endMs": 234.76299999997718,
+          "durationMs": 48.623999999981606,
+          "resourceBytes": 80963,
+          "transferBytes": 16018,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "mobile",
+      "page": "article",
+      "repeat": 3,
+      "name": "mobile-article-3",
+      "reportSha256": "2ee181590987c0c5cc83a9202cd460e89a4e62062945a81173c4619d33ae6557",
+      "fetchTime": "2026-10-18T19:06:03.629Z",
+      "simulatedLcpMs": 1350.1680000000001,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 245,
+        "observedLargestContentfulPaint": 245,
+        "observedDomContentLoaded": 268,
+        "observedLoad": 269
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 181.305,
+        "elementRenderDelay": 63.406
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 151,
+          "bottom": 286,
+          "left": 16,
+          "right": 396,
+          "width": 380,
+          "height": 135
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -24,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.1499999999941792,
+          "endMs": 181.18699999997625,
+          "durationMs": 180.03699999998207,
+          "resourceBytes": 10983,
+          "transferBytes": 4742,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 189.0799999999872,
+          "endMs": 222.8279999999795,
+          "durationMs": 33.74799999999232,
+          "resourceBytes": 80963,
+          "transferBytes": 16022,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 1,
+      "name": "desktop-home-1",
+      "reportSha256": "fec6951077611bf0a92c82fe9ba0b391847fbed5c88929594e819d24f8e44367",
+      "fetchTime": "2026-10-18T19:04:27.669Z",
+      "simulatedLcpMs": 497.98999999999995,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 314,
+        "observedLargestContentfulPaint": 314,
+        "observedDomContentLoaded": 297,
+        "observedLoad": 414
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 185.76,
+        "resourceLoadDelay": 6.15,
+        "resourceLoadDuration": 31.236,
+        "elementRenderDelay": 90.836
+      },
+      "lcpNode": {
+        "selector": "section.hero > div.hero-art > div.hero-portrait > img.scene",
+        "bounds": {
+          "top": 155,
+          "bottom": 453,
+          "left": 923,
+          "right": 1244,
+          "width": 320,
+          "height": 298
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -100,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.3980000000010477,
+          "endMs": 185.77599999999802,
+          "durationMs": 184.37799999999697,
+          "resourceBytes": 37251,
+          "transferBytes": 6931,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 190.90600000000268,
+          "endMs": 243.68099999999686,
+          "durationMs": 52.77499999999418,
+          "resourceBytes": 80963,
+          "transferBytes": 16019,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 293.2019999999902,
+          "endMs": 402.99499999999534,
+          "durationMs": 109.79300000000512,
+          "resourceBytes": 352240,
+          "transferBytes": 352924,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-480-4sFRpTcA.webp",
+          "type": "Image",
+          "startMs": 292.9759999999951,
+          "endMs": 376.6499999999942,
+          "durationMs": 83.67399999999907,
+          "resourceBytes": 47116,
+          "transferBytes": 47730,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 2,
+      "name": "desktop-home-2",
+      "reportSha256": "8e9de8aadb6a10485ec5e9b98a09bab2bf93317b584f21d2a173f417cccfd693",
+      "fetchTime": "2026-10-18T19:05:19.477Z",
+      "simulatedLcpMs": 486.96700000000004,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 309,
+        "observedLargestContentfulPaint": 309,
+        "observedDomContentLoaded": 294,
+        "observedLoad": 408
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 194.492,
+        "resourceLoadDelay": 6.431,
+        "resourceLoadDuration": 34.426,
+        "elementRenderDelay": 73.171
+      },
+      "lcpNode": {
+        "selector": "section.hero > div.hero-art > div.hero-portrait > img.scene",
+        "bounds": {
+          "top": 155,
+          "bottom": 453,
+          "left": 923,
+          "right": 1244,
+          "width": 320,
+          "height": 298
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -99,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.1779999999853317,
+          "endMs": 194.4320000000007,
+          "durationMs": 193.25400000001537,
+          "resourceBytes": 37251,
+          "transferBytes": 6932,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 199.98099999997066,
+          "endMs": 245.44799999997485,
+          "durationMs": 45.46700000000419,
+          "resourceBytes": 80963,
+          "transferBytes": 16022,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 289.3549999999814,
+          "endMs": 396.83599999998114,
+          "durationMs": 107.48099999999977,
+          "resourceBytes": 352240,
+          "transferBytes": 352935,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-480-4sFRpTcA.webp",
+          "type": "Image",
+          "startMs": 287.1109999999753,
+          "endMs": 342.92699999999604,
+          "durationMs": 55.81600000002072,
+          "resourceBytes": 47116,
+          "transferBytes": 47715,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "home",
+      "repeat": 3,
+      "name": "desktop-home-3",
+      "reportSha256": "684e4be23dd93892ed02ef1cf9b8a7d275b5eb88789bc59351113d3a48eb4a7e",
+      "fetchTime": "2026-10-18T19:06:09.664Z",
+      "simulatedLcpMs": 660.1979999999999,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 365,
+        "observedLargestContentfulPaint": 365,
+        "observedDomContentLoaded": 349,
+        "observedLoad": 540
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 233.416,
+        "resourceLoadDelay": 6.644,
+        "resourceLoadDuration": 53.476,
+        "elementRenderDelay": 71.3
+      },
+      "lcpNode": {
+        "selector": "section.hero > div.hero-art > div.hero-portrait > img.scene",
+        "bounds": {
+          "top": 155,
+          "bottom": 453,
+          "left": 923,
+          "right": 1244,
+          "width": 320,
+          "height": 298
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -175,
+      "requestCount": 14,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/",
+          "type": "Document",
+          "startMs": 1.3170000000100117,
+          "endMs": 233.43599999998696,
+          "durationMs": 232.11899999997695,
+          "resourceBytes": 37251,
+          "transferBytes": 6931,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 239.25900000002002,
+          "endMs": 298.97100000001956,
+          "durationMs": 59.711999999999534,
+          "resourceBytes": 80963,
+          "transferBytes": 16022,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/InterVariable-DiVDrmQJ.woff2",
+          "type": "Font",
+          "startMs": 343.57200000001467,
+          "endMs": 529.3549999999814,
+          "durationMs": 185.7829999999667,
+          "resourceBytes": 352240,
+          "transferBytes": 352943,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-480-4sFRpTcA.webp",
+          "type": "Image",
+          "startMs": 343.3179999999993,
+          "endMs": 476.10699999998906,
+          "durationMs": 132.78899999998976,
+          "resourceBytes": 47116,
+          "transferBytes": 47729,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 1,
+      "name": "desktop-listing-1",
+      "reportSha256": "c7b9a1bf7b239712ddcd18702170f2290e17ba2f227562e44cd23c27928d3299",
+      "fetchTime": "2026-10-18T19:04:34.471Z",
+      "simulatedLcpMs": 642.8399999999999,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 292,
+        "observedLargestContentfulPaint": 449,
+        "observedDomContentLoaded": 293,
+        "observedLoad": 418
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 200.378,
+        "resourceLoadDelay": 5.774,
+        "resourceLoadDuration": 209.482,
+        "elementRenderDelay": 33.701
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 363,
+          "bottom": 583,
+          "left": 438,
+          "right": 658,
+          "width": 220,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -126,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 2.1010000000096625,
+          "endMs": 200.36299999999756,
+          "durationMs": 198.2619999999879,
+          "resourceBytes": 24273,
+          "transferBytes": 6115,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 205.29300000000512,
+          "endMs": 250.94500000000698,
+          "durationMs": 45.65200000000186,
+          "resourceBytes": 80963,
+          "transferBytes": 16021,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 2,
+      "name": "desktop-listing-2",
+      "reportSha256": "f9ff0a9728db3e30ec621c977772d7a51e153a8b63776dc717726b426c8de8f8",
+      "fetchTime": "2026-10-18T19:05:26.113Z",
+      "simulatedLcpMs": 461.5849999999999,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 277,
+        "observedLargestContentfulPaint": 277,
+        "observedDomContentLoaded": 262,
+        "observedLoad": 264
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 183.566,
+        "resourceLoadDelay": 5.317,
+        "resourceLoadDuration": 45.259,
+        "elementRenderDelay": 43.243
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 363,
+          "bottom": 583,
+          "left": 438,
+          "right": 658,
+          "width": 220,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 13,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 1.2149999999965075,
+          "endMs": 184.3059999999823,
+          "durationMs": 183.0909999999858,
+          "resourceBytes": 24273,
+          "transferBytes": 6116,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 187.8849999999802,
+          "endMs": 234.01499999998487,
+          "durationMs": 46.13000000000466,
+          "resourceBytes": 80963,
+          "transferBytes": 16021,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "listing",
+      "repeat": 3,
+      "name": "desktop-listing-3",
+      "reportSha256": "bc50f783a8dc163428a8c6fbee6214a3465daa96062d0f26fa74f41c1c810b81",
+      "fetchTime": "2026-10-18T19:06:16.457Z",
+      "simulatedLcpMs": 460.65700000000004,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 252,
+        "observedLargestContentfulPaint": 252,
+        "observedDomContentLoaded": 244,
+        "observedLoad": 245
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 163.1770000000298,
+        "resourceLoadDelay": 5.2189999999701975,
+        "resourceLoadDuration": 34.681,
+        "elementRenderDelay": 49.041
+      },
+      "lcpNode": {
+        "selector": "div.experience-list > article.experience-card > div.experience-art > img.scene",
+        "bounds": {
+          "top": 363,
+          "bottom": 583,
+          "left": 438,
+          "right": 658,
+          "width": 220,
+          "height": 220
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 7,
+      "requestCount": 10,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/search",
+          "type": "Document",
+          "startMs": 1.5460000000311993,
+          "endMs": 162.9650000000256,
+          "durationMs": 161.4189999999944,
+          "resourceBytes": 24273,
+          "transferBytes": 6119,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 167.5350000000035,
+          "endMs": 207.65700000000652,
+          "durationMs": 40.12200000000303,
+          "resourceBytes": 80963,
+          "transferBytes": 16024,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 1,
+      "name": "desktop-detail-1",
+      "reportSha256": "2d83db38b41b535792361e14e33a9ae74c61f7d850f3bb1f5e5876ac2605ed84",
+      "fetchTime": "2026-10-18T19:04:41.570Z",
+      "simulatedLcpMs": 630.0930000000001,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 266,
+        "observedLargestContentfulPaint": 277,
+        "observedDomContentLoaded": 252,
+        "observedLoad": 252
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 179.377,
+        "resourceLoadDelay": 6.244,
+        "resourceLoadDuration": 58.321,
+        "elementRenderDelay": 33.537
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 255,
+          "bottom": 733,
+          "left": 130,
+          "right": 768,
+          "width": 638,
+          "height": 478
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 14,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.2480000000068685,
+          "endMs": 179.04800000000978,
+          "durationMs": 177.8000000000029,
+          "resourceBytes": 21307,
+          "transferBytes": 6716,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 184.36600000000908,
+          "endMs": 215.82600000000093,
+          "durationMs": 31.45999999999185,
+          "resourceBytes": 80963,
+          "transferBytes": 16024,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 184.8000000000029,
+          "endMs": 242.56700000001,
+          "durationMs": 57.7670000000071,
+          "resourceBytes": 66308,
+          "transferBytes": 66916,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 2,
+      "name": "desktop-detail-2",
+      "reportSha256": "a2b479cdcfc878763b7a6aecd5d49baf81ed00d61cc143f59a1929fe93f12eec",
+      "fetchTime": "2026-10-18T19:05:32.342Z",
+      "simulatedLcpMs": 697.919,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 327,
+        "observedLargestContentfulPaint": 359,
+        "observedDomContentLoaded": 310,
+        "observedLoad": 318
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 205.4479999999702,
+        "resourceLoadDelay": 5.931000000029802,
+        "resourceLoadDuration": 105.924,
+        "elementRenderDelay": 41.754
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 255,
+          "bottom": 733,
+          "left": 130,
+          "right": 768,
+          "width": 638,
+          "height": 478
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 9,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.1449999999604188,
+          "endMs": 205.43899999998393,
+          "durationMs": 204.29400000002352,
+          "resourceBytes": 21307,
+          "transferBytes": 6715,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 210.487999999983,
+          "endMs": 271.3279999999795,
+          "durationMs": 60.83999999999651,
+          "resourceBytes": 80963,
+          "transferBytes": 16022,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 210.90099999998347,
+          "endMs": 316.2839999999851,
+          "durationMs": 105.38300000000163,
+          "resourceBytes": 66308,
+          "transferBytes": 66925,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "detail",
+      "repeat": 3,
+      "name": "desktop-detail-3",
+      "reportSha256": "70bff457de9f3d8f871f40f317205cfed30cc5992bff40857c5f3e73fc973b18",
+      "fetchTime": "2026-10-18T19:06:22.646Z",
+      "simulatedLcpMs": 779.8,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 321,
+        "observedLargestContentfulPaint": 342,
+        "observedDomContentLoaded": 322,
+        "observedLoad": 324
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 214.257,
+        "resourceLoadDelay": 5.481,
+        "resourceLoadDuration": 102.031,
+        "elementRenderDelay": 20.201
+      },
+      "lcpNode": {
+        "selector": "section.container > div.detail-gallery > div.detail-art > img.scene",
+        "bounds": {
+          "top": 255,
+          "bottom": 733,
+          "left": 130,
+          "right": 768,
+          "width": 638,
+          "height": 478
+        }
+      },
+      "discovery": {
+        "priorityHinted": {
+          "label": "fetchpriority=high applied",
+          "value": true
+        },
+        "requestDiscoverable": {
+          "label": "Request is discoverable in initial document",
+          "value": true
+        },
+        "eagerlyLoaded": {
+          "label": "lazy load not applied",
+          "value": true
+        }
+      },
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -3,
+      "requestCount": 13,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/cruises/dubai/sample-creek-cruise",
+          "type": "Document",
+          "startMs": 1.536999999982072,
+          "endMs": 214.05499999999302,
+          "durationMs": 212.51800000001094,
+          "resourceBytes": 21307,
+          "transferBytes": 6715,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 218.99799999999232,
+          "endMs": 272.2389999999723,
+          "durationMs": 53.24099999997998,
+          "resourceBytes": 80963,
+          "transferBytes": 16023,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+          "type": "Image",
+          "startMs": 219.4539999999979,
+          "endMs": 320.7280000000028,
+          "durationMs": 101.27400000000489,
+          "resourceBytes": 66308,
+          "transferBytes": 66919,
+          "priority": "High",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 1,
+      "name": "desktop-article-1",
+      "reportSha256": "105e4e341b6bd89a6e6d3ddab05078e5204c5530f5e26f9d52352b8bbbd4c03a",
+      "fetchTime": "2026-10-18T19:04:47.777Z",
+      "simulatedLcpMs": 435.69800000000004,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 270,
+        "observedLargestContentfulPaint": 270,
+        "observedDomContentLoaded": 285,
+        "observedLoad": 285
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 198.312,
+        "elementRenderDelay": 71.66
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 255,
+          "bottom": 453,
+          "left": 92,
+          "right": 668,
+          "width": 576,
+          "height": 199
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -15,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.1520000000018626,
+          "endMs": 198.20200000000477,
+          "durationMs": 197.0500000000029,
+          "resourceBytes": 10983,
+          "transferBytes": 4746,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 203.2890000000043,
+          "endMs": 236.52600000001257,
+          "durationMs": 33.237000000008265,
+          "resourceBytes": 80963,
+          "transferBytes": 16019,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 2,
+      "name": "desktop-article-2",
+      "reportSha256": "c7ef067931c8ecb925f0132447087238139e98b18203283119813754ab195e7d",
+      "fetchTime": "2026-10-18T19:05:38.666Z",
+      "simulatedLcpMs": 464.01599999999996,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 263,
+        "observedLargestContentfulPaint": 263,
+        "observedDomContentLoaded": 250,
+        "observedLoad": 251
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 179.219,
+        "elementRenderDelay": 84.205
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 255,
+          "bottom": 453,
+          "left": 92,
+          "right": 668,
+          "width": 576,
+          "height": 199
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": 12,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.2309999999997672,
+          "endMs": 178.4320000000007,
+          "durationMs": 177.20100000000093,
+          "resourceBytes": 10983,
+          "transferBytes": 4736,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 183.01799999998184,
+          "endMs": 225.86900000000605,
+          "durationMs": 42.851000000024214,
+          "resourceBytes": 80963,
+          "transferBytes": 16028,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "page": "article",
+      "repeat": 3,
+      "name": "desktop-article-3",
+      "reportSha256": "0a5930caa652c79421dca65f18f2c984dee389c94f3c100b701fba0cd9f3832c",
+      "fetchTime": "2026-10-18T19:06:28.969Z",
+      "simulatedLcpMs": 489.482,
+      "simulatedTbtMs": 0,
+      "observed": {
+        "observedFirstContentfulPaint": 239,
+        "observedLargestContentfulPaint": 239,
+        "observedDomContentLoaded": 247,
+        "observedLoad": 248
+      },
+      "observedPhasesMs": {
+        "timeToFirstByte": 164.852,
+        "elementRenderDelay": 73.759
+      },
+      "lcpNode": {
+        "selector": "article.article-page > header.container > div.article-heading > h1",
+        "bounds": {
+          "top": 255,
+          "bottom": 453,
+          "left": 92,
+          "right": 668,
+          "width": 576,
+          "height": 199
+        }
+      },
+      "discovery": null,
+      "longTasks": [],
+      "warnings": [],
+      "firstPaintAfterLoadMs": -9,
+      "requestCount": 6,
+      "requests": [
+        {
+          "url": "https://bookorgo.com/blog/sample-first-visit-planning",
+          "type": "Document",
+          "startMs": 1.2110000000102445,
+          "endMs": 164.74200000002747,
+          "durationMs": 163.53100000001723,
+          "resourceBytes": 10983,
+          "transferBytes": 4743,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        },
+        {
+          "url": "https://bookorgo.com/build/assets/app-WMfHBrE1.css",
+          "type": "Stylesheet",
+          "startMs": 169.6150000000198,
+          "endMs": 203.2060000000347,
+          "durationMs": 33.5910000000149,
+          "resourceBytes": 80963,
+          "transferBytes": 16019,
+          "priority": "VeryHigh",
+          "protocol": "h3"
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "mobile-home-1",
+      "simulatedLcpDeltaMs": 2008.362,
+      "observedLcpDeltaMs": 966,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "mobile-home-2",
+      "simulatedLcpDeltaMs": -414.7370000000001,
+      "observedLcpDeltaMs": -84,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "mobile-home-3",
+      "simulatedLcpDeltaMs": -570.7069999999999,
+      "observedLcpDeltaMs": -133,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "mobile-listing-1",
+      "simulatedLcpDeltaMs": -23.692000000000007,
+      "observedLcpDeltaMs": -136,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "mobile-listing-2",
+      "simulatedLcpDeltaMs": 1.4629999999999654,
+      "observedLcpDeltaMs": 65,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "mobile-listing-3",
+      "simulatedLcpDeltaMs": -409.8240000000003,
+      "observedLcpDeltaMs": -33,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "mobile-detail-1",
+      "simulatedLcpDeltaMs": 507.1329999999998,
+      "observedLcpDeltaMs": 340,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "mobile-detail-2",
+      "simulatedLcpDeltaMs": 477.4250000000002,
+      "observedLcpDeltaMs": 103,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "mobile-detail-3",
+      "simulatedLcpDeltaMs": 150.33799999999974,
+      "observedLcpDeltaMs": -12,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "mobile-article-1",
+      "simulatedLcpDeltaMs": 847.1190000000001,
+      "observedLcpDeltaMs": 1063,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "mobile-article-2",
+      "simulatedLcpDeltaMs": -3.7250000000001364,
+      "observedLcpDeltaMs": -23,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "mobile-article-3",
+      "simulatedLcpDeltaMs": 32.30800000000045,
+      "observedLcpDeltaMs": 13,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-home-1",
+      "simulatedLcpDeltaMs": -191.54299999999995,
+      "observedLcpDeltaMs": -165,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-home-2",
+      "simulatedLcpDeltaMs": -321.36500000000007,
+      "observedLcpDeltaMs": -41,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-home-3",
+      "simulatedLcpDeltaMs": -316.9280000000001,
+      "observedLcpDeltaMs": -19,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-listing-1",
+      "simulatedLcpDeltaMs": 180.91000000000003,
+      "observedLcpDeltaMs": 197,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-listing-2",
+      "simulatedLcpDeltaMs": -45.229000000000156,
+      "observedLcpDeltaMs": -4,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-listing-3",
+      "simulatedLcpDeltaMs": -121.89499999999987,
+      "observedLcpDeltaMs": -184,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-detail-1",
+      "simulatedLcpDeltaMs": -16.787999999999897,
+      "observedLcpDeltaMs": 3,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-detail-2",
+      "simulatedLcpDeltaMs": 125.99599999999998,
+      "observedLcpDeltaMs": 82,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-detail-3",
+      "simulatedLcpDeltaMs": 90.75999999999999,
+      "observedLcpDeltaMs": -86,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-article-1",
+      "simulatedLcpDeltaMs": -94.20099999999985,
+      "observedLcpDeltaMs": -178,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-article-2",
+      "simulatedLcpDeltaMs": -36.52000000000004,
+      "observedLcpDeltaMs": -11,
+      "sameLcpSelector": true
+    },
+    {
+      "name": "desktop-article-3",
+      "simulatedLcpDeltaMs": -3.519999999999925,
+      "observedLcpDeltaMs": -34,
+      "sameLcpSelector": true
+    }
+  ],
+  "limitations": [
+    "No new navigation, field data, deployment or timing measurement. Original P1-05i target misses remain unchanged.",
+    "Observed trace timing and simulated Lighthouse timing are distinct; neither is field p75.",
+    "Request duration includes request/response waiting and transfer; it does not identify origin, CDN, cache or congestion as the cause.",
+    "Network request presence does not prove which element selected it; no currentSrc is inferred from fallback src.",
+    "Raw Lighthouse reports lack full trace/devtools event streams and browser visibility evidence; heading paint delay cause remains unresolved.",
+    "TBT=0 does not imply no long tasks: retain long-task diagnostics separately."
+  ],
+  "profiles": {
+    "mobile": {
+      "lighthouseVersion": "12.8.2",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      }
+    },
+    "desktop": {
+      "lighthouseVersion": "12.8.2",
+      "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.0.0 Safari/537.36",
+      "settings": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "node",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance"
+        ],
+        "skipAudits": null
+      }
+    }
+  },
+  "status": "OFFLINE_DIAGNOSIS_COMPLETE_WITH_UNRESOLVED_CAUSE",
+  "analyzerRevision": "ce43b75cb2620e21190c7f0e0d647cab91c7aafb",
+  "analysisDate": "2026-10-19",
+  "inputs": [
+    {
+      "task": "P1-05f",
+      "runId": 38891777361,
+      "artifactId": 12041539562,
+      "sha256": "f64c47ed128588abdfc54ac23796078d920fa415e8ebda00a35623d01c18a22c",
+      "digestVerified": true
+    },
+    {
+      "task": "P1-05i",
+      "runId": 39156968757,
+      "artifactId": 12146529335,
+      "sha256": "ce4f351ceb8d295471dd7336693615cf91fc805a056c0aaf63efac952a23c08e",
+      "digestVerified": true
+    }
+  ],
+  "requestProjection": "All 48 original reports validated. Derived rows keep Document/Stylesheet/Font and URLs containing sharjah; requestCount is unfiltered. Profiles deduplicate methodology; raw JSON hashes preserve input identity.",
+  "findings": {
+    "detailImage": {
+      "url": "https://bookorgo.com/build/assets/sharjah-DPcNNgwU.webp",
+      "resourceBytes": 66308,
+      "allSixMobileRequestsSame": true,
+      "conclusion": "First two current observed resource-load durations increased despite approximately 8.5ms discovery delays; server/CDN/network cause not established; currentSrc not captured."
+    },
+    "headingPaint": {
+      "homeFirstRenderDelayMs": 1173.664,
+      "articleFirstRenderDelayMs": 1160.676,
+      "articleFirstPaintAfterLoadMs": 942,
+      "articleFontRequests": 0,
+      "homeSecondFirstPaintMs": 363,
+      "homeSecondFontEndMs": 867.6650000000081,
+      "conclusion": "A font-only explanation is unsupported. Full traces and visibility evidence required; neither blocking CSS nor browser scheduling is proven as cause."
+    },
+    "timingSeparation": {
+      "detailThirdObservedDeltaMs": -12,
+      "detailThirdSimulatedDeltaMs": 150.33799999999974
+    },
+    "preservedFailures": "P1-05i mobile home1/detail2/article1 simulated LCP >2500ms remain unchanged; this is not performance acceptance."
+  },
+  "requirements": [
+    "Master V3.1 non-functional performance goals",
+    "Playbook V4.1 QA and evidence",
+    "OWNER-20261012-MAIN"
+  ],
+  "deployment": {
+    "changed": false,
+    "lastRecordedVerifiedRevision": "0d51ce8d7a29a7a235502aebedd9c02c39943a43",
+    "liveRechecked": false,
+    "productionRequests": 0,
+    "applicationChanges": false
+  },
+  "nextTask": "P1-05k: bounded controlled read-only trace capture for home/detail/article; pinned browser/profile, fixed cold/warm budget, full trace/network plus visibility/currentSrc; retain failures. Then unresolved reference-design review.",
+  "verification": {
+    "local": {
+      "unitTestsPassed": 7,
+      "unitTestsFailed": 0,
+      "syntax": "PASS",
+      "originalReportsValidated": 48
+    },
+    "ci": {
+      "runId": 39179485958,
+      "jobId": 117828981835,
+      "sourceRevision": "ce43b75cb2620e21190c7f0e0d647cab91c7aafb",
+      "unitTestsPassed": 7,
+      "unitTestsFailed": 0,
+      "completedAt": "2026-10-19T00:09:26Z",
+      "url": "https://github.com/bookorgo/BookOrGo/actions/runs/39179485958",
+      "warnings": [
+        "setup-node punycode deprecation",
+        "checkout@v4/setup-node@v4 Node20 target forced to Node24"
+      ]
+    }
+  }
+}
