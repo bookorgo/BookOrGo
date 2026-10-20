@@ -34,6 +34,14 @@ try {
         assert.equal(await page.locator('.site-header').evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(6, 43, 111)');
         assert.ok(await page.getByText('Development preview', { exact: true }).isVisible());
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+        const heroMask = await page.locator('.hero-portrait').evaluate(el => {
+            const s = getComputedStyle(el);
+            return { radii: [s.borderTopLeftRadius, s.borderTopRightRadius, s.borderBottomRightRadius, s.borderBottomLeftRadius], overflow: s.overflow };
+        });
+        assert.deepEqual(heroMask.radii, ['50%', '50%', '18%', '18%']);
+        assert.equal(heroMask.overflow, 'hidden');
+        assert.equal(await page.locator('.hero-portrait').isVisible(), width > 720);
+        checks.push({ viewport: width, heroArch: 'pass', heroMask });
         if (width === 390) {
             const menu = page.locator('.mobile-menu summary');
             await menu.focus();
@@ -129,3 +137,4 @@ try {
 } finally {
     await browser.close();
 }
+
