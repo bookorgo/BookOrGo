@@ -1,9 +1,12 @@
 {
   "task": "P1-DESIGN-GAP-01",
-  "status": "active",
+  "status": "released",
   "owner": "bookorgo-home-gap-checkpoint-20261020",
   "acquired_at": "2026-10-20T12:05:00Z",
-  "expires_at": "2026-10-20T12:35:00Z",
+  "expires_at": "2026-10-20T12:10:00Z",
   "base_revision": "a4fcd9786ac3276f8db530f826ee26fb9232155c",
-  "scope": "Reconcile completed release, verify artifact/screenshots, finalize durable evidence and release lease; no new deployment"
+  "scope": "Reconcile completed release, verify artifact/screenshots, finalize durable evidence and release lease; no new deployment",
+  "released_at": "2026-10-20T12:10:00Z",
+  "result": "P1-DESIGN-GAP-01 verified live; release a4fcd978; durable evidence checkpoint complete",
+  "next_task": "P1-DESIGN-GAP-02"
 }

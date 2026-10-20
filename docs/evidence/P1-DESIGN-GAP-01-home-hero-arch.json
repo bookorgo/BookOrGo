@@ -1,0 +1,203 @@
+{
+  "task": "P1-DESIGN-GAP-01",
+  "status": "VERIFIED_LIVE",
+  "checkpoint_date": "2026-10-20",
+  "source_revision": "d801bf040adb33031a60958b48b9521f9f734d40",
+  "release_revision": "a4fcd9786ac3276f8db530f826ee26fb9232155c",
+  "change": {
+    "scope": "Homepage inner hero photo mask only",
+    "before_radii": [
+      "50%",
+      "50%",
+      "50%",
+      "50%"
+    ],
+    "after_radii": [
+      "50%",
+      "50%",
+      "18%",
+      "18%"
+    ],
+    "interpretation": "Rounded crown and shallow lower corners based on visual inspection of private native-resolution homepage reference. 18% is an approximation, not recovered reference CSS or exact-design acceptance.",
+    "preserved": [
+      "Outer orbit",
+      "Frame dimensions and insets",
+      "Photo, crop and priority",
+      "Text, layout, routes and noindex",
+      "Mobile hidden decoration",
+      "Existing Sites/files and database"
+    ]
+  },
+  "source_checks": {
+    "foundation_run": 39384033077,
+    "quality_run": 39384033063,
+    "php_tests": 22,
+    "assertions": 612,
+    "asset_tests": 2,
+    "hero_viewports": [
+      1920,
+      1440,
+      768,
+      390,
+      320
+    ],
+    "no_js_internal_links": 27,
+    "accessibility_states": 24,
+    "automated_violations": 0,
+    "zero_movement_states": 12,
+    "no_js_stability_checks": 3,
+    "responsive_image_cases": 144,
+    "negative_control": "Temporarily restores prior circle, confirms radii differ and bounding rectangle remains identical, then removes override before screenshots."
+  },
+  "source_artifact": {
+    "id": 12246114288,
+    "sha256": "717293ee5a0cb331ee532d2e51a9b235fd78d81015c7abfd134599a1236d3a19",
+    "digest_verified_during_implementation": true,
+    "expires_at": "2026-11-03T07:04:09Z"
+  },
+  "source_quality_artifact": {
+    "id": 12247135054,
+    "sha256": "c15afe381c4aa4987d086b1b44b8fea2c87547fc3a7e1534298b0a8acfe03dcc",
+    "digest_verified_during_implementation": true,
+    "expires_at": "2026-11-03T07:09:09Z"
+  },
+  "baseline": {
+    "source_revision": "5d4c6a18fadecc38024e129eef6fa6d388b4f53d",
+    "run_id": 39113838952,
+    "artifact_id": 12131129884,
+    "sha256": "b3a11c45123934ef825682f68a59d11afc83e4250c7f743364f1220e42cb9625",
+    "digest_verified_during_implementation": true,
+    "fresh_live_capture": false
+  },
+  "homepage_pixel_comparison_recorded_during_implementation": [
+    {
+      "width": 1920,
+      "height_before": 3818,
+      "height_after": 3818,
+      "changed_pixels": 5637,
+      "bbox": [
+        1233,
+        283,
+        1530,
+        450
+      ]
+    },
+    {
+      "width": 1440,
+      "height_before": 3818,
+      "height_after": 3818,
+      "changed_pixels": 5636,
+      "bbox": [
+        993,
+        283,
+        1290,
+        450
+      ]
+    },
+    {
+      "width": 768,
+      "height_before": 4574,
+      "height_after": 4574,
+      "changed_pixels": 2659,
+      "bbox": [
+        522,
+        175,
+        701,
+        381
+      ]
+    },
+    {
+      "width": 390,
+      "height_before": 5163,
+      "height_after": 5163,
+      "changed_pixels": 0,
+      "bbox": null
+    },
+    {
+      "width": 320,
+      "height_before": 6389,
+      "height_after": 6389,
+      "changed_pixels": 0,
+      "bbox": null
+    }
+  ],
+  "secondary_screenshot_audit": {
+    "scope": "Preserved source screenshots, not reference acceptance",
+    "byte_identical": [
+      "article-1440",
+      "article-390",
+      "detail-1440",
+      "detail-1920",
+      "detail-390",
+      "listing-390",
+      "listing-empty-390"
+    ],
+    "not_byte_identical": [
+      "listing-1440",
+      "listing-1920"
+    ],
+    "limitation": "Desktop listing PNG differences were not localized in this bounded homepage task. Functional/accessibility/image gates passed; no all-pages pixel-identity claim."
+  },
+  "release": {
+    "run_id": 39384850578,
+    "job_id": 118502141372,
+    "status": "VERIFIED_LIVE",
+    "verified_at": "2026-10-20T07:19:59Z",
+    "previous_revision": "0d51ce8d7a29a7a235502aebedd9c02c39943a43",
+    "http_security_asset_checks": 69,
+    "failures": 0,
+    "hero_assertions_viewports": [
+      1440,
+      390
+    ],
+    "page_errors": [],
+    "accessibility_states": 24,
+    "automated_violations": 0,
+    "zero_movement_states": 12,
+    "no_js_stability_checks": 3,
+    "responsive_image_cases": 144,
+    "backup_extracted_comparison": "PASS",
+    "backup_sha256": "c3b957794f595eb66127c35680dae4a19ed44d87d39d01a603b14d6b830cb195",
+    "rollback": "Available; not needed",
+    "existing_default_preserved": true,
+    "database_touched": false,
+    "incoming_archive_removed": true
+  },
+  "live_artifact": {
+    "id": 12246903777,
+    "sha256": "560b7f930176458e412864a76c2a6c6c491dc7367e717237c10a2f3d80f140ba",
+    "digest_reverified_at_checkpoint": true,
+    "expires_at": "2026-11-19T07:19:59Z"
+  },
+  "visual_review": {
+    "source_viewports": [
+      1920,
+      768,
+      390
+    ],
+    "source_webkit_viewport": 1440,
+    "live_viewports": [
+      1440,
+      390
+    ],
+    "result": "Arch correction visible; no new blocking clipping/overflow in reviewed homepage screenshots. Exact reference match not claimed."
+  },
+  "recovery": "Final checkpoint resumed after lease expiry with remote main and zero active/queued workflows reconciled. No redeployment or repeat test-until-green.",
+  "requirements": [
+    "Master V3.1 visual/responsive/accessibility",
+    "Playbook V4.1 P1-01 and QA evidence",
+    "OWNER-20261012-MAIN"
+  ],
+  "limits": [
+    "Exact three-template design and owner acceptance remain open",
+    "Licensed existing media retained, not reference media substitution",
+    "No field CWV, screen-reader or physical-device acceptance",
+    "Relevant P0 database/cron/storage gates remain open",
+    "P6/P7 deferred"
+  ],
+  "warnings": [
+    "Existing Actions/Node dependency deprecation warnings retained",
+    "Earlier local pixel comparison completed with Pillow getdata deprecation warning"
+  ],
+  "next_task": "P1-DESIGN-GAP-02: measure homepage heading typography/spacing against private reference, preserving accessibility and honest sample content"
+}
