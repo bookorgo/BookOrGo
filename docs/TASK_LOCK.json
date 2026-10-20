@@ -1,9 +1,9 @@
 {
   "task": "P1-DESIGN-GAP-01",
   "status": "active",
-  "owner": "bookorgo-home-gap-20261020",
-  "acquired_at": "2026-10-20T07:02:00Z",
-  "expires_at": "2026-10-20T07:47:00Z",
-  "base_revision": "486ed7609cbdface299dca946253d1cd23cedc0a",
-  "scope": "Homepage hero arch correction, source/browser verification and guarded release; preserve content/URLs"
+  "owner": "bookorgo-home-gap-checkpoint-20261020",
+  "acquired_at": "2026-10-20T12:05:00Z",
+  "expires_at": "2026-10-20T12:35:00Z",
+  "base_revision": "a4fcd9786ac3276f8db530f826ee26fb9232155c",
+  "scope": "Reconcile completed release, verify artifact/screenshots, finalize durable evidence and release lease; no new deployment"
 }
