@@ -3,7 +3,9 @@ body.page-home{font-family:Inter,Arial,sans-serif}
 body .destination-photo{object-fit:cover;object-position:center;max-width:100%;height:100%;width:100%;filter:none}
 body .hero-art .destination-photo{width:100%;height:100%;margin:0;transform:rotate(8deg) scale(1.12);object-position:50% 40%}
 body .hero h1{font-weight:900;letter-spacing:-2px}
-body .hero-portrait{inset:15px}
+/* P1-DESIGN-GAP-01: reference arch, not a circular portrait.
+   Keep the outer orbit, photo crop and existing responsive frame unchanged. */
+body.page-home .hero-portrait{inset:15px;border-radius:50% 50% 18% 18%}
 body .hero-art-label{font-family:Inter,Arial,sans-serif}
 body .destination-card::after,body .category-card::after{background:linear-gradient(transparent,#05142acc)}
 body .featured-art .sample-ribbon{background:white;color:#264967;border:1px solid #e0e7ee;border-radius:4px;font-size:9px;letter-spacing:0;text-transform:none;padding:5px 7px;top:10px;left:10px}
@@ -103,3 +105,4 @@ body .detail-gallery .detail-art>p,body .gallery-tile>span{
     box-shadow:0 0 0 4px rgba(6,43,111,.9);
 }
 body .category-card .card-copy{background:rgba(6,43,111,.9)}
+

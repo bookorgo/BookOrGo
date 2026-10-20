@@ -36,6 +36,37 @@ try {
         assert.equal(await page.locator('.region-card').count(), 8);
         await verifyPhotos(page);
         assert.ok(await page.evaluate(async () => { await document.fonts.load('700 32px Inter'); return document.fonts.check('700 32px Inter'); }));
+        const portrait = page.locator('.hero-portrait');
+        const portraitGeometry = await portrait.evaluate(el => {
+            const style = getComputedStyle(el);
+            return {
+                radii: [style.borderTopLeftRadius, style.borderTopRightRadius, style.borderBottomRightRadius, style.borderBottomLeftRadius],
+                overflow: style.overflow,
+                width: el.offsetWidth,
+                height: el.offsetHeight,
+            };
+        });
+        assert.deepEqual(portraitGeometry.radii, ['50%', '50%', '18%', '18%'], 'reference arch has rounded crown and shallow lower corners');
+        assert.equal(portraitGeometry.overflow, 'hidden', 'photo remains clipped to arch');
+        if (width > 720) {
+            assert.ok(await portrait.isVisible());
+            const frame = await page.locator('.hero-art').evaluate(el => ({ width: el.offsetWidth, height: el.offsetHeight }));
+            assert.equal(portraitGeometry.width, frame.width - 32, 'existing 15px inset and outer border preserved');
+            assert.equal(portraitGeometry.height, frame.height - 32);
+            // Negative control: the old circle must be distinguishable; changing
+            // only the clipping curve must not move the frame or surrounding page.
+            const bounds = await portrait.boundingBox();
+            await portrait.evaluate(el => el.style.borderRadius = '50%');
+            assert.notDeepEqual(await portrait.evaluate(el => {
+                const s = getComputedStyle(el);
+                return [s.borderTopLeftRadius, s.borderTopRightRadius, s.borderBottomRightRadius, s.borderBottomLeftRadius];
+            }), portraitGeometry.radii);
+            assert.deepEqual(await portrait.boundingBox(), bounds);
+            await portrait.evaluate(el => el.style.removeProperty('border-radius'));
+        } else {
+            assert.equal(await portrait.isVisible(), false, 'decorative hero stays hidden on mobile');
+        }
+        checks.push({ viewport: width, heroArch: 'pass', portraitGeometry });
         assert.ok(await page.locator('#newsletter-preview').isDisabled());
         assert.ok(await page.locator('#preview-date').isDisabled());
         assert.ok(await page.locator('#preview-travellers').isDisabled());
@@ -182,3 +213,4 @@ try {
 } finally {
     await browser.close();
 }
+
